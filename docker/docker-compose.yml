@@ -1,0 +1,11 @@
+version: '3.1'
+
+services:
+  app:
+    tty: true
+    image: jjthomson2166/scale-ubuntu
+    volumes:
+      # - "/home/jjthomson/core:/root/core"
+      - type: bind
+        source: "/home/jjthomson/core"
+        target: "/root/core"
