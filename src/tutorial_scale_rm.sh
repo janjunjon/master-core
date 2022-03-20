@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # シンボリックリンクを貼る
-cd ~/scale-5.4.4/scale-rm/test/tutorial/ideal
-ln -s ../../../../bin/scale-rm ./
-ln -s ../../../../bin/scale-rm_init ./
+# cd ~/scale-5.4.4/scale-rm/test/tutorial/ideal
+# ln -s ../../../../bin/scale-rm ./
+# ln -s ../../../../bin/scale-rm_init ./
 
 
 # ** 初期値作成 **
