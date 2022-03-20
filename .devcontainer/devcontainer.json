@@ -1,0 +1,24 @@
+{
+  // コンテナの名前
+  "name": "scale-ubuntu",
+
+  // Docker Composeの設定ファイルパス
+  "dockerComposeFile": [
+      "../docker/docker-compose.yml"
+  ],
+
+  // コンテナのサービス名
+  "service": "app",
+
+  // コンテナ内でのユーザー
+  // "remoteUser": "root",
+
+  // VSCodeで開くコンテナ内のパス
+  "workspaceFolder": "/root",
+
+  // コンテナ内で使用する拡張機能
+  "extensions": [
+      // "dbaeumer.vscode-eslint",
+      // "esbenp.prettier-vscode"
+  ]
+}
