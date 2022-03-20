@@ -30,7 +30,7 @@ RUN cd && cd scale-5.4.4/scale-rm/util/netcdf2grads_h && \
 
 # install SNO
 RUN cd &&  cd scale-5.4.4/scale-rm/util/sno && \
-    make && \
+    make
 
 # mpiをrootとして実行することを許可
 # ENV OMPI_ALLOW_RUN_AS_ROOT 1
