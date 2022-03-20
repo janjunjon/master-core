@@ -1,9 +1,16 @@
 #!/bin/bash
 
+# シンボリックリンクを貼る
+cd ~/scale-5.4.4/scale-rm/test/tutorial/ideal
+ln -s ../../../../bin/scale-rm ./
+ln -s ../../../../bin/scale-rm_init ./
+
+
 # ** 初期値作成 **
 cd ~/scale-5.4.4/scale-rm/test/tutorial/ideal/
 cp sample/init_R20kmDX500m.conf ./init_R20kmDX500m.conf
-mpirun --allow-run-as-root -n 2 ./scale-rm_init init_R20kmDX500m.conf ※rootとして実行
+mpirun --allow-run-as-root -n 2 ./scale-rm_init init_R20kmDX500m.conf 
+# ※rootとして実行
 
 # ** シミュレーション実行 **
 cp sample/run_R20kmDX500m.conf ./run_R20kmDX500m.conf

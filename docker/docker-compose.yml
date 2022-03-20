@@ -10,11 +10,9 @@ services:
       - type: bind
         source: "/home/jjthomson/core"
         target: "/root/core"
-      # scale-5.4.4のバインドマウント
-      - type: bind
-        source: "/home/jjthomson/scale-5.4.4"
-        target: "/root/scale-5.4.4"
       # Fドライブのバインドマウント
-      # - type: bind
-      #   source: "/mnt/f/ishihara_juntaro/ishihara_master"
-      #   target: "/root/ishihara_master"
+      - type: bind
+        source: "/mnt/f/ishihara_juntaro/ishihara_master"
+        target: "/root/ishihara_master"
+      # scale-5.4.4
+      # - "/root/scale-5.4.4"
