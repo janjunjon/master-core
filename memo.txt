@@ -70,9 +70,19 @@ draw_r1h.gs
 
 ※Fドライブをマウント
 sudo mount -t drvfs F: /mnt/f/
+/mnt/f/ishihara_juntaro/ishihara_master/
 
 ※ディレクトリの容量
 du
+
+--------------------------------------------------------------
+** pip **
+
+pip install netCDF4 (including numpy)
+pip install matplotlib
+pip install pandas
+pip install sklearn
+pip install basemap
 
 --------------------------------------------------------------
 ** Docker **

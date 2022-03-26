@@ -40,3 +40,10 @@ RUN cd &&  cd scale-5.4.4/scale-rm/util/sno && \
 RUN cd && cd scale-5.4.4/scale-rm/test/tutorial/ideal && \
     ln -s ../../../../bin/scale-rm ./ && \
     ln -s ../../../../bin/scale-rm_init ./
+
+# install module
+RUN pip install netCDF4 && \
+    pip install matplotlib && \
+    pip install pandas && \
+    pip install sklearn && \
+    pip install basemap
