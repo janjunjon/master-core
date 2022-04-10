@@ -6,7 +6,7 @@ RUN apt upgrade && apt update && \
     apt install -y build-essential && \
     apt install -y openmpi-bin && \
     apt install -y git && \
-    apt install -y gcc gfortran g++ libcurl4-openssl-dev m4 mlocate make wget && \
+    apt install -y gcc gfortran g++ libcurl4-openssl-dev m4 mlocate make wget bc vim && \
     apt install -y python3 python3-pip && \
     apt install -y libhdf5-dev hdf5-helpers hdf5-tools && \
     apt install -y libnetcdf-dev libnetcdff-dev libnetcdf-c++4-dev && \
@@ -47,3 +47,15 @@ RUN pip install netCDF4 && \
     pip install pandas && \
     pip install sklearn && \
     pip install basemap
+
+ENV Tutorial_DIR $HOME/scale-5.4.4/scale-rm/test/tutorial
+
+# wgrib2
+ENV CC gcc
+ENV FC gfortran
+RUN cd && \
+    wget https://www.ftp.cpc.ncep.noaa.gov/wd51we/wgrib2/wgrib2.tgz && \
+    tar xvfz wgrib2.tgz && \
+    cd grib2/ && \
+    make
+ENV PATH $PATH:/root/grib2/wgrib2/
