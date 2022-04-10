@@ -1,0 +1,3 @@
+#!/bin/bash
+
+ln -s /root/fdrive/scale_database /root/scale-5.4.4/scale_database

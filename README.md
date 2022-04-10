@@ -23,14 +23,15 @@
 
 ### others
 
-* if error, which is permission denied, happens, execute this command  
-` sudo chmod -R 777 ./ `
+* if error, which is `VS Code: NoPermissions (FileSystemError): Error: EACCES: permission denied`, happens, execute this command  
+` sudo chown -R user {dir} `
 
 ## SCALE
 
 ### tutorial
 
 * 初期値作成  
+`export PATH=$PATH:$HOME/scale-5.4.4/scale-rm/test/tutorial`
 `cd ~/scale-5.4.4/scale-rm/test/tutorial/ideal/`  
 `cp sample/init_R20kmDX500m.conf ./init_R20kmDX500m.conf`  
 `mpirun --allow-run-as-root -n 2 ./scale-rm_init init_R20kmDX500m.conf` ※rootとして実行  
@@ -46,12 +47,6 @@
 `grads -blc checkfig_ideal.gs`  
 
 ### 現実大気実験
-* 概要  
-    * 入力データの準備  
-    * pp : 地形データの作成  
-    * init : 初期値・境界値データの作成  
-    * run : シミュレーションの実行  
-    * net2g : 出力データを netCDF から GrADS 形式に変換（オプション）  
 
 * 入力データ (境界値データ) の準備  
 `wget https://scale.riken.jp/archives/scale_database.tar.gz -P {dir_path}` in Drive  
@@ -59,3 +54,6 @@
 `export SCALE_DB="{dir_path}/scale_database"`  
 
 * pp : 地形データの作成  
+`export Tutorial_DIR=$HOME/scale-5.4.4/scale-rm/test/tutorial`  
+`cd $Tutorial_DIR/real/tools`  
+`bash convert_FNL-grib2grads.sh 2007071418 2007071500 FNL_input FNL_output`  
