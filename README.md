@@ -30,6 +30,8 @@
 
 ### tutorial
 
+#### 理想大気実験
+
 * 初期値作成  
 `export PATH=$PATH:$HOME/scale-5.4.4/scale-rm/test/tutorial`
 `cd ~/scale-5.4.4/scale-rm/test/tutorial/ideal/`  
@@ -46,7 +48,7 @@
 `mpirun --allow-run-as-root -n 2 ./net2g net2g_R20kmDX500m.conf`  
 `grads -blc checkfig_ideal.gs`  
 
-### 現実大気実験
+#### 現実大気実験
 
 * 入力データ (境界値データ) の準備  
 `wget https://scale.riken.jp/archives/scale_database.tar.gz -P {dir_path}` in Drive  
@@ -57,3 +59,12 @@
 `export Tutorial_DIR=$HOME/scale-5.4.4/scale-rm/test/tutorial`  
 `cd $Tutorial_DIR/real/tools`  
 `bash convert_FNL-grib2grads.sh 2007071418 2007071500 FNL_input FNL_output`  
+
+* 実験セットの準備  
+`bash ~/core/initial`
+`cd $Tutorial_DIR/real`  
+`make`  
+
+* 地形データの作成：pp  
+`cd $Tutorial_DIR/real/experiment/pp/`  
+`mpirun --allow-run-as-root -n 4 ./scale-rm_pp pp.d01.conf`  

@@ -6,12 +6,12 @@ RUN apt upgrade && apt update && \
     apt install -y build-essential && \
     apt install -y openmpi-bin && \
     apt install -y git && \
-    apt install -y gcc gfortran g++ libcurl4-openssl-dev m4 mlocate make wget bc vim && \
+    apt install -y gcc gfortran g++ libcurl4-openssl-dev m4 mlocate make wget bc vim netstat && \
     apt install -y python3 python3-pip && \
     apt install -y libhdf5-dev hdf5-helpers hdf5-tools && \
     apt install -y libnetcdf-dev libnetcdff-dev libnetcdf-c++4-dev && \
-    apt install -y liblapack-dev libscalapack-openmpi-dev libatlas-base-dev && \
-    apt install -y grads
+    apt install -y liblapack-dev libscalapack-openmpi-dev libatlas-base-dev libopenmpi-dev && \
+    apt install -y grads gphys
 RUN cd && \
     ompi_info | head >> ompi.txt && \
     nc-config --all >> nc-config.txt
@@ -48,7 +48,11 @@ RUN pip install netCDF4 && \
     pip install sklearn && \
     pip install basemap
 
-ENV Tutorial_DIR $HOME/scale-5.4.4/scale-rm/test/tutorial
+RUN mkdir wgrib && \
+    wget https://ftp.cpc.ncep.noaa.gov/wd51we/wgrib/wgrib.tar && \
+    ./src2all alpha && \
+    gcc -o wgrib wgrib.c && \
+    install wgrib /usr/local/bin
 
 # wgrib2
 ENV CC gcc
@@ -58,4 +62,4 @@ RUN cd && \
     tar xvfz wgrib2.tgz && \
     cd grib2/ && \
     make
-ENV PATH $PATH:/root/grib2/wgrib2/
+ENV PATH $PATH:$HOME/grib2/wgrib2/

@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# ln -s /root/fdrive/scale_database /root/scale-5.4.4/scale_database
+
+# make path for tutorial directory
+export Tutorial_DIR=$HOME/scale-5.4.4/scale-rm/test/tutorial
+export SCALE_DB=$HOME/scale-5.4.4/scale_database
+
+# confirm
+echo $Tutorial_DIR
+echo $SCALE_DB
