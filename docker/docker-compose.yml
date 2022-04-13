@@ -22,7 +22,3 @@ services:
       - type: bind
         source: "/mnt/f/ishihara_juntaro/fdrive"
         target: "/root/fdrive"
-    # command: bash initial
-    # command: ln -s /root/fdrive/scale_database /root/scale-5.4.4/
-    # command: export PATH=$PATH:/root/scale-5.4.4/scale-rm/test/tutorial
-    # command: export Tutorial_DIR=$HOME/scale-5.4.4/scale-rm/test/tutorial
