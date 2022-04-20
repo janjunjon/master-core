@@ -67,4 +67,4 @@
 
 * 地形データの作成：pp  
 `cd $Tutorial_DIR/real/experiment/pp/`  
-`mpirun --allow-run-as-root -n 4 ./scale-rm_pp pp.d01.conf`  
+`mpirun --allow-run-as-root --oversubscribe -n 4 ./scale-rm_pp pp.d01.conf`  
