@@ -4,7 +4,7 @@
 
   // Docker Composeの設定ファイルパス
   "dockerComposeFile": [
-      "../docker/docker-compose.yml"
+      "../docker-compose.yml"
   ],
 
   // コンテナのサービス名

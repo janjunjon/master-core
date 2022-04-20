@@ -6,12 +6,12 @@ RUN apt upgrade && apt update && \
     apt install -y build-essential && \
     apt install -y openmpi-bin && \
     apt install -y git && \
-    apt install -y gcc gfortran g++ libcurl4-openssl-dev m4 mlocate make wget bc vim netstat && \
+    apt install -y gcc gfortran g++ libcurl4-openssl-dev m4 mlocate make wget bc vim && \
     apt install -y python3 python3-pip && \
     apt install -y libhdf5-dev hdf5-helpers hdf5-tools && \
     apt install -y libnetcdf-dev libnetcdff-dev libnetcdf-c++4-dev && \
     apt install -y liblapack-dev libscalapack-openmpi-dev libatlas-base-dev libopenmpi-dev && \
-    apt install -y grads gphys
+    apt install -y grads
 RUN cd && \
     ompi_info | head >> ompi.txt && \
     nc-config --all >> nc-config.txt
@@ -48,8 +48,9 @@ RUN pip install netCDF4 && \
     pip install sklearn && \
     pip install basemap
 
-RUN mkdir wgrib && \
+RUN mkdir wgrib && cd wgrib/ && \
     wget https://ftp.cpc.ncep.noaa.gov/wd51we/wgrib/wgrib.tar && \
+    tar xvf wgrib.tar && \
     ./src2all alpha && \
     gcc -o wgrib wgrib.c && \
     install wgrib /usr/local/bin
