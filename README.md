@@ -68,3 +68,21 @@
 * 地形データの作成：pp  
 `cd $Tutorial_DIR/real/experiment/pp/`  
 `mpirun --allow-run-as-root --oversubscribe -n 4 ./scale-rm_pp pp.d01.conf`  
+
+* 初期値/境界値データの作成：init  
+`cd ${Tutorial_DIR}/real/experiment/init`  
+`cp ../../data/gradsinput-link_FNL.sh ./`  
+`bash gradsinput-link_FNL.sh`  
+`ln -s ../../data/namelist.grads_boundary.FNL.2005053112-2016051106 ./`  
+`mpirun --allow-run-as-root --oversubscribe -n 4 ./scale-rm_init init.d01.conf`
+
+* シミュレーションの実行：run  
+`cd ${Tutorial_DIR}/real/experiment/run`  
+`mpirun --allow-run-as-root --oversubscribe -n 4 ./scale-rm run.d01.conf >& log &`  
+
+* 結果のクイック描画：net2g  
+`cd ${Tutorial_DIR}/real/experiment/net2g`  
+`mpirun --allow-run-as-root --oversubscribe -n 4 ./net2g net2g.2D.d01.conf`  
+`mpirun --allow-run-as-root --oversubscribe -n 4 ./net2g net2g.3D.d01.conf`  
+`cp ../../data/checkfig_real.gs ./`  
+`grads -blc checkfig_real.gs`  
