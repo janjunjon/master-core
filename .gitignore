@@ -1,4 +1,4 @@
 ./memo.txt
 */__pycache__
 */*.nc
-lib/gs/*
+# lib/gs/*

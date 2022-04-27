@@ -26,7 +26,7 @@
 * if error, which is `VS Code: NoPermissions (FileSystemError): Error: EACCES: permission denied`, happens, execute this command  
 ` sudo chown -R user {dir} `
 
-## SCALE
+## SCALE [SCALE_user_guide](https://scale.riken.jp/archives/scale_users_guide.v5.4.4.pdf)
 
 ### tutorial
 
@@ -86,3 +86,9 @@
 `mpirun --allow-run-as-root --oversubscribe -n 4 ./net2g net2g.3D.d01.conf`  
 `cp ../../data/checkfig_real.gs ./`  
 `grads -blc checkfig_real.gs`  
+
+## Refference
+
+* [SCALE_user_guide](https://scale.riken.jp/archives/scale_users_guide.v5.4.4.pdf)  
+* [color.gs](http://kodama.fubuki.info/wiki/wiki.cgi/GrADS/script/color.gs?lang=jp)  
+* [xcbar.gs](http://kodama.fubuki.info/wiki/wiki.cgi/GrADS/script/xcbar.gs?lang=en)  
