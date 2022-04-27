@@ -21,12 +21,15 @@
 * if you enter in command line in docker container  
 ` docker exec -it docker-app-1 bash `
 
+* after you enter in docker container, execute this.  
+` ./build/initial `
+
 ### others
 
 * if error, which is `VS Code: NoPermissions (FileSystemError): Error: EACCES: permission denied`, happens, execute this command  
 ` sudo chown -R user {dir} `
 
-## SCALE [SCALE_user_guide](https://scale.riken.jp/archives/scale_users_guide.v5.4.4.pdf)
+## SCALE ([SCALE_user_guide](https://scale.riken.jp/archives/scale_users_guide.v5.4.4.pdf))
 
 ### tutorial
 
