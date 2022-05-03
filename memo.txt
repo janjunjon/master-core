@@ -90,4 +90,17 @@ pip install basemap
 docker image build -t jjthomson2166/scale-ubuntu .
 
 
+--------------------------------------------------------------
 
+1. gpview <- gphys <- ruby, ruby-dev, dclconfig(fortran) <- xlib
+
+
+--------------------------------------------------------------
+** log **
+
+[00aecdb8f8a7:00959] Read -1, expected 28800, errno = 1
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+ *** End   Launch System for SCALE-RM

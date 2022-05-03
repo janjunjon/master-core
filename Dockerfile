@@ -1,6 +1,8 @@
 FROM ubuntu
 SHELL ["/bin/bash", "-c"]
 ENV TZ=Asia/Tokyo
+ENV CC gcc
+ENV FC gfortran
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 RUN apt upgrade && apt update && \
     apt install -y build-essential && \
@@ -12,9 +14,10 @@ RUN apt upgrade && apt update && \
     apt install -y libnetcdf-dev libnetcdff-dev libnetcdf-c++4-dev && \
     apt install -y liblapack-dev libscalapack-openmpi-dev libatlas-base-dev libopenmpi-dev && \
     apt install -y grads
+
 RUN cd && \
     ompi_info | head >> ompi.txt && \
-    nc-config --all >> nc-config.txt
+    nc-config --all >> nc-config.txt  
 
 # install SCALE
 RUN cd && wget https://scale.riken.jp/archives/scale-5.4.4.tar.gz && \
@@ -48,6 +51,7 @@ RUN pip install netCDF4 && \
     pip install sklearn && \
     pip install basemap
 
+# wgrib
 RUN mkdir wgrib && cd wgrib/ && \
     wget https://ftp.cpc.ncep.noaa.gov/wd51we/wgrib/wgrib.tar && \
     tar xvf wgrib.tar && \
@@ -56,11 +60,31 @@ RUN mkdir wgrib && cd wgrib/ && \
     install wgrib /usr/local/bin
 
 # wgrib2
-ENV CC gcc
-ENV FC gfortran
 RUN cd && \
     wget https://www.ftp.cpc.ncep.noaa.gov/wd51we/wgrib2/wgrib2.tgz && \
     tar xvfz wgrib2.tgz && \
     cd grib2/ && \
     make
 ENV PATH $PATH:$HOME/grib2/wgrib2/
+
+# Ruby
+RUN apt install -y ruby ruby-dev
+
+
+# dclconfig
+ENV DCLDIR /root/dcl-5.2
+RUN cd && http://www.gfd-dennou.org/arch/dcl/dcl-5.2.tar.gz && \
+    tar xvzf dcl-5.2.tar.gz && cd dcl-5.2/ && \
+    ./configure --prefix=/usr/local/dcl-ifc && \
+    # vi Mkinclude
+    # DCLLIBNAME      = dcl$(DCLVERNUM)$(DCLLANG)
+    # DCLFRT          = dclfrt
+    make && make install
+
+# gphys(gpview)
+RUN cd && wget http://ruby.gfd-dennou.org/products/gphys/release/gphys-1.5.5.tar.gz && \
+    tar xvzf gphys-1.5.5.tar.gz && \
+    cd gphys-1.5.5/ && \
+    # cp /root/core/build/install.rb ./
+    ruby install.rb
+
