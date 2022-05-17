@@ -67,24 +67,24 @@ RUN cd && \
     make
 ENV PATH $PATH:$HOME/grib2/wgrib2/
 
-# Ruby
-RUN apt install -y ruby ruby-dev
+# # Ruby
+# RUN apt install -y ruby ruby-dev
 
 
-# dclconfig
-ENV DCLDIR /root/dcl-5.2
-RUN cd && http://www.gfd-dennou.org/arch/dcl/dcl-5.2.tar.gz && \
-    tar xvzf dcl-5.2.tar.gz && cd dcl-5.2/ && \
-    ./configure --prefix=/usr/local/dcl-ifc && \
-    # vi Mkinclude
-    # DCLLIBNAME      = dcl$(DCLVERNUM)$(DCLLANG)
-    # DCLFRT          = dclfrt
-    make && make install
+# # dclconfig
+# ENV DCLDIR /root/dcl-5.2
+# RUN cd && http://www.gfd-dennou.org/arch/dcl/dcl-5.2.tar.gz && \
+#     tar xvzf dcl-5.2.tar.gz && cd dcl-5.2/ && \
+#     ./configure --prefix=/usr/local/dcl-ifc && \
+#     # vi Mkinclude
+#     # DCLLIBNAME      = dcl$(DCLVERNUM)$(DCLLANG)
+#     # DCLFRT          = dclfrt
+#     make && make install
 
-# gphys(gpview)
-RUN cd && wget http://ruby.gfd-dennou.org/products/gphys/release/gphys-1.5.5.tar.gz && \
-    tar xvzf gphys-1.5.5.tar.gz && \
-    cd gphys-1.5.5/ && \
-    # cp /root/core/build/install.rb ./
-    ruby install.rb
+# # gphys(gpview)
+# RUN cd && wget http://ruby.gfd-dennou.org/products/gphys/release/gphys-1.5.5.tar.gz && \
+#     tar xvzf gphys-1.5.5.tar.gz && \
+#     cd gphys-1.5.5/ && \
+#     # cp /root/core/build/install.rb ./
+#     ruby install.rb
 

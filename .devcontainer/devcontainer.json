@@ -1,10 +1,11 @@
 {
   // コンテナの名前
   "name": "scale-ubuntu",
+  // "name": "core_app_1",
 
   // Docker Composeの設定ファイルパス
   "dockerComposeFile": [
-      "../docker-compose.yml"
+    "../docker-compose.yml"
   ],
 
   // コンテナのサービス名
