@@ -10,3 +10,5 @@ mesg n 2> /dev/null || true
 
 export Tutorial_DIR=$HOME/scale-5.4.4/scale-rm/test/tutorial
 export SCALE_DB=$HOME/scale-5.4.4/scale_database
+
+cp $HOME/scale-5.4.4 -R $HOME/fdrive

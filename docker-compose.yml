@@ -3,11 +3,12 @@ version: '3.1'
 services:
   app:
     tty: true
-    image: jjthomson2166/scale-ubuntu
-    build:
-      context: "."
-      dockerfile: "./Dockerfile"
-    restart: "always"
+    container_name: "scale-dev"
+    image: "jjthomson2166/scale-ubuntu"
+    # build:
+    #   context: "."
+    #   dockerfile: "./Dockerfile"
+    # restart: "always"
     volumes:
       # coreのバインドマウント
       # - "/home/jjthomson/core:/root/core"

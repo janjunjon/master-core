@@ -16,13 +16,16 @@
 ` sudo mount -t drvfs F: /mnt/f/ `
 
 * before docker-compose up  
-` docker cp docker-app-1:/root/scale-5.4.4 ~/ `
+` docker cp scale-dev:/root/scale-5.4.4 ~/ `
 
 * if you enter in command line in docker container  
-` docker exec -it docker-app-1 bash `
+` docker exec -it scale-dev bash `
 
 * after you enter in docker container, execute this.  
-` ./build/initial `
+` ./build/initial.sh `  
+
+* if you exit container shell, execute this.  
+` cp $HOME/scale-5.4.4 -R $HOME/fdrive `  
 
 ### others
 
@@ -58,7 +61,7 @@
 `ln -s {dir_path}/scale_database ./`  
 `export SCALE_DB="{dir_path}/scale_database"`  
 
-* pp : 地形データの作成  
+* pp : 地形データの作成の為の処理  
 `export Tutorial_DIR=$HOME/scale-5.4.4/scale-rm/test/tutorial`  
 `cd $Tutorial_DIR/real/tools`  
 `bash convert_FNL-grib2grads.sh 2007071418 2007071500 FNL_input FNL_output`  

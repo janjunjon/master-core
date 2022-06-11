@@ -1,8 +1,6 @@
+from itertools import accumulate
 import netCDF4
 import numpy as np
-import matplotlib.pyplot as plt
-import matplotlib.cm as cm
-from mpl_toolkits.basemap import Basemap
 
 def read_netCDF(filename):
     nc = netCDF4.Dataset(filename)
@@ -16,35 +14,45 @@ def config_netCDF(nc, var=None):
         config = nc[var]
     return config
 
-def draw_pic(nc, v):
-    var = np.array(nc[v][0][:][:])
-    Lo = np.array(nc['lon'])
-    La = np.array(nc['lat'])
-    Lon, Lat = np.meshgrid(Lo, La)
-    fig = plt.figure(figsize=(10, 10))
-    interval = list(np.arange(200, 300, 10))
-    interval.insert(0, 0.1)
-    cmap = cm.jet
-    cmap.set_under('w', alpha=0)
-    basemap = return_basemap()
-    x, y = basemap(Lon, Lat)
-    im=plt.contourf(x, y, var, interval, cmap=cmap, latlon=True)
-    cb = basemap.colorbar(im, "right", size="2.5%")
-    plt.show()
-    plt.savefig("./img/test.png")
-    plt.close()    
+def mkBinaryMSMs(nc, var='r1h'):
+    v_array = nc.variables[var][:][:][:].tolist()
+    normal_array_with_time = []
+    accumulate3hours = []
+    for v_time in v_array:
+        normal_array = []
+        for v_lat in v_time:
+            normal_array.extend(v_lat)
+        normal_array_with_time.append(normal_array)
+    for i in range(0, 24, 3):
+        sum3hours = [
+            x + y + z for (x, y, z) in zip(
+                normal_array_with_time[i],
+                normal_array_with_time[i+1],
+                normal_array_with_time[i+2]
+            )
+        ]
+        accumulate3hours.append(sum3hours)
+    return accumulate3hours   
 
-def return_basemap():
-    m=Basemap(
-        projection='cyl',
-        resolution='i',
-        llcrnrlat=30,
-        urcrnrlat=35,
-        llcrnrlon=128,
-        urcrnrlon=133
-    )
-    m.drawcoastlines(color='black')
-    m.drawmeridians(np.arange(128,133,0.5))
-    m.drawparallels(np.arange(30,35,0.5))
-    return m
+def _MSMp_to_binary(nc, var):
+    # <class 'numpy.ma.core.MaskedArray'>
+    # .data = <class 'numpy.ndarray'>
+    # time(8) -> p(16) -> lat(253) -> lon(241)
+    lon=nc.variables['lon'][:]
+    lat=nc.variables['lat'][:]
+    p=nc.variables['p'][:]
+    time=nc.variables['time'][:]
+    v=nc.variables[var][:][:][:][:]
+    return
+
+def _MSMs_to_binary(nc, var):
+    # <class 'numpy.ma.core.MaskedArray'>
+    # .data = <class 'numpy.ndarray'>
+    # time(24) -> lat(505) -> lon(481)
+    lon=nc.variables['lon'][:]
+    lat=nc.variables['lat'][:]
+    time=nc.variables['time'][:]
+    v=nc.variables[var][:][:][:]
+    nc.close()
+    return
   
