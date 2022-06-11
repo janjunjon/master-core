@@ -1,4 +1,4 @@
-import src.module.netcdf as netcdf
+import module.netcdf as netcdf
 
 def main():
     path = "/mnt/f/ishihara_juntaro/ishihara_master/0703.nc"
