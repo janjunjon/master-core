@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
 import matplotlib.cm as cm
+import numpy as np
 from mpl_toolkits.basemap import Basemap
 
 def draw_pic(nc, v):
