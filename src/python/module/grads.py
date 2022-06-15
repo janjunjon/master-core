@@ -1,6 +1,7 @@
 import os
 
 def execute_shell(gradsfile, *args):
+    gradsfile = os.path.expanduser(gradsfile)
     command = f"grads -blc {gradsfile}"
     if len(args) == 0:
         print("$", command)
