@@ -61,11 +61,11 @@ RUN mkdir wgrib && cd wgrib/ && \
 
 # wgrib2
 RUN cd && \
-    wget https://www.ftp.cpc.ncep.noaa.gov/wd51we/wgrib2/wgrib2.tgz && \
-    tar xvfz wgrib2.tgz && \
+    wget ftp://ftp.cpc.ncep.noaa.gov/wd51we/wgrib2/wgrib2.tgz && \
+    tar -xvfz wgrib2.tgz && \
     cd grib2/ && \
     make
-ENV PATH $PATH:$HOME/grib2/wgrib2/
+ENV PATH $PATH:/root/grib2/wgrib2/wgrib2
 
 # # Ruby
 # RUN apt install -y ruby ruby-dev

@@ -10,5 +10,7 @@ mesg n 2> /dev/null || true
 
 export Tutorial_DIR=$HOME/scale-5.4.4/scale-rm/test/tutorial
 export SCALE_DB=$HOME/scale-5.4.4/scale_database
+export PATH=$PATH:/root/grib2/wgrib2
+alias wgrib2="/root/grib2/wgrib2/wgrib2"
 
-cp $HOME/scale-5.4.4 -R $HOME/fdrive
+# cp $HOME/scale-5.4.4 -R $HOME/fdrive
