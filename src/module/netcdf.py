@@ -3,10 +3,6 @@ import netCDF4
 import numpy as np
 from . import draw, grads
 
-class MSM():
-    def __init__(self) -> None:
-        pass
-
 def read_netCDF(filename):
     nc = netCDF4.Dataset(filename)
     return nc
