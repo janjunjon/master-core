@@ -17,7 +17,7 @@ RUN apt upgrade && apt update && \
 
 RUN cd && \
     ompi_info | head >> ompi.txt && \
-    nc-config --all >> nc-config.txt  
+    nc-config --all >> nc-config.txt
 
 # install SCALE
 RUN cd && wget https://scale.riken.jp/archives/scale-5.4.4.tar.gz && \
@@ -32,7 +32,7 @@ RUN cd && cd scale-5.4.4/scale-rm/util/netcdf2grads_h && \
     make -j 2
 
 # install SNO
-RUN cd &&  cd scale-5.4.4/scale-rm/util/sno && \
+RUN cd && cd scale-5.4.4/scale-rm/util/sno && \
     make
 
 # mpiをrootとして実行することを許可

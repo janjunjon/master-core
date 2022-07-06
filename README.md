@@ -10,6 +10,12 @@
 * docker image pull  
 ` docker image pull jjthomson2166/scale-ubuntu `
 
+* error stack
+```
+sudo gpasswd -a $(whoami) docker
+sudo chgrp docker /var/run/docker.sock
+```
+
 ### docker container
 
 * if you use F drive, execute this command and comment out mount in docker-compose.yml  
@@ -55,6 +61,10 @@
 `grads -blc checkfig_ideal.gs`  
 
 #### 現実大気実験
+
+* `USER.sh`   
+This is a file for configure and making `experiments/`  
+`make`  
 
 * 入力データ (境界値データ) の準備  
 `wget https://scale.riken.jp/archives/scale_database.tar.gz -P {dir_path}` in Drive  
