@@ -1,0 +1,2574 @@
+rec 1:0:date 2007071418 HGT kpds5=7 kpds6=100 kpds7=1000 levels=(3,232) grid=3 1000 mb anl:
+  HGT=Geopotential height [gpm]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -391.6 389.5  num bits 13  BDS_Ref -3916  DecScale 1 BinScale 0
+
+rec 2:105968:date 2007071418 HGT kpds5=7 kpds6=100 kpds7=975 levels=(3,207) grid=3 975 mb anl:
+  HGT=Geopotential height [gpm]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -191.3 564.4  num bits 13  BDS_Ref -1913  DecScale 1 BinScale 0
+
+rec 3:211936:date 2007071418 HGT kpds5=7 kpds6=100 kpds7=950 levels=(3,182) grid=3 950 mb anl:
+  HGT=Geopotential height [gpm]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 14.2 742.9  num bits 13  BDS_Ref 142  DecScale 1 BinScale 0
+
+rec 4:317904:date 2007071418 HGT kpds5=7 kpds6=100 kpds7=925 levels=(3,157) grid=3 925 mb anl:
+  HGT=Geopotential height [gpm]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 224.7 925.8  num bits 13  BDS_Ref 2247  DecScale 1 BinScale 0
+
+rec 5:423872:date 2007071418 HGT kpds5=7 kpds6=100 kpds7=900 levels=(3,132) grid=3 900 mb anl:
+  HGT=Geopotential height [gpm]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 439.9 1150.3  num bits 13  BDS_Ref 4399  DecScale 1 BinScale 0
+
+rec 6:529840:date 2007071418 HGT kpds5=7 kpds6=100 kpds7=850 levels=(3,82) grid=3 850 mb anl:
+  HGT=Geopotential height [gpm]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 883.8 1637.2  num bits 13  BDS_Ref 8838  DecScale 1 BinScale 0
+
+rec 7:635808:date 2007071418 HGT kpds5=7 kpds6=100 kpds7=800 levels=(3,32) grid=3 800 mb anl:
+  HGT=Geopotential height [gpm]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 1349.5 2147.5  num bits 13  BDS_Ref 13495  DecScale 1 BinScale 0
+
+rec 8:741776:date 2007071418 HGT kpds5=7 kpds6=100 kpds7=750 levels=(2,238) grid=3 750 mb anl:
+  HGT=Geopotential height [gpm]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 1839 2684.3  num bits 14  BDS_Ref 18390  DecScale 1 BinScale 0
+
+rec 9:855890:date 2007071418 HGT kpds5=7 kpds6=100 kpds7=700 levels=(2,188) grid=3 700 mb anl:
+  HGT=Geopotential height [gpm]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 2351.9 3253.2  num bits 14  BDS_Ref 23519  DecScale 1 BinScale 0
+
+rec 10:970004:date 2007071418 HGT kpds5=7 kpds6=100 kpds7=650 levels=(2,138) grid=3 650 mb anl:
+  HGT=Geopotential height [gpm]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 2894.5 3861.3  num bits 14  BDS_Ref 28945  DecScale 1 BinScale 0
+
+rec 11:1084118:date 2007071418 HGT kpds5=7 kpds6=100 kpds7=600 levels=(2,88) grid=3 600 mb anl:
+  HGT=Geopotential height [gpm]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 3471.4 4516.6  num bits 14  BDS_Ref 34714  DecScale 1 BinScale 0
+
+rec 12:1198232:date 2007071418 HGT kpds5=7 kpds6=100 kpds7=550 levels=(2,38) grid=3 550 mb anl:
+  HGT=Geopotential height [gpm]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 4087.1 5216  num bits 14  BDS_Ref 40871  DecScale 1 BinScale 0
+
+rec 13:1312346:date 2007071418 HGT kpds5=7 kpds6=100 kpds7=500 levels=(1,244) grid=3 500 mb anl:
+  HGT=Geopotential height [gpm]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 4747.6 5967.8  num bits 14  BDS_Ref 47476  DecScale 1 BinScale 0
+
+rec 14:1426460:date 2007071418 HGT kpds5=7 kpds6=100 kpds7=450 levels=(1,194) grid=3 450 mb anl:
+  HGT=Geopotential height [gpm]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 5460.1 6780.7  num bits 14  BDS_Ref 54601  DecScale 1 BinScale 0
+
+rec 15:1540574:date 2007071418 HGT kpds5=7 kpds6=100 kpds7=400 levels=(1,144) grid=3 400 mb anl:
+  HGT=Geopotential height [gpm]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 6237.9 7668.6  num bits 14  BDS_Ref 62379  DecScale 1 BinScale 0
+
+rec 16:1654688:date 2007071418 HGT kpds5=7 kpds6=100 kpds7=350 levels=(1,94) grid=3 350 mb anl:
+  HGT=Geopotential height [gpm]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 7102.7 8656.3  num bits 14  BDS_Ref 71027  DecScale 1 BinScale 0
+
+rec 17:1768802:date 2007071418 HGT kpds5=7 kpds6=100 kpds7=300 levels=(1,44) grid=3 300 mb anl:
+  HGT=Geopotential height [gpm]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 8083.7 9769.2  num bits 15  BDS_Ref 80837  DecScale 1 BinScale 0
+
+rec 18:1891060:date 2007071418 HGT kpds5=7 kpds6=100 kpds7=250 levels=(0,250) grid=3 250 mb anl:
+  HGT=Geopotential height [gpm]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 9216.8 11070.7  num bits 15  BDS_Ref 92168  DecScale 1 BinScale 0
+
+rec 19:2013318:date 2007071418 HGT kpds5=7 kpds6=100 kpds7=200 levels=(0,200) grid=3 200 mb anl:
+  HGT=Geopotential height [gpm]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 10581 12606.4  num bits 15  BDS_Ref 105810  DecScale 1 BinScale 0
+
+rec 20:2135576:date 2007071418 HGT kpds5=7 kpds6=100 kpds7=150 levels=(0,150) grid=3 150 mb anl:
+  HGT=Geopotential height [gpm]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 12285.5 14454.7  num bits 15  BDS_Ref 122855  DecScale 1 BinScale 0
+
+rec 21:2257834:date 2007071418 HGT kpds5=7 kpds6=100 kpds7=100 levels=(0,100) grid=3 100 mb anl:
+  HGT=Geopotential height [gpm]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 14579.7 16901.1  num bits 15  BDS_Ref 145797  DecScale 1 BinScale 0
+
+rec 22:2380092:date 2007071418 HGT kpds5=7 kpds6=100 kpds7=70 levels=(0,70) grid=3 70 mb anl:
+  HGT=Geopotential height [gpm]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 16553.2 19002.2  num bits 15  BDS_Ref 165532  DecScale 1 BinScale 0
+
+rec 23:2502350:date 2007071418 HGT kpds5=7 kpds6=100 kpds7=50 levels=(0,50) grid=3 50 mb anl:
+  HGT=Geopotential height [gpm]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 18383.7 21182.1  num bits 15  BDS_Ref 183837  DecScale 1 BinScale 0
+
+rec 24:2624608:date 2007071418 HGT kpds5=7 kpds6=100 kpds7=30 levels=(0,30) grid=3 30 mb anl:
+  HGT=Geopotential height [gpm]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 21123.2 24605.5  num bits 16  BDS_Ref 211232  DecScale 1 BinScale 0
+
+rec 25:2755012:date 2007071418 HGT kpds5=7 kpds6=100 kpds7=20 levels=(0,20) grid=3 20 mb anl:
+  HGT=Geopotential height [gpm]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 23286.8 27359.9  num bits 16  BDS_Ref 232868  DecScale 1 BinScale 0
+
+rec 26:2885416:date 2007071418 HGT kpds5=7 kpds6=100 kpds7=10 levels=(0,10) grid=3 10 mb anl:
+  HGT=Geopotential height [gpm]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 27053.9 32161.1  num bits 16  BDS_Ref 270539  DecScale 1 BinScale 0
+
+rec 27:3015820:date 2007071418 TMP kpds5=11 kpds6=100 kpds7=1000 levels=(3,232) grid=3 1000 mb anl:
+  TMP=Temp. [K]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 236.2 320.8  num bits 10  BDS_Ref 2362  DecScale 1 BinScale 0
+
+rec 28:3097354:date 2007071418 TMP kpds5=11 kpds6=100 kpds7=975 levels=(3,207) grid=3 975 mb anl:
+  TMP=Temp. [K]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 235 319.2  num bits 10  BDS_Ref 2350  DecScale 1 BinScale 0
+
+rec 29:3178888:date 2007071418 TMP kpds5=11 kpds6=100 kpds7=950 levels=(3,182) grid=3 950 mb anl:
+  TMP=Temp. [K]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 233.8 316.9  num bits 10  BDS_Ref 2338  DecScale 1 BinScale 0
+
+rec 30:3260422:date 2007071418 TMP kpds5=11 kpds6=100 kpds7=925 levels=(3,157) grid=3 925 mb anl:
+  TMP=Temp. [K]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 232.7 314.4  num bits 10  BDS_Ref 2327  DecScale 1 BinScale 0
+
+rec 31:3341956:date 2007071418 TMP kpds5=11 kpds6=100 kpds7=900 levels=(3,132) grid=3 900 mb anl:
+  TMP=Temp. [K]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 231.5 311.8  num bits 10  BDS_Ref 2315  DecScale 1 BinScale 0
+
+rec 32:3423490:date 2007071418 TMP kpds5=11 kpds6=100 kpds7=850 levels=(3,82) grid=3 850 mb anl:
+  TMP=Temp. [K]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 229 308.3  num bits 10  BDS_Ref 2290  DecScale 1 BinScale 0
+
+rec 33:3505024:date 2007071418 TMP kpds5=11 kpds6=100 kpds7=800 levels=(3,32) grid=3 800 mb anl:
+  TMP=Temp. [K]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 226.3 304.4  num bits 10  BDS_Ref 2263  DecScale 1 BinScale 0
+
+rec 34:3586558:date 2007071418 TMP kpds5=11 kpds6=100 kpds7=750 levels=(2,238) grid=3 750 mb anl:
+  TMP=Temp. [K]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 223.5 299.5  num bits 10  BDS_Ref 2235  DecScale 1 BinScale 0
+
+rec 35:3668092:date 2007071418 TMP kpds5=11 kpds6=100 kpds7=700 levels=(2,188) grid=3 700 mb anl:
+  TMP=Temp. [K]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 220.7 295.7  num bits 10  BDS_Ref 2207  DecScale 1 BinScale 0
+
+rec 36:3749626:date 2007071418 TMP kpds5=11 kpds6=100 kpds7=650 levels=(2,138) grid=3 650 mb anl:
+  TMP=Temp. [K]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 218.6 291.6  num bits 10  BDS_Ref 2186  DecScale 1 BinScale 0
+
+rec 37:3831160:date 2007071418 TMP kpds5=11 kpds6=100 kpds7=600 levels=(2,88) grid=3 600 mb anl:
+  TMP=Temp. [K]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 218.7 287.3  num bits 10  BDS_Ref 2187  DecScale 1 BinScale 0
+
+rec 38:3912694:date 2007071418 TMP kpds5=11 kpds6=100 kpds7=550 levels=(2,38) grid=3 550 mb anl:
+  TMP=Temp. [K]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 225.3 282.6  num bits 10  BDS_Ref 2253  DecScale 1 BinScale 0
+
+rec 39:3994228:date 2007071418 TMP kpds5=11 kpds6=100 kpds7=500 levels=(1,244) grid=3 500 mb anl:
+  TMP=Temp. [K]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 222.8 277.5  num bits 10  BDS_Ref 2228  DecScale 1 BinScale 0
+
+rec 40:4075762:date 2007071418 TMP kpds5=11 kpds6=100 kpds7=450 levels=(1,194) grid=3 450 mb anl:
+  TMP=Temp. [K]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 219.1 271.9  num bits 10  BDS_Ref 2191  DecScale 1 BinScale 0
+
+rec 41:4157296:date 2007071418 TMP kpds5=11 kpds6=100 kpds7=400 levels=(1,144) grid=3 400 mb anl:
+  TMP=Temp. [K]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 214.9 266.8  num bits 10  BDS_Ref 2149  DecScale 1 BinScale 0
+
+rec 42:4238830:date 2007071418 TMP kpds5=11 kpds6=100 kpds7=350 levels=(1,94) grid=3 350 mb anl:
+  TMP=Temp. [K]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 210.6 260.1  num bits 9  BDS_Ref 2106  DecScale 1 BinScale 0
+
+rec 43:4312218:date 2007071418 TMP kpds5=11 kpds6=100 kpds7=300 levels=(1,44) grid=3 300 mb anl:
+  TMP=Temp. [K]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 205.2 252.4  num bits 9  BDS_Ref 2052  DecScale 1 BinScale 0
+
+rec 44:4385606:date 2007071418 TMP kpds5=11 kpds6=100 kpds7=250 levels=(0,250) grid=3 250 mb anl:
+  TMP=Temp. [K]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 200.7 243.7  num bits 9  BDS_Ref 2007  DecScale 1 BinScale 0
+
+rec 45:4458994:date 2007071418 TMP kpds5=11 kpds6=100 kpds7=200 levels=(0,200) grid=3 200 mb anl:
+  TMP=Temp. [K]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 195.6 238.2  num bits 9  BDS_Ref 1956  DecScale 1 BinScale 0
+
+rec 46:4532382:date 2007071418 TMP kpds5=11 kpds6=100 kpds7=150 levels=(0,150) grid=3 150 mb anl:
+  TMP=Temp. [K]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 193.1 235  num bits 9  BDS_Ref 1931  DecScale 1 BinScale 0
+
+rec 47:4605770:date 2007071418 TMP kpds5=11 kpds6=100 kpds7=100 levels=(0,100) grid=3 100 mb anl:
+  TMP=Temp. [K]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 189.5 231.7  num bits 9  BDS_Ref 1895  DecScale 1 BinScale 0
+
+rec 48:4679158:date 2007071418 TMP kpds5=11 kpds6=100 kpds7=70 levels=(0,70) grid=3 70 mb anl:
+  TMP=Temp. [K]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 185.7 231.7  num bits 9  BDS_Ref 1857  DecScale 1 BinScale 0
+
+rec 49:4752546:date 2007071418 TMP kpds5=11 kpds6=100 kpds7=50 levels=(0,50) grid=3 50 mb anl:
+  TMP=Temp. [K]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 182.5 231.9  num bits 9  BDS_Ref 1825  DecScale 1 BinScale 0
+
+rec 50:4825934:date 2007071418 TMP kpds5=11 kpds6=100 kpds7=30 levels=(0,30) grid=3 30 mb anl:
+  TMP=Temp. [K]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 180.8 231.7  num bits 9  BDS_Ref 1808  DecScale 1 BinScale 0
+
+rec 51:4899322:date 2007071418 TMP kpds5=11 kpds6=100 kpds7=20 levels=(0,20) grid=3 20 mb anl:
+  TMP=Temp. [K]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 180.5 234.6  num bits 10  BDS_Ref 1805  DecScale 1 BinScale 0
+
+rec 52:4980856:date 2007071418 TMP kpds5=11 kpds6=100 kpds7=10 levels=(0,10) grid=3 10 mb anl:
+  TMP=Temp. [K]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 185.2 242.2  num bits 10  BDS_Ref 1852  DecScale 1 BinScale 0
+
+rec 53:5062390:date 2007071418 VVEL kpds5=39 kpds6=100 kpds7=1000 levels=(3,232) grid=3 1000 mb anl:
+  VVEL=Pressure vertical velocity [Pa/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -1.098 1.525  num bits 12  BDS_Ref -1098  DecScale 3 BinScale 0
+
+rec 54:5160214:date 2007071418 VVEL kpds5=39 kpds6=100 kpds7=975 levels=(3,207) grid=3 975 mb anl:
+  VVEL=Pressure vertical velocity [Pa/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -1.088 1.524  num bits 12  BDS_Ref -1088  DecScale 3 BinScale 0
+
+rec 55:5258038:date 2007071418 VVEL kpds5=39 kpds6=100 kpds7=950 levels=(3,182) grid=3 950 mb anl:
+  VVEL=Pressure vertical velocity [Pa/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -1.143 1.532  num bits 12  BDS_Ref -1143  DecScale 3 BinScale 0
+
+rec 56:5355862:date 2007071418 VVEL kpds5=39 kpds6=100 kpds7=925 levels=(3,157) grid=3 925 mb anl:
+  VVEL=Pressure vertical velocity [Pa/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -1.563 1.582  num bits 12  BDS_Ref -1563  DecScale 3 BinScale 0
+
+rec 57:5453686:date 2007071418 VVEL kpds5=39 kpds6=100 kpds7=900 levels=(3,132) grid=3 900 mb anl:
+  VVEL=Pressure vertical velocity [Pa/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -2.017 1.587  num bits 12  BDS_Ref -2017  DecScale 3 BinScale 0
+
+rec 58:5551510:date 2007071418 VVEL kpds5=39 kpds6=100 kpds7=850 levels=(3,82) grid=3 850 mb anl:
+  VVEL=Pressure vertical velocity [Pa/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -2.742 1.578  num bits 13  BDS_Ref -2742  DecScale 3 BinScale 0
+
+rec 59:5657478:date 2007071418 VVEL kpds5=39 kpds6=100 kpds7=800 levels=(3,32) grid=3 800 mb anl:
+  VVEL=Pressure vertical velocity [Pa/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -3.035 1.418  num bits 13  BDS_Ref -3035  DecScale 3 BinScale 0
+
+rec 60:5763446:date 2007071418 VVEL kpds5=39 kpds6=100 kpds7=750 levels=(2,238) grid=3 750 mb anl:
+  VVEL=Pressure vertical velocity [Pa/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -3.053 1.647  num bits 13  BDS_Ref -3053  DecScale 3 BinScale 0
+
+rec 61:5869414:date 2007071418 VVEL kpds5=39 kpds6=100 kpds7=700 levels=(2,188) grid=3 700 mb anl:
+  VVEL=Pressure vertical velocity [Pa/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -2.958 1.614  num bits 13  BDS_Ref -2958  DecScale 3 BinScale 0
+
+rec 62:5975382:date 2007071418 VVEL kpds5=39 kpds6=100 kpds7=650 levels=(2,138) grid=3 650 mb anl:
+  VVEL=Pressure vertical velocity [Pa/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -3.269 1.428  num bits 13  BDS_Ref -3269  DecScale 3 BinScale 0
+
+rec 63:6081350:date 2007071418 VVEL kpds5=39 kpds6=100 kpds7=600 levels=(2,88) grid=3 600 mb anl:
+  VVEL=Pressure vertical velocity [Pa/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -3.604 1.264  num bits 13  BDS_Ref -3604  DecScale 3 BinScale 0
+
+rec 64:6187318:date 2007071418 VVEL kpds5=39 kpds6=100 kpds7=550 levels=(2,38) grid=3 550 mb anl:
+  VVEL=Pressure vertical velocity [Pa/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -3.997 1.091  num bits 13  BDS_Ref -3997  DecScale 3 BinScale 0
+
+rec 65:6293286:date 2007071418 VVEL kpds5=39 kpds6=100 kpds7=500 levels=(1,244) grid=3 500 mb anl:
+  VVEL=Pressure vertical velocity [Pa/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -4.631 1.116  num bits 13  BDS_Ref -4631  DecScale 3 BinScale 0
+
+rec 66:6399254:date 2007071418 VVEL kpds5=39 kpds6=100 kpds7=450 levels=(1,194) grid=3 450 mb anl:
+  VVEL=Pressure vertical velocity [Pa/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -4.877 1.18  num bits 13  BDS_Ref -4877  DecScale 3 BinScale 0
+
+rec 67:6505222:date 2007071418 VVEL kpds5=39 kpds6=100 kpds7=400 levels=(1,144) grid=3 400 mb anl:
+  VVEL=Pressure vertical velocity [Pa/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -4.623 1.215  num bits 13  BDS_Ref -4623  DecScale 3 BinScale 0
+
+rec 68:6611190:date 2007071418 VVEL kpds5=39 kpds6=100 kpds7=350 levels=(1,94) grid=3 350 mb anl:
+  VVEL=Pressure vertical velocity [Pa/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -3.912 1.079  num bits 13  BDS_Ref -3912  DecScale 3 BinScale 0
+
+rec 69:6717158:date 2007071418 VVEL kpds5=39 kpds6=100 kpds7=300 levels=(1,44) grid=3 300 mb anl:
+  VVEL=Pressure vertical velocity [Pa/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -3.025 0.781  num bits 12  BDS_Ref -3025  DecScale 3 BinScale 0
+
+rec 70:6814982:date 2007071418 VVEL kpds5=39 kpds6=100 kpds7=250 levels=(0,250) grid=3 250 mb anl:
+  VVEL=Pressure vertical velocity [Pa/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -2.113 0.547  num bits 12  BDS_Ref -2113  DecScale 3 BinScale 0
+
+rec 71:6912806:date 2007071418 VVEL kpds5=39 kpds6=100 kpds7=200 levels=(0,200) grid=3 200 mb anl:
+  VVEL=Pressure vertical velocity [Pa/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -1.044 0.391  num bits 11  BDS_Ref -1044  DecScale 3 BinScale 0
+
+rec 72:7002484:date 2007071418 VVEL kpds5=39 kpds6=100 kpds7=150 levels=(0,150) grid=3 150 mb anl:
+  VVEL=Pressure vertical velocity [Pa/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -0.384 0.276  num bits 10  BDS_Ref -384  DecScale 3 BinScale 0
+
+rec 73:7084018:date 2007071418 VVEL kpds5=39 kpds6=100 kpds7=100 levels=(0,100) grid=3 100 mb anl:
+  VVEL=Pressure vertical velocity [Pa/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -0.177 0.137  num bits 9  BDS_Ref -177  DecScale 3 BinScale 0
+
+rec 74:7157406:date 2007071418 RH kpds5=52 kpds6=100 kpds7=1000 levels=(3,232) grid=3 1000 mb anl:
+  RH=Relative humidity [%]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 3 100  num bits 7  BDS_Ref 3  DecScale 0 BinScale 0
+
+rec 75:7214504:date 2007071418 RH kpds5=52 kpds6=100 kpds7=975 levels=(3,207) grid=3 975 mb anl:
+  RH=Relative humidity [%]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 3 100  num bits 7  BDS_Ref 3  DecScale 0 BinScale 0
+
+rec 76:7271602:date 2007071418 RH kpds5=52 kpds6=100 kpds7=950 levels=(3,182) grid=3 950 mb anl:
+  RH=Relative humidity [%]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 3 100  num bits 7  BDS_Ref 3  DecScale 0 BinScale 0
+
+rec 77:7328700:date 2007071418 RH kpds5=52 kpds6=100 kpds7=925 levels=(3,157) grid=3 925 mb anl:
+  RH=Relative humidity [%]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 3 100  num bits 7  BDS_Ref 3  DecScale 0 BinScale 0
+
+rec 78:7385798:date 2007071418 RH kpds5=52 kpds6=100 kpds7=900 levels=(3,132) grid=3 900 mb anl:
+  RH=Relative humidity [%]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 0 100  num bits 7  BDS_Ref 0  DecScale 0 BinScale 0
+
+rec 79:7442896:date 2007071418 RH kpds5=52 kpds6=100 kpds7=850 levels=(3,82) grid=3 850 mb anl:
+  RH=Relative humidity [%]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 0 100  num bits 7  BDS_Ref 0  DecScale 0 BinScale 0
+
+rec 80:7499994:date 2007071418 RH kpds5=52 kpds6=100 kpds7=800 levels=(3,32) grid=3 800 mb anl:
+  RH=Relative humidity [%]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 0 100  num bits 7  BDS_Ref 0  DecScale 0 BinScale 0
+
+rec 81:7557092:date 2007071418 RH kpds5=52 kpds6=100 kpds7=750 levels=(2,238) grid=3 750 mb anl:
+  RH=Relative humidity [%]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 0 100  num bits 7  BDS_Ref 0  DecScale 0 BinScale 0
+
+rec 82:7614190:date 2007071418 RH kpds5=52 kpds6=100 kpds7=700 levels=(2,188) grid=3 700 mb anl:
+  RH=Relative humidity [%]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 0 100  num bits 7  BDS_Ref 0  DecScale 0 BinScale 0
+
+rec 83:7671288:date 2007071418 RH kpds5=52 kpds6=100 kpds7=650 levels=(2,138) grid=3 650 mb anl:
+  RH=Relative humidity [%]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 0 100  num bits 7  BDS_Ref 0  DecScale 0 BinScale 0
+
+rec 84:7728386:date 2007071418 RH kpds5=52 kpds6=100 kpds7=600 levels=(2,88) grid=3 600 mb anl:
+  RH=Relative humidity [%]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 0 100  num bits 7  BDS_Ref 0  DecScale 0 BinScale 0
+
+rec 85:7785484:date 2007071418 RH kpds5=52 kpds6=100 kpds7=550 levels=(2,38) grid=3 550 mb anl:
+  RH=Relative humidity [%]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 0 100  num bits 7  BDS_Ref 0  DecScale 0 BinScale 0
+
+rec 86:7842582:date 2007071418 RH kpds5=52 kpds6=100 kpds7=500 levels=(1,244) grid=3 500 mb anl:
+  RH=Relative humidity [%]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 0 100  num bits 7  BDS_Ref 0  DecScale 0 BinScale 0
+
+rec 87:7899680:date 2007071418 RH kpds5=52 kpds6=100 kpds7=450 levels=(1,194) grid=3 450 mb anl:
+  RH=Relative humidity [%]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 0 100  num bits 7  BDS_Ref 0  DecScale 0 BinScale 0
+
+rec 88:7956778:date 2007071418 RH kpds5=52 kpds6=100 kpds7=400 levels=(1,144) grid=3 400 mb anl:
+  RH=Relative humidity [%]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 0 100  num bits 7  BDS_Ref 0  DecScale 0 BinScale 0
+
+rec 89:8013876:date 2007071418 RH kpds5=52 kpds6=100 kpds7=350 levels=(1,94) grid=3 350 mb anl:
+  RH=Relative humidity [%]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 0 100  num bits 7  BDS_Ref 0  DecScale 0 BinScale 0
+
+rec 90:8070974:date 2007071418 RH kpds5=52 kpds6=100 kpds7=300 levels=(1,44) grid=3 300 mb anl:
+  RH=Relative humidity [%]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 0 100  num bits 7  BDS_Ref 0  DecScale 0 BinScale 0
+
+rec 91:8128072:date 2007071418 RH kpds5=52 kpds6=100 kpds7=250 levels=(0,250) grid=3 250 mb anl:
+  RH=Relative humidity [%]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 0 100  num bits 7  BDS_Ref 0  DecScale 0 BinScale 0
+
+rec 92:8185170:date 2007071418 RH kpds5=52 kpds6=100 kpds7=200 levels=(0,200) grid=3 200 mb anl:
+  RH=Relative humidity [%]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 0 100  num bits 7  BDS_Ref 0  DecScale 0 BinScale 0
+
+rec 93:8242268:date 2007071418 RH kpds5=52 kpds6=100 kpds7=150 levels=(0,150) grid=3 150 mb anl:
+  RH=Relative humidity [%]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 0 100  num bits 7  BDS_Ref 0  DecScale 0 BinScale 0
+
+rec 94:8299366:date 2007071418 RH kpds5=52 kpds6=100 kpds7=100 levels=(0,100) grid=3 100 mb anl:
+  RH=Relative humidity [%]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 0 100  num bits 7  BDS_Ref 0  DecScale 0 BinScale 0
+
+rec 95:8356464:date 2007071418 ABSV kpds5=41 kpds6=100 kpds7=1000 levels=(3,232) grid=3 1000 mb anl:
+  ABSV=Absolute vorticity [/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -0.000426 0.000327  num bits 10  BDS_Ref -426  DecScale 6 BinScale 0
+
+rec 96:8437998:date 2007071418 ABSV kpds5=41 kpds6=100 kpds7=975 levels=(3,207) grid=3 975 mb anl:
+  ABSV=Absolute vorticity [/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -0.000427 0.000366  num bits 10  BDS_Ref -427  DecScale 6 BinScale 0
+
+rec 97:8519532:date 2007071418 ABSV kpds5=41 kpds6=100 kpds7=950 levels=(3,182) grid=3 950 mb anl:
+  ABSV=Absolute vorticity [/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -0.000466 0.000408  num bits 10  BDS_Ref -466  DecScale 6 BinScale 0
+
+rec 98:8601066:date 2007071418 ABSV kpds5=41 kpds6=100 kpds7=925 levels=(3,157) grid=3 925 mb anl:
+  ABSV=Absolute vorticity [/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -0.000494 0.00044  num bits 10  BDS_Ref -494  DecScale 6 BinScale 0
+
+rec 99:8682600:date 2007071418 ABSV kpds5=41 kpds6=100 kpds7=900 levels=(3,132) grid=3 900 mb anl:
+  ABSV=Absolute vorticity [/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -0.000496 0.000457  num bits 10  BDS_Ref -496  DecScale 6 BinScale 0
+
+rec 100:8764134:date 2007071418 ABSV kpds5=41 kpds6=100 kpds7=850 levels=(3,82) grid=3 850 mb anl:
+  ABSV=Absolute vorticity [/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -0.000481 0.000452  num bits 10  BDS_Ref -481  DecScale 6 BinScale 0
+
+rec 101:8845668:date 2007071418 ABSV kpds5=41 kpds6=100 kpds7=800 levels=(3,32) grid=3 800 mb anl:
+  ABSV=Absolute vorticity [/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -0.000448 0.000436  num bits 10  BDS_Ref -448  DecScale 6 BinScale 0
+
+rec 102:8927202:date 2007071418 ABSV kpds5=41 kpds6=100 kpds7=750 levels=(2,238) grid=3 750 mb anl:
+  ABSV=Absolute vorticity [/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -0.000413 0.000416  num bits 10  BDS_Ref -413  DecScale 6 BinScale 0
+
+rec 103:9008736:date 2007071418 ABSV kpds5=41 kpds6=100 kpds7=700 levels=(2,188) grid=3 700 mb anl:
+  ABSV=Absolute vorticity [/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -0.000379 0.000428  num bits 10  BDS_Ref -379  DecScale 6 BinScale 0
+
+rec 104:9090270:date 2007071418 ABSV kpds5=41 kpds6=100 kpds7=650 levels=(2,138) grid=3 650 mb anl:
+  ABSV=Absolute vorticity [/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -0.00034 0.000445  num bits 10  BDS_Ref -340  DecScale 6 BinScale 0
+
+rec 105:9171804:date 2007071418 ABSV kpds5=41 kpds6=100 kpds7=600 levels=(2,88) grid=3 600 mb anl:
+  ABSV=Absolute vorticity [/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -0.000321 0.000443  num bits 10  BDS_Ref -321  DecScale 6 BinScale 0
+
+rec 106:9253338:date 2007071418 ABSV kpds5=41 kpds6=100 kpds7=550 levels=(2,38) grid=3 550 mb anl:
+  ABSV=Absolute vorticity [/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -0.000322 0.000448  num bits 10  BDS_Ref -322  DecScale 6 BinScale 0
+
+rec 107:9334872:date 2007071418 ABSV kpds5=41 kpds6=100 kpds7=500 levels=(1,244) grid=3 500 mb anl:
+  ABSV=Absolute vorticity [/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -0.000374 0.000454  num bits 10  BDS_Ref -374  DecScale 6 BinScale 0
+
+rec 108:9416406:date 2007071418 ABSV kpds5=41 kpds6=100 kpds7=450 levels=(1,194) grid=3 450 mb anl:
+  ABSV=Absolute vorticity [/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -0.00042 0.000468  num bits 10  BDS_Ref -420  DecScale 6 BinScale 0
+
+rec 109:9497940:date 2007071418 ABSV kpds5=41 kpds6=100 kpds7=400 levels=(1,144) grid=3 400 mb anl:
+  ABSV=Absolute vorticity [/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -0.000464 0.000469  num bits 10  BDS_Ref -464  DecScale 6 BinScale 0
+
+rec 110:9579474:date 2007071418 ABSV kpds5=41 kpds6=100 kpds7=350 levels=(1,94) grid=3 350 mb anl:
+  ABSV=Absolute vorticity [/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -0.000457 0.000457  num bits 10  BDS_Ref -457  DecScale 6 BinScale 0
+
+rec 111:9661008:date 2007071418 ABSV kpds5=41 kpds6=100 kpds7=300 levels=(1,44) grid=3 300 mb anl:
+  ABSV=Absolute vorticity [/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -0.00039 0.000434  num bits 10  BDS_Ref -390  DecScale 6 BinScale 0
+
+rec 112:9742542:date 2007071418 ABSV kpds5=41 kpds6=100 kpds7=250 levels=(0,250) grid=3 250 mb anl:
+  ABSV=Absolute vorticity [/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -0.000331 0.000413  num bits 10  BDS_Ref -331  DecScale 6 BinScale 0
+
+rec 113:9824076:date 2007071418 ABSV kpds5=41 kpds6=100 kpds7=200 levels=(0,200) grid=3 200 mb anl:
+  ABSV=Absolute vorticity [/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -0.000279 0.000339  num bits 10  BDS_Ref -279  DecScale 6 BinScale 0
+
+rec 114:9905610:date 2007071418 ABSV kpds5=41 kpds6=100 kpds7=150 levels=(0,150) grid=3 150 mb anl:
+  ABSV=Absolute vorticity [/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -0.000206 0.00026  num bits 9  BDS_Ref -206  DecScale 6 BinScale 0
+
+rec 115:9978998:date 2007071418 ABSV kpds5=41 kpds6=100 kpds7=100 levels=(0,100) grid=3 100 mb anl:
+  ABSV=Absolute vorticity [/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -0.000233 0.000177  num bits 9  BDS_Ref -233  DecScale 6 BinScale 0
+
+rec 116:10052386:date 2007071418 ABSV kpds5=41 kpds6=100 kpds7=70 levels=(0,70) grid=3 70 mb anl:
+  ABSV=Absolute vorticity [/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -0.00022 0.000163  num bits 9  BDS_Ref -220  DecScale 6 BinScale 0
+
+rec 117:10125774:date 2007071418 ABSV kpds5=41 kpds6=100 kpds7=50 levels=(0,50) grid=3 50 mb anl:
+  ABSV=Absolute vorticity [/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -0.000228 0.000155  num bits 9  BDS_Ref -228  DecScale 6 BinScale 0
+
+rec 118:10199162:date 2007071418 ABSV kpds5=41 kpds6=100 kpds7=30 levels=(0,30) grid=3 30 mb anl:
+  ABSV=Absolute vorticity [/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -0.000242 0.000152  num bits 9  BDS_Ref -242  DecScale 6 BinScale 0
+
+rec 119:10272550:date 2007071418 ABSV kpds5=41 kpds6=100 kpds7=20 levels=(0,20) grid=3 20 mb anl:
+  ABSV=Absolute vorticity [/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -0.000242 0.000156  num bits 9  BDS_Ref -242  DecScale 6 BinScale 0
+
+rec 120:10345938:date 2007071418 ABSV kpds5=41 kpds6=100 kpds7=10 levels=(0,10) grid=3 10 mb anl:
+  ABSV=Absolute vorticity [/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -0.000285 0.00018  num bits 9  BDS_Ref -285  DecScale 6 BinScale 0
+
+rec 121:10419326:date 2007071418 O3MR kpds5=154 kpds6=100 kpds7=100 levels=(0,100) grid=3 100 mb anl:
+  O3MR=Ozone mixing ratio [kg/kg]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 0 4.097e-06  num bits 13  BDS_Ref 0  DecScale 9 BinScale 0
+
+rec 122:10525294:date 2007071418 O3MR kpds5=154 kpds6=100 kpds7=70 levels=(0,70) grid=3 70 mb anl:
+  O3MR=Ozone mixing ratio [kg/kg]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 4.48e-07 5.323e-06  num bits 13  BDS_Ref 448  DecScale 9 BinScale 0
+
+rec 123:10631262:date 2007071418 O3MR kpds5=154 kpds6=100 kpds7=50 levels=(0,50) grid=3 50 mb anl:
+  O3MR=Ozone mixing ratio [kg/kg]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 1.192e-06 6.61e-06  num bits 13  BDS_Ref 1192  DecScale 9 BinScale 0
+
+rec 124:10737230:date 2007071418 O3MR kpds5=154 kpds6=100 kpds7=30 levels=(0,30) grid=3 30 mb anl:
+  O3MR=Ozone mixing ratio [kg/kg]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 2.086e-06 9.572e-06  num bits 13  BDS_Ref 2086  DecScale 9 BinScale 0
+
+rec 125:10843198:date 2007071418 O3MR kpds5=154 kpds6=100 kpds7=20 levels=(0,20) grid=3 20 mb anl:
+  O3MR=Ozone mixing ratio [kg/kg]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 1.942e-06 1.4205e-05  num bits 14  BDS_Ref 1942  DecScale 9 BinScale 0
+
+rec 126:10957312:date 2007071418 O3MR kpds5=154 kpds6=100 kpds7=10 levels=(0,10) grid=3 10 mb anl:
+  O3MR=Ozone mixing ratio [kg/kg]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 4.393e-06 1.6939e-05  num bits 14  BDS_Ref 4393  DecScale 9 BinScale 0
+
+rec 127:11071426:date 2007071418 CLWMR kpds5=153 kpds6=100 kpds7=1000 levels=(3,232) grid=3 1000 mb anl:
+  CLWMR=Cloud water [kg/kg]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 0 0.000349  num bits 9  BDS_Ref 0  DecScale 6 BinScale 0
+
+rec 128:11144814:date 2007071418 CLWMR kpds5=153 kpds6=100 kpds7=975 levels=(3,207) grid=3 975 mb anl:
+  CLWMR=Cloud water [kg/kg]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 0 0.000349  num bits 9  BDS_Ref 0  DecScale 6 BinScale 0
+
+rec 129:11218202:date 2007071418 CLWMR kpds5=153 kpds6=100 kpds7=950 levels=(3,182) grid=3 950 mb anl:
+  CLWMR=Cloud water [kg/kg]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 0 0.000349  num bits 9  BDS_Ref 0  DecScale 6 BinScale 0
+
+rec 130:11291590:date 2007071418 CLWMR kpds5=153 kpds6=100 kpds7=925 levels=(3,157) grid=3 925 mb anl:
+  CLWMR=Cloud water [kg/kg]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 0 0.000364  num bits 9  BDS_Ref 0  DecScale 6 BinScale 0
+
+rec 131:11364978:date 2007071418 CLWMR kpds5=153 kpds6=100 kpds7=900 levels=(3,132) grid=3 900 mb anl:
+  CLWMR=Cloud water [kg/kg]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 0 0.000405  num bits 9  BDS_Ref 0  DecScale 6 BinScale 0
+
+rec 132:11438366:date 2007071418 CLWMR kpds5=153 kpds6=100 kpds7=850 levels=(3,82) grid=3 850 mb anl:
+  CLWMR=Cloud water [kg/kg]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 0 0.000525  num bits 10  BDS_Ref 0  DecScale 6 BinScale 0
+
+rec 133:11519900:date 2007071418 CLWMR kpds5=153 kpds6=100 kpds7=800 levels=(3,32) grid=3 800 mb anl:
+  CLWMR=Cloud water [kg/kg]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 0 0.001734  num bits 11  BDS_Ref 0  DecScale 6 BinScale 0
+
+rec 134:11609578:date 2007071418 CLWMR kpds5=153 kpds6=100 kpds7=750 levels=(2,238) grid=3 750 mb anl:
+  CLWMR=Cloud water [kg/kg]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 0 0.001649  num bits 11  BDS_Ref 0  DecScale 6 BinScale 0
+
+rec 135:11699256:date 2007071418 CLWMR kpds5=153 kpds6=100 kpds7=700 levels=(2,188) grid=3 700 mb anl:
+  CLWMR=Cloud water [kg/kg]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 0 0.00094  num bits 10  BDS_Ref 0  DecScale 6 BinScale 0
+
+rec 136:11780790:date 2007071418 CLWMR kpds5=153 kpds6=100 kpds7=650 levels=(2,138) grid=3 650 mb anl:
+  CLWMR=Cloud water [kg/kg]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 0 0.001171  num bits 11  BDS_Ref 0  DecScale 6 BinScale 0
+
+rec 137:11870468:date 2007071418 CLWMR kpds5=153 kpds6=100 kpds7=600 levels=(2,88) grid=3 600 mb anl:
+  CLWMR=Cloud water [kg/kg]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 0 0.000867  num bits 10  BDS_Ref 0  DecScale 6 BinScale 0
+
+rec 138:11952002:date 2007071418 CLWMR kpds5=153 kpds6=100 kpds7=550 levels=(2,38) grid=3 550 mb anl:
+  CLWMR=Cloud water [kg/kg]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 0 0.000885  num bits 10  BDS_Ref 0  DecScale 6 BinScale 0
+
+rec 139:12033536:date 2007071418 CLWMR kpds5=153 kpds6=100 kpds7=500 levels=(1,244) grid=3 500 mb anl:
+  CLWMR=Cloud water [kg/kg]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 0 0.00084  num bits 10  BDS_Ref 0  DecScale 6 BinScale 0
+
+rec 140:12115070:date 2007071418 CLWMR kpds5=153 kpds6=100 kpds7=450 levels=(1,194) grid=3 450 mb anl:
+  CLWMR=Cloud water [kg/kg]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 0 0.000963  num bits 10  BDS_Ref 0  DecScale 6 BinScale 0
+
+rec 141:12196604:date 2007071418 CLWMR kpds5=153 kpds6=100 kpds7=400 levels=(1,144) grid=3 400 mb anl:
+  CLWMR=Cloud water [kg/kg]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 0 0.001072  num bits 11  BDS_Ref 0  DecScale 6 BinScale 0
+
+rec 142:12286282:date 2007071418 CLWMR kpds5=153 kpds6=100 kpds7=350 levels=(1,94) grid=3 350 mb anl:
+  CLWMR=Cloud water [kg/kg]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 0 0.00128  num bits 11  BDS_Ref 0  DecScale 6 BinScale 0
+
+rec 143:12375960:date 2007071418 CLWMR kpds5=153 kpds6=100 kpds7=300 levels=(1,44) grid=3 300 mb anl:
+  CLWMR=Cloud water [kg/kg]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 0 0.001419  num bits 11  BDS_Ref 0  DecScale 6 BinScale 0
+
+rec 144:12465638:date 2007071418 CLWMR kpds5=153 kpds6=100 kpds7=250 levels=(0,250) grid=3 250 mb anl:
+  CLWMR=Cloud water [kg/kg]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 0 0.00155  num bits 11  BDS_Ref 0  DecScale 6 BinScale 0
+
+rec 145:12555316:date 2007071418 CLWMR kpds5=153 kpds6=100 kpds7=200 levels=(0,200) grid=3 200 mb anl:
+  CLWMR=Cloud water [kg/kg]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 0 0.001654  num bits 11  BDS_Ref 0  DecScale 6 BinScale 0
+
+rec 146:12644994:date 2007071418 CLWMR kpds5=153 kpds6=100 kpds7=150 levels=(0,150) grid=3 150 mb anl:
+  CLWMR=Cloud water [kg/kg]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 0 0.000433  num bits 9  BDS_Ref 0  DecScale 6 BinScale 0
+
+rec 147:12718382:date 2007071418 CLWMR kpds5=153 kpds6=100 kpds7=100 levels=(0,100) grid=3 100 mb anl:
+  CLWMR=Cloud water [kg/kg]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 0 0.00021  num bits 8  BDS_Ref 0  DecScale 6 BinScale 0
+
+rec 148:12783626:date 2007071418 5WAVH kpds5=222 kpds6=100 kpds7=500 levels=(1,244) grid=3 500 mb anl:
+  5WAVH=5-wave geopotential height [gpm]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 4783.2 5949.9  num bits 14  BDS_Ref 47832  DecScale 1 BinScale 0
+
+rec 149:12897740:date 2007071418 UGRD kpds5=33 kpds6=100 kpds7=1000 levels=(3,232) grid=3 1000 mb anl:
+  UGRD=u wind [m/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -23.1 29.5  num bits 10  BDS_Ref -231  DecScale 1 BinScale 0
+
+rec 150:12979274:date 2007071418 VGRD kpds5=34 kpds6=100 kpds7=1000 levels=(3,232) grid=3 1000 mb anl:
+  VGRD=v wind [m/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -24.7 30.3  num bits 10  BDS_Ref -247  DecScale 1 BinScale 0
+
+rec 151:13060808:date 2007071418 UGRD kpds5=33 kpds6=100 kpds7=975 levels=(3,207) grid=3 975 mb anl:
+  UGRD=u wind [m/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -23.9 32.1  num bits 10  BDS_Ref -239  DecScale 1 BinScale 0
+
+rec 152:13142342:date 2007071418 VGRD kpds5=34 kpds6=100 kpds7=975 levels=(3,207) grid=3 975 mb anl:
+  VGRD=v wind [m/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -27 36.6  num bits 10  BDS_Ref -270  DecScale 1 BinScale 0
+
+rec 153:13223876:date 2007071418 UGRD kpds5=33 kpds6=100 kpds7=950 levels=(3,182) grid=3 950 mb anl:
+  UGRD=u wind [m/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -26 36.4  num bits 10  BDS_Ref -260  DecScale 1 BinScale 0
+
+rec 154:13305410:date 2007071418 VGRD kpds5=34 kpds6=100 kpds7=950 levels=(3,182) grid=3 950 mb anl:
+  VGRD=v wind [m/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -31.1 39.2  num bits 10  BDS_Ref -311  DecScale 1 BinScale 0
+
+rec 155:13386944:date 2007071418 UGRD kpds5=33 kpds6=100 kpds7=925 levels=(3,157) grid=3 925 mb anl:
+  UGRD=u wind [m/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -27.9 38.1  num bits 10  BDS_Ref -279  DecScale 1 BinScale 0
+
+rec 156:13468478:date 2007071418 VGRD kpds5=34 kpds6=100 kpds7=925 levels=(3,157) grid=3 925 mb anl:
+  VGRD=v wind [m/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -32.3 40.4  num bits 10  BDS_Ref -323  DecScale 1 BinScale 0
+
+rec 157:13550012:date 2007071418 UGRD kpds5=33 kpds6=100 kpds7=900 levels=(3,132) grid=3 900 mb anl:
+  UGRD=u wind [m/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -29.5 39  num bits 10  BDS_Ref -295  DecScale 1 BinScale 0
+
+rec 158:13631546:date 2007071418 VGRD kpds5=34 kpds6=100 kpds7=900 levels=(3,132) grid=3 900 mb anl:
+  VGRD=v wind [m/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -33 40.8  num bits 10  BDS_Ref -330  DecScale 1 BinScale 0
+
+rec 159:13713080:date 2007071418 UGRD kpds5=33 kpds6=100 kpds7=850 levels=(3,82) grid=3 850 mb anl:
+  UGRD=u wind [m/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -27.4 39.9  num bits 10  BDS_Ref -274  DecScale 1 BinScale 0
+
+rec 160:13794614:date 2007071418 VGRD kpds5=34 kpds6=100 kpds7=850 levels=(3,82) grid=3 850 mb anl:
+  VGRD=v wind [m/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -33.6 41.6  num bits 10  BDS_Ref -336  DecScale 1 BinScale 0
+
+rec 161:13876148:date 2007071418 UGRD kpds5=33 kpds6=100 kpds7=800 levels=(3,32) grid=3 800 mb anl:
+  UGRD=u wind [m/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -26.6 41.5  num bits 10  BDS_Ref -266  DecScale 1 BinScale 0
+
+rec 162:13957682:date 2007071418 VGRD kpds5=34 kpds6=100 kpds7=800 levels=(3,32) grid=3 800 mb anl:
+  VGRD=v wind [m/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -34.1 41.4  num bits 10  BDS_Ref -341  DecScale 1 BinScale 0
+
+rec 163:14039216:date 2007071418 UGRD kpds5=33 kpds6=100 kpds7=750 levels=(2,238) grid=3 750 mb anl:
+  UGRD=u wind [m/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -25.6 42.2  num bits 10  BDS_Ref -256  DecScale 1 BinScale 0
+
+rec 164:14120750:date 2007071418 VGRD kpds5=34 kpds6=100 kpds7=750 levels=(2,238) grid=3 750 mb anl:
+  VGRD=v wind [m/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -30.6 40.7  num bits 10  BDS_Ref -306  DecScale 1 BinScale 0
+
+rec 165:14202284:date 2007071418 UGRD kpds5=33 kpds6=100 kpds7=700 levels=(2,188) grid=3 700 mb anl:
+  UGRD=u wind [m/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -25.6 43.3  num bits 10  BDS_Ref -256  DecScale 1 BinScale 0
+
+rec 166:14283818:date 2007071418 VGRD kpds5=34 kpds6=100 kpds7=700 levels=(2,188) grid=3 700 mb anl:
+  VGRD=v wind [m/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -29.4 39.6  num bits 10  BDS_Ref -294  DecScale 1 BinScale 0
+
+rec 167:14365352:date 2007071418 UGRD kpds5=33 kpds6=100 kpds7=650 levels=(2,138) grid=3 650 mb anl:
+  UGRD=u wind [m/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -23.9 46.3  num bits 10  BDS_Ref -239  DecScale 1 BinScale 0
+
+rec 168:14446886:date 2007071418 VGRD kpds5=34 kpds6=100 kpds7=650 levels=(2,138) grid=3 650 mb anl:
+  VGRD=v wind [m/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -30.6 37.6  num bits 10  BDS_Ref -306  DecScale 1 BinScale 0
+
+rec 169:14528420:date 2007071418 UGRD kpds5=33 kpds6=100 kpds7=600 levels=(2,88) grid=3 600 mb anl:
+  UGRD=u wind [m/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -23.3 51.5  num bits 10  BDS_Ref -233  DecScale 1 BinScale 0
+
+rec 170:14609954:date 2007071418 VGRD kpds5=34 kpds6=100 kpds7=600 levels=(2,88) grid=3 600 mb anl:
+  VGRD=v wind [m/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -32.9 36.1  num bits 10  BDS_Ref -329  DecScale 1 BinScale 0
+
+rec 171:14691488:date 2007071418 UGRD kpds5=33 kpds6=100 kpds7=550 levels=(2,38) grid=3 550 mb anl:
+  UGRD=u wind [m/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -22.2 55.5  num bits 10  BDS_Ref -222  DecScale 1 BinScale 0
+
+rec 172:14773022:date 2007071418 VGRD kpds5=34 kpds6=100 kpds7=550 levels=(2,38) grid=3 550 mb anl:
+  VGRD=v wind [m/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -34.7 34.9  num bits 10  BDS_Ref -347  DecScale 1 BinScale 0
+
+rec 173:14854556:date 2007071418 UGRD kpds5=33 kpds6=100 kpds7=500 levels=(1,244) grid=3 500 mb anl:
+  UGRD=u wind [m/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -22.7 59.2  num bits 10  BDS_Ref -227  DecScale 1 BinScale 0
+
+rec 174:14936090:date 2007071418 VGRD kpds5=34 kpds6=100 kpds7=500 levels=(1,244) grid=3 500 mb anl:
+  VGRD=v wind [m/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -37.4 39.2  num bits 10  BDS_Ref -374  DecScale 1 BinScale 0
+
+rec 175:15017624:date 2007071418 UGRD kpds5=33 kpds6=100 kpds7=450 levels=(1,194) grid=3 450 mb anl:
+  UGRD=u wind [m/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -25.1 64.8  num bits 10  BDS_Ref -251  DecScale 1 BinScale 0
+
+rec 176:15099158:date 2007071418 VGRD kpds5=34 kpds6=100 kpds7=450 levels=(1,194) grid=3 450 mb anl:
+  VGRD=v wind [m/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -39.7 44.1  num bits 10  BDS_Ref -397  DecScale 1 BinScale 0
+
+rec 177:15180692:date 2007071418 UGRD kpds5=33 kpds6=100 kpds7=400 levels=(1,144) grid=3 400 mb anl:
+  UGRD=u wind [m/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -28.6 69.9  num bits 10  BDS_Ref -286  DecScale 1 BinScale 0
+
+rec 178:15262226:date 2007071418 VGRD kpds5=34 kpds6=100 kpds7=400 levels=(1,144) grid=3 400 mb anl:
+  VGRD=v wind [m/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -44.5 49.3  num bits 10  BDS_Ref -445  DecScale 1 BinScale 0
+
+rec 179:15343760:date 2007071418 UGRD kpds5=33 kpds6=100 kpds7=350 levels=(1,94) grid=3 350 mb anl:
+  UGRD=u wind [m/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -33 72.9  num bits 11  BDS_Ref -330  DecScale 1 BinScale 0
+
+rec 180:15433438:date 2007071418 VGRD kpds5=34 kpds6=100 kpds7=350 levels=(1,94) grid=3 350 mb anl:
+  VGRD=v wind [m/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -49.9 53.4  num bits 11  BDS_Ref -499  DecScale 1 BinScale 0
+
+rec 181:15523116:date 2007071418 UGRD kpds5=33 kpds6=100 kpds7=300 levels=(1,44) grid=3 300 mb anl:
+  UGRD=u wind [m/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -38.3 79.1  num bits 11  BDS_Ref -383  DecScale 1 BinScale 0
+
+rec 182:15612794:date 2007071418 VGRD kpds5=34 kpds6=100 kpds7=300 levels=(1,44) grid=3 300 mb anl:
+  VGRD=v wind [m/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -51.6 56.9  num bits 11  BDS_Ref -516  DecScale 1 BinScale 0
+
+rec 183:15702472:date 2007071418 UGRD kpds5=33 kpds6=100 kpds7=250 levels=(0,250) grid=3 250 mb anl:
+  UGRD=u wind [m/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -37.1 81.4  num bits 11  BDS_Ref -371  DecScale 1 BinScale 0
+
+rec 184:15792150:date 2007071418 VGRD kpds5=34 kpds6=100 kpds7=250 levels=(0,250) grid=3 250 mb anl:
+  VGRD=v wind [m/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -53.2 56.8  num bits 11  BDS_Ref -532  DecScale 1 BinScale 0
+
+rec 185:15881828:date 2007071418 UGRD kpds5=33 kpds6=100 kpds7=200 levels=(0,200) grid=3 200 mb anl:
+  UGRD=u wind [m/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -31.5 76.5  num bits 11  BDS_Ref -315  DecScale 1 BinScale 0
+
+rec 186:15971506:date 2007071418 VGRD kpds5=34 kpds6=100 kpds7=200 levels=(0,200) grid=3 200 mb anl:
+  VGRD=v wind [m/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -47.5 60.7  num bits 11  BDS_Ref -475  DecScale 1 BinScale 0
+
+rec 187:16061184:date 2007071418 UGRD kpds5=33 kpds6=100 kpds7=150 levels=(0,150) grid=3 150 mb anl:
+  UGRD=u wind [m/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -41.8 64.7  num bits 11  BDS_Ref -418  DecScale 1 BinScale 0
+
+rec 188:16150862:date 2007071418 VGRD kpds5=34 kpds6=100 kpds7=150 levels=(0,150) grid=3 150 mb anl:
+  VGRD=v wind [m/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -45.6 38.8  num bits 10  BDS_Ref -456  DecScale 1 BinScale 0
+
+rec 189:16232396:date 2007071418 UGRD kpds5=33 kpds6=100 kpds7=100 levels=(0,100) grid=3 100 mb anl:
+  UGRD=u wind [m/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -52.3 59.8  num bits 11  BDS_Ref -523  DecScale 1 BinScale 0
+
+rec 190:16322074:date 2007071418 VGRD kpds5=34 kpds6=100 kpds7=100 levels=(0,100) grid=3 100 mb anl:
+  VGRD=v wind [m/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -29.3 29  num bits 10  BDS_Ref -293  DecScale 1 BinScale 0
+
+rec 191:16403608:date 2007071418 UGRD kpds5=33 kpds6=100 kpds7=70 levels=(0,70) grid=3 70 mb anl:
+  UGRD=u wind [m/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -32.6 63  num bits 10  BDS_Ref -326  DecScale 1 BinScale 0
+
+rec 192:16485142:date 2007071418 VGRD kpds5=34 kpds6=100 kpds7=70 levels=(0,70) grid=3 70 mb anl:
+  VGRD=v wind [m/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -27.1 32  num bits 10  BDS_Ref -271  DecScale 1 BinScale 0
+
+rec 193:16566676:date 2007071418 UGRD kpds5=33 kpds6=100 kpds7=50 levels=(0,50) grid=3 50 mb anl:
+  UGRD=u wind [m/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -30.7 68.7  num bits 10  BDS_Ref -307  DecScale 1 BinScale 0
+
+rec 194:16648210:date 2007071418 VGRD kpds5=34 kpds6=100 kpds7=50 levels=(0,50) grid=3 50 mb anl:
+  VGRD=v wind [m/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -25.4 32.8  num bits 10  BDS_Ref -254  DecScale 1 BinScale 0
+
+rec 195:16729744:date 2007071418 UGRD kpds5=33 kpds6=100 kpds7=30 levels=(0,30) grid=3 30 mb anl:
+  UGRD=u wind [m/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -40 78.4  num bits 11  BDS_Ref -400  DecScale 1 BinScale 0
+
+rec 196:16819422:date 2007071418 VGRD kpds5=34 kpds6=100 kpds7=30 levels=(0,30) grid=3 30 mb anl:
+  VGRD=v wind [m/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -28.6 36.6  num bits 10  BDS_Ref -286  DecScale 1 BinScale 0
+
+rec 197:16900956:date 2007071418 UGRD kpds5=33 kpds6=100 kpds7=20 levels=(0,20) grid=3 20 mb anl:
+  UGRD=u wind [m/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -49.5 93  num bits 11  BDS_Ref -495  DecScale 1 BinScale 0
+
+rec 198:16990634:date 2007071418 VGRD kpds5=34 kpds6=100 kpds7=20 levels=(0,20) grid=3 20 mb anl:
+  VGRD=v wind [m/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -32.3 36.6  num bits 10  BDS_Ref -323  DecScale 1 BinScale 0
+
+rec 199:17072168:date 2007071418 UGRD kpds5=33 kpds6=100 kpds7=10 levels=(0,10) grid=3 10 mb anl:
+  UGRD=u wind [m/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -49.5 120.7  num bits 11  BDS_Ref -495  DecScale 1 BinScale 0
+
+rec 200:17161846:date 2007071418 VGRD kpds5=34 kpds6=100 kpds7=10 levels=(0,10) grid=3 10 mb anl:
+  VGRD=v wind [m/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -43.4 50.3  num bits 10  BDS_Ref -434  DecScale 1 BinScale 0
+
+rec 201:17243380:date 2007071418 TMP kpds5=11 kpds6=116 kpds7=7680 levels=(30,0) grid=3 30-0 mb above gnd anl:
+  TMP=Temp. [K]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 220.9 317.2  num bits 10  BDS_Ref 2209  DecScale 1 BinScale 0
+
+rec 202:17324914:date 2007071418 RH kpds5=52 kpds6=116 kpds7=7680 levels=(30,0) grid=3 30-0 mb above gnd anl:
+  RH=Relative humidity [%]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 3 100  num bits 7  BDS_Ref 3  DecScale 0 BinScale 0
+
+rec 203:17382012:date 2007071418 SPFH kpds5=51 kpds6=116 kpds7=7680 levels=(30,0) grid=3 30-0 mb above gnd anl:
+  SPFH=Specific humidity [kg/kg]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 3e-05 0.02248  num bits 12  BDS_Ref 3  DecScale 5 BinScale 0
+
+rec 204:17479836:date 2007071418 UGRD kpds5=33 kpds6=116 kpds7=7680 levels=(30,0) grid=3 30-0 mb above gnd anl:
+  UGRD=u wind [m/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -28.7 33.8  num bits 10  BDS_Ref -287  DecScale 1 BinScale 0
+
+rec 205:17561370:date 2007071418 VGRD kpds5=34 kpds6=116 kpds7=7680 levels=(30,0) grid=3 30-0 mb above gnd anl:
+  VGRD=v wind [m/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -29.1 35.7  num bits 10  BDS_Ref -291  DecScale 1 BinScale 0
+
+rec 206:17642904:date 2007071418 TMP kpds5=11 kpds6=103 kpds7=1829 levels=(7,37) grid=3 1829 m above MSL anl:
+  TMP=Temp. [K]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 217 306.1  num bits 10  BDS_Ref 2170  DecScale 1 BinScale 0
+
+rec 207:17724438:date 2007071418 TMP kpds5=11 kpds6=103 kpds7=2743 levels=(10,183) grid=3 2743 m above MSL anl:
+  TMP=Temp. [K]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 217 298.3  num bits 10  BDS_Ref 2170  DecScale 1 BinScale 0
+
+rec 208:17805972:date 2007071418 TMP kpds5=11 kpds6=103 kpds7=3658 levels=(14,74) grid=3 3658 m above MSL anl:
+  TMP=Temp. [K]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 217.1 292.2  num bits 10  BDS_Ref 2171  DecScale 1 BinScale 0
+
+rec 209:17887506:date 2007071418 UGRD kpds5=33 kpds6=103 kpds7=1829 levels=(7,37) grid=3 1829 m above MSL anl:
+  UGRD=u wind [m/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -29.1 41.2  num bits 10  BDS_Ref -291  DecScale 1 BinScale 0
+
+rec 210:17969040:date 2007071418 VGRD kpds5=34 kpds6=103 kpds7=1829 levels=(7,37) grid=3 1829 m above MSL anl:
+  VGRD=v wind [m/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -35.4 45.7  num bits 10  BDS_Ref -354  DecScale 1 BinScale 0
+
+rec 211:18050574:date 2007071418 UGRD kpds5=33 kpds6=103 kpds7=2743 levels=(10,183) grid=3 2743 m above MSL anl:
+  UGRD=u wind [m/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -28.4 43.3  num bits 10  BDS_Ref -284  DecScale 1 BinScale 0
+
+rec 212:18132108:date 2007071418 VGRD kpds5=34 kpds6=103 kpds7=2743 levels=(10,183) grid=3 2743 m above MSL anl:
+  VGRD=v wind [m/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -30.4 43.7  num bits 10  BDS_Ref -304  DecScale 1 BinScale 0
+
+rec 213:18213642:date 2007071418 UGRD kpds5=33 kpds6=103 kpds7=3658 levels=(14,74) grid=3 3658 m above MSL anl:
+  UGRD=u wind [m/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -20.6 49.8  num bits 10  BDS_Ref -206  DecScale 1 BinScale 0
+
+rec 214:18295176:date 2007071418 VGRD kpds5=34 kpds6=103 kpds7=3658 levels=(14,74) grid=3 3658 m above MSL anl:
+  VGRD=v wind [m/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -34.1 40.3  num bits 10  BDS_Ref -341  DecScale 1 BinScale 0
+
+rec 215:18376710:date 2007071418 HGT kpds5=7 kpds6=117 kpds7=2000 levels=(7,208) grid=3 2000 pv units anl: bitmap: 30655 undef
+  HGT=Geopotential height [gpm]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 2457.5 20077.7  num bits 18  BDS_Ref 24575  DecScale 1 BinScale 0
+
+rec 216:18462582:date 2007071418 HGT kpds5=7 kpds6=117 kpds7=34768 levels=(135,208) grid=3 -2000 pv units anl: bitmap: 31986 undef
+  HGT=Geopotential height [gpm]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 3654.7 20037.2  num bits 18  BDS_Ref 36547  DecScale 1 BinScale 0
+
+rec 217:18545460:date 2007071418 TMP kpds5=11 kpds6=117 kpds7=2000 levels=(7,208) grid=3 2000 pv units anl: bitmap: 30655 undef
+  TMP=Temp. [K]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 186.8 264.2  num bits 10  BDS_Ref 1868  DecScale 1 BinScale 0
+
+rec 218:18596828:date 2007071418 TMP kpds5=11 kpds6=117 kpds7=34768 levels=(135,208) grid=3 -2000 pv units anl: bitmap: 31986 undef
+  TMP=Temp. [K]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 188.8 263.2  num bits 10  BDS_Ref 1888  DecScale 1 BinScale 0
+
+rec 219:18646532:date 2007071418 PRES kpds5=1 kpds6=117 kpds7=2000 levels=(7,208) grid=3 2000 pv units anl: bitmap: 30655 undef
+  PRES=Pressure [Pa]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 5549 72258  num bits 17  BDS_Ref 5549  DecScale 0 BinScale 0
+
+rec 220:18728092:date 2007071418 PRES kpds5=1 kpds6=117 kpds7=34768 levels=(135,208) grid=3 -2000 pv units anl: bitmap: 31986 undef
+  PRES=Pressure [Pa]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 5552 60867  num bits 16  BDS_Ref 5552  DecScale 0 BinScale 0
+
+rec 221:18802676:date 2007071418 VWSH kpds5=136 kpds6=117 kpds7=2000 levels=(7,208) grid=3 2000 pv units anl: bitmap: 30655 undef
+  VWSH=Vertical speed shear [1/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -0.0436 0.0246  num bits 10  BDS_Ref -436  DecScale 4 BinScale 0
+
+rec 222:18854044:date 2007071418 VWSH kpds5=136 kpds6=117 kpds7=34768 levels=(135,208) grid=3 -2000 pv units anl: bitmap: 31986 undef
+  VWSH=Vertical speed shear [1/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -0.0428 0.0284  num bits 10  BDS_Ref -428  DecScale 4 BinScale 0
+
+rec 223:18903748:date 2007071418 UGRD kpds5=33 kpds6=117 kpds7=2000 levels=(7,208) grid=3 2000 pv units anl: bitmap: 30655 undef
+  UGRD=u wind [m/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -53.7 69.5  num bits 11  BDS_Ref -537  DecScale 1 BinScale 0
+
+rec 224:18959428:date 2007071418 VGRD kpds5=34 kpds6=117 kpds7=2000 levels=(7,208) grid=3 2000 pv units anl: bitmap: 30655 undef
+  VGRD=v wind [m/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -54 58.7  num bits 11  BDS_Ref -540  DecScale 1 BinScale 0
+
+rec 225:19015108:date 2007071418 UGRD kpds5=33 kpds6=117 kpds7=34768 levels=(135,208) grid=3 -2000 pv units anl: bitmap: 31986 undef
+  UGRD=u wind [m/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -40.9 83.8  num bits 11  BDS_Ref -409  DecScale 1 BinScale 0
+
+rec 226:19068958:date 2007071418 VGRD kpds5=34 kpds6=117 kpds7=34768 levels=(135,208) grid=3 -2000 pv units anl: bitmap: 31986 undef
+  VGRD=v wind [m/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -47.7 57.2  num bits 11  BDS_Ref -477  DecScale 1 BinScale 0
+
+rec 227:19122808:date 2007071418 PRES kpds5=1 kpds6=1 kpds7=0 levels=(0,0) grid=3 sfc anl:
+  PRES=Pressure [Pa]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 51742 104209  num bits 16  BDS_Ref 51742  DecScale 0 BinScale 0
+
+rec 228:19253212:date 2007071418 PWAT kpds5=54 kpds6=200 kpds7=0 levels=(0,0) grid=3 atmos col anl:
+  PWAT=Precipitable water [kg/m^2]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 0.1 76.9  num bits 10  BDS_Ref 1  DecScale 1 BinScale 0
+
+rec 229:19334746:date 2007071418 RH kpds5=52 kpds6=200 kpds7=0 levels=(0,0) grid=3 atmos col anl:
+  RH=Relative humidity [%]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 1 90  num bits 7  BDS_Ref 1  DecScale 0 BinScale 0
+
+rec 230:19391844:date 2007071418 HGT kpds5=7 kpds6=7 kpds7=0 levels=(0,0) grid=3 tropopause anl:
+  HGT=Geopotential height [gpm]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 6398.4 18737.3  num bits 17  BDS_Ref 63984  DecScale 1 BinScale 0
+
+rec 231:19530392:date 2007071418 TMP kpds5=11 kpds6=7 kpds7=0 levels=(0,0) grid=3 tropopause anl:
+  TMP=Temp. [K]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 185.3 262.9  num bits 10  BDS_Ref 1853  DecScale 1 BinScale 0
+
+rec 232:19611926:date 2007071418 PRES kpds5=1 kpds6=7 kpds7=0 levels=(0,0) grid=3 tropopause anl:
+  PRES=Pressure [Pa]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 5549 46380  num bits 16  BDS_Ref 5549  DecScale 0 BinScale 0
+
+rec 233:19742330:date 2007071418 VWSH kpds5=136 kpds6=7 kpds7=0 levels=(0,0) grid=3 tropopause anl:
+  VWSH=Vertical speed shear [1/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -0.034 0.0302  num bits 10  BDS_Ref -340  DecScale 4 BinScale 0
+
+rec 234:19823864:date 2007071418 LFTX kpds5=131 kpds6=1 kpds7=0 levels=(0,0) grid=3 sfc anl:
+  LFTX=Surface lifted index [K]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -8.7 37.9  num bits 9  BDS_Ref -87  DecScale 1 BinScale 0
+
+rec 235:19897252:date 2007071418 CAPE kpds5=157 kpds6=1 kpds7=0 levels=(0,0) grid=3 sfc anl:
+  CAPE=Convective Avail. Pot. Energy [J/kg]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 0 3550  num bits 12  BDS_Ref 0  DecScale 0 BinScale 0
+
+rec 236:19995076:date 2007071418 CIN kpds5=156 kpds6=1 kpds7=0 levels=(0,0) grid=3 sfc anl:
+  CIN=Convective inhibition [J/kg]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -1324 0  num bits 11  BDS_Ref -1324  DecScale 0 BinScale 0
+
+rec 237:20084754:date 2007071418 4LFTX kpds5=132 kpds6=1 kpds7=0 levels=(0,0) grid=3 sfc anl:
+  4LFTX=Best (4-layer) lifted index [K]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -13.2 28.9  num bits 9  BDS_Ref -132  DecScale 1 BinScale 0
+
+rec 238:20158142:date 2007071418 CAPE kpds5=157 kpds6=116 kpds7=46080 levels=(180,0) grid=3 180-0 mb above gnd anl:
+  CAPE=Convective Avail. Pot. Energy [J/kg]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 0 3550  num bits 12  BDS_Ref 0  DecScale 0 BinScale 0
+
+rec 239:20255966:date 2007071418 CIN kpds5=156 kpds6=116 kpds7=46080 levels=(180,0) grid=3 180-0 mb above gnd anl:
+  CIN=Convective inhibition [J/kg]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -1106 0  num bits 11  BDS_Ref -1106  DecScale 0 BinScale 0
+
+rec 240:20345644:date 2007071418 HGT kpds5=7 kpds6=6 kpds7=0 levels=(0,0) grid=3 max wind lev anl:
+  HGT=Geopotential height [gpm]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 4916.2 16478  num bits 17  BDS_Ref 49162  DecScale 1 BinScale 0
+
+rec 241:20484192:date 2007071418 TMP kpds5=11 kpds6=6 kpds7=0 levels=(0,0) grid=3 max wind lev anl:
+  TMP=Temp. [K]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 190.3 274.5  num bits 10  BDS_Ref 1903  DecScale 1 BinScale 0
+
+rec 242:20565726:date 2007071418 PRES kpds5=1 kpds6=6 kpds7=0 levels=(0,0) grid=3 max wind lev anl:
+  PRES=Pressure [Pa]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 10644 50000  num bits 16  BDS_Ref 10644  DecScale 0 BinScale 0
+
+rec 243:20696130:date 2007071418 HGT kpds5=7 kpds6=1 kpds7=0 levels=(0,0) grid=3 sfc anl:
+  HGT=Geopotential height [gpm]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -284.5 5537.9  num bits 16  BDS_Ref -2845  DecScale 1 BinScale 0
+
+rec 244:20826534:date 2007071418 PRMSL kpds5=2 kpds6=102 kpds7=0 levels=(0,0) grid=3 MSL anl:
+  PRMSL=Pressure reduced to MSL [Pa]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 95235 105683  num bits 14  BDS_Ref 95235  DecScale 0 BinScale 0
+
+rec 245:20940648:date 2007071418 RH kpds5=52 kpds6=108 kpds7=11364 levels=(44,100) grid=3 sigma 0.44-1.00 anl:
+  RH=Relative humidity [%]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 5 100  num bits 7  BDS_Ref 5  DecScale 0 BinScale 0
+
+rec 246:20997746:date 2007071418 RH kpds5=52 kpds6=108 kpds7=18526 levels=(72,94) grid=3 sigma 0.72-0.94 anl:
+  RH=Relative humidity [%]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 1 100  num bits 7  BDS_Ref 1  DecScale 0 BinScale 0
+
+rec 247:21054844:date 2007071418 RH kpds5=52 kpds6=108 kpds7=11336 levels=(44,72) grid=3 sigma 0.44-0.72 anl:
+  RH=Relative humidity [%]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 0 100  num bits 7  BDS_Ref 0  DecScale 0 BinScale 0
+
+rec 248:21111942:date 2007071418 RH kpds5=52 kpds6=108 kpds7=8548 levels=(33,100) grid=3 sigma 0.33-1.00 anl:
+  RH=Relative humidity [%]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 5 100  num bits 7  BDS_Ref 5  DecScale 0 BinScale 0
+
+rec 249:21169040:date 2007071418 POT kpds5=13 kpds6=107 kpds7=9950 levels=(38,222) grid=3 sigma=0.9950 anl:
+  POT=Potential temp. [K]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 241.9 335.6  num bits 10  BDS_Ref 2419  DecScale 1 BinScale 0
+
+rec 250:21250574:date 2007071418 TMP kpds5=11 kpds6=107 kpds7=9950 levels=(38,222) grid=3 sigma=0.9950 anl:
+  TMP=Temp. [K]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 217.3 318.2  num bits 10  BDS_Ref 2173  DecScale 1 BinScale 0
+
+rec 251:21332108:date 2007071418 VVEL kpds5=39 kpds6=107 kpds7=9950 levels=(38,222) grid=3 sigma=0.9950 anl:
+  VVEL=Pressure vertical velocity [Pa/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -2.338 2.936  num bits 13  BDS_Ref -2338  DecScale 3 BinScale 0
+
+rec 252:21438076:date 2007071418 RH kpds5=52 kpds6=107 kpds7=9950 levels=(38,222) grid=3 sigma=0.9950 anl:
+  RH=Relative humidity [%]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 3 100  num bits 7  BDS_Ref 3  DecScale 0 BinScale 0
+
+rec 253:21495174:date 2007071418 TOZNE kpds5=10 kpds6=200 kpds7=0 levels=(0,0) grid=3 atmos col anl:
+  TOZNE=Total ozone [Dobson]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 213.9 464.7  num bits 12  BDS_Ref 2139  DecScale 1 BinScale 0
+
+rec 254:21592998:date 2007071418 CWAT kpds5=76 kpds6=200 kpds7=0 levels=(0,0) grid=3 atmos col anl:
+  CWAT=Cloud water [kg/m^2]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 0 3.94  num bits 9  BDS_Ref 0  DecScale 2 BinScale 0
+
+rec 255:21666386:date 2007071418 HGT kpds5=7 kpds6=4 kpds7=0 levels=(0,0) grid=3 0C isotherm anl:
+  HGT=Geopotential height [gpm]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -1000 6418.5  num bits 17  BDS_Ref -10000  DecScale 1 BinScale 0
+
+rec 256:21804934:date 2007071418 RH kpds5=52 kpds6=4 kpds7=0 levels=(0,0) grid=3 0C isotherm anl:
+  RH=Relative humidity [%]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 0 100  num bits 7  BDS_Ref 0  DecScale 0 BinScale 0
+
+rec 257:21862032:date 2007071418 HGT kpds5=7 kpds6=204 kpds7=0 levels=(0,0) grid=3 high trop freezing lvl anl:
+  HGT=Geopotential height [gpm]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -1000 6418.5  num bits 17  BDS_Ref -10000  DecScale 1 BinScale 0
+
+rec 258:22000580:date 2007071418 RH kpds5=52 kpds6=204 kpds7=0 levels=(0,0) grid=3 high trop freezing lvl anl:
+  RH=Relative humidity [%]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 0 100  num bits 7  BDS_Ref 0  DecScale 0 BinScale 0
+
+rec 259:22057678:date 2007071418 UGRD kpds5=33 kpds6=7 kpds7=0 levels=(0,0) grid=3 tropopause anl:
+  UGRD=u wind [m/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -53.2 78.8  num bits 11  BDS_Ref -532  DecScale 1 BinScale 0
+
+rec 260:22147356:date 2007071418 VGRD kpds5=34 kpds6=7 kpds7=0 levels=(0,0) grid=3 tropopause anl:
+  VGRD=v wind [m/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -51.8 57.8  num bits 11  BDS_Ref -518  DecScale 1 BinScale 0
+
+rec 261:22237034:date 2007071418 UGRD kpds5=33 kpds6=6 kpds7=0 levels=(0,0) grid=3 max wind lev anl:
+  UGRD=u wind [m/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -55.5 87.6  num bits 11  BDS_Ref -555  DecScale 1 BinScale 0
+
+rec 262:22326712:date 2007071418 VGRD kpds5=34 kpds6=6 kpds7=0 levels=(0,0) grid=3 max wind lev anl:
+  VGRD=v wind [m/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -55.4 61.3  num bits 11  BDS_Ref -554  DecScale 1 BinScale 0
+
+rec 263:22416390:date 2007071418 UGRD kpds5=33 kpds6=107 kpds7=9950 levels=(38,222) grid=3 sigma=0.9950 anl:
+  UGRD=u wind [m/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -25.5 30.8  num bits 10  BDS_Ref -255  DecScale 1 BinScale 0
+
+rec 264:22497924:date 2007071418 VGRD kpds5=34 kpds6=107 kpds7=9950 levels=(38,222) grid=3 sigma=0.9950 anl:
+  VGRD=v wind [m/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -26.2 31.9  num bits 10  BDS_Ref -262  DecScale 1 BinScale 0
+
+rec 265:22579458:date 2007071418 TMP kpds5=11 kpds6=1 kpds7=0 levels=(0,0) grid=3 sfc anl:
+  TMP=Temp. [K]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 193.7 320.8  num bits 11  BDS_Ref 1937  DecScale 1 BinScale 0
+
+rec 266:22669136:date 2007071418 SOILW kpds5=144 kpds6=112 kpds7=10 levels=(0,10) grid=3 0-10 cm down anl: bitmap: 42945 undef
+  SOILW=Volumetric soil moisture [fraction]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 0.03 1  num bits 10  BDS_Ref 30  DecScale 3 BinScale 0
+
+rec 267:22705140:date 2007071418 SOILW kpds5=144 kpds6=112 kpds7=2600 levels=(10,40) grid=3 10-40 cm down anl: bitmap: 42945 undef
+  SOILW=Volumetric soil moisture [fraction]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 0.095 1  num bits 10  BDS_Ref 95  DecScale 3 BinScale 0
+
+rec 268:22741144:date 2007071418 SOILW kpds5=144 kpds6=112 kpds7=10340 levels=(40,100) grid=3 40-100 cm down anl: bitmap: 42945 undef
+  SOILW=Volumetric soil moisture [fraction]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 0.099 1  num bits 10  BDS_Ref 99  DecScale 3 BinScale 0
+
+rec 269:22777148:date 2007071418 SOILW kpds5=144 kpds6=112 kpds7=25800 levels=(100,200) grid=3 100-200 cm down anl: bitmap: 42945 undef
+  SOILW=Volumetric soil moisture [fraction]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 0.105 1  num bits 10  BDS_Ref 105  DecScale 3 BinScale 0
+
+rec 270:22813152:date 2007071418 TMP kpds5=11 kpds6=112 kpds7=10 levels=(0,10) grid=3 0-10 cm down anl: bitmap: 42945 undef
+  TMP=Temp. [K]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 211.5 316.1  num bits 11  BDS_Ref 2115  DecScale 1 BinScale 0
+
+rec 271:22851934:date 2007071418 TMP kpds5=11 kpds6=112 kpds7=2600 levels=(10,40) grid=3 10-40 cm down anl: bitmap: 42945 undef
+  TMP=Temp. [K]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 211.3 313  num bits 10  BDS_Ref 2113  DecScale 1 BinScale 0
+
+rec 272:22887938:date 2007071418 TMP kpds5=11 kpds6=112 kpds7=10340 levels=(40,100) grid=3 40-100 cm down anl: bitmap: 42945 undef
+  TMP=Temp. [K]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 209.6 309.1  num bits 10  BDS_Ref 2096  DecScale 1 BinScale 0
+
+rec 273:22923942:date 2007071418 TMP kpds5=11 kpds6=112 kpds7=25800 levels=(100,200) grid=3 100-200 cm down anl: bitmap: 42945 undef
+  TMP=Temp. [K]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 206.7 306.6  num bits 10  BDS_Ref 2067  DecScale 1 BinScale 0
+
+rec 274:22959946:date 2007071418 WEASD kpds5=65 kpds6=1 kpds7=0 levels=(0,0) grid=3 sfc anl:
+  WEASD=Accum. snow [kg/m^2]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 0 415  num bits 9  BDS_Ref 0  DecScale 0 BinScale 0
+
+rec 275:23033334:date 2007071418 LAND kpds5=81 kpds6=1 kpds7=0 levels=(0,0) grid=3 sfc anl:
+  LAND=Land cover (land=1;sea=0) [fraction]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 0 1  num bits 1  BDS_Ref 0  DecScale 0 BinScale 0
+
+rec 276:23041562:date 2007071418 ICEC kpds5=91 kpds6=1 kpds7=0 levels=(0,0) grid=3 sfc anl:
+  ICEC=Ice concentration (ice=1;no ice=0) [fraction]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 0 1  num bits 7  BDS_Ref 0  DecScale 2 BinScale 0
+
+rec 277:23098660:date 2007071418 TMP kpds5=11 kpds6=105 kpds7=2 levels=(0,2) grid=3 2 m above gnd anl:
+  TMP=Temp. [K]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 203.7 318.5  num bits 11  BDS_Ref 2037  DecScale 1 BinScale 0
+
+rec 278:23188338:date 2007071418 SPFH kpds5=51 kpds6=105 kpds7=2 levels=(0,2) grid=3 2 m above gnd anl:
+  SPFH=Specific humidity [kg/kg]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 0 0.02407  num bits 12  BDS_Ref 0  DecScale 5 BinScale 0
+
+rec 279:23286162:date 2007071418 HPBL kpds5=221 kpds6=1 kpds7=0 levels=(0,0) grid=3 sfc anl:
+  HPBL=Planetary boundary layer height [m]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 17 5449  num bits 16  BDS_Ref 170  DecScale 1 BinScale 0
+
+rec 280:23416566:date 2007071418 TCDC kpds5=71 kpds6=244 kpds7=0 levels=(0,0) grid=3 convect-cld layer anl:
+  TCDC=Total cloud cover [%]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 0 0  num bits 0  BDS_Ref 0  DecScale 0 BinScale 0
+
+rec 281:23416650:date 2007071418 RH kpds5=52 kpds6=105 kpds7=2 levels=(0,2) grid=3 2 m above gnd anl:
+  RH=Relative humidity [%]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data 5 100  num bits 7  BDS_Ref 5  DecScale 0 BinScale 0
+
+rec 282:23473748:date 2007071418 UGRD kpds5=33 kpds6=105 kpds7=10 levels=(0,10) grid=3 10 m above gnd anl:
+  UGRD=u wind [m/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -22 27.4  num bits 9  BDS_Ref -220  DecScale 1 BinScale 0
+
+rec 283:23547136:date 2007071418 VGRD kpds5=34 kpds6=105 kpds7=10 levels=(0,10) grid=3 10 m above gnd anl:
+  VGRD=v wind [m/s]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -23.3 27.3  num bits 9  BDS_Ref -233  DecScale 1 BinScale 0
+
+rec 284:23620524:date 2007071418 GPA kpds5=27 kpds6=100 kpds7=1000 levels=(3,232) grid=3 1000 mb anl:
+  GPA=Geopotential height anomaly [gpm]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -372 379.5  num bits 13  BDS_Ref -3720  DecScale 1 BinScale 0
+
+rec 285:23726492:date 2007071418 GPA kpds5=27 kpds6=100 kpds7=500 levels=(1,244) grid=3 500 mb anl:
+  GPA=Geopotential height anomaly [gpm]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -341.9 312.2  num bits 13  BDS_Ref -3419  DecScale 1 BinScale 0
+
+rec 286:23832460:date 2007071418 5WAVA kpds5=230 kpds6=100 kpds7=500 levels=(1,244) grid=3 500 mb anl:
+  5WAVA=5-wave geopot. height anomaly [gpm]
+  timerange 10 P1 0 P2 0 TimeU 1  nx 360 ny 181 GDS grid 0 num_in_ave 0 missing 0
+  center 7 subcenter 0 process 82 Table 2 scan: WE:NS winds(N/S) 
+  latlon: lat  90.000000 to -90.000000 by 1.000000  nxny 65160
+          long 0.000000 to -1.000000 by 1.000000, (360 x 181) scan 0 mode 128 bdsgrid 1
+  min/max data -323.6 315.2  num bits 13  BDS_Ref -3236  DecScale 1 BinScale 0
+
+1:0:d=07071418:HGT:1000 mb:anl:NAve=0
+2:105968:d=07071418:HGT:975 mb:anl:NAve=0
+3:211936:d=07071418:HGT:950 mb:anl:NAve=0
+4:317904:d=07071418:HGT:925 mb:anl:NAve=0
+5:423872:d=07071418:HGT:900 mb:anl:NAve=0
+6:529840:d=07071418:HGT:850 mb:anl:NAve=0
+7:635808:d=07071418:HGT:800 mb:anl:NAve=0
+8:741776:d=07071418:HGT:750 mb:anl:NAve=0
+9:855890:d=07071418:HGT:700 mb:anl:NAve=0
+10:970004:d=07071418:HGT:650 mb:anl:NAve=0
+11:1084118:d=07071418:HGT:600 mb:anl:NAve=0
+12:1198232:d=07071418:HGT:550 mb:anl:NAve=0
+13:1312346:d=07071418:HGT:500 mb:anl:NAve=0
+14:1426460:d=07071418:HGT:450 mb:anl:NAve=0
+15:1540574:d=07071418:HGT:400 mb:anl:NAve=0
+16:1654688:d=07071418:HGT:350 mb:anl:NAve=0
+17:1768802:d=07071418:HGT:300 mb:anl:NAve=0
+18:1891060:d=07071418:HGT:250 mb:anl:NAve=0
+19:2013318:d=07071418:HGT:200 mb:anl:NAve=0
+20:2135576:d=07071418:HGT:150 mb:anl:NAve=0
+21:2257834:d=07071418:HGT:100 mb:anl:NAve=0
+22:2380092:d=07071418:HGT:70 mb:anl:NAve=0
+23:2502350:d=07071418:HGT:50 mb:anl:NAve=0
+24:2624608:d=07071418:HGT:30 mb:anl:NAve=0
+25:2755012:d=07071418:HGT:20 mb:anl:NAve=0
+26:2885416:d=07071418:HGT:10 mb:anl:NAve=0
+27:3015820:d=07071418:TMP:1000 mb:anl:NAve=0
+28:3097354:d=07071418:TMP:975 mb:anl:NAve=0
+29:3178888:d=07071418:TMP:950 mb:anl:NAve=0
+30:3260422:d=07071418:TMP:925 mb:anl:NAve=0
+31:3341956:d=07071418:TMP:900 mb:anl:NAve=0
+32:3423490:d=07071418:TMP:850 mb:anl:NAve=0
+33:3505024:d=07071418:TMP:800 mb:anl:NAve=0
+34:3586558:d=07071418:TMP:750 mb:anl:NAve=0
+35:3668092:d=07071418:TMP:700 mb:anl:NAve=0
+36:3749626:d=07071418:TMP:650 mb:anl:NAve=0
+37:3831160:d=07071418:TMP:600 mb:anl:NAve=0
+38:3912694:d=07071418:TMP:550 mb:anl:NAve=0
+39:3994228:d=07071418:TMP:500 mb:anl:NAve=0
+40:4075762:d=07071418:TMP:450 mb:anl:NAve=0
+41:4157296:d=07071418:TMP:400 mb:anl:NAve=0
+42:4238830:d=07071418:TMP:350 mb:anl:NAve=0
+43:4312218:d=07071418:TMP:300 mb:anl:NAve=0
+44:4385606:d=07071418:TMP:250 mb:anl:NAve=0
+45:4458994:d=07071418:TMP:200 mb:anl:NAve=0
+46:4532382:d=07071418:TMP:150 mb:anl:NAve=0
+47:4605770:d=07071418:TMP:100 mb:anl:NAve=0
+48:4679158:d=07071418:TMP:70 mb:anl:NAve=0
+49:4752546:d=07071418:TMP:50 mb:anl:NAve=0
+50:4825934:d=07071418:TMP:30 mb:anl:NAve=0
+51:4899322:d=07071418:TMP:20 mb:anl:NAve=0
+52:4980856:d=07071418:TMP:10 mb:anl:NAve=0
+53:5062390:d=07071418:VVEL:1000 mb:anl:NAve=0
+54:5160214:d=07071418:VVEL:975 mb:anl:NAve=0
+55:5258038:d=07071418:VVEL:950 mb:anl:NAve=0
+56:5355862:d=07071418:VVEL:925 mb:anl:NAve=0
+57:5453686:d=07071418:VVEL:900 mb:anl:NAve=0
+58:5551510:d=07071418:VVEL:850 mb:anl:NAve=0
+59:5657478:d=07071418:VVEL:800 mb:anl:NAve=0
+60:5763446:d=07071418:VVEL:750 mb:anl:NAve=0
+61:5869414:d=07071418:VVEL:700 mb:anl:NAve=0
+62:5975382:d=07071418:VVEL:650 mb:anl:NAve=0
+63:6081350:d=07071418:VVEL:600 mb:anl:NAve=0
+64:6187318:d=07071418:VVEL:550 mb:anl:NAve=0
+65:6293286:d=07071418:VVEL:500 mb:anl:NAve=0
+66:6399254:d=07071418:VVEL:450 mb:anl:NAve=0
+67:6505222:d=07071418:VVEL:400 mb:anl:NAve=0
+68:6611190:d=07071418:VVEL:350 mb:anl:NAve=0
+69:6717158:d=07071418:VVEL:300 mb:anl:NAve=0
+70:6814982:d=07071418:VVEL:250 mb:anl:NAve=0
+71:6912806:d=07071418:VVEL:200 mb:anl:NAve=0
+72:7002484:d=07071418:VVEL:150 mb:anl:NAve=0
+73:7084018:d=07071418:VVEL:100 mb:anl:NAve=0
+74:7157406:d=07071418:RH:1000 mb:anl:NAve=0
+75:7214504:d=07071418:RH:975 mb:anl:NAve=0
+76:7271602:d=07071418:RH:950 mb:anl:NAve=0
+77:7328700:d=07071418:RH:925 mb:anl:NAve=0
+78:7385798:d=07071418:RH:900 mb:anl:NAve=0
+79:7442896:d=07071418:RH:850 mb:anl:NAve=0
+80:7499994:d=07071418:RH:800 mb:anl:NAve=0
+81:7557092:d=07071418:RH:750 mb:anl:NAve=0
+82:7614190:d=07071418:RH:700 mb:anl:NAve=0
+83:7671288:d=07071418:RH:650 mb:anl:NAve=0
+84:7728386:d=07071418:RH:600 mb:anl:NAve=0
+85:7785484:d=07071418:RH:550 mb:anl:NAve=0
+86:7842582:d=07071418:RH:500 mb:anl:NAve=0
+87:7899680:d=07071418:RH:450 mb:anl:NAve=0
+88:7956778:d=07071418:RH:400 mb:anl:NAve=0
+89:8013876:d=07071418:RH:350 mb:anl:NAve=0
+90:8070974:d=07071418:RH:300 mb:anl:NAve=0
+91:8128072:d=07071418:RH:250 mb:anl:NAve=0
+92:8185170:d=07071418:RH:200 mb:anl:NAve=0
+93:8242268:d=07071418:RH:150 mb:anl:NAve=0
+94:8299366:d=07071418:RH:100 mb:anl:NAve=0
+95:8356464:d=07071418:ABSV:1000 mb:anl:NAve=0
+96:8437998:d=07071418:ABSV:975 mb:anl:NAve=0
+97:8519532:d=07071418:ABSV:950 mb:anl:NAve=0
+98:8601066:d=07071418:ABSV:925 mb:anl:NAve=0
+99:8682600:d=07071418:ABSV:900 mb:anl:NAve=0
+100:8764134:d=07071418:ABSV:850 mb:anl:NAve=0
+101:8845668:d=07071418:ABSV:800 mb:anl:NAve=0
+102:8927202:d=07071418:ABSV:750 mb:anl:NAve=0
+103:9008736:d=07071418:ABSV:700 mb:anl:NAve=0
+104:9090270:d=07071418:ABSV:650 mb:anl:NAve=0
+105:9171804:d=07071418:ABSV:600 mb:anl:NAve=0
+106:9253338:d=07071418:ABSV:550 mb:anl:NAve=0
+107:9334872:d=07071418:ABSV:500 mb:anl:NAve=0
+108:9416406:d=07071418:ABSV:450 mb:anl:NAve=0
+109:9497940:d=07071418:ABSV:400 mb:anl:NAve=0
+110:9579474:d=07071418:ABSV:350 mb:anl:NAve=0
+111:9661008:d=07071418:ABSV:300 mb:anl:NAve=0
+112:9742542:d=07071418:ABSV:250 mb:anl:NAve=0
+113:9824076:d=07071418:ABSV:200 mb:anl:NAve=0
+114:9905610:d=07071418:ABSV:150 mb:anl:NAve=0
+115:9978998:d=07071418:ABSV:100 mb:anl:NAve=0
+116:10052386:d=07071418:ABSV:70 mb:anl:NAve=0
+117:10125774:d=07071418:ABSV:50 mb:anl:NAve=0
+118:10199162:d=07071418:ABSV:30 mb:anl:NAve=0
+119:10272550:d=07071418:ABSV:20 mb:anl:NAve=0
+120:10345938:d=07071418:ABSV:10 mb:anl:NAve=0
+121:10419326:d=07071418:O3MR:100 mb:anl:NAve=0
+122:10525294:d=07071418:O3MR:70 mb:anl:NAve=0
+123:10631262:d=07071418:O3MR:50 mb:anl:NAve=0
+124:10737230:d=07071418:O3MR:30 mb:anl:NAve=0
+125:10843198:d=07071418:O3MR:20 mb:anl:NAve=0
+126:10957312:d=07071418:O3MR:10 mb:anl:NAve=0
+127:11071426:d=07071418:CLWMR:1000 mb:anl:NAve=0
+128:11144814:d=07071418:CLWMR:975 mb:anl:NAve=0
+129:11218202:d=07071418:CLWMR:950 mb:anl:NAve=0
+130:11291590:d=07071418:CLWMR:925 mb:anl:NAve=0
+131:11364978:d=07071418:CLWMR:900 mb:anl:NAve=0
+132:11438366:d=07071418:CLWMR:850 mb:anl:NAve=0
+133:11519900:d=07071418:CLWMR:800 mb:anl:NAve=0
+134:11609578:d=07071418:CLWMR:750 mb:anl:NAve=0
+135:11699256:d=07071418:CLWMR:700 mb:anl:NAve=0
+136:11780790:d=07071418:CLWMR:650 mb:anl:NAve=0
+137:11870468:d=07071418:CLWMR:600 mb:anl:NAve=0
+138:11952002:d=07071418:CLWMR:550 mb:anl:NAve=0
+139:12033536:d=07071418:CLWMR:500 mb:anl:NAve=0
+140:12115070:d=07071418:CLWMR:450 mb:anl:NAve=0
+141:12196604:d=07071418:CLWMR:400 mb:anl:NAve=0
+142:12286282:d=07071418:CLWMR:350 mb:anl:NAve=0
+143:12375960:d=07071418:CLWMR:300 mb:anl:NAve=0
+144:12465638:d=07071418:CLWMR:250 mb:anl:NAve=0
+145:12555316:d=07071418:CLWMR:200 mb:anl:NAve=0
+146:12644994:d=07071418:CLWMR:150 mb:anl:NAve=0
+147:12718382:d=07071418:CLWMR:100 mb:anl:NAve=0
+148:12783626:d=07071418:5WAVH:500 mb:anl:NAve=0
+149:12897740:d=07071418:UGRD:1000 mb:anl:NAve=0
+150:12979274:d=07071418:VGRD:1000 mb:anl:NAve=0
+151:13060808:d=07071418:UGRD:975 mb:anl:NAve=0
+152:13142342:d=07071418:VGRD:975 mb:anl:NAve=0
+153:13223876:d=07071418:UGRD:950 mb:anl:NAve=0
+154:13305410:d=07071418:VGRD:950 mb:anl:NAve=0
+155:13386944:d=07071418:UGRD:925 mb:anl:NAve=0
+156:13468478:d=07071418:VGRD:925 mb:anl:NAve=0
+157:13550012:d=07071418:UGRD:900 mb:anl:NAve=0
+158:13631546:d=07071418:VGRD:900 mb:anl:NAve=0
+159:13713080:d=07071418:UGRD:850 mb:anl:NAve=0
+160:13794614:d=07071418:VGRD:850 mb:anl:NAve=0
+161:13876148:d=07071418:UGRD:800 mb:anl:NAve=0
+162:13957682:d=07071418:VGRD:800 mb:anl:NAve=0
+163:14039216:d=07071418:UGRD:750 mb:anl:NAve=0
+164:14120750:d=07071418:VGRD:750 mb:anl:NAve=0
+165:14202284:d=07071418:UGRD:700 mb:anl:NAve=0
+166:14283818:d=07071418:VGRD:700 mb:anl:NAve=0
+167:14365352:d=07071418:UGRD:650 mb:anl:NAve=0
+168:14446886:d=07071418:VGRD:650 mb:anl:NAve=0
+169:14528420:d=07071418:UGRD:600 mb:anl:NAve=0
+170:14609954:d=07071418:VGRD:600 mb:anl:NAve=0
+171:14691488:d=07071418:UGRD:550 mb:anl:NAve=0
+172:14773022:d=07071418:VGRD:550 mb:anl:NAve=0
+173:14854556:d=07071418:UGRD:500 mb:anl:NAve=0
+174:14936090:d=07071418:VGRD:500 mb:anl:NAve=0
+175:15017624:d=07071418:UGRD:450 mb:anl:NAve=0
+176:15099158:d=07071418:VGRD:450 mb:anl:NAve=0
+177:15180692:d=07071418:UGRD:400 mb:anl:NAve=0
+178:15262226:d=07071418:VGRD:400 mb:anl:NAve=0
+179:15343760:d=07071418:UGRD:350 mb:anl:NAve=0
+180:15433438:d=07071418:VGRD:350 mb:anl:NAve=0
+181:15523116:d=07071418:UGRD:300 mb:anl:NAve=0
+182:15612794:d=07071418:VGRD:300 mb:anl:NAve=0
+183:15702472:d=07071418:UGRD:250 mb:anl:NAve=0
+184:15792150:d=07071418:VGRD:250 mb:anl:NAve=0
+185:15881828:d=07071418:UGRD:200 mb:anl:NAve=0
+186:15971506:d=07071418:VGRD:200 mb:anl:NAve=0
+187:16061184:d=07071418:UGRD:150 mb:anl:NAve=0
+188:16150862:d=07071418:VGRD:150 mb:anl:NAve=0
+189:16232396:d=07071418:UGRD:100 mb:anl:NAve=0
+190:16322074:d=07071418:VGRD:100 mb:anl:NAve=0
+191:16403608:d=07071418:UGRD:70 mb:anl:NAve=0
+192:16485142:d=07071418:VGRD:70 mb:anl:NAve=0
+193:16566676:d=07071418:UGRD:50 mb:anl:NAve=0
+194:16648210:d=07071418:VGRD:50 mb:anl:NAve=0
+195:16729744:d=07071418:UGRD:30 mb:anl:NAve=0
+196:16819422:d=07071418:VGRD:30 mb:anl:NAve=0
+197:16900956:d=07071418:UGRD:20 mb:anl:NAve=0
+198:16990634:d=07071418:VGRD:20 mb:anl:NAve=0
+199:17072168:d=07071418:UGRD:10 mb:anl:NAve=0
+200:17161846:d=07071418:VGRD:10 mb:anl:NAve=0
+201:17243380:d=07071418:TMP:30-0 mb above gnd:anl:NAve=0
+202:17324914:d=07071418:RH:30-0 mb above gnd:anl:NAve=0
+203:17382012:d=07071418:SPFH:30-0 mb above gnd:anl:NAve=0
+204:17479836:d=07071418:UGRD:30-0 mb above gnd:anl:NAve=0
+205:17561370:d=07071418:VGRD:30-0 mb above gnd:anl:NAve=0
+206:17642904:d=07071418:TMP:1829 m above MSL:anl:NAve=0
+207:17724438:d=07071418:TMP:2743 m above MSL:anl:NAve=0
+208:17805972:d=07071418:TMP:3658 m above MSL:anl:NAve=0
+209:17887506:d=07071418:UGRD:1829 m above MSL:anl:NAve=0
+210:17969040:d=07071418:VGRD:1829 m above MSL:anl:NAve=0
+211:18050574:d=07071418:UGRD:2743 m above MSL:anl:NAve=0
+212:18132108:d=07071418:VGRD:2743 m above MSL:anl:NAve=0
+213:18213642:d=07071418:UGRD:3658 m above MSL:anl:NAve=0
+214:18295176:d=07071418:VGRD:3658 m above MSL:anl:NAve=0
+215:18376710:d=07071418:HGT:2000 pv units:anl:NAve=0
+216:18462582:d=07071418:HGT:-2000 pv units:anl:NAve=0
+217:18545460:d=07071418:TMP:2000 pv units:anl:NAve=0
+218:18596828:d=07071418:TMP:-2000 pv units:anl:NAve=0
+219:18646532:d=07071418:PRES:2000 pv units:anl:NAve=0
+220:18728092:d=07071418:PRES:-2000 pv units:anl:NAve=0
+221:18802676:d=07071418:VWSH:2000 pv units:anl:NAve=0
+222:18854044:d=07071418:VWSH:-2000 pv units:anl:NAve=0
+223:18903748:d=07071418:UGRD:2000 pv units:anl:NAve=0
+224:18959428:d=07071418:VGRD:2000 pv units:anl:NAve=0
+225:19015108:d=07071418:UGRD:-2000 pv units:anl:NAve=0
+226:19068958:d=07071418:VGRD:-2000 pv units:anl:NAve=0
+227:19122808:d=07071418:PRES:sfc:anl:NAve=0
+228:19253212:d=07071418:PWAT:atmos col:anl:NAve=0
+229:19334746:d=07071418:RH:atmos col:anl:NAve=0
+230:19391844:d=07071418:HGT:tropopause:anl:NAve=0
+231:19530392:d=07071418:TMP:tropopause:anl:NAve=0
+232:19611926:d=07071418:PRES:tropopause:anl:NAve=0
+233:19742330:d=07071418:VWSH:tropopause:anl:NAve=0
+234:19823864:d=07071418:LFTX:sfc:anl:NAve=0
+235:19897252:d=07071418:CAPE:sfc:anl:NAve=0
+236:19995076:d=07071418:CIN:sfc:anl:NAve=0
+237:20084754:d=07071418:4LFTX:sfc:anl:NAve=0
+238:20158142:d=07071418:CAPE:180-0 mb above gnd:anl:NAve=0
+239:20255966:d=07071418:CIN:180-0 mb above gnd:anl:NAve=0
+240:20345644:d=07071418:HGT:max wind lev:anl:NAve=0
+241:20484192:d=07071418:TMP:max wind lev:anl:NAve=0
+242:20565726:d=07071418:PRES:max wind lev:anl:NAve=0
+243:20696130:d=07071418:HGT:sfc:anl:NAve=0
+244:20826534:d=07071418:PRMSL:MSL:anl:NAve=0
+245:20940648:d=07071418:RH:sigma 0.44-1.00:anl:NAve=0
+246:20997746:d=07071418:RH:sigma 0.72-0.94:anl:NAve=0
+247:21054844:d=07071418:RH:sigma 0.44-0.72:anl:NAve=0
+248:21111942:d=07071418:RH:sigma 0.33-1.00:anl:NAve=0
+249:21169040:d=07071418:POT:sigma=0.9950:anl:NAve=0
+250:21250574:d=07071418:TMP:sigma=0.9950:anl:NAve=0
+251:21332108:d=07071418:VVEL:sigma=0.9950:anl:NAve=0
+252:21438076:d=07071418:RH:sigma=0.9950:anl:NAve=0
+253:21495174:d=07071418:TOZNE:atmos col:anl:NAve=0
+254:21592998:d=07071418:CWAT:atmos col:anl:NAve=0
+255:21666386:d=07071418:HGT:0C isotherm:anl:NAve=0
+256:21804934:d=07071418:RH:0C isotherm:anl:NAve=0
+257:21862032:d=07071418:HGT:high trop freezing lvl:anl:NAve=0
+258:22000580:d=07071418:RH:high trop freezing lvl:anl:NAve=0
+259:22057678:d=07071418:UGRD:tropopause:anl:NAve=0
+260:22147356:d=07071418:VGRD:tropopause:anl:NAve=0
+261:22237034:d=07071418:UGRD:max wind lev:anl:NAve=0
+262:22326712:d=07071418:VGRD:max wind lev:anl:NAve=0
+263:22416390:d=07071418:UGRD:sigma=0.9950:anl:NAve=0
+264:22497924:d=07071418:VGRD:sigma=0.9950:anl:NAve=0
+265:22579458:d=07071418:TMP:sfc:anl:NAve=0
+266:22669136:d=07071418:SOILW:0-10 cm down:anl:NAve=0
+267:22705140:d=07071418:SOILW:10-40 cm down:anl:NAve=0
+268:22741144:d=07071418:SOILW:40-100 cm down:anl:NAve=0
+269:22777148:d=07071418:SOILW:100-200 cm down:anl:NAve=0
+270:22813152:d=07071418:TMP:0-10 cm down:anl:NAve=0
+271:22851934:d=07071418:TMP:10-40 cm down:anl:NAve=0
+272:22887938:d=07071418:TMP:40-100 cm down:anl:NAve=0
+273:22923942:d=07071418:TMP:100-200 cm down:anl:NAve=0
+274:22959946:d=07071418:WEASD:sfc:anl:NAve=0
+275:23033334:d=07071418:LAND:sfc:anl:NAve=0
+276:23041562:d=07071418:ICEC:sfc:anl:NAve=0
+277:23098660:d=07071418:TMP:2 m above gnd:anl:NAve=0
+278:23188338:d=07071418:SPFH:2 m above gnd:anl:NAve=0
+279:23286162:d=07071418:HPBL:sfc:anl:NAve=0
+280:23416566:d=07071418:TCDC:convect-cld layer:anl:NAve=0
+281:23416650:d=07071418:RH:2 m above gnd:anl:NAve=0
+282:23473748:d=07071418:UGRD:10 m above gnd:anl:NAve=0
+283:23547136:d=07071418:VGRD:10 m above gnd:anl:NAve=0
+284:23620524:d=07071418:GPA:1000 mb:anl:NAve=0
+285:23726492:d=07071418:GPA:500 mb:anl:NAve=0
+286:23832460:d=07071418:5WAVA:500 mb:anl:NAve=0
