@@ -1,5 +1,4 @@
 version: '3.1'
-
 services:
   app:
     tty: true
@@ -11,23 +10,18 @@ services:
     # restart: "always"
     volumes:
       # coreのバインドマウント
-      # - "/home/jjthomson/core:/root/core"
       - type: bind
-        source: "/home/jjthomson/core"
-        target: "/root/core"
+        source: "/home/jjthomson/master-core"
+        target: "/root/master-core"
       # scale-5.4.4のバインドマウント
       - type: bind
-        source: "/home/jjthomson/scale-5.4.4"
+        source: "/home/jjthomson/fdrive/scale-5.4.4"
         target: "/root/scale-5.4.4"
       # Eドライブのバインドマウント
+      # - type: bind
+      #   source: "/home/jjthomson/edrive"
+      #   target: "/root/edrive"
+      # Fドライブのバインドマウント
       - type: bind
-        source: "/mnt/e/edrive"
-        target: "/root/edrive"
-      # # Fドライブ(移行前)のバインドマウント
-      # - type: bind
-      #   source: "/mnt/f/ishihara_juntaro/ishihara_master"
-      #   target: "/root/ishihara_master"
-      # # Fドライブ(移行先)のバインドマウント
-      # - type: bind
-      #   source: "/mnt/f/ishihara_juntaro/fdrive"
-      #   target: "/root/fdrive"
+        source: "/home/jjthomson/fdrive"
+        target: "/root/fdrive"
