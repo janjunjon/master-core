@@ -1,11 +1,11 @@
-!1970-2013年の8月のprecipの検定統計量Tと自由度mを求める
 program test
     implicit none
     integer, parameter :: xdim = 2560, ydim = 3360
-    integer :: ra(xdim, ydim)
-    real*4 :: precip(xdim, ydim)
+    integer(kind=2) :: ra(xdim, ydim)
+    real(kind=4) :: precip(xdim, ydim)
+    integer :: i, j, k, y, m, d, t
 
-    open(11, file='/home/jjthomson/fdrive/ra/202007/01/202007010030.bin', form='unformatted', &
+    open(11, file='/root/fdrive/ra/202007/01/202007010030.bin', form='unformatted', &
     & access='direct', recl=xdim*ydim*2)
 
         !初期値を与える
@@ -27,7 +27,7 @@ program test
 
     write(*,*) precip
 
-    open(20, file='/home/jjthomson/fdrive/ra/test.bin', form='unformatted', &
+    open(20, file='/root/fdrive/ra/converted/202007010030_converted.bin', form='unformatted', &
     & access='direct', recl=xdim*ydim*4)
     write(20,rec=1)
 
