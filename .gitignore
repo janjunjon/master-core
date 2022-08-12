@@ -1,5 +1,5 @@
 memo.txt
-*/__pycache__
+__pycache__
 *.nc
 *.grd
 *LOG*

@@ -1,4 +1,3 @@
-from array import array
 import struct
 import numpy as np
 
