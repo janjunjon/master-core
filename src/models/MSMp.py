@@ -1,5 +1,3 @@
-from ..module import netcdf
-
 class MSMp:
     def __init__(self, nc) -> None:
         self.nc = nc
@@ -11,12 +9,12 @@ class MSMp:
         self.z = self.getGeopotentialHeight(nc)
         pass
 
-    def getLatLon(nc):
+    def getLatLon(self, nc):
         lat = nc.variables['lat']
         lon = nc.variables['lon']
         return lat, lon
 
-    def getWind(nc):
+    def getWind(self, nc):
         u = nc.variables['u']
         v = nc.variables['v']
         return u, v
@@ -25,14 +23,14 @@ class MSMp:
         rh = nc.variables['rh']
         return rh
 
-    def getTemperature(nc):
+    def getTemperature(self, nc):
         temp = nc.variables['temp']
         return temp
 
-    def getVerticalVelocity(nc):
+    def getVerticalVelocity(self, nc):
         w = nc.variables['w']
         return w
 
-    def getGeopotentialHeight(nc):
+    def getGeopotentialHeight(self, nc):
         z = nc.variables['z']
         return z

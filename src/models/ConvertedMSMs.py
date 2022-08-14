@@ -1,4 +1,6 @@
-from ..module import netcdf
+import sys
+sys.path.append('../')
+from module import netcdf
 
 class ConvertedMSMs:
     def __init__(self, nc) -> None:
@@ -7,10 +9,10 @@ class ConvertedMSMs:
         self.r1h = self.getRain(nc)
         pass
 
-    def getLatLon(nc):
+    def getLatLon(self, nc):
         lat, lon = netcdf._returnConvertedLatLon(nc)
         return lat, lon
 
-    def getRain(nc):
+    def getRain(self, nc):
         r1h = netcdf.convertMSMsTo3hours(nc) 
         return r1h
