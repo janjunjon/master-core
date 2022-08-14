@@ -1,4 +1,14 @@
+import subprocess
 import os
+
+def main(command):
+    subprocess.run(command, shell=True)
+
+def grads_command(*args):
+    command = "grads -blc {}".format(*args)
+    return command
+
+# ------------------------------------------------------------
 
 def execute_shell(gradsfile, *args):
     gradsfile = os.path.expanduser(gradsfile)

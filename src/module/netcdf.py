@@ -1,6 +1,7 @@
 from itertools import accumulate
 import netCDF4
 import numpy as np
+from numpy import dtype
 from . import draw, grads
 
 def read_netCDF(filename):
@@ -54,68 +55,40 @@ def convertMSMsTo3hours(nc, var='r1h'):
         accumulate3hours.append(lat_a)
     return accumulate3hours
 
-def mkBinary(filename, array):
-    with open(filename, 'wb') as f:
-        f.write(array)
+def makeNetCDF():
 
-def test():
-    nc = read_netCDF('/home/jjthomson/fdrive/nc/s20200701.nc')
-    r1h = convertMSMsTo3hours(nc)
-    lat, lon = _returnConvertedLatLon(nc)
-    draw.drawMapByArray(r1h, lat, lon, 0, "~/core/img/test.png")
+    # オブジェクトを作成し，各次元数を設定します．
 
-def test2():
-    nc = read_netCDF('/home/jjthomson/fdrive/nc/s20200701.nc')
-    r1h = nc.variables['r1h']
-    lat= nc.variables['lat']
-    lon = nc.variables['lon']
-    draw.drawMapByArray(r1h, lat, lon, 0, "~/core/img/test2.png")
-    grads.execute_shell(
-        '~/core/src/gs/draw_netcdf.gs',
-        '/home/jjthomson/fdrive/nc/s20200701.nc',
-        'test3.png'
-    )
+    nc = netCDF4.Dataset('filename.nc', 'w', format='NETCDF3_CLASSIC')
+    nc.createDimension('ntime', len(time_out))  # e.g. time_out = [0, 1, ...]
+    # nc.createDimensions('ntime', None)        # unlimitedにする場合
+    nc.createDimension('xi', x)                 # e.g. x = 10
+    nc.createDimension('eta', y)                # e.g. y = 10
 
-# --------------------------------------------------------------------------
+    # その後，各変数を定義します．
+    # 以下の例では，時間，緯度，経度，3次元変数を定義します．
 
-def _convertMSMsResolutionByOneDimension(v_array):
-    normal_array_with_time = []
-    for v_time in v_array:
-        normal_array = []
-        for i in range(0, len(v_time), 2):
-            for j in range(0, len(v_time[i]), 2):
-                normal_array.append(v_time[i][j])
-        normal_array_with_time.append(normal_array)
-    return normal_array_with_time
+    time = nc.createVariable('time', dtype('int32').char, ('ntime',))
+    time.long_name = 'time of test variable'
+    time.units = 'days since 1968-05-23 00:00:00'
 
-def _convertArray(v_array):
-    normal_array_with_time = []
-    for v_time in v_array:
-        normal_array = []
-        for v_lat in v_time:
-            normal_array.extend(v_lat)
-        normal_array_with_time.append(normal_array)
-    return normal_array_with_time
+    lon = nc.createVariable('lon', dtype('double').char, ('eta', 'xi'))
+    lon.long_name = 'east longitude'
+    lon.units = 'degree of east longitude'
 
-def _MSMp_to_binary(nc, var):
-    # <class 'numpy.ma.core.MaskedArray'>
-    # .data = <class 'numpy.ndarray'>
-    # time(8) -> p(16) -> lat(253) -> lon(241)
-    lon=nc.variables['lon'][:]
-    lat=nc.variables['lat'][:]
-    p=nc.variables['p'][:]
-    time=nc.variables['time'][:]
-    v=nc.variables[var][:][:][:][:]
-    return
+    lat = nc.createVariable('lat', dtype('double').char, ('eta', 'xi'))
+    lat.long_name = 'north latitude'
+    lat.units = 'degree of north latitude'
 
-def _MSMs_to_binary(nc, var):
-    # <class 'numpy.ma.core.MaskedArray'>
-    # .data = <class 'numpy.ndarray'>
-    # time(24) -> lat(505) -> lon(481)
-    lon=nc.variables['lon'][:]
-    lat=nc.variables['lat'][:]
-    time=nc.variables['time'][:]
-    v=nc.variables[var][:][:][:]
+    var = nc.createVariable('varname', dtype('double').char, ('ntime', 'eta', 'xi'))
+    var.long_name = 'test variable'
+    var.units = 'unit of test variable'
+
+    # 最後に，予め np.ndarray 等で作成しておいた値を代入します．
+
+    time[:] = time_out
+    lon[:,:] = lon_out
+    lat[:,:] = lat_out
+    var[:,:,:] = var_out
+
     nc.close()
-    return
-  
