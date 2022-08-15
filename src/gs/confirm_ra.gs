@@ -1,18 +1,28 @@
+'open /home/jjthomson/fdrive/ra/ra.ctl'
+*'sdfopen /home/jjthomson/fdrive/ra/ra202007_lonlat.nc'
 'q ctlinfo'
-'sdfopen /home/jjthomson/fdrive/ra/ra202007_lonlat.nc'
 
 'set grads off'
 'set background 1'
 'set mpdset hires'
 'set gxout shaded'
-'set lon 128 132'
-'set lat 30 34'
-'set t 1'
+'set lon 128 132.5'
+'set lat 30 34.5'
+*'set t 1'
 
-'color.gs 200 300 10 -kind white->rainbow'
+t=1
+while(t<=249)
 
-'d rain'
+'set t 't
+'color.gs 0 200 20 -kind white->rainbow'
+'d ra'
 
-'gxprint /home/jjthomson/master-core/img/confim_ra.png'
+'xcbar 1.8 8.8 2.0 2.15 -edge triangle -fh 0.1 -ft 4 -fw 0.07 -line on'
+
+'gxprint ../test/confirm_ra(t='t').png'
+'c'
+
+t=t+1
+endwhile
 
 'reinit'

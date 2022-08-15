@@ -1,12 +1,13 @@
 import sys
 sys.path.append('../')
 from module import netcdf
+import netCDF4
 
 class ConvertedMSMs:
-    def __init__(self, nc) -> None:
-        self.nc = nc
-        self.lat, self.lon = self.getLatLon(nc)
-        self.r1h = self.getRain(nc)
+    def __init__(self, file) -> None:
+        self.nc = netCDF4.Dataset(file)
+        self.lat, self.lon = self.getLatLon(self.nc)
+        self.r1h = self.getRain(self.nc)
         pass
 
     def getLatLon(self, nc):
