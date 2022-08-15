@@ -1,12 +1,14 @@
+import netCDF4
+
 class MSMp:
-    def __init__(self, nc) -> None:
-        self.nc = nc
-        self.lat, self.lon = self.getLatLon(nc)
-        self.u, self.v = self.getWind(nc)
-        self.rh = self.getRelativeHumidity(nc)
-        self.temp = self.getTemperature(nc)
-        self.w = self.getVerticalVelocity(nc)
-        self.z = self.getGeopotentialHeight(nc)
+    def __init__(self, file) -> None:
+        self.nc = netCDF4.Dataset(file)
+        self.lat, self.lon = self.getLatLon(self.nc)
+        self.u, self.v = self.getWind(self.nc)
+        self.rh = self.getRelativeHumidity(self.nc)
+        self.temp = self.getTemperature(self.nc)
+        self.w = self.getVerticalVelocity(self.nc)
+        self.z = self.getGeopotentialHeight(self.nc)
         pass
 
     def getLatLon(self, nc):
