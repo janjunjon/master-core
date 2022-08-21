@@ -7,8 +7,8 @@ filename='/home/jjthomson/fdrive/ra/ra202007_lonlat.nc'
 'set undef dfile'
 'set fwrite 'filename
 
-'set lon 128 132'
-'set lat 30 34'
+'set lon 127 133'
+'set lat 29 35'
 'set t 1 249'
 
 'define rain = ra'
