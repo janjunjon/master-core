@@ -1,4 +1,3 @@
-from itertools import accumulate
 import netCDF4
 import numpy as np
 from numpy import dtype
@@ -16,7 +15,7 @@ def config_netCDF(nc, var=None):
         config = nc[var]
     return config
 
-def convertMSMsResolution(v_array):
+def _convertMSMsResolution(v_array):
     normal_array_with_time = []
     for time_a in v_array:
         lat_a = []
@@ -39,10 +38,10 @@ def _returnConvertedLatLon(nc):
         convertedLon.append(lon[j])
     return [convertedLat, convertedLon]
 
-def convertMSMsTo3hours(nc, var='r1h'):
+def _convertMSMsTo3hours(nc, var='r1h'):
     v_array = nc.variables[var][:][:][:].tolist()
-    normal_array_with_time = convertMSMsResolution(v_array)
-    accumulate3hours = []    
+    normal_array_with_time = _convertMSMsResolution(v_array)
+    accumulate3hours = []
     for i in range(0, 24, 3):
         lat_a = []
         for j in range(0, 253):
@@ -55,18 +54,33 @@ def convertMSMsTo3hours(nc, var='r1h'):
         accumulate3hours.append(lat_a)
     return accumulate3hours
 
-def makeNetCDF():
+def _convertMSMsWithNoAcumulation(nc, var='r1h'):
+    v_array = nc.variables[var][:][:][:].tolist()
+    normal_array_with_time = _convertMSMsResolution(v_array)
+    accumulate3hours = []
+    for i in range(0, 24, 1):
+        lat_a = []
+        for j in range(0, 253):
+            lon_a = []
+            for k in range(0, 241):
+                lon_a.append(
+                    normal_array_with_time[i][j][k]
+                )
+            lat_a.append(lon_a)
+        accumulate3hours.append(lat_a)
+    return accumulate3hours
 
-    # オブジェクトを作成し，各次元数を設定します．
+def test():
+    nc = read_netCDF('/home/jjthomson/fdrive/nc/data/s20200703.nc')
+    lat, lon = _returnConvertedLatLon(nc)
+    r1h = _convertMSMsWithNoAcumulation(nc)
+    draw.drawMapByArray(r1h, lat, lon, 0, '/home/jjthomson/master-core/img/test_MSMs20200703.png')
 
+def makeNetCDF(filename):
     nc = netCDF4.Dataset('filename.nc', 'w', format='NETCDF3_CLASSIC')
-    nc.createDimension('ntime', len(time_out))  # e.g. time_out = [0, 1, ...]
-    # nc.createDimensions('ntime', None)        # unlimitedにする場合
-    nc.createDimension('xi', x)                 # e.g. x = 10
-    nc.createDimension('eta', y)                # e.g. y = 10
-
-    # その後，各変数を定義します．
-    # 以下の例では，時間，緯度，経度，3次元変数を定義します．
+    nc.createDimension('ntime', len(time_out))
+    nc.createDimension('xi', x)
+    nc.createDimension('eta', y)
 
     time = nc.createVariable('time', dtype('int32').char, ('ntime',))
     time.long_name = 'time of test variable'
@@ -84,11 +98,13 @@ def makeNetCDF():
     var.long_name = 'test variable'
     var.units = 'unit of test variable'
 
-    # 最後に，予め np.ndarray 等で作成しておいた値を代入します．
-
     time[:] = time_out
     lon[:,:] = lon_out
     lat[:,:] = lat_out
     var[:,:,:] = var_out
 
     nc.close()
+
+def arrayToBinary(arr, path):
+    nd_arr = np.array(arr)
+    np.save(path, nd_arr)

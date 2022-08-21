@@ -28,7 +28,7 @@ def drawMapByArray(v_array, v_lat, v_lon, t, path):
     Lo = np.array(v_lon)
     Lon, Lat = np.meshgrid(Lo, La)
     fig = plt.figure(figsize=(10, 10))
-    interval = list(np.arange(100, 300, 20))
+    interval = list(np.arange(0, 100, 10))
     interval.insert(0, 0.1)
     cmap = cm.jet
     cmap.set_under('w', alpha=0)
@@ -38,7 +38,7 @@ def drawMapByArray(v_array, v_lat, v_lon, t, path):
     cb = basemap.colorbar(im, "right", size="2.5%")
     plt.show()
     plt.savefig(os.path.expanduser(path))
-    plt.close()   
+    plt.close()
 
 def return_basemap():
     m=Basemap(
