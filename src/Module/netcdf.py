@@ -58,7 +58,7 @@ def _convertMSMsWithNoAcumulation(nc, var='r1h'):
     v_array = nc.variables[var][:][:][:].tolist()
     normal_array_with_time = _convertMSMsResolution(v_array)
     accumulate3hours = []
-    for i in range(0, 24, 1):
+    for i in range(0, 24, 3):
         lat_a = []
         for j in range(0, 253):
             lon_a = []
@@ -74,7 +74,8 @@ def test():
     nc = read_netCDF('/home/jjthomson/fdrive/nc/data/s20200703.nc')
     lat, lon = _returnConvertedLatLon(nc)
     r1h = _convertMSMsWithNoAcumulation(nc)
-    draw.drawMapByArray(r1h, lat, lon, 0, '/home/jjthomson/master-core/img/test_MSMs20200703.png')
+    path = '/home/jjthomson/fdrive/nc/conveted/test2.nc'
+    makeNetcdfFile(path, lon, lat, range(1, 25, 3), r1h)
 
 def makeNetcdfFile(path, lonList, latList, timeList, rainList):
     nc = netCDF4.Dataset(path, "w", format="NETCDF4")
