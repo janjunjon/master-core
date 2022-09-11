@@ -13,6 +13,7 @@ class NetCDF:
         self.dimensions = self.nc.dimensions
         self.variables = self.nc.variables
         self.filename = path.split('/')[-1].split('.')[0]
+        self.MSMRange = [120, 150, 22.4, 47.6]
 
     def makeNetcdfFile(self, path, lonList, latList, timeList, rainList):
         nc = netCDF4.Dataset(path, "w", format="NETCDF4")
@@ -35,7 +36,7 @@ class NetCDF:
         time.unit = 'hours since {}'.format(self.filename)
         time.standard_name = 'time'
 
-        rain = nc.createVariable("rain", dtype('float32'), ("time", "lat", "lon"))
+        rain = nc.createVariable("rain", dtype('int16'), ("time", "lat", "lon"))
         rain.scale_factor = 0.006116208155
         rain.add_offset = 200.0
         rain.long_name = 'rainfall in 1 hour'
@@ -55,7 +56,7 @@ class NetCDF:
         Lo = np.array(v_lon)
         Lon, Lat = np.meshgrid(Lo, La)
         fig = plt.figure(figsize=(10, 10))
-        interval = list(np.arange(100, 300, 20))
+        interval = list(np.arange(10, 100, 10))
         interval.insert(0, 0.1)
         cmap = cm.jet
         cmap.set_under('w', alpha=0)
@@ -67,14 +68,15 @@ class NetCDF:
         plt.savefig(os.path.expanduser(path))
         plt.close()
 
-    def _return_basemap():
+    def _return_basemap(self):
+        llcrnrlon, urcrnrlon, llcrnrlat, urcrnrlat = self.MSMRange
         m=Basemap(
             projection='cyl',
             resolution='i',
-            llcrnrlat=30,
-            urcrnrlat=35,
-            llcrnrlon=128,
-            urcrnrlon=133
+            llcrnrlat=llcrnrlat,
+            urcrnrlat=urcrnrlat,
+            llcrnrlon=llcrnrlon,
+            urcrnrlon=urcrnrlon
         )
         m.drawcoastlines(color='black')
         m.drawmeridians(np.arange(128,133,0.5))

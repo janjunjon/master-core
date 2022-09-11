@@ -1,6 +1,5 @@
-from models import MSMs, MSMp, ConvertedMSMs
-from module import netcdf
-
+from netCDF import MSMs, MSMp, ConvertedMSMs
+from Module import netcdf
 
 def main():
     return
