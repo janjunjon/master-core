@@ -3,7 +3,7 @@ from netCDF.NetCDF import NetCDF
 
 class ConvertedMSMs(NetCDF):
     def __init__(self, file) -> None:
-        super().__init__()
+        super().__init__(file)
         self.nc = netCDF4.Dataset(file, format="NETCDF3_CLASSIC")
         self.lat, self.lon = self.getLatLon()
         # 0,3,6,9,12,15,18,21時は欠損
