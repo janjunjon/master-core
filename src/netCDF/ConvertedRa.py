@@ -43,23 +43,6 @@ class ConvertedRa(NetCDF):
             normal_array_with_time.append(lat_a)
         return normal_array_with_time
 
-    def _convertRaRain_(self, var='rain'):
-        v_array = self.nc.variables[var][:][:][:].tolist()
-        print(len(v_array[:]), len(v_array[:][:]), len(v_array[:][:][:]))
-        normal_array_with_time = self._convertResolution(v_array)
-        convertedRain = []    
-        for i in range(0, 8):
-            lat_a = []
-            for j in range(0, len(normal_array_with_time[:])):
-                lon_a = []
-                for k in range(0, len(normal_array_with_time[:][:])):
-                    lon_a.append(
-                        normal_array_with_time[i][j][k]
-                    )
-                lat_a.append(lon_a)
-            convertedRain.append(lat_a)
-        return convertedRain
-
     def _convertRaRain(self):
         rain = ma.masked_values(self.nc.variables['rain'], value=-9999)
         convertedRain = []    
