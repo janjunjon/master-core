@@ -98,7 +98,7 @@ def makeNetcdfFile(path, lonList, latList, timeList, rainList):
     time.unit = 'hours since 2020-07-03 00:00:00+00:00'
     time.standard_name = 'time'
 
-    rain = nc.createVariable("rain", dtype('float32'), ("time", "lat", "lon"))
+    rain = nc.createVariable("rain", dtype('int16'), ("time", "lat", "lon"))
     rain.scale_factor = 0.006116208155
     rain.add_offset = 200.0
     rain.long_name = 'rainfall in 1 hour'
