@@ -7,7 +7,7 @@ from numpy import dtype
 class Execution:
     def __init__(self) -> None:
         self.nc_Ra = NetCDF('/home/jjthomson/fdrive/ra/ra.nc')
-        self.nc_MSMs = NetCDF('/home/jjthomson/fdrive/nc/MSMs.nc')
+        self.nc_MSMs = NetCDF('/home/jjthomson/fdrive/nc/reversedMSMs.nc')
         self.rain_Ra = self.nc_Ra.variables['rain'][:][:][:].tolist()
         self.rain_MSMs = self.nc_MSMs.variables['rain'][:][:][:].tolist()
         self.lat = self.nc_Ra.variables['lat'][:].tolist()

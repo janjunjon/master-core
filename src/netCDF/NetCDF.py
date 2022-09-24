@@ -79,6 +79,6 @@ class NetCDF:
             urcrnrlon=urcrnrlon
         )
         m.drawcoastlines(color='black')
-        m.drawmeridians(np.arange(128,133,0.5))
-        m.drawparallels(np.arange(30,35,0.5))
+        # m.drawmeridians(np.arange(128,133,0.5))
+        # m.drawparallels(np.arange(30,35,0.5))
         return m
