@@ -18,7 +18,7 @@ class Regression(SKLearn):
         super().__init__()
         self.nc_rains = NetCDF('/home/jjthomson/fdrive/rains.nc')
         self.nc_MSMp = NetCDF('/home/jjthomson/fdrive/nc/LowLoadMSMp.nc')        
-        self.save_path = '{}/var/MLModels/SDGRegressor_HeavyRain'.format(self.root_path)
+        self.save_path = '{}/var/MLModels/LinearRegression_HeavyRain'.format(self.root_path)
 
         self.rain_Ra = self.nc_rains.variables['rain_Ra'][:][:][:].tolist()
         self.rain_MSMs = self.nc_rains.variables['rain_MSMs'][:][:][:].tolist()
@@ -31,13 +31,14 @@ class Regression(SKLearn):
     def main(self):
         X, Y = self.getData()
         X_train, X_test, Y_train, Y_test = self.getDistributedData(X, Y)
-        model = linear_model.LinearRegression(max_iter=1000)
+        model = linear_model.LinearRegression()
         model.fit(X_train, Y_train)
         
         pred_model=model.predict(X_test)
         r2_lr = r2_score(Y_test, pred_model)
         mae_lr = mean_absolute_error(Y_test, pred_model)
         scores = cross_validation.cross_val_score(model, X, Y)
+        RMS=np.mean((pred_model - Y_test) ** 2)
 
         print('Cross-Validation scores: {}'.format(scores))
         print('Test set score: {}'.format(model.score(X_test, Y_test)))
@@ -45,6 +46,7 @@ class Regression(SKLearn):
         print("MAE : %.3f" % mae_lr)
         print("Coef = ", model.coef_)
         print("Intercept =", model.intercept_)
+        print("RMS: {}".format(RMS))
 
         with open('{}.txt'.format(self.save_path), 'w') as f:
             f.write(
@@ -55,6 +57,7 @@ class Regression(SKLearn):
                 MAE: {mae_lr}
                 Coef: {model.coef_}
                 Intercept: {model.intercept_}
+                RMS: {RMS}
                 '''
             )
 
@@ -64,9 +67,7 @@ class Regression(SKLearn):
         plt.show
         # plt.savefig('./test3.png')
 
-        print("\n「RMだけの平均2乗誤差」と「全部を使用したときの平均二乗誤差」")
-        RMS=np.mean((pred_model - Y_test) ** 2)
-        print(RMS)
+        
 
         self.saveModel(model, '{}.sav'.format(self.save_path))
 
