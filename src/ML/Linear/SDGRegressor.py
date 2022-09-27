@@ -17,7 +17,8 @@ class Regression(SKLearn):
     def __init__(self):
         super().__init__()
         self.nc_rains = NetCDF('/home/jjthomson/fdrive/rains.nc')
-        self.nc_MSMp = NetCDF('/home/jjthomson/fdrive/nc/LowLoadMSMp.nc')
+        self.nc_MSMp = NetCDF('/home/jjthomson/fdrive/nc/LowLoadMSMp.nc')        
+        self.save_path = '{}/var/MLModels/SDGRegressor_HeavyRain'.format(self.root_path)
 
         self.rain_Ra = self.nc_rains.variables['rain_Ra'][:][:][:].tolist()
         self.rain_MSMs = self.nc_rains.variables['rain_MSMs'][:][:][:].tolist()
@@ -45,27 +46,38 @@ class Regression(SKLearn):
         print("Coef = ", model.coef_)
         print("Intercept =", model.intercept_)
 
+        with open('{}.txt'.format(self.save_path), 'w') as f:
+            f.write(
+                f'''
+                Cross-Validation scores: {scores})
+                Test set score: {model.score(X_test, Y_test)}
+                R2: {r2_lr}
+                MAE: {mae_lr}
+                Coef: {model.coef_}
+                Intercept: {model.intercept_}
+                '''
+            )
+
         plt.scatter(Y_test, pred_model, c='r', marker='s',label="ALL")
         plt.legend()
         plt.hlines(y=0, xmin=0, xmax=50, colors='black')
         plt.show
-        plt.savefig('./test3.png')
+        # plt.savefig('./test3.png')
 
         print("\n「RMだけの平均2乗誤差」と「全部を使用したときの平均二乗誤差」")
         RMS=np.mean((pred_model - Y_test) ** 2)
         print(RMS)
-        
-        save_path = '{}/var/MLModels/SDGRegressor_HeavyRain.sav'.format(self.root_path)
-        self.saveModel(model, save_path)
+
+        self.saveModel(model, '{}.sav'.format(self.save_path))
 
     def getData(self):
-        # self.rain_Ra = np.ravel(self.rain_Ra[0])
-        # self.rain_MSMs = np.ravel(self.rain_MSMs[0])
-        # self.w = np.ravel(self.w[0])
-        # self.u = np.ravel(self.u[0])
-        # self.v = np.ravel(self.v[0])
-        # self.temp = np.ravel(self.temp[0])
-        # self.rh = np.ravel(self.rh[0])
+        # self.rain_Ra = np.ravel(self.rain_Ra[0:56])
+        # self.rain_MSMs = np.ravel(self.rain_MSMs[0:56])
+        # self.w = np.ravel(self.w[0:56])
+        # self.u = np.ravel(self.u[0:56])
+        # self.v = np.ravel(self.v[0:56])
+        # self.temp = np.ravel(self.temp[0:56])
+        # self.rh = np.ravel(self.rh[0:56])
         d = MLData([
             self.rain_Ra,
             self.rain_MSMs,
@@ -85,20 +97,22 @@ class Regression(SKLearn):
         self.rh = Data[6]
         Y = []
         X = []
+        print(len(self.rain_Ra))
         for i in range(len(self.rain_Ra)):
-            Y_arr = [
-                self.rain_Ra[i]
-            ]
-            X_arr = [
-                self.rain_MSMs[i],
-                self.w[i],
-                self.u[i],
-                self.v[i],
-                self.temp[i],
-                self.rh[i]
-            ]
-            Y.append(Y_arr)
-            X.append(X_arr)
+            if self.rain_Ra[i] > 0 and self.rain_MSMs[i] > 0:
+                Y_arr = [
+                    self.rain_Ra[i]
+                ]
+                X_arr = [
+                    self.rain_MSMs[i],
+                    self.w[i],
+                    self.u[i],
+                    self.v[i],
+                    self.temp[i],
+                    self.rh[i]
+                ]
+                Y.append(Y_arr)
+                X.append(X_arr)
         print('X length:', len(X), 'X components length:', len(X[0]), 'Y length:', len(Y))
         sc=preprocessing.StandardScaler()
         sc.fit(X)
@@ -109,6 +123,5 @@ class Regression(SKLearn):
 
     def getDistributedData(self, X, Y):
         X_train, X_test, Y_train, Y_test = cross_validation.train_test_split(X, Y, test_size=0.2, random_state=0)
-        print(type(X_train), X_train, X_test, Y_train, Y_test)
         return X_train, X_test, Y_train, Y_test
 

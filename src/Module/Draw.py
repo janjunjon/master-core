@@ -29,7 +29,24 @@ class Draw:
         Lo = np.array(v_lon)
         Lon, Lat = np.meshgrid(Lo, La)
         fig = plt.figure(figsize=(10, 10))
-        interval = list(np.arange(0, 100, 10))
+        interval = list(np.arange(0, 65, 5))
+        cmap = cm.jet
+        cmap.set_under('w', alpha=0)
+        basemap = self.return_basemap(region)
+        x, y = basemap(Lon, Lat)
+        im=plt.contourf(x, y, var, interval, cmap=cmap, latlon=True)
+        cb = basemap.colorbar(im, "right", size="2.5%")
+        plt.show()
+        plt.savefig(os.path.expanduser(path))
+        plt.close()
+
+    def drawMapByArrayNotMultidimensional(self, v_array, v_lat, v_lon, path, region):
+        var = np.array(v_array)
+        La = np.array(v_lat)
+        Lo = np.array(v_lon)
+        Lon, Lat = np.meshgrid(Lo, La)
+        fig = plt.figure(figsize=(10, 10))
+        interval = list(np.arange(0, 65, 5))
         cmap = cm.jet
         cmap.set_under('w', alpha=0)
         basemap = self.return_basemap(region)
