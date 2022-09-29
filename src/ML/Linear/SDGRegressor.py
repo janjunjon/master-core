@@ -38,6 +38,7 @@ class Regression(SKLearn):
         r2_lr = r2_score(Y_test, pred_model)
         mae_lr = mean_absolute_error(Y_test, pred_model)
         scores = cross_validation.cross_val_score(model, X, Y)
+        RMS=np.mean((pred_model - Y_test) ** 2)
 
         print('Cross-Validation scores: {}'.format(scores))
         print('Test set score: {}'.format(model.score(X_test, Y_test)))
@@ -45,6 +46,7 @@ class Regression(SKLearn):
         print("MAE : %.3f" % mae_lr)
         print("Coef = ", model.coef_)
         print("Intercept =", model.intercept_)
+        print("RMS: {}".format(RMS))
 
         with open('{}.txt'.format(self.save_path), 'w') as f:
             f.write(
@@ -55,6 +57,7 @@ class Regression(SKLearn):
                 MAE: {mae_lr}
                 Coef: {model.coef_}
                 Intercept: {model.intercept_}
+                RMS: {RMS}
                 '''
             )
 
@@ -68,7 +71,7 @@ class Regression(SKLearn):
         RMS=np.mean((pred_model - Y_test) ** 2)
         print(RMS)
 
-        self.saveModel(model, '{}.sav'.format(self.save_path))
+        # self.saveModel(model, '{}.sav'.format(self.save_path))
 
     def getData(self):
         # self.rain_Ra = np.ravel(self.rain_Ra[0:56])
