@@ -7,7 +7,6 @@ from sklearn.metrics import r2_score
 from sklearn.metrics import mean_absolute_error
 import sklearn
 sklearn.__version__
-import pickle
 
 from ML.Abstract import SKLearn
 from netCDF.NetCDF import NetCDF
@@ -18,7 +17,7 @@ class Regression(SKLearn):
         super().__init__()
         self.nc_rains = NetCDF('/home/jjthomson/fdrive/rains.nc')
         self.nc_MSMp = NetCDF('/home/jjthomson/fdrive/nc/LowLoadMSMp.nc')        
-        self.save_path = '{}/var/MLModels/SDGRegressor_HeavyRain'.format(self.root_path)
+        self.save_path = '{}/var/MLModels/Lasso_all'.format(self.root_path)
 
         self.rain_Ra = self.nc_rains.variables['rain_Ra'][:][:][:].tolist()
         self.rain_MSMs = self.nc_rains.variables['rain_MSMs'][:][:][:].tolist()
@@ -31,14 +30,14 @@ class Regression(SKLearn):
     def main(self):
         X, Y = self.getData()
         X_train, X_test, Y_train, Y_test = self.getDistributedData(X, Y)
-        model = linear_model.SGDRegressor(max_iter=1000)
+        model = linear_model.Lasso(max_iter=1000)
         model.fit(X_train, Y_train)
         
         pred_model=model.predict(X_test)
         r2_lr = r2_score(Y_test, pred_model)
         mae_lr = mean_absolute_error(Y_test, pred_model)
-        scores = cross_validation.cross_val_score(model, X, Y, cv=5)
-        RMSE=self.calcRMSE(pred_model, Y_test)
+        scores = cross_validation.cross_val_score(model, X, Y)
+        RMS=self.calcRMSE(pred_model, Y_test)
 
         print('Cross-Validation scores: {}'.format(scores))
         print('Test set score: {}'.format(model.score(X_test, Y_test)))
@@ -46,7 +45,7 @@ class Regression(SKLearn):
         print("MAE : %.3f" % mae_lr)
         print("Coef = ", model.coef_)
         print("Intercept =", model.intercept_)
-        print("RMSE: {}".format(RMSE))
+        print("RMS: {}".format(RMS))
 
         with open('{}.txt'.format(self.save_path), 'w') as f:
             f.write(
@@ -60,7 +59,7 @@ class Regression(SKLearn):
                 MAE: {mae_lr}
                 Coef: {model.coef_}
                 Intercept: {model.intercept_}
-                RMSE: {RMSE}
+                RMS: {RMS}
                 '''
             )
 
@@ -73,30 +72,30 @@ class Regression(SKLearn):
         self.saveModel(model, '{}.sav'.format(self.save_path))
 
     def getData(self):
-        # self.rain_Ra = np.ravel(self.rain_Ra[:][:][:])
-        # self.rain_MSMs = np.ravel(self.rain_MSMs[:][:][:])
-        # self.w = np.ravel(self.w[:][:][:])
-        # self.u = np.ravel(self.u[:][:][:])
-        # self.v = np.ravel(self.v[:][:][:])
-        # self.temp = np.ravel(self.temp[:][:][:])
-        # self.rh = np.ravel(self.rh[:][:][:])
-        d = MLData([
-            self.rain_Ra,
-            self.rain_MSMs,
-            self.w,
-            self.u,
-            self.v,
-            self.temp,
-            self.rh
-        ])
-        Data = d.main()
-        self.rain_Ra = Data[0]
-        self.rain_MSMs = Data[1]
-        self.w = Data[2]
-        self.u = Data[3]
-        self.v = Data[4]
-        self.temp = Data[5]
-        self.rh = Data[6]
+        self.rain_Ra = np.ravel(self.rain_Ra[:][:][:])
+        self.rain_MSMs = np.ravel(self.rain_MSMs[:][:][:])
+        self.w = np.ravel(self.w[:][:][:])
+        self.u = np.ravel(self.u[:][:][:])
+        self.v = np.ravel(self.v[:][:][:])
+        self.temp = np.ravel(self.temp[:][:][:])
+        self.rh = np.ravel(self.rh[:][:][:])
+        # d = MLData([
+        #     self.rain_Ra,
+        #     self.rain_MSMs,
+        #     self.w,
+        #     self.u,
+        #     self.v,
+        #     self.temp,
+        #     self.rh
+        # ])
+        # Data = d.main()
+        # self.rain_Ra = Data[0]
+        # self.rain_MSMs = Data[1]
+        # self.w = Data[2]
+        # self.u = Data[3]
+        # self.v = Data[4]
+        # self.temp = Data[5]
+        # self.rh = Data[6]
         Y = []
         X = []
         print(len(self.rain_Ra))
@@ -131,5 +130,5 @@ class Regression(SKLearn):
         X = pred_model
         Y = Y_test
         deviation = [(x - y) ** 2 for (x, y) in zip(X, Y)]
-        RMSE = pow(np.mean(deviation), 0.5)
+        RMSE = np.mean(deviation)
         return RMSE
