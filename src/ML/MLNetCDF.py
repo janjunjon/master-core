@@ -1,3 +1,4 @@
+from os import pread
 from ML.Abstract import SKLearn
 from Module.Draw import Draw
 
@@ -28,11 +29,9 @@ class MLNetCDF(SKLearn):
         X, Y = self.shapeData()
         predicted = self.model.predict(X)
         predicted = np.array(predicted)
-        for i in range(len(predicted)):
-            if self.rain_MSMs[i] < 5:
-                predicted[i] = 0
-            if self.rain_MSMs[i] < 10:
-                predicted[i] = self.rain_MSMs[i]
+        # for i in range(len(predicted)):
+        #     if self.rain_MSMs[i] < 10:
+        #         predicted[i] = self.rain_MSMs[i]
         predicted = predicted.reshape([253, 241])
         self.predicted = predicted
         print(self.calcRMSE())
@@ -40,26 +39,26 @@ class MLNetCDF(SKLearn):
 
     def shapeData(self):
         i = self.predicted_time_step
-        self.rain_Ra = np.ravel(self.rain_Ra[i])
-        self.rain_MSMs = np.ravel(self.rain_MSMs[i])
-        self.w = np.ravel(self.w[i])
-        self.u = np.ravel(self.u[i])
-        self.v = np.ravel(self.v[i])
-        self.temp = np.ravel(self.temp[i])
-        self.rh = np.ravel(self.rh[i])
+        rain_Ra = np.ravel(self.rain_Ra[i])
+        rain_MSMs = np.ravel(self.rain_MSMs[i])
+        w = np.ravel(self.w[i])
+        u = np.ravel(self.u[i])
+        v = np.ravel(self.v[i])
+        temp = np.ravel(self.temp[i])
+        rh = np.ravel(self.rh[i])
         Y = []
         X = []
-        for i in range(len(self.rain_Ra)):
+        for i in range(len(rain_Ra)):
             Y_arr = [
-                self.rain_Ra[i]
+                rain_Ra[i]
             ]
             X_arr = [
-                self.rain_MSMs[i],
-                self.w[i],
-                self.u[i],
-                self.v[i],
-                self.temp[i],
-                self.rh[i]
+                rain_MSMs[i],
+                w[i],
+                u[i],
+                v[i],
+                temp[i],
+                rh[i]
             ]
             Y.append(Y_arr)
             X.append(X_arr)
@@ -80,6 +79,6 @@ class MLNetCDF(SKLearn):
         X = np.ravel(self.rain_Ra[t])
         # Y = np.ravel(self.rain_MSMs[t])
         Y = np.ravel(self.predicted)
-        deviation = [(x - y) ** 2 for (x, y) in zip(X, Y)]
-        RMSE = np.mean(deviation)
+        deviation = np.array([(x - y) ** 2 for (x, y) in zip(X, Y)])
+        RMSE = pow(np.mean(deviation), 0.5)
         return RMSE

@@ -53,6 +53,9 @@ class Regression(SKLearn):
         with open('{}.txt'.format(self.save_path), 'w') as f:
             f.write(
                 f'''
+                X length:, {len(X)}
+                X components length: {len(X[0])}
+                Y length: {len(Y)}
                 Cross-Validation scores: {scores})
                 Test set score: {model.score(X_test, Y_test)}
                 R2: {r2_lr}

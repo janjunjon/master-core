@@ -18,7 +18,7 @@ class Regression(SKLearn):
         super().__init__()
         self.nc_rains = NetCDF('/home/jjthomson/fdrive/rains.nc')
         self.nc_MSMp = NetCDF('/home/jjthomson/fdrive/nc/LowLoadMSMp.nc')        
-        self.save_path = '{}/var/MLModels/LinearRegression_HeavyRain'.format(self.root_path)
+        self.save_path = '{}/var/MLModels/LinearRegression_all'.format(self.root_path)
 
         self.rain_Ra = self.nc_rains.variables['rain_Ra'][:][:][:].tolist()
         self.rain_MSMs = self.nc_rains.variables['rain_MSMs'][:][:][:].tolist()
@@ -38,7 +38,7 @@ class Regression(SKLearn):
         r2_lr = r2_score(Y_test, pred_model)
         mae_lr = mean_absolute_error(Y_test, pred_model)
         scores = cross_validation.cross_val_score(model, X, Y)
-        RMS=np.mean((pred_model - Y_test) ** 2)
+        RMS=self.calcRMSE(pred_model, Y_test)
 
         print('Cross-Validation scores: {}'.format(scores))
         print('Test set score: {}'.format(model.score(X_test, Y_test)))
@@ -51,6 +51,9 @@ class Regression(SKLearn):
         with open('{}.txt'.format(self.save_path), 'w') as f:
             f.write(
                 f'''
+                X length:, {len(X)}
+                X components length: {len(X[0])}
+                Y length: {len(Y)}
                 Cross-Validation scores: {scores})
                 Test set score: {model.score(X_test, Y_test)}
                 R2: {r2_lr}
@@ -67,35 +70,33 @@ class Regression(SKLearn):
         plt.show
         # plt.savefig('./test3.png')
 
-        
-
         self.saveModel(model, '{}.sav'.format(self.save_path))
 
     def getData(self):
-        # self.rain_Ra = np.ravel(self.rain_Ra[0:56])
-        # self.rain_MSMs = np.ravel(self.rain_MSMs[0:56])
-        # self.w = np.ravel(self.w[0:56])
-        # self.u = np.ravel(self.u[0:56])
-        # self.v = np.ravel(self.v[0:56])
-        # self.temp = np.ravel(self.temp[0:56])
-        # self.rh = np.ravel(self.rh[0:56])
-        d = MLData([
-            self.rain_Ra,
-            self.rain_MSMs,
-            self.w,
-            self.u,
-            self.v,
-            self.temp,
-            self.rh
-        ])
-        Data = d.main()
-        self.rain_Ra = Data[0]
-        self.rain_MSMs = Data[1]
-        self.w = Data[2]
-        self.u = Data[3]
-        self.v = Data[4]
-        self.temp = Data[5]
-        self.rh = Data[6]
+        self.rain_Ra = np.ravel(self.rain_Ra[:][:][:])
+        self.rain_MSMs = np.ravel(self.rain_MSMs[:][:][:])
+        self.w = np.ravel(self.w[:][:][:])
+        self.u = np.ravel(self.u[:][:][:])
+        self.v = np.ravel(self.v[:][:][:])
+        self.temp = np.ravel(self.temp[:][:][:])
+        self.rh = np.ravel(self.rh[:][:][:])
+        # d = MLData([
+        #     self.rain_Ra,
+        #     self.rain_MSMs,
+        #     self.w,
+        #     self.u,
+        #     self.v,
+        #     self.temp,
+        #     self.rh
+        # ])
+        # Data = d.main()
+        # self.rain_Ra = Data[0]
+        # self.rain_MSMs = Data[1]
+        # self.w = Data[2]
+        # self.u = Data[3]
+        # self.v = Data[4]
+        # self.temp = Data[5]
+        # self.rh = Data[6]
         Y = []
         X = []
         print(len(self.rain_Ra))
@@ -126,3 +127,9 @@ class Regression(SKLearn):
         X_train, X_test, Y_train, Y_test = cross_validation.train_test_split(X, Y, test_size=0.2, random_state=0)
         return X_train, X_test, Y_train, Y_test
 
+    def calcRMSE(self, pred_model, Y_test):
+        X = pred_model
+        Y = Y_test
+        deviation = [(x - y) ** 2 for (x, y) in zip(X, Y)]
+        RMSE = np.mean(deviation)
+        return RMSE
