@@ -9,7 +9,7 @@ class MLNetCDF(SKLearn):
     def __init__(self) -> None:
         super().__init__()
         self.model = self.loadModel('{}/var/MLModels/SDGRegressor_all.sav'.format(self.root_path))
-        self.save_path = '/home/jjthomson/fdrive/images/predict/predictedRain20200703_0300JST_HeavyRain02.png'
+        self.save_path = '/home/jjthomson/fdrive/images/predict/predictedRain20200703_0300JST_all02.png'
         self.region = [22, 48, 120, 150]
         self.predicted_time_step = 24
 
@@ -26,16 +26,18 @@ class MLNetCDF(SKLearn):
         self.rh = self.nc_MSMp.variables['rh'][:][:][:].tolist()
 
     def predict(self):
+        i = self.predicted_time_step
         X, Y = self.shapeData()
         predicted = self.model.predict(X)
         predicted = np.array(predicted)
-        # for i in range(len(predicted)):
-        #     if self.rain_MSMs[i] < 10:
-        #         predicted[i] = self.rain_MSMs[i]
+        rain_MSMs = np.ravel(self.rain_MSMs[i])
+        for i in range(len(predicted)):
+            if rain_MSMs[i] < 10:
+                predicted[i] = rain_MSMs[i]
         predicted = predicted.reshape([253, 241])
         self.predicted = predicted
         print(self.calcRMSE())
-        # self.makeFigure(self.predicted)
+        self.makeFigure(self.predicted)
 
     def shapeData(self):
         i = self.predicted_time_step

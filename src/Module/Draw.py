@@ -29,6 +29,7 @@ class Draw:
         Lo = np.array(v_lon)
         Lon, Lat = np.meshgrid(Lo, La)
         fig = plt.figure(figsize=(10, 10))
+        plt.rcParams['font.size'] = 16
         interval = list(np.arange(0, 65, 5))
         cmap = cm.jet
         cmap.set_under('w', alpha=0)
@@ -46,6 +47,7 @@ class Draw:
         Lo = np.array(v_lon)
         Lon, Lat = np.meshgrid(Lo, La)
         fig = plt.figure(figsize=(10, 10))
+        plt.rcParams['font.size'] = 16
         interval = list(np.arange(0, 65, 5))
         cmap = cm.jet
         cmap.set_under('w', alpha=0)
