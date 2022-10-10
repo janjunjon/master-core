@@ -1,4 +1,4 @@
-from netCDF.ConvertedMSMs import ConvertedMSMs
+from netCDF.ConvertedAllMSMs import ConvertedAllMSMs
 import os
 
 class Execution:
@@ -10,12 +10,13 @@ class Execution:
         for file in files:
             startString = file[0]
             if startString == 's':
-                nc = ConvertedMSMs('{}/{}'.format(self.path, file))
+                nc = ConvertedAllMSMs('{}/{}'.format(self.path, file))
                 savePath = file[1:9]
                 nc.makeNetcdfFile(
                     '/home/jjthomson/fdrive/nc/converted/{}.nc'.format(savePath),
                     nc.lon,
                     nc.lat,
                     nc.time,
-                    nc.rain
+                    nc.rain,
+                    nc.sp
                 )
