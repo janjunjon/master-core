@@ -1,5 +1,5 @@
 import numpy as np
-from windspharm.xarray import *
+from windspharm.standard import *
 import xarray
 
 from Abstract.Abstract import Abstract
@@ -7,12 +7,13 @@ from netCDF.NetCDF import NetCDF
 
 # 一旦保留
 class Calculation(Abstract):
-    def __init__(self, path) -> None:
+    def __init__(self) -> None:
         super().__init__()
         self.MSMp = NetCDF('/home/jjthomson/fdrive/nc/data/p20200701.nc')
         self.ConvertedMSMs = NetCDF('/home/jjthomson/fdrive/nc/converted/20200701.nc')
         self.sp = np.array(self.ConvertedMSMs.variables['sp'][:][:][:].tolist())
-        self.lat = np.array(self.MSMp.variables['lat'][:].tolist())
+        lat = self.MSMp.variables['lat'][:].tolist()
+        self.lat = np.array(lat)
         self.lon = np.array(self.MSMp.variables['lon'][:].tolist())
         self.p = np.array(self.MSMp.variables['p'][:].tolist())
         self.temp = np.array(self.MSMp.variables['temp'][:][:][:][:].tolist())
@@ -27,16 +28,16 @@ class Calculation(Abstract):
     def divergence(self, qu, qv):
         qu = xarray.DataArray(
             data=qu,
-            dims=['lat', 'lon'],
-            coords=[('lat', self.lat), ('lon', self.lon)]
+            dims=['latitude', 'longitude'],
+            coords=[('latitude', self.lat), ('longitude', self.lon)]
         )
         qv = xarray.DataArray(
             data=qv,
-            dims=['lat', 'lon'],
-            coords=[('lat', self.lat), ('lon', self.lon)]
+            dims=['latitude', 'longitude'],
+            coords=[('latitude', self.lat), ('longitude', self.lon)]
         )
-        w = VectorWind(qu, qv)
-        DIV = w.divergence()
+        w = VectorWind(qu, qv, gridtype='regular')
+        DIV = w.divergence(truncation=13)
         # U = np.ravel(qu)
         # V = np.ravel(qv)
         # DIV = []
@@ -67,11 +68,13 @@ class Calculation(Abstract):
                 x = 0
             X.append(x)
         X = np.array(X).reshape(253, 241)
-        w = q * x * 100
+        w = q * X * 100
         qu = u * w
         qv = v * w
-        a = self.divergence(qu, qv)
-        return w, qu, qv, a
+        qu = np.ma.MaskedArray(qu)
+        qv = np.ma.MaskedArray(qv)
+        div = self.divergence(qu, qv)
+        return w, qu, qv, div
     
     def calc975hPa(self, time):
         p = 0
