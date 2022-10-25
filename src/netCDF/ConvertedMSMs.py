@@ -1,5 +1,7 @@
 import netCDF4
+
 from netCDF.NetCDF import NetCDF
+from Module.CreateNetCDFMSMs import *
 
 class ConvertedMSMs(NetCDF):
     def __init__(self, file) -> None:
@@ -8,17 +10,25 @@ class ConvertedMSMs(NetCDF):
         self.lat, self.lon = self.getLatLon()
         # 0,3,6,9,12,15,18,21時は欠損
         self.time = [1.0, 4.0, 7.0, 10.0, 13.0, 16.0, 19.0, 22.0]
-        self.rain = self.getRain()
         self.filename = file.split('/')[-1].split('.')[0]
         self.MSMRange = [120, 150, 22.4, 47.6]
+
+        self.rain = self._convertMSMsTo3hoursWithNoAccumulation()
+        self.psea = self._convertMSMsTo3hoursWithNoAccumulation(var='psea')
+        self.sp = self._convertMSMsTo3hoursWithNoAccumulation(var='sp')
+        self.u = self._convertMSMsTo3hoursWithNoAccumulation(var='u')
+        self.v = self._convertMSMsTo3hoursWithNoAccumulation(var='v')
+        self.temp = self._convertMSMsTo3hoursWithNoAccumulation(var='temp')
+        self.rh = self._convertMSMsTo3hoursWithNoAccumulation(var='rh')
+        self.ncld_upper = self._convertMSMsTo3hoursWithNoAccumulation(var='ncld_upper')
+        self.ncld_mid = self._convertMSMsTo3hoursWithNoAccumulation(var='ncld_mid')
+        self.ncld_low = self._convertMSMsTo3hoursWithNoAccumulation(var='ncld_low')
+        self.ncld = self._convertMSMsTo3hoursWithNoAccumulation(var='ncld')
+        self.dswrf = self._convertMSMsTo3hoursWithNoAccumulation(var='dswrf')
 
     def getLatLon(self):
         lat, lon = self._returnConvertedLatLon()
         return lat, lon
-
-    def getRain(self):
-        r1h = self._convertMSMsTo3hoursWithNoAccumulation()
-        return r1h
 
     def _convertMSMsResolution(self, v_array):
         normal_array_with_time = []
@@ -75,8 +85,8 @@ class ConvertedMSMs(NetCDF):
             accumulate3hours.append(lat_a)
         return accumulate3hours
 
-    def makeNetcdfFile(self, path, lonList, latList, timeList, rainList):
-        super().makeNetcdfFile(path, lonList, latList, timeList, rainList)
+    def makeNetcdfFile(self):
+        CreateNetCDFMSMs.makeNetcdfFile()
 
     def drawMapByArray(self, v_array, v_lat, v_lon, t, path):
         super().drawMapByArray(v_array, v_lat, v_lon, t, path)
