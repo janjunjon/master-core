@@ -6,14 +6,17 @@ from Abstract.Abstract import Abstract
 from netCDF.NetCDF import NetCDF
 
 class Calculation(Abstract):
-    def __init__(self) -> None:
+    def __init__(self, path_MSMp, path_ConvertedMSMs) -> None:
         super().__init__()
-        self.MSMp = NetCDF('/home/jjthomson/fdrive/nc/data/p20200701.nc')
-        self.ConvertedMSMs = NetCDF('/home/jjthomson/fdrive/nc/converted/20200701.nc')
+        # self.MSMp = NetCDF('/home/jjthomson/fdrive/nc/data/p20200701.nc')
+        # self.ConvertedMSMs = NetCDF('/home/jjthomson/fdrive/nc/converted/20200701.nc')        
+        self.MSMp = NetCDF(path_MSMp)
+        self.ConvertedMSMs = NetCDF(path_ConvertedMSMs)
         self.sp = np.array(self.ConvertedMSMs.variables['sp'][:][:][:].tolist())
         lat = self.MSMp.variables['lat'][:].tolist()
         self.lat = np.array(lat)
         self.lon = np.array(self.MSMp.variables['lon'][:].tolist())
+        self.time = np.array(self.MSMp.variables['time'][:].tolist())
         self.p = np.array(self.MSMp.variables['p'][:].tolist())
         self.temp = np.array(self.MSMp.variables['temp'][:][:][:][:].tolist())
         self.z = np.array(self.MSMp.variables['z'][:][:][:][:].tolist())
@@ -78,27 +81,18 @@ class Calculation(Abstract):
         DIV = (div1000 + div975 + div950 + div925 + div900 + div850 + div800 + div700 + div600 + div500 + div400 + div300 + div250 + div200 + div150 + div100) / 9.81 * 60 * 60 * 3
         return W, QU, QV, DIV
 
-    def shape(self, array):
-        array = np.array(array).reshape(253, 241)
-        return array
-    
-    def calc1000hPa(self, time):
-        i = 0
+    def calcVars(self, i, time, lower, upper):
         sp = np.ravel(self.sp[time, :, :] / 100)
-        pres = np.array([987.5]*253*241)
+        lower_pres = np.array([lower]*253*241) if lower != None else 'None'
+        p = np.array([self.p[i]]*253*241) 
+        upper_pres = np.array([upper]*253*241) if upper != None else 'None'
         temp = np.ravel(self.temp[time, i, :, :])
         u = np.ravel(self.u[time, i, :, :])
         v = np.ravel(self.v[time, i, :, :])
         rh = np.ravel(self.rh[time, i, :, :])
-        X = []
-        for i in range(len(pres)):
-            if sp[i] >= pres[i]:
-                x = sp[i] - pres[i]
-            else:
-                x = 0
-            X.append(x)
+        X = self.getHeight(p, sp, lower_pres, upper_pres)
         W, QU, QV = [], [], []
-        for i in range(len(pres)):
+        for i in range(253*241):
             esat = 6.1078 * pow(10, 7.5 * (temp[i] - 273.15)/(237.3 + (temp[i] - 273.15)))
             e = esat * rh[i] / 100
             q = (0.622 * (e / 1000)) / (1 - 0.378 * (e / 1000))
@@ -114,492 +108,182 @@ class Calculation(Abstract):
         DIV = self.divergence(QU, QV)
         return W, QU, QV, DIV
 
-    # def calc1000hPa(self, time):
-    #     i = 0
-    #     sp = np.ravel(self.sp[time, :, :] / 100)
-    #     pres = np.array([987.5]*253*241)
-    #     temp = self.temp[time, i, :, :]
-    #     u = self.u[time, i, :, :]
-    #     v = self.v[time, i, :, :]
-    #     rh = self.rh[time, i, :, :]
-    #     esat = 6.1078 * pow(10, 7.5 * (temp - 273.15)/(237.3 + (temp - 273.15)))
-    #     e = esat * rh / 100
-    #     q = (0.622 * (e / 1000)) / (1 - 0.378 * (e / 1000))
-    #     X = []
-    #     for i in range(len(pres)):
-    #         if sp[i] >= pres[i]:
-    #             x = sp[i] - pres[i]
-    #         else:
-    #             x = 0
-    #         X.append(x)
-    #     X = np.array(X).reshape(253, 241)
-    #     w = q * X * 100
-    #     qu = u * w
-    #     qv = v * w
-    #     div = self.divergence(qu, qv)
-    #     return w, qu, qv, div
-    
-    def calc975hPa(self, time):
-        i = 1
-        sp = np.ravel(self.sp[time, :, :] / 100)
-        lower_pres = np.array([987.5]*253*241)
-        p = np.array([self.p[i]]*253*241) 
-        upper_pres = np.array([962.5]*253*241)
-        temp = self.temp[time, i, :, :]
-        u = self.u[time, i, :, :]
-        v = self.v[time, i, :, :]
-        rh = self.rh[time, i, :, :]
-        esat = 6.1078 * pow(10, 7.5 * (temp - 273.15)/(237.3 + (temp - 273.15)))
-        e = esat * rh / 100
-        q = (0.622 * (e / 1000)) / (1 - 0.378 * (e / 1000))
+    def getHeight(self, p, sp, lower_pres, upper_pres):
         X = []
         # sp > 987.5, 987.5 >= sp > 975, 975 >= sp > 962.5, 962.5 > sp
-        for i in range(len(lower_pres)):
-            if sp[i] > lower_pres[i]:
-                x = lower_pres[i] - upper_pres[i]
-            elif lower_pres[i] >= sp[i] and sp[i] > p[i]:
-                x1 = sp[i] - p[i]
-                x2 = p[i] - upper_pres[i]
-                x = x1 + x2
-            elif p[i] >= sp[i] and sp[i] >= upper_pres[i]:
-                x = sp[i] - upper_pres[i]
-            else:
-                x = 0
-            X.append(x)
-        w = q * X * 100
-        qu = u * w
-        qv = v * w
-        div = self.divergence(qu, qv)
-        return w, qu, qv, div
+        if type(lower_pres) is str:
+            for i in range(len(upper_pres)):
+                if sp[i] > upper_pres[i]:
+                    x = sp[i] - upper_pres[i]
+                else:
+                    x = 0
+                X.append(x)
+        elif type(upper_pres) is str:
+            for i in range(len(lower_pres)):
+                if sp[i] > lower_pres[i]:
+                    x = p[i] - lower_pres[i]
+                else:
+                    x = 0
+                X.append(x)
+        else:
+            for i in range(len(lower_pres)):
+                if sp[i] > lower_pres[i]:
+                    x = lower_pres[i] - upper_pres[i]
+                elif lower_pres[i] >= sp[i] and sp[i] > p[i]:
+                    x1 = sp[i] - p[i]
+                    x2 = p[i] - upper_pres[i]
+                    x = x1 + x2
+                elif p[i] >= sp[i] and sp[i] >= upper_pres[i]:
+                    x = sp[i] - upper_pres[i]
+                else:
+                    x = 0
+                X.append(x)
+        return X
+
+    def shape(self, array):
+        array = np.array(array).reshape(253, 241)
+        return array
     
+    def calc1000hPa(self, time):
+        W, QU, QV, DIV = self.calcVars(
+            i=0,
+            time=time,
+            lower=None,
+            upper=987.5
+        )
+        return W, QU, QV, DIV
+    
+    def calc975hPa(self, time):
+        W, QU, QV, DIV = self.calcVars(
+            i=1,
+            time=time,
+            lower=987.5,
+            upper=962.5
+        )
+        return W, QU, QV, DIV
+
     def calc950hPa(self, time):
-        i = 2
-        sp = np.ravel(self.sp[time, :, :] / 100)
-        lower_pres = np.array([962.5]*253*241)
-        p = np.array([self.p[i]]*253*241) 
-        upper_pres = np.array([937.5]*253*241)
-        temp = self.temp[time, i, :, :]
-        u = self.u[time, i, :, :]
-        v = self.v[time, i, :, :]
-        rh = self.rh[time, i, :, :]
-        esat = 6.1078 * pow(10, 7.5 * (temp - 273.15)/(237.3 + (temp - 273.15)))
-        e = esat * rh / 100
-        q = (0.622 * (e / 1000)) / (1 - 0.378 * (e / 1000))
-        X = []
-        for i in range(len(lower_pres)):
-            if sp[i] > lower_pres[i]:
-                x = lower_pres[i] - upper_pres[i]
-            elif lower_pres[i] >= sp[i] and sp[i] > p[i]:
-                x1 = sp[i] - p[i]
-                x2 = p[i] - upper_pres[i]
-                x = x1 + x2
-            elif p[i] >= sp[i] and sp[i] >= upper_pres[i]:
-                x = sp[i] - upper_pres[i]
-            else:
-                x = 0
-            X.append(x)
-        w = q * X * 100
-        qu = u * w
-        qv = v * w
-        div = self.divergence(qu, qv)
-        return w, qu, qv, div
+        W, QU, QV, DIV = self.calcVars(
+            i=2,
+            time=time,
+            lower=962.5,
+            upper=937.5
+        )
+        return W, QU, QV, DIV
     
     def calc925hPa(self, time):
-        i = 3
-        sp = np.ravel(self.sp[time, :, :] / 100)
-        lower_pres = np.array([937.5]*253*241)
-        p = np.array([self.p[i]]*253*241) 
-        upper_pres = np.array([912.5]*253*241)
-        temp = self.temp[time, i, :, :]
-        u = self.u[time, i, :, :]
-        v = self.v[time, i, :, :]
-        rh = self.rh[time, i, :, :]
-        esat = 6.1078 * pow(10, 7.5 * (temp - 273.15)/(237.3 + (temp - 273.15)))
-        e = esat * rh / 100
-        q = (0.622 * (e / 1000)) / (1 - 0.378 * (e / 1000))
-        X = []
-        for i in range(len(lower_pres)):
-            if sp[i] > lower_pres[i]:
-                x = lower_pres[i] - upper_pres[i]
-            elif lower_pres[i] >= sp[i] and sp[i] > p[i]:
-                x1 = sp[i] - p[i]
-                x2 = p[i] - upper_pres[i]
-                x = x1 + x2
-            elif p[i] >= sp[i] and sp[i] >= upper_pres[i]:
-                x = sp[i] - upper_pres[i]
-            else:
-                x = 0
-            X.append(x)
-        w = q * X * 100
-        qu = u * w
-        qv = v * w
-        div = self.divergence(qu, qv)
-        return w, qu, qv, div
+        W, QU, QV, DIV = self.calcVars(
+            i=3,
+            time=time,
+            lower=937.5,
+            upper=912.5
+        )
+        return W, QU, QV, DIV
     
     def calc900hPa(self, time):
-        i = 4
-        sp = np.ravel(self.sp[time, :, :] / 100)
-        lower_pres = np.array([912.5]*253*241)
-        p = np.array([self.p[i]]*253*241) 
-        upper_pres = np.array([875]*253*241)
-        temp = self.temp[time, i, :, :]
-        u = self.u[time, i, :, :]
-        v = self.v[time, i, :, :]
-        rh = self.rh[time, i, :, :]
-        esat = 6.1078 * pow(10, 7.5 * (temp - 273.15)/(237.3 + (temp - 273.15)))
-        e = esat * rh / 100
-        q = (0.622 * (e / 1000)) / (1 - 0.378 * (e / 1000))
-        X = []
-        for i in range(len(lower_pres)):
-            if sp[i] > lower_pres[i]:
-                x = lower_pres[i] - upper_pres[i]
-            elif lower_pres[i] >= sp[i] and sp[i] > p[i]:
-                x1 = sp[i] - p[i]
-                x2 = p[i] - upper_pres[i]
-                x = x1 + x2
-            elif p[i] >= sp[i] and sp[i] >= upper_pres[i]:
-                x = sp[i] - upper_pres[i]
-            else:
-                x = 0
-            X.append(x)
-        w = q * X * 100
-        qu = u * w
-        qv = v * w
-        div = self.divergence(qu, qv)
-        return w, qu, qv, div
+        W, QU, QV, DIV = self.calcVars(
+            i=4,
+            time=time,
+            lower=912.5,
+            upper=875
+        )
+        return W, QU, QV, DIV
     
     def calc850hPa(self, time):
-        i = 5
-        sp = np.ravel(self.sp[time, :, :] / 100)
-        lower_pres = np.array([875]*253*241)
-        p = np.array([self.p[i]]*253*241) 
-        upper_pres = np.array([825]*253*241)
-        temp = self.temp[time, i, :, :]
-        u = self.u[time, i, :, :]
-        v = self.v[time, i, :, :]
-        rh = self.rh[time, i, :, :]
-        esat = 6.1078 * pow(10, 7.5 * (temp - 273.15)/(237.3 + (temp - 273.15)))
-        e = esat * rh / 100
-        q = (0.622 * (e / 1000)) / (1 - 0.378 * (e / 1000))
-        X = []
-        for i in range(len(lower_pres)):
-            if sp[i] > lower_pres[i]:
-                x = lower_pres[i] - upper_pres[i]
-            elif lower_pres[i] >= sp[i] and sp[i] > p[i]:
-                x1 = sp[i] - p[i]
-                x2 = p[i] - upper_pres[i]
-                x = x1 + x2
-            elif p[i] >= sp[i] and sp[i] >= upper_pres[i]:
-                x = sp[i] - upper_pres[i]
-            else:
-                x = 0
-            X.append(x)
-        w = q * X * 100
-        qu = u * w
-        qv = v * w
-        div = self.divergence(qu, qv)
-        return w, qu, qv, div
+        W, QU, QV, DIV = self.calcVars(
+            i=5,
+            time=time,
+            lower=875,
+            upper=825
+        )
+        return W, QU, QV, DIV
     
     def calc800hPa(self, time):
-        i = 6
-        sp = np.ravel(self.sp[time, :, :] / 100)
-        lower_pres = np.array([825]*253*241)
-        p = np.array([self.p[i]]*253*241) 
-        upper_pres = np.array([750]*253*241)
-        temp = self.temp[time, i, :, :]
-        u = self.u[time, i, :, :]
-        v = self.v[time, i, :, :]
-        rh = self.rh[time, i, :, :]
-        esat = 6.1078 * pow(10, 7.5 * (temp - 273.15)/(237.3 + (temp - 273.15)))
-        e = esat * rh / 100
-        q = (0.622 * (e / 1000)) / (1 - 0.378 * (e / 1000))
-        X = []
-        for i in range(len(lower_pres)):
-            if sp[i] > lower_pres[i]:
-                x = lower_pres[i] - upper_pres[i]
-            elif lower_pres[i] >= sp[i] and sp[i] > p[i]:
-                x1 = sp[i] - p[i]
-                x2 = p[i] - upper_pres[i]
-                x = x1 + x2
-            elif p[i] >= sp[i] and sp[i] >= upper_pres[i]:
-                x = sp[i] - upper_pres[i]
-            else:
-                x = 0
-            X.append(x)
-        w = q * X * 100
-        qu = u * w
-        qv = v * w
-        div = self.divergence(qu, qv)
-        return w, qu, qv, div
+        W, QU, QV, DIV = self.calcVars(
+            i=6,
+            time=time,
+            lower=825,
+            upper=750
+        )
+        return W, QU, QV, DIV
     
     def calc700hPa(self, time):
-        i = 7
-        sp = np.ravel(self.sp[time, :, :] / 100)
-        lower_pres = np.array([750]*253*241)
-        p = np.array([self.p[i]]*253*241) 
-        upper_pres = np.array([650]*253*241)
-        temp = self.temp[time, i, :, :]
-        u = self.u[time, i, :, :]
-        v = self.v[time, i, :, :]
-        rh = self.rh[time, i, :, :]
-        esat = 6.1078 * pow(10, 7.5 * (temp - 273.15)/(237.3 + (temp - 273.15)))
-        e = esat * rh / 100
-        q = (0.622 * (e / 1000)) / (1 - 0.378 * (e / 1000))
-        X = []
-        for i in range(len(lower_pres)):
-            if sp[i] > lower_pres[i]:
-                x = lower_pres[i] - upper_pres[i]
-            elif lower_pres[i] >= sp[i] and sp[i] > p[i]:
-                x1 = sp[i] - p[i]
-                x2 = p[i] - upper_pres[i]
-                x = x1 + x2
-            elif p[i] >= sp[i] and sp[i] >= upper_pres[i]:
-                x = sp[i] - upper_pres[i]
-            else:
-                x = 0
-            X.append(x)
-        w = q * X * 100
-        qu = u * w
-        qv = v * w
-        div = self.divergence(qu, qv)
-        return w, qu, qv, div
+        W, QU, QV, DIV = self.calcVars(
+            i=7,
+            time=time,
+            lower=750,
+            upper=650
+        )
+        return W, QU, QV, DIV
     
     def calc600hPa(self, time):
-        i = 8
-        sp = np.ravel(self.sp[time, :, :] / 100)
-        lower_pres = np.array([650]*253*241)
-        p = np.array([self.p[i]]*253*241) 
-        upper_pres = np.array([550]*253*241)
-        temp = self.temp[time, i, :, :]
-        u = self.u[time, i, :, :]
-        v = self.v[time, i, :, :]
-        rh = self.rh[time, i, :, :]
-        esat = 6.1078 * pow(10, 7.5 * (temp - 273.15)/(237.3 + (temp - 273.15)))
-        e = esat * rh / 100
-        q = (0.622 * (e / 1000)) / (1 - 0.378 * (e / 1000))
-        X = []
-        for i in range(len(lower_pres)):
-            if sp[i] > lower_pres[i]:
-                x = lower_pres[i] - upper_pres[i]
-            elif lower_pres[i] >= sp[i] and sp[i] > p[i]:
-                x1 = sp[i] - p[i]
-                x2 = p[i] - upper_pres[i]
-                x = x1 + x2
-            elif p[i] >= sp[i] and sp[i] >= upper_pres[i]:
-                x = sp[i] - upper_pres[i]
-            else:
-                x = 0
-            X.append(x)
-        w = q * X * 100
-        qu = u * w
-        qv = v * w
-        div = self.divergence(qu, qv)
-        return w, qu, qv, div
+        W, QU, QV, DIV = self.calcVars(
+            i=8,
+            time=time,
+            lower=650,
+            upper=550
+        )
+        return W, QU, QV, DIV
     
     def calc500hPa(self, time):
-        i = 9
-        sp = np.ravel(self.sp[time, :, :] / 100)
-        lower_pres = np.array([550]*253*241)
-        p = np.array([self.p[i]]*253*241) 
-        upper_pres = np.array([450]*253*241)
-        temp = self.temp[time, i, :, :]
-        u = self.u[time, i, :, :]
-        v = self.v[time, i, :, :]
-        rh = self.rh[time, i, :, :]
-        esat = 6.1078 * pow(10, 7.5 * (temp - 273.15)/(237.3 + (temp - 273.15)))
-        e = esat * rh / 100
-        q = (0.622 * (e / 1000)) / (1 - 0.378 * (e / 1000))
-        X = []
-        for i in range(len(lower_pres)):
-            if sp[i] > lower_pres[i]:
-                x = lower_pres[i] - upper_pres[i]
-            elif lower_pres[i] >= sp[i] and sp[i] > p[i]:
-                x1 = sp[i] - p[i]
-                x2 = p[i] - upper_pres[i]
-                x = x1 + x2
-            elif p[i] >= sp[i] and sp[i] >= upper_pres[i]:
-                x = sp[i] - upper_pres[i]
-            else:
-                x = 0
-            X.append(x)
-        w = q * X * 100
-        qu = u * w
-        qv = v * w
-        div = self.divergence(qu, qv)
-        return w, qu, qv, div
+        W, QU, QV, DIV = self.calcVars(
+            i=9,
+            time=time,
+            lower=550,
+            upper=450
+        )
+        return W, QU, QV, DIV
     
     def calc400hPa(self, time):
-        i = 10
-        sp = np.ravel(self.sp[time, :, :] / 100)
-        lower_pres = np.array([450]*253*241)
-        p = np.array([self.p[i]]*253*241) 
-        upper_pres = np.array([350]*253*241)
-        temp = self.temp[time, i, :, :]
-        u = self.u[time, i, :, :]
-        v = self.v[time, i, :, :]
-        rh = self.rh[time, i, :, :]
-        esat = 6.1078 * pow(10, 7.5 * (temp - 273.15)/(237.3 + (temp - 273.15)))
-        e = esat * rh / 100
-        q = (0.622 * (e / 1000)) / (1 - 0.378 * (e / 1000))
-        X = []
-        for i in range(len(lower_pres)):
-            if sp[i] > lower_pres[i]:
-                x = lower_pres[i] - upper_pres[i]
-            elif lower_pres[i] >= sp[i] and sp[i] > p[i]:
-                x1 = sp[i] - p[i]
-                x2 = p[i] - upper_pres[i]
-                x = x1 + x2
-            elif p[i] >= sp[i] and sp[i] >= upper_pres[i]:
-                x = sp[i] - upper_pres[i]
-            else:
-                x = 0
-            X.append(x)
-        w = q * X * 100
-        qu = u * w
-        qv = v * w
-        div = self.divergence(qu, qv)
-        return w, qu, qv, div
+        W, QU, QV, DIV = self.calcVars(
+            i=10,
+            time=time,
+            lower=450,
+            upper=350
+        )
+        return W, QU, QV, DIV
     
     def calc300hPa(self, time):
-        i = 11
-        sp = np.ravel(self.sp[time, :, :] / 100)
-        lower_pres = np.array([350]*253*241)
-        p = np.array([self.p[i]]*253*241) 
-        upper_pres = np.array([275]*253*241)
-        temp = self.temp[time, i, :, :]
-        u = self.u[time, i, :, :]
-        v = self.v[time, i, :, :]
-        rh = self.rh[time, i, :, :]
-        esat = 6.1078 * pow(10, 7.5 * (temp - 273.15)/(237.3 + (temp - 273.15)))
-        e = esat * rh / 100
-        q = (0.622 * (e / 1000)) / (1 - 0.378 * (e / 1000))
-        X = []
-        for i in range(len(lower_pres)):
-            if sp[i] > lower_pres[i]:
-                x = lower_pres[i] - upper_pres[i]
-            elif lower_pres[i] >= sp[i] and sp[i] > p[i]:
-                x1 = sp[i] - p[i]
-                x2 = p[i] - upper_pres[i]
-                x = x1 + x2
-            elif p[i] >= sp[i] and sp[i] >= upper_pres[i]:
-                x = sp[i] - upper_pres[i]
-            else:
-                x = 0
-            X.append(x)
-        w = q * X * 100
-        qu = u * w
-        qv = v * w
-        div = self.divergence(qu, qv)
-        return w, qu, qv, div
+        W, QU, QV, DIV = self.calcVars(
+            i=11,
+            time=time,
+            lower=350,
+            upper=275
+        )
+        return W, QU, QV, DIV
     
     def calc250hPa(self, time):
-        i = 12
-        sp = np.ravel(self.sp[time, :, :] / 100)
-        lower_pres = np.array([275]*253*241)
-        p = np.array([self.p[i]]*253*241) 
-        upper_pres = np.array([225]*253*241)
-        temp = self.temp[time, i, :, :]
-        u = self.u[time, i, :, :]
-        v = self.v[time, i, :, :]
-        rh = self.rh[time, i, :, :]
-        esat = 6.1078 * pow(10, 7.5 * (temp - 273.15)/(237.3 + (temp - 273.15)))
-        e = esat * rh / 100
-        q = (0.622 * (e / 1000)) / (1 - 0.378 * (e / 1000))
-        X = []
-        for i in range(len(lower_pres)):
-            if sp[i] > lower_pres[i]:
-                x = lower_pres[i] - upper_pres[i]
-            elif lower_pres[i] >= sp[i] and sp[i] > p[i]:
-                x1 = sp[i] - p[i]
-                x2 = p[i] - upper_pres[i]
-                x = x1 + x2
-            elif p[i] >= sp[i] and sp[i] >= upper_pres[i]:
-                x = sp[i] - upper_pres[i]
-            else:
-                x = 0
-            X.append(x)
-        w = q * x * 100
-        qu = u * w
-        qv = v * w
-        div = self.divergence(qu, qv)
-        return w, qu, qv, div
+        W, QU, QV, DIV = self.calcVars(
+            i=12,
+            time=time,
+            lower=275,
+            upper=225
+        )
+        return W, QU, QV, DIV
     
     def calc200hPa(self, time):
-        i = 13
-        sp = np.ravel(self.sp[time, :, :] / 100)
-        lower_pres = np.array([225]*253*241)
-        p = np.array([self.p[i]]*253*241) 
-        upper_pres = np.array([175]*253*241)
-        temp = self.temp[time, i, :, :]
-        u = self.u[time, i, :, :]
-        v = self.v[time, i, :, :]
-        rh = self.rh[time, i, :, :]
-        esat = 6.1078 * pow(10, 7.5 * (temp - 273.15)/(237.3 + (temp - 273.15)))
-        e = esat * rh / 100
-        q = (0.622 * (e / 1000)) / (1 - 0.378 * (e / 1000))
-        X = []
-        for i in range(len(lower_pres)):
-            if sp[i] > lower_pres[i]:
-                x = lower_pres[i] - upper_pres[i]
-            elif lower_pres[i] >= sp[i] and sp[i] > p[i]:
-                x1 = sp[i] - p[i]
-                x2 = p[i] - upper_pres[i]
-                x = x1 + x2
-            elif p[i] >= sp[i] and sp[i] >= upper_pres[i]:
-                x = sp[i] - upper_pres[i]
-            else:
-                x = 0
-            X.append(x)
-        w = q * X * 100
-        qu = u * w
-        qv = v * w
-        div = self.divergence(qu, qv)
-        return w, qu, qv, div
+        W, QU, QV, DIV = self.calcVars(
+            i=13,
+            time=time,
+            lower=225,
+            upper=175
+        )
+        return W, QU, QV, DIV
     
     def calc150hPa(self, time):
-        i = 14
-        sp = np.ravel(self.sp[time, :, :] / 100)
-        lower_pres = np.array([175]*253*241)
-        p = np.array([self.p[i]]*253*241) 
-        upper_pres = np.array([125]*253*241)
-        temp = self.temp[time, i, :, :]
-        u = self.u[time, i, :, :]
-        v = self.v[time, i, :, :]
-        rh = self.rh[time, i, :, :]
-        esat = 6.1078 * pow(10, 7.5 * (temp - 273.15)/(237.3 + (temp - 273.15)))
-        e = esat * rh / 100
-        q = (0.622 * (e / 1000)) / (1 - 0.378 * (e / 1000))
-        X = []
-        for i in range(len(lower_pres)):
-            if sp[i] > lower_pres[i]:
-                x = lower_pres[i] - upper_pres[i]
-            elif lower_pres[i] >= sp[i] and sp[i] > p[i]:
-                x1 = sp[i] - p[i]
-                x2 = p[i] - upper_pres[i]
-                x = x1 + x2
-            elif p[i] >= sp[i] and sp[i] >= upper_pres[i]:
-                x = sp[i] - upper_pres[i]
-            else:
-                x = 0
-            X.append(x)
-        w = q * X * 100
-        qu = u * w
-        qv = v * w
-        div = self.divergence(qu, qv)
-        return w, qu, qv, div
+        W, QU, QV, DIV = self.calcVars(
+            i=14,
+            time=time,
+            lower=175,
+            upper=125
+        )
+        return W, QU, QV, DIV
     
     def calc100hPa(self, time):
-        i = 15
-        temp = self.temp[time, i, :, :]
-        u = self.u[time, i, :, :]
-        v = self.v[time, i, :, :]
-        rh = self.rh[time, i, :, :]
-        esat = 6.1078 * pow(10, 7.5 * (temp - 273.15)/(237.3 + (temp - 273.15)))
-        e = esat * rh / 100
-        q = (0.622 * (e / 1000)) / (1 - 0.378 * (e / 1000))
-        X = np.array([25]*253*241).reshape(253, 241)
-        w = q * X * 100
-        qu = u * w
-        qv = v * w
-        div = self.divergence(qu, qv)
-        return w, qu, qv, div
+        W, QU, QV, DIV = self.calcVars(
+            i=15,
+            time=time,
+            lower=125,
+            upper=None
+        )
+        return W, QU, QV, DIV
