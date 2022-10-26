@@ -4,6 +4,7 @@ import numpy as np
 from numpy import dtype
 
 from Module.CalcDivergence import Calculation
+from Module.CreateNetCDF import CreateNetCDF
 
 class Execution:
     def __init__(self) -> None:
@@ -20,7 +21,7 @@ class Execution:
                 filename_ConvertedMSMs = '{}/{}'.format(self.path_ConvertedMSMs, file[1:])
                 calc = Calculation(filename_MSMp, filename_ConvertedMSMs)
                 calc.main()
-                self.makeNetcdfFile(
+                CreateNetCDF.createNcFileDivergence(
                     filename=file[1:],
                     path='{}/{}'.format(self.saveDir, file[1:]),
                     lonList=calc.lon,
