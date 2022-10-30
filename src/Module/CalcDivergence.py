@@ -95,7 +95,7 @@ class Calculation(Abstract):
         for i in range(253*241):
             esat = 6.1078 * pow(10, 7.5 * (temp[i] - 273.15)/(237.3 + (temp[i] - 273.15)))
             e = esat * rh[i] / 100
-            q = (0.622 * (e / 1000)) / (1 - 0.378 * (e / 1000))
+            q = (0.622 * (e / p[0])) / (1 - 0.378 * (e / p[0]))
             w = q * X[i] * 100
             qu = u[i] * w
             qv = v[i] * w
