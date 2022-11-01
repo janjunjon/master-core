@@ -104,3 +104,10 @@ class Calculation:
         temp850hPa -= SALR*heightFromLCL
         SSI = temp500hPa - temp850hPa
         return SSI
+
+    @classmethod
+    def getKI(cls, temp850hPa, temp700hPa, temp500hPa, rh850hPa, rh700hPa):
+        Td850hPa = cls.getDewPointReductionRate(temp850hPa, rh850hPa)
+        Td700hPa = cls.getDewPointReductionRate(temp700hPa, rh700hPa)
+        KI = (temp850hPa - temp500hPa) + Td850hPa - (temp700hPa - Td700hPa)
+        return KI
