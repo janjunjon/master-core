@@ -1,6 +1,7 @@
 import math
 
 class Calculation:
+    # !! Unit of temperature is K !!
     # P0: sea level pressure, Rd: const of dry air, Cp: specific heat at constant pressure
     # DALR: dry adiabatic lapse rate (K/m), L: condensation latent heat
     P0 = 1013.25
@@ -77,7 +78,7 @@ class Calculation:
         return EPT
 
     @classmethod
-    def getDewPointReductionRate(cls, temp, rh):
+    def getDewPointTemperature(cls, temp, rh):
         # Td: dew point temperature
         e = cls.getWaterVaporPressure(temp, rh)
         Td = (237.3 * math.log10(6.1078/e)) / (math.log10(e/6.1078) - 7.5)
@@ -107,7 +108,10 @@ class Calculation:
 
     @classmethod
     def getKI(cls, temp850hPa, temp700hPa, temp500hPa, rh850hPa, rh700hPa):
-        Td850hPa = cls.getDewPointReductionRate(temp850hPa, rh850hPa)
-        Td700hPa = cls.getDewPointReductionRate(temp700hPa, rh700hPa)
+        Td850hPa = cls.getDewPointTemperature(temp850hPa, rh850hPa)
+        Td700hPa = cls.getDewPointTemperature(temp700hPa, rh700hPa)
+        temp850hPa -= 273.15
+        temp700hPa -= 273.15
+        temp500hPa -= 273.15
         KI = (temp850hPa - temp500hPa) + Td850hPa - (temp700hPa - Td700hPa)
         return KI
