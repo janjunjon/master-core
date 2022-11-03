@@ -85,9 +85,15 @@ class Calculation:
         return Td
 
     @classmethod
-    def getLCL(cls, temp, rh):
+    def getCondensationTemperature(cls, temp, rh):
         # Tl: condensation temperature
         Tl = 1 / (1 / (temp - 55) - math.log(rh/100) / 2840) + 55
+        return Tl
+
+    @classmethod
+    def getLCL(cls, temp, rh):
+        # lifted condensation level
+        Tl = cls.getCondensationTemperature(temp, rh)
         LCL = (temp - Tl) / 9.81 * 1000
         return LCL
 
@@ -108,6 +114,7 @@ class Calculation:
 
     @classmethod
     def getKI(cls, temp850hPa, temp700hPa, temp500hPa, rh850hPa, rh700hPa):
+        # KI: K Index
         Td850hPa = cls.getDewPointTemperature(temp850hPa, rh850hPa)
         Td700hPa = cls.getDewPointTemperature(temp700hPa, rh700hPa)
         temp850hPa -= 273.15

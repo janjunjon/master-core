@@ -173,10 +173,13 @@ class CreateNetCDF:
         nc.close()
 
     @classmethod
-    def createNcFileMSMsOnlyRain(cls, path, lonList, latList, timeList, rainList):
+    def createNcFileAtmosIndexes(
+        cls, filename, path, lonList, latList, pList, timeList, ptList, eptList, tdList, tlList, lclList, ssiList, kiList
+    ):
         nc = netCDF4.Dataset(path, "w", format="NETCDF4")
         nc.createDimension("lon", len(lonList))
         nc.createDimension("lat", len(latList))
+        nc.createDimension("p", len(pList))
         nc.createDimension("time", len(timeList))
 
         lon = nc.createVariable("lon", dtype('float32'), "lon")
@@ -189,17 +192,57 @@ class CreateNetCDF:
         lat.units = 'degrees_north'
         lat.standard_name = 'latitude'
 
+        p = nc.createVariable("p", dtype('float32'), "p")
+        p.long_name = 'pressure level'
+        p.units = 'hPa'
+        p.standard_name = 'air_pressure'
+
         time = nc.createVariable("time", dtype('int16'), "time")
         time.long_name = 'time'
-        time.unit = 'hours since 2020-07-03 00:00:00+00:00'
+        time.unit = 'hours since {}'.format(filename)
         time.standard_name = 'time'
 
-        rain = nc.createVariable("rain", dtype('int16'), ("time", "lat", "lon"))
-        rain.scale_factor = 0.006116208155
-        rain.add_offset = 200.0
-        rain.long_name = 'rainfall in 1 hour'
-        rain.units = 'mm/h'
-        rain.standard_name = 'rainfall_rate'
+        pt = nc.createVariable("pt", dtype('int16'), ("time", "p", "lat", "lon"))
+        pt.long_name = 'potential temperature'
+        pt.units = 'K'
+        pt.standard_name = 'potential_temperature'
 
-        lon[:], lat[:], time[:], rain[:, :, :] = np.array(lonList), np.array(latList), np.array(timeList), np.array(rainList)
+        ept = nc.createVariable("ept", dtype('int16'), ("time", "p", "lat", "lon"))
+        ept.long_name = 'equivalent potential temperature'
+        ept.units = 'K'
+        ept.standard_name = 'equivalent_potential_temperature'
+
+        td = nc.createVariable("td", dtype('int16'), ("time", "lat", "lon"))
+        td.long_name = 'dew point temperature'
+        td.units = 'K'
+        td.standard_name = 'dew_point_temperature'
+
+        tl = nc.createVariable("tl", dtype('int16'), ("time", "lat", "lon"))
+        tl.long_name = 'condensation temperature'
+        tl.units = 'K'
+        tl.standard_name = 'condensation_temperature'
+
+        lcl = nc.createVariable("lcl", dtype('int16'), ("time", "lat", "lon"))
+        lcl.long_name = 'lifted condensation level'
+        lcl.units = 'm'
+        lcl.standard_name = 'lifted_condensation_level'
+
+        ssi = nc.createVariable("ssi", dtype('int16'), ("time", "lat", "lon"))
+        ssi.long_name = 'Showalter Stability Index'
+        ssi.units = ''
+        ssi.standard_name = 'Showalter_Stability_Index'
+
+        ki = nc.createVariable("ki", dtype('int16'), ("time", "lat", "lon"))
+        ki.long_name = 'K Index'
+        ki.units = ''
+        ki.standard_name = 'K_Index'
+
+        lon[:], lat[:], p[:], time[:] = np.array(lonList), np.array(latList), np.array(pList), np.array(timeList)
+        pt[:, :, :, :] = np.array(ptList)
+        ept[:, :, :, :] = np.array(eptList)
+        td[:, :, :] = np.array(tdList)
+        tl[:, :, :] = np.array(tlList)
+        lcl[:, :, :] = np.array(lclList)
+        ssi[:, :, :] = np.array(ssiList)
+        ki[:, :, :] = np.array(kiList)
         nc.close()
