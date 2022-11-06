@@ -5,21 +5,45 @@ from netCDF.NetCDF import NetCDF
 
 class Combine:
     @classmethod
-    def combineMSM(cls, path, var, varDim):
+    def combineMSM(cls, path, var, varDim=3, pORs=None):
         varList = []
         for file in os.listdir(path):
+            if pORs != None and pORs != file[0]: continue
             if file == '20200630.nc':
                 nc = NetCDF('{}/{}'.format(path, file))
-                VAR = np.array(nc.variables[var][:][:][:][:].tolist())
-                for i in [5,6,7]:
-                    varList.append(VAR[i, :, :, :])
+                VAR = np.array(nc.variables[var][:].tolist())
+                for t in [5,6,7]:
+                    varList.append(VAR[t, :, :]) if varDim == 3 else varList.append(VAR[t, :, :, :])
             elif file == '20200731.nc':
                 nc = NetCDF('{}/{}'.format(path, file))
-                VAR = np.array(nc.variables[var][:][:][:][:].tolist())
-                for i in [0,1,2,3,4]:
-                    varList.append(VAR)
+                VAR = np.array(nc.variables[var][:].tolist())
+                for t in [0,1,2,3,4]:
+                    varList.append(VAR[t, :, :]) if varDim == 3 else varList.append(VAR[t, :, :, :])
             else:
                 nc = NetCDF('{}/{}'.format(path, file))
-                VAR = np.array(nc.variables[var][:][:][:][:].tolist())
-                varList.append(VAR)
+                VAR = np.array(nc.variables[var][:].tolist())
+                for t in range(8):
+                    varList.append(VAR[t, :, :]) if varDim == 3 else varList.append(VAR[t, :, :, :])
+        return varList
+        
+    @classmethod
+    def combineMSMp(cls, path, var, varDim=3, pORs=None):
+        varList = []
+        for file in os.listdir(path):
+            if pORs != None and pORs != file[0]: continue
+            if file == 'p20200630.nc':
+                nc = NetCDF('{}/{}'.format(path, file))
+                VAR = np.array(nc.variables[var][:].tolist())
+                for t in [5,6,7]:
+                    varList.append(VAR[t, :, :]) if varDim == 3 else varList.append(VAR[t, :, :, :])
+            elif file == 'p20200731.nc':
+                nc = NetCDF('{}/{}'.format(path, file))
+                VAR = np.array(nc.variables[var][:].tolist())
+                for t in [0,1,2,3,4]:
+                    varList.append(VAR[t, :, :]) if varDim == 3 else varList.append(VAR[t, :, :, :])
+            else:
+                nc = NetCDF('{}/{}'.format(path, file))
+                VAR = np.array(nc.variables[var][:].tolist())
+                for t in range(8):
+                    varList.append(VAR[t, :, :]) if varDim == 3 else varList.append(VAR[t, :, :, :])
         return varList

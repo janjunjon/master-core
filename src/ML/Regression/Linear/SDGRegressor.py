@@ -6,8 +6,6 @@ import sklearn.model_selection as cross_validation
 from sklearn.metrics import r2_score
 from sklearn.metrics import mean_absolute_error
 import sklearn
-sklearn.__version__
-import pickle
 
 from netCDF.NetCDF import NetCDF
 from ML.Other.MLData import Data as MLData
