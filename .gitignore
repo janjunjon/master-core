@@ -1,5 +1,6 @@
 memo.txt
 __pycache__
+fdrive
 *.nc
 *.grd
 *LOG*

@@ -8,9 +8,9 @@ from sklearn.metrics import mean_absolute_error
 import sklearn
 sklearn.__version__
 
-from ML.Abstract import SKLearn
+from ML.Other.Abstract import SKLearn
 from netCDF.NetCDF import NetCDF
-from ML.MLData import Data as MLData
+from ML.Other.MLData import Data as MLData
 
 class Regression(SKLearn):
     def __init__(self):
