@@ -15,6 +15,9 @@ class NetCDF:
         self.filename = path.split('/')[-1].split('.')[0]
         self.MSMRange = [120, 150, 22.4, 47.6]
 
+        self.lat = self.nc.variables['lat'][:].tolist()
+        self.lon = self.nc.variables['lon'][:].tolist()
+
     def makeNetcdfFile(self, path, lonList, latList, timeList, rainList):
         nc = netCDF4.Dataset(path, "w", format="NETCDF4")
         nc.createDimension("lon", len(lonList))

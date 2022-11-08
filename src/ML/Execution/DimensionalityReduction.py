@@ -13,39 +13,77 @@ class Execution(Abstract):
         self.ncMSMp = NetCDF('{}/MSMp.nc'.format(path_to_combined))
         self.ncDiv = NetCDF('{}/div.nc'.format(path_to_combined))
         self.ncAtmos = NetCDF('{}/atmos.nc'.format(path_to_combined))
-        self.getVars()
+        self.varNcRain  = ['rain_Ra', 'rain_MSMs']
+        self.varNcMSMs  = ['psea', 'sp', 'ncld_upper', 'ncld_mid', 'ncld_low', 'ncld', 'dswrf']
+        self.varNcMSMp  = ['z', 'w', 'u', 'v', 'temp', 'rh']
+        self.varNcDiv   = ['pwv', 'qu', 'qv', 'div']
+        self.varNcAtmos = ['pt', 'ept', 'td', 'tl', 'lcl', 'ssi', 'ki']
+        self.twoDimVarNames = self.get2DimentionalVars()
+        self.threeDimVarNames = self.get3DimentionalVars()
+        # self.getVars()
 
     def main(self):
-        PrincipalComponentAnalysis.main(n_components=3)
+        PrincipalComponentAnalysis.main(n_components=None)
+
+    def getAllVars(self):
+        for var_name in self.allVarsName:
+            var = getattr(self, var_name)
 
     def getVars(self) -> None:
-        self.rain_Ra = np.array(self.ncRain.variables['rain_Ra'][:].to_list())
-        self.rain_MSMs = np.array(self.ncRain.variables['rain_MSMs'][:].to_list())
+        for var in self.varNcRain:
+            setattr(self, var, self.ncRain.variables[var])
+        for var in self.varNcMSMs:
+            setattr(self, var, self.ncMSMs.variables[var])
+        for var in self.varNcMSMp:
+            setattr(self, var, self.ncMSMp.variables[var])
+        for var in self.varNcDiv:
+            setattr(self, var, self.ncDiv.variables[var])
+        for var in self.varNcAtmos:
+            setattr(self, var, self.ncAtmos.variables[var])
 
-        self.psea = np.array(self.ncMSMs.variables['psea'][:].to_list())
-        self.sp = np.array(self.ncMSMs.variables['sp'][:].to_list())
-        self.ncld_upper = np.array(self.ncMSMs.variables['ncld_upper'][:].to_list())
-        self.ncld_mid = np.array(self.ncMSMs.variables['ncld_mid'][:].to_list())
-        self.ncld_low = np.array(self.ncMSMs.variables['ncld_low'][:].to_list())
-        self.ncld = np.array(self.ncMSMs.variables['ncld'][:].to_list())
-        self.dswrf = np.array(self.ncMSMs.variables['dswrf'][:].to_list())
-        
-        self.z = np.array(self.ncMSMp.variables['z'][:].to_list()) # 3 dimension
-        self.vv = np.array(self.ncMSMp.variables['w'][:].to_list()) # 3 dimension
-        self.u = np.array(self.ncMSMp.variables['u'][:].to_list()) # 3 dimension
-        self.v = np.array(self.ncMSMp.variables['v'][:].to_list()) # 3 dimension
-        self.temp = np.array(self.ncMSMp.variables['temp'][:].to_list()) # 3 dimension
-        self.rh = np.array(self.ncMSMp.variables['rh'][:].to_list()) # 3 dimension
-        
-        self.w = np.array(self.ncDiv.variables['w'][:].to_list())
-        self.qu = np.array(self.ncDiv.variables['qu'][:].to_list())
-        self.qv = np.array(self.ncDiv.variables['qv'][:].to_list())
-        self.div = np.array(self.ncDiv.variables['div'][:].to_list())
-        
-        self.pt = np.array(self.ncAtmos.variables['pt'][:].to_list()) # 3 dimension
-        self.ept = np.array(self.ncAtmos.variables['ept'][:].to_list()) # 3 dimension
-        self.td = np.array(self.ncAtmos.variables['td'][:].to_list())
-        self.tl = np.array(self.ncAtmos.variables['tl'][:].to_list())
-        self.lcl = np.array(self.ncAtmos.variables['lcl'][:].to_list())
-        self.ssi = np.array(self.ncAtmos.variables['ssi'][:].to_list())
-        self.ki = np.array(self.ncAtmos.variables['ki'][:].to_list())
+    def reshapeVars(self) -> None:
+        for var_name in self.allVarsName:
+            setattr(self, var_name, self.reshape(getattr(self, var_name)))
+
+    def convertVars(self) -> None:
+        for var_name in self.allVarsName:
+            setattr(self, var_name, self.convert(getattr(self, var_name)))
+
+    def reshape(self, array: np.ndarray) -> np.ndarray:
+        if array.ndim == 1 and len(array) == 253*241:
+            array = np.reshape(array, (253, 241))
+        elif array.ndim == 1 and len(array) == 253*241*16:
+            array = np.reshape(array, (16, 253, 241))
+        return array
+
+    def convert(self, array: np.ndarray) -> np.ndarray:
+        if array.ndim > 1:
+            array = np.ravel(array)
+        return array
+
+    def getAllVarsName(self):
+        var_names = []
+        var_names.extend(self.varNcRain)
+        var_names.extend(self.varNcMSMs)
+        var_names.extend(self.varNcMSMp)
+        var_names.extend(self.varNcDiv)
+        var_names.extend(self.varNcAtmos)
+        return var_names
+
+    def get2DimentionalVars(self):
+        var_names = []
+        var_names.extend(self.varNcRain)
+        var_names.extend(self.varNcMSMs)
+        var_names.extend(self.varNcDiv)
+        out = ['pt', 'ept']
+        arr = [self.varNcAtmos[i] for i in np.arange(len(self.varNcAtmos)) if self.varNcAtmos[i] not in out]
+        var_names.extend(arr)
+        return var_names
+
+    def get3DimentionalVars(self):
+        var_names = []
+        var_names.extend(self.varNcMSMp)
+        out = ['td', 'tl', 'lcl', 'ssi', 'ki']
+        arr = [self.varNcAtmos[i] for i in np.arange(len(self.varNcAtmos)) if self.varNcAtmos[i] not in out]
+        var_names.extend(arr)
+        return var_names

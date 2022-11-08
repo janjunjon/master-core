@@ -201,7 +201,7 @@ class CreateNetCDF:
         nc.close()
 
     @classmethod
-    def createNcFileDivergence(cls, filename, path, lonList, latList, timeList, wList, quList, qvList, divList):
+    def createNcFileDivergence(cls, filename, path, lonList, latList, timeList, pwvList, quList, qvList, divList):
         nc = netCDF4.Dataset(path, "w", format="NETCDF4")
         nc.createDimension("lon", len(lonList))
         nc.createDimension("lat", len(latList))
@@ -222,10 +222,10 @@ class CreateNetCDF:
         time.unit = 'hours since {}'.format(filename)
         time.standard_name = 'time'
 
-        w = nc.createVariable("w", dtype('int16'), ("time", "lat", "lon"))
-        w.long_name = 'precipitable water vaper'
-        w.units = 'mm/h'
-        w.standard_name = 'precipitable_water_vaper'
+        pwv = nc.createVariable("pwv", dtype('int16'), ("time", "lat", "lon"))
+        pwv.long_name = 'precipitable water vaper'
+        pwv.units = 'mm/h'
+        pwv.standard_name = 'precipitable_water_vaper'
 
         qu = nc.createVariable("qu", dtype('int16'), ("time", "lat", "lon"))
         qu.long_name = 'specific humidity on u wind'
@@ -243,7 +243,7 @@ class CreateNetCDF:
         div.standard_name = 'water_vapor_divergence'
 
         lon[:], lat[:], time[:] = np.array(lonList), np.array(latList), np.array(timeList)
-        w[:, :, :] = np.array(wList)
+        pwv[:, :, :] = np.array(pwvList)
         qu[:, :, :] = np.array(quList)
         qv[:, :, :] = np.array(qvList)
         div[:, :, :] = np.array(divList)
@@ -322,4 +322,78 @@ class CreateNetCDF:
         lcl[:, :, :] = np.array(lclList)
         ssi[:, :, :] = np.array(ssiList)
         ki[:, :, :] = np.array(kiList)
+        nc.close()
+        
+    @classmethod
+    def createNcFileRain(cls, filename, path, lonList, latList, timeList, rainList):
+        nc = netCDF4.Dataset(path, "w", format="NETCDF4")
+        nc.createDimension("lon", len(lonList))
+        nc.createDimension("lat", len(latList))
+        nc.createDimension("time", len(timeList))
+
+        lon = nc.createVariable("lon", dtype('float32'), "lon")
+        lon.long_name = 'longitude'
+        lon.units = 'degrees_east'
+        lon.standard_name = 'longitude'
+
+        lat = nc.createVariable("lat", dtype('float32'), "lat")
+        lat.long_name = 'latitude'
+        lat.units = 'degrees_north'
+        lat.standard_name = 'latitude'
+
+        time = nc.createVariable("time", dtype('int16'), "time")
+        time.long_name = 'time'
+        time.unit = 'hours since {}'.format(filename)
+        time.standard_name = 'time'
+
+        rain = nc.createVariable("rain", dtype('int16'), ("time", "lat", "lon"))
+        rain.scale_factor = 0.006116208155
+        rain.add_offset = 200.0
+        rain.long_name = 'rainfall in 1 hour'
+        rain.units = 'mm/h'
+        rain.standard_name = 'rainfall_rate'
+
+        lon[:], lat[:], time[:] = np.array(lonList), np.array(latList), np.array(timeList)
+        rain[:, :, :] = np.array(rainList)
+        nc.close()
+
+    @classmethod
+    def createNcFileRaMSMsRain(self, path, lonList, latList, timeList, rainList1, rainList2):
+        nc = netCDF4.Dataset(path, "w", format="NETCDF4")
+        nc.createDimension("lon", len(lonList))
+        nc.createDimension("lat", len(latList))
+        nc.createDimension("time", len(timeList))
+
+        lon = nc.createVariable("lon", dtype('float32'), "lon")
+        lon.long_name = 'longitude'
+        lon.units = 'degrees_east'
+        lon.standard_name = 'longitude'
+
+        lat = nc.createVariable("lat", dtype('float32'), "lat")
+        lat.long_name = 'latitude'
+        lat.units = 'degrees_north'
+        lat.standard_name = 'latitude'
+
+        time = nc.createVariable("time", dtype('int16'), "time")
+        time.long_name = 'time'
+        time.unit = 'hours since 2020-07-03 00:00:00+00:00'
+        time.standard_name = 'time'
+
+        rain_Ra = nc.createVariable("rain_Ra", dtype('int16'), ("time", "lat", "lon"))
+        rain_Ra.scale_factor = 0.006116208155
+        rain_Ra.add_offset = 200.0
+        rain_Ra.long_name = 'RadarAmedas rain_fall in 1 hour'
+        rain_Ra.units = 'mm/h'
+        rain_Ra.standard_name = 'rainfall_rate'
+
+        rain_MSMs = nc.createVariable("rain_MSMs", dtype('int16'), ("time", "lat", "lon"))
+        rain_MSMs.scale_factor = 0.006116208155
+        rain_MSMs.add_offset = 200.0
+        rain_MSMs.long_name = 'MSMs rain_fall in 1 hour'
+        rain_MSMs.units = 'mm/h'
+        rain_MSMs.standard_name = 'rainfall_rate'
+
+        lon[:], lat[:], time[:] = np.array(lonList), np.array(latList), np.array(timeList)
+        rain_Ra[:, :, :] = np.array(rainList1)
+        rain_MSMs[:, :, :] = np.array(rainList2)
         nc.close()

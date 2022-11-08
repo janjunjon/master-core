@@ -11,7 +11,6 @@ class Execution:
         self.saveFilename = saveFilename
         self.nc = netCDF4.Dataset('/home/jjthomson/fdrive/nc/data/p20200701.nc')
         self.lat = self.nc.variables['lat'][:].tolist()
-        self.lat.reverse()
         self.lon = self.nc.variables['lon'][:].tolist()
         self.p = [
             1000.,  975.,  950.,  925.,  900.,  850.,  800.,  700.,  600.,  500.,  400.,  300.,  250.,  200.,  150.,  100.
@@ -74,7 +73,7 @@ class Execution:
         )
 
     def combineAllDiv(self):
-        W = Combine.combineMSM(self.path, 'w')
+        PWV = Combine.combineMSM(self.path, 'pwv')
         QU = Combine.combineMSM(self.path, 'qu')
         QV = Combine.combineMSM(self.path, 'qv')
         DIV = Combine.combineMSM(self.path, 'div')
@@ -84,7 +83,7 @@ class Execution:
             lonList=self.lon,
             latList=self.lat,
             timeList=self.time,
-            wList=W,
+            pwvList=PWV,
             quList=QU,
             qvList=QV,
             divList=DIV
