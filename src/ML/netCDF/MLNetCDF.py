@@ -1,5 +1,5 @@
 from os import pread
-from ML.Abstract import SKLearn
+from ML.Other.Abstract import SKLearn
 from Module.Draw import Draw
 
 from netCDF.NetCDF import NetCDF
