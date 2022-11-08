@@ -1,4 +1,5 @@
 import math
+import metpy.calc as calc
 
 class Calculation:
     # !! Unit of temperature is K !!
@@ -122,3 +123,19 @@ class Calculation:
         temp500hPa -= 273.15
         KI = (temp850hPa - temp500hPa) + Td850hPa - (temp700hPa - Td700hPa)
         return KI
+
+    @classmethod
+    def getCAPE(cls, temp, P, rh):
+        Td = cls.getDewPointTemperature(temp=temp, rh=rh)
+        parcel_profile = calc.parcel_profile(
+            pressure=P,
+            temperature=temp,
+            dewpoint=Td
+        )
+        CAPE, CIN = calc.cape_cin(
+            pressure=P,
+            temperature=temp,
+            dewpoint=Td,
+            parcel_profile=parcel_profile
+        )
+        return CAPE, CIN
