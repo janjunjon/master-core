@@ -1,6 +1,8 @@
 import numpy as np
 import random
 
+from netCDF.NetCDF import NetCDF
+
 class Sample:
     def __init__(self) -> None:
         self.rain_Ra = 'ra'
@@ -24,3 +26,7 @@ class Sample:
         for i in range(10):
             locals()[names[i]] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
             print(locals()[names[i]])
+
+    def comfirmImage(self):
+        ncMSMs = NetCDF('/home/jjthomson/fdrive/nc/reversed/MSMs.nc')
+        ncRain = NetCDF('/home/jjthomson/fdrive/nc/rains.nc')

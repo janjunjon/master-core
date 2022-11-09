@@ -51,12 +51,12 @@ class Execution:
         )
 
     def combineAllMSMp(self):
-        Z = Combine.combineMSMp(self.path, 'z', 4, 'p')
-        W = Combine.combineMSMp(self.path, 'w', 4, 'p')
-        U = Combine.combineMSMp(self.path, 'u', 4, 'p')
-        V = Combine.combineMSMp(self.path, 'v', 4, 'p')
-        TEMP = Combine.combineMSMp(self.path, 'temp', 4, 'p')
-        RH = Combine.combineMSMp(self.path, 'rh', 4, 'p')
+        Z = Combine.combineMSM(self.path, 'z', 4)
+        W = Combine.combineMSM(self.path, 'w', 4)
+        U = Combine.combineMSM(self.path, 'u', 4)
+        V = Combine.combineMSM(self.path, 'v', 4)
+        TEMP = Combine.combineMSM(self.path, 'temp', 4)
+        RH = Combine.combineMSM(self.path, 'rh', 4)
         CreateNetCDF.createNcFileMSMp(
             filename=self.saveFilename,
             path='{}/{}'.format(self.saveDir, self.saveFilename),

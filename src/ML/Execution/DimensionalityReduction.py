@@ -7,27 +7,46 @@ from ML.DR.PCA import PrincipalComponentAnalysis
 class Execution(Abstract):
     def __init__(self) -> None:
         super().__init__()
-        path_to_combined = '{}/fdrive/nc/combined'.format(self.parent_path)
+        path_to_combined = '{}/fdrive/nc/reversed'.format(self.parent_path)
         self.ncRain = NetCDF('{}/fdrive/rains.nc'.format(self.parent_path))
         self.ncMSMs = NetCDF('{}/MSMs.nc'.format(path_to_combined))
         self.ncMSMp = NetCDF('{}/MSMp.nc'.format(path_to_combined))
         self.ncDiv = NetCDF('{}/div.nc'.format(path_to_combined))
         self.ncAtmos = NetCDF('{}/atmos.nc'.format(path_to_combined))
         self.varNcRain  = ['rain_Ra', 'rain_MSMs']
-        self.varNcMSMs  = ['psea', 'sp', 'ncld_upper', 'ncld_mid', 'ncld_low', 'ncld', 'dswrf']
+        self.varNcMSMs  = ['psea', 'sp', 'u', 'v', 'temp', 'rh', 'ncld_upper', 'ncld_mid', 'ncld_low', 'ncld', 'dswrf']
         self.varNcMSMp  = ['z', 'w', 'u', 'v', 'temp', 'rh']
         self.varNcDiv   = ['pwv', 'qu', 'qv', 'div']
         self.varNcAtmos = ['pt', 'ept', 'td', 'tl', 'lcl', 'ssi', 'ki']
-        self.twoDimVarNames = self.get2DimentionalVars()
-        self.threeDimVarNames = self.get3DimentionalVars()
-        # self.getVars()
+        self.twoDimVarNames = self.get2DimentionalVarNames()
+        self.threeDimVarNames = self.get3DimentionalVarNames()
+        self.getVars()
 
     def main(self):
-        PrincipalComponentAnalysis.main(n_components=None)
-
-    def getAllVars(self):
-        for var_name in self.allVarsName:
-            var = getattr(self, var_name)
+        PrincipalComponentAnalysis.main(
+            n_components=None,
+            rain_MSMs=self.rain_MSMs,
+            psea=self.psea,
+            sp=self.sp,
+            u=self.u,
+            v=self.v,
+            temp=self.temp,
+            rh=self.rh,
+            ncld_upper=self.ncld_upper,
+            ncld_mid=self.ncld_mid,
+            ncld_low=self.ncld_low,
+            ncld=self.ncld,
+            dswrf=self.dswrf,
+            pwv=self.pwv,
+            qu=self.qu,
+            qv=self.qv,
+            div=self.div,
+            td=self.td,
+            tl=self.tl,
+            lcl=self.lcl,
+            ssi=self.ssi,
+            ki=self.ki,
+        )
 
     def getVars(self) -> None:
         for var in self.varNcRain:
@@ -41,12 +60,12 @@ class Execution(Abstract):
         for var in self.varNcAtmos:
             setattr(self, var, self.ncAtmos.variables[var])
 
-    def reshapeVars(self) -> None:
-        for var_name in self.allVarsName:
+    def reshapeVars(self, var_names) -> None:
+        for var_name in var_names:
             setattr(self, var_name, self.reshape(getattr(self, var_name)))
 
-    def convertVars(self) -> None:
-        for var_name in self.allVarsName:
+    def convertVars(self, var_names) -> None:
+        for var_name in var_names:
             setattr(self, var_name, self.convert(getattr(self, var_name)))
 
     def reshape(self, array: np.ndarray) -> np.ndarray:
@@ -70,7 +89,7 @@ class Execution(Abstract):
         var_names.extend(self.varNcAtmos)
         return var_names
 
-    def get2DimentionalVars(self):
+    def get2DimentionalVarNames(self):
         var_names = []
         var_names.extend(self.varNcRain)
         var_names.extend(self.varNcMSMs)
@@ -80,7 +99,7 @@ class Execution(Abstract):
         var_names.extend(arr)
         return var_names
 
-    def get3DimentionalVars(self):
+    def get3DimentionalVarNames(self):
         var_names = []
         var_names.extend(self.varNcMSMp)
         out = ['td', 'tl', 'lcl', 'ssi', 'ki']

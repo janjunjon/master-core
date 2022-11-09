@@ -46,29 +46,6 @@ class Execution:
             ncldList=arr[10],
             dswrfList=arr[11]
         )
-
-    def createReversedMSMp(self):
-        arr = []
-        for var_name in self.varNcMSMp:
-            locals()[var_name] = self.nc.variables[var_name][:].tolist()
-            for var_p in locals()[var_name]:
-                for var_lat in var_p:
-                    var_lat.reverse()
-            arr.append(locals()[var_name])
-        CreateNetCDF.createNcFileMSMp(
-            filename=self.saveFilename,
-            path='{}/{}'.format(self.saveDir, self.saveFilename),
-            lonList=self.lon,
-            latList=self.lat,
-            pList=self.p,
-            timeList=self.time,
-            zList=arr[0],
-            wList=arr[1],
-            uList=arr[2],
-            vList=arr[3],
-            tempList=arr[4],
-            rhList=arr[5]
-        )
     
     def createReversedDiv(self):
         arr = []
@@ -87,32 +64,4 @@ class Execution:
             quList=arr[1],
             qvList=arr[2],
             divList=arr[3]
-        )
-
-    def createReversedAtmos(self):
-        arr = []
-        for var_name in self.varNcMSMp:
-            locals()[var_name] = self.nc.variables[var_name][:].tolist()
-            if var_name == 'pt' or var_name == 'ept':
-                for var_p in locals()[var_name]:
-                    for var_lat in var_p:
-                        var_lat.reverse()
-            else:
-                for var in locals()[var_name]:
-                    var.reverse()
-            arr.append(locals()[var_name])
-        CreateNetCDF.createNcFileAtmosIndexes(
-            filename=self.saveFilename,
-            path='{}/{}'.format(self.saveDir, self.saveFilename),
-            lonList=self.lon,
-            latList=self.lat,
-            pList=self.p,
-            timeList=self.time,
-            ptList=arr[0],
-            eptList=arr[1],
-            tdList=arr[2],
-            tlList=arr[3],
-            lclList=arr[4],
-            ssiList=arr[5],
-            kiList=arr[6]
         )
