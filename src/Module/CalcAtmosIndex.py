@@ -125,13 +125,39 @@ class Calculation:
         return KI
 
     @classmethod
-    def getCAPE(cls, temp, P, rh):
+    def getParcelProfile(cls, temp, P, rh):
         Td = cls.getDewPointTemperature(temp=temp, rh=rh)
         parcel_profile = calc.parcel_profile(
             pressure=P,
             temperature=temp,
             dewpoint=Td
         )
+        return parcel_profile
+
+    @classmethod
+    def getEL(cls, temp, P, rh):
+        Td = cls.getDewPointTemperature(temp=temp, rh=rh)
+        EL = calc.el(
+            pressure=P,
+            temperature=temp,
+            dewpoint=Td,
+        )
+        return EL
+
+    @classmethod
+    def getLFC(cls, temp, P, rh):
+        Td = cls.getDewPointTemperature(temp=temp, rh=rh)
+        LFC = calc.lfc(
+            pressure=P,
+            temperature=temp,
+            dewpoint=Td,
+        )
+        return LFC
+
+    @classmethod
+    def getCAPE(cls, temp, P, rh):
+        Td = cls.getDewPointTemperature(temp=temp, rh=rh)
+        parcel_profile = cls.getParcelProfile(temp, P, rh)
         CAPE, CIN = calc.cape_cin(
             pressure=P,
             temperature=temp,
