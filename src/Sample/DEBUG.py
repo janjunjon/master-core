@@ -1,6 +1,8 @@
 import numpy as np
 import random
 
+from sklearn.decomposition import PCA
+
 from netCDF.NetCDF import NetCDF
 
 class Sample:
@@ -30,3 +32,20 @@ class Sample:
     def comfirmImage(self):
         ncMSMs = NetCDF('/home/jjthomson/fdrive/nc/reversed/MSMs.nc')
         ncRain = NetCDF('/home/jjthomson/fdrive/nc/rains.nc')
+
+    def PCAdebug(self):
+        x = np.linspace(0.2,1,100)
+        y = 0.8*x + np.random.randn(100)*0.1
+        print(x)
+        print(y)
+        X = np.vstack([x, y]).T
+        print(len(X), len(X[0]), X)
+        np.random.shuffle(X)
+        pca = PCA(n_components=2)
+        pca.fit(X)
+        # PCA(copy=True, n_components=2, whiten=False)
+
+    def arraydebug(self):
+        arr = np.array([[1,2,3],[1,2,3]])
+        arr = arr.T
+        print(arr)

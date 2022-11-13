@@ -2,7 +2,7 @@ import numpy as np
 
 from Abstract.Abstract import Abstract
 from netCDF.NetCDF import NetCDF
-from ML.DR.PCA import PrincipalComponentAnalysis
+from ML.DR.PCA import *
 
 class Execution(Abstract):
     def __init__(self) -> None:
@@ -23,8 +23,10 @@ class Execution(Abstract):
         self.getVars()
 
     def main(self):
-        PrincipalComponentAnalysis.main(
-            n_components=None,
+        numbers = self.getRainExistsNumber(0)
+        self.convertVars(self.twoDimVarNames)
+        self.getSpecificVars(self.twoDimVarNames, numbers)
+        data = PrincipalComponentAnalysis.shapeData(
             rain_MSMs=self.rain_MSMs,
             psea=self.psea,
             sp=self.sp,
@@ -47,7 +49,12 @@ class Execution(Abstract):
             ssi=self.ssi,
             ki=self.ki,
         )
-
+        feature, pca, df = PrincipalComponentAnalysis.main(n_components=None, X=data)
+        self.reshapeVars(self.twoDimVarNames)
+        PrincipalComponentAnalysis.savePCA(pca, '{}/var/PCA/{}'.format(self.root_path, 'PCA_Rain.sav'))
+        PrincipalComponentAnalysis.saveArray(feature, '{}/var/PCA/{}'.format(self.root_path, 'PCA_Rain'))
+        return feature, pca, df
+        
     def getVars(self) -> None:
         for var in self.varNcRain:
             setattr(self, var, self.ncRain.variables[var])
@@ -69,6 +76,8 @@ class Execution(Abstract):
             setattr(self, var_name, self.convert(getattr(self, var_name)))
 
     def reshape(self, array: np.ndarray) -> np.ndarray:
+        if not isinstance(array, np.ndarray):
+            array = np.array(array)
         if array.ndim == 1 and len(array) == 253*241:
             array = np.reshape(array, (253, 241))
         elif array.ndim == 1 and len(array) == 253*241*16:
@@ -76,9 +85,30 @@ class Execution(Abstract):
         return array
 
     def convert(self, array: np.ndarray) -> np.ndarray:
+        if not isinstance(array, np.ndarray):
+            array = np.array(array)
         if array.ndim > 1:
             array = np.ravel(array)
         return array
+
+    def getRainExistsNumber(self, mm):
+        self.rain_Ra = np.array(self.rain_Ra)
+        rains = self.rain_Ra.tolist()
+        rains = self.convert(rains).tolist()
+        Numbers = []
+        for rain in rains:
+            if rain > mm:
+                Numbers.append(rains.index(rain))
+        self.rain_Ra = self.reshape(rains)
+        return Numbers
+
+    def getSpecificVars(self, var_names, Numbers):
+        for var_name in var_names:
+            X = []
+            for i in Numbers:
+                specificVar = getattr(self, var_name)[i]
+                X.append(specificVar)
+            setattr(self, var_name, X)
 
     def getAllVarsName(self):
         var_names = []
