@@ -5,7 +5,8 @@ from mpl_toolkits.basemap import Basemap
 import os
 
 class Draw:
-    def drawMapByNC(self, nc, v):
+    @classmethod
+    def drawMapByNC(cls, path, nc, v, region):
         var = np.array(nc[v][0][:][:])
         Lo = np.array(nc['lon'])
         La = np.array(nc['lat'])
@@ -15,12 +16,12 @@ class Draw:
         interval.insert(0, 0.1)
         cmap = cm.jet
         cmap.set_under('w', alpha=0)
-        basemap = self.return_basemap()
+        basemap = cls.return_basemap(region)
         x, y = basemap(Lon, Lat)
         im=plt.contourf(x, y, var, interval, cmap=cmap, latlon=True)
         cb = basemap.colorbar(im, "right", size="2.5%")
         plt.show()
-        plt.savefig("./img/test.png")
+        plt.savefig(path)
         plt.close()
 
     def drawMapByArray(self, v_array, v_lat, v_lon, t, path, region):
@@ -59,7 +60,8 @@ class Draw:
         plt.savefig(os.path.expanduser(path))
         plt.close()
 
-    def return_basemap(self, region):
+    @classmethod
+    def return_basemap(cls, region):
         m=Basemap(
             projection='cyl',
             resolution='i',

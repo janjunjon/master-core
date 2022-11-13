@@ -1,5 +1,7 @@
 memo.txt
+*.code-workspace
 __pycache__
+fdrive
 *.nc
 *.grd
 *LOG*

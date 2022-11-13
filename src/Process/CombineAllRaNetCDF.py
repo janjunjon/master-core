@@ -1,5 +1,5 @@
 from netCDF.NetCDF import NetCDF
-from Module.netcdf import makeNetcdfFile
+from Module.CreateNetCDF import CreateNetCDF
 import netCDF4
 import os
 
@@ -13,7 +13,7 @@ class Execution:
 
     def main(self):
         rains = self.conbineRa()
-        makeNetcdfFile(
+        CreateNetCDF.createNcFileRain(
             path='/home/jjthomson/fdrive/ra/ra.nc',
             lonList=self.lon,
             latList=self.lat,

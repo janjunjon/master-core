@@ -1,6 +1,7 @@
 import netCDF4
 
 from netCDF.NetCDF import NetCDF
+from Module.Reverse import Reverse
 from Module.CreateNetCDF import *
 
 class ConvertedMSMs(NetCDF):
@@ -12,22 +13,27 @@ class ConvertedMSMs(NetCDF):
 
         self.nc = netCDF4.Dataset(file, format="NETCDF3_CLASSIC")
         self.lat, self.lon = self.getLatLon()
+        self.lat.reverse()
         # 0,3,6,9,12,15,18,21時は欠損
         self.time = [1.0, 4.0, 7.0, 10.0, 13.0, 16.0, 19.0, 22.0]
         self.MSMRange = [120, 150, 22.4, 47.6]
+        self.varNcMSMs  = ['r1h', 'psea', 'sp', 'u', 'v', 'temp', 'rh', 'ncld_upper', 'ncld_mid', 'ncld_low', 'ncld', 'dswrf']
+        self.getVars()
+        self.reverse()
 
-        self.rain = self._convertMSMsTo3hoursWithNoAccumulation()
-        self.psea = self._convertMSMsTo3hoursWithNoAccumulation(var='psea')
-        self.sp = self._convertMSMsTo3hoursWithNoAccumulation(var='sp')
-        self.u = self._convertMSMsTo3hoursWithNoAccumulation(var='u')
-        self.v = self._convertMSMsTo3hoursWithNoAccumulation(var='v')
-        self.temp = self._convertMSMsTo3hoursWithNoAccumulation(var='temp')
-        self.rh = self._convertMSMsTo3hoursWithNoAccumulation(var='rh')
-        self.ncld_upper = self._convertMSMsTo3hoursWithNoAccumulation(var='ncld_upper')
-        self.ncld_mid = self._convertMSMsTo3hoursWithNoAccumulation(var='ncld_mid')
-        self.ncld_low = self._convertMSMsTo3hoursWithNoAccumulation(var='ncld_low')
-        self.ncld = self._convertMSMsTo3hoursWithNoAccumulation(var='ncld')
-        self.dswrf = self._convertMSMsTo3hoursWithNoAccumulation(var='dswrf')
+    def getVars(self):
+        for var_name in self.varNcMSMs:
+            if var_name == 'r1h':
+                setattr(self, 'rain', self._convertMSMsTo3hoursWithNoAccumulation(var_name))
+            else:
+                setattr(self, var_name, self._convertMSMsTo3hoursWithNoAccumulation(var_name))
+
+    def reverse(self):
+        for var_name in self.varNcMSMs:
+            if var_name == 'r1h':
+                setattr(self, 'rain', Reverse.reverseLat(getattr(self, 'rain')))
+            else:
+                setattr(self, var_name, Reverse.reverseLat(getattr(self, var_name)))
 
     def getLatLon(self):
         lat, lon = self._returnConvertedLatLon()
@@ -87,29 +93,3 @@ class ConvertedMSMs(NetCDF):
                 lat_a.append(lon_a)
             accumulate3hours.append(lat_a)
         return accumulate3hours
-
-    def createNetcdfFile(self):
-        filename = self.filename
-        path = '{}/{}.nc'.format(self.saveDir, filename)
-        CreateNetCDF.createNcFileMSMs(
-            filename=filename,
-            path=path,
-            lonList=self.lon,
-            latList=self.lat,
-            timeList=self.time,
-            rainList=self.rain,
-            pseaList=self.psea,
-            spList=self.sp,
-            uList=self.u,
-            vList=self.v,
-            tempList=self.temp,
-            rhList=self.rh,
-            ncld_upperList=self.ncld_upper,
-            ncld_midList=self.ncld_mid,
-            ncld_lowList=self.ncld_low,
-            ncldList=self.ncld,
-            dswrfList=self.dswrf
-        )
-
-    def drawMapByArray(self, v_array, v_lat, v_lon, t, path):
-        super().drawMapByArray(v_array, v_lat, v_lon, t, path)

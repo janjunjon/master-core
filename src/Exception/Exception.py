@@ -1,0 +1,2 @@
+class NetCDFError(Exception):
+    pass

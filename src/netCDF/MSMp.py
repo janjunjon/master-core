@@ -1,38 +1,25 @@
-import netCDF4
+from netCDF.NetCDF import *
+from Module.Reverse import Reverse
 
-class MSMp:
-    def __init__(self, file) -> None:
-        self.nc = netCDF4.Dataset(file)
-        self.lat, self.lon = self.getLatLon(self.nc)
-        self.u, self.v = self.getWind(self.nc)
-        self.rh = self.getRelativeHumidity(self.nc)
-        self.temp = self.getTemperature(self.nc)
-        self.w = self.getVerticalVelocity(self.nc)
-        self.z = self.getGeopotentialHeight(self.nc)
-        pass
+class MSMp(NetCDF):
+    def __init__(self, path) -> None:
+        super().__init__(path)
+        lat = self.nc.variables['lat'][:].tolist()
+        lat.reverse()
+        self.lat = lat
+        self.lon = self.variables['lon'][:].tolist()
+        self.p = [
+            1000.,  975.,  950.,  925.,  900.,  850.,  800.,  700.,  600.,  500.,  400.,  300.,  250.,  200.,  150.,  100.
+        ]
+        self.time = [1.0, 4.0, 7.0, 10.0, 13.0, 16.0, 19.0, 22.0]
+        self.varNcMSMp  = ['z', 'w', 'u', 'v', 'temp', 'rh']
+        self.getVars()
+        self.reverse()
 
-    def getLatLon(self, nc):
-        lat = nc.variables['lat']
-        lon = nc.variables['lon']
-        return lat, lon
+    def getVars(self):
+        for var_name in self.varNcMSMp:
+            setattr(self, var_name, self.nc.variables[var_name][:].tolist())
 
-    def getWind(self, nc):
-        u = nc.variables['u']
-        v = nc.variables['v']
-        return u, v
-    
-    def getRelativeHumidity(nc):
-        rh = nc.variables['rh']
-        return rh
-
-    def getTemperature(self, nc):
-        temp = nc.variables['temp']
-        return temp
-
-    def getVerticalVelocity(self, nc):
-        w = nc.variables['w']
-        return w
-
-    def getGeopotentialHeight(self, nc):
-        z = nc.variables['z']
-        return z
+    def reverse(self):
+        for var_name in self.varNcMSMp:
+            setattr(self, var_name, Reverse.reverseLat(getattr(self, var_name)))
