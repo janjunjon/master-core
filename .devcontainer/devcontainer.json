@@ -1,10 +1,11 @@
 {
-  "name": "scale-dev",
-  "dockerComposeFile": "../docker-compose.yml",
-  "service": "app",
-  "workspaceFolder": "/root",
-  "extensions": [
-    "ms-python.python",
-    "ms-python.vscode-pylance"
-  ]
+	"name": "scale-dev",
+	"dockerComposeFile": "../docker-compose.yml",
+	"service": "app",
+	"workspaceFolder": "/root",
+	"extensions": [
+		"MS-CEINTL.vscode-language-pack-ja",
+		"ms-python.python",
+		"ms-python.vscode-pylance"
+	]
 }

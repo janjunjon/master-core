@@ -4,6 +4,7 @@ from Abstract.Abstract import Abstract
 from netCDF.NetCDF import NetCDF
 from Module.CalcAtmosIndex import Calculation as AtmosCalculation
 from Module.CreateNetCDF import CreateNetCDF
+from Module.Reverse import Reverse
 
 class NetCDFAtmosIndex(Abstract):
     def __init__(self, path_MSMp, savePath, filename) -> None:
@@ -12,7 +13,9 @@ class NetCDFAtmosIndex(Abstract):
         self.savePath = savePath
         self.filename = filename
 
-        self.lat = np.array(self.MSMp.variables['lat'][:].tolist())
+        lat = self.MSMp.variables['lat'][:].tolist()
+        lat.reverse()
+        self.lat = np.array(lat)
         self.lon = np.array(self.MSMp.variables['lon'][:].tolist())
         self.time = np.array(self.MSMp.variables['time'][:].tolist())
         # [1000.,  975.,  950.,  925.,  900.,  850.,  800.,  700.,  600.,  500.,  400.,  300.,  250.,  200.,  150.,  100.]
@@ -28,9 +31,13 @@ class NetCDFAtmosIndex(Abstract):
         self.rh700hPa = self.rh[:, 7, :, :]
         self.rh500hPa = self.rh[:, 9, :, :]
 
+        self.varNcAtmos = ['pt', 'ept', 'td', 'tl', 'lcl', 'ssi', 'ki']
+
     def main(self):
-        self.PT, self.EPT = self.calcFourDimensionalVars()
-        self.Td, self.Tl, self.LCL, self.SSI, self.KI = self.calcThreeDimensionalVars()
+        self.pt, self.ept = self.calcFourDimensionalVars()
+        self.td, self.tl, self.lcl, self.ssi, self.ki = self.calcThreeDimensionalVars()
+        for var_name in self.varNcAtmos:
+            setattr(self, var_name, Reverse.reverseLat(getattr(self, var_name)))
         CreateNetCDF.createNcFileAtmosIndexes(
             filename=self.filename,
             path=self.savePath,
@@ -38,13 +45,13 @@ class NetCDFAtmosIndex(Abstract):
             latList=self.lat,
             pList=self.p,
             timeList=self.time,
-            ptList=self.PT,
-            eptList=self.EPT,
-            tdList=self.Td,
-            tlList=self.Tl,
-            lclList=self.LCL,
-            ssiList=self.SSI,
-            kiList=self.KI
+            ptList=self.pt,
+            eptList=self.ept,
+            tdList=self.td,
+            tlList=self.tl,
+            lclList=self.lcl,
+            ssiList=self.ssi,
+            kiList=self.ki
         )
 
     def calcFourDimensionalVars(self):
