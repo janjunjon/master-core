@@ -13,6 +13,7 @@ class Data:
 
     def main(self):
         MLData = self.combineExamples()
+        print(len(MLData), len(MLData[0]))
         return MLData
 
     def combineExamples(self):

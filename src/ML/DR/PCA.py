@@ -10,7 +10,10 @@ from Abstract.Abstract import Abstract
 
 class PrincipalComponentAnalysis:
     @classmethod
-    def main(cls, n_components, X):
+    def main(cls, X, n_components: int = None):
+        """
+        transform(X): np.dot(X-X.mean(axis=0), PCA.components_)
+        """
         pca = PCA(n_components=n_components)
         pca.fit(X)
         feature = pca.transform(X)
@@ -63,37 +66,63 @@ class PrincipalComponentAnalysis:
 
 class PCALoad(Abstract):
     def __init__(self, filename) -> None:
+        """
+        filename: *.sav
+        """
         super().__init__()
         self.label = filename.split('.')[0]
         self.path = '{}/var/PCA/{}'.format(self.root_path, filename)
         self.pca = pickle.load(open(self.path, 'rb'))
         self.feature = np.load(file='{}/var/PCA/{}.npy'.format(self.root_path, self.label))
+        self.indexes = np.load(file='{}/var/PCA/{}.npy'.format(self.root_path, '{}_indexes'.format(self.label, '')))
 
     @property
-    def components(self):
+    def score_(self):
+        """
+        score_: 主成分得点
+        """
+        np.set_printoptions(precision=5, suppress=True)
+        return self.feature
+
+    @property
+    def loading_(self):
+        """
+        loading_: 主成分負荷量
+        """
         np.set_printoptions(precision=5, suppress=True)
         return self.pca.components_
 
     @property
-    def mean(self):
+    def mean_(self):
         return self.pca.mean_
 
     @property
-    def covariance(self):
+    def covariance_(self):
         return self.pca.get_covariance()
 
     @property
     def explained_variance_ratio_(self):
+        """
+        explained_variance_ratio_: 各主成分の寄与率
+        """
         np.set_printoptions(precision=5, suppress=True)
         return self.pca.explained_variance_ratio_
     
-    def print_cumulative_contribution_rate(self):
+    @property
+    def cumulative_contribution_rate(self):
         explained_variance_ratio_ = self.getNormalArray(self.pca.explained_variance_ratio_)
+        array = []
         cumulative_contribution_rate = 0
-        text = ''
         for each_rate in explained_variance_ratio_:
             cumulative_contribution_rate += each_rate
-            text += 'Until No.{}: {}\n'.format(explained_variance_ratio_.index(each_rate)+1, cumulative_contribution_rate)
+            array.append(cumulative_contribution_rate)
+        return array
+
+    def print_cumulative_contribution_rate(self):
+        cumulative_contribution_rates = self.cumulative_contribution_rate()
+        text = ''
+        for i in range(len(cumulative_contribution_rates)):
+            text += 'Until No.{}: {}\n'.format(i+1, cumulative_contribution_rates[i])
         with open('{}/var/PCA/{}.txt'.format(self.root_path, self.label), 'w') as f:
             f.write(text)
 
