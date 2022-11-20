@@ -18,3 +18,25 @@ class Array:
         if array.ndim > 1:
             array = np.ravel(array)
         return array
+
+    @classmethod
+    def listToNdArray(cls, array):
+        if isinstance(array, list):
+            array = np.array(array)
+        return array
+
+    @classmethod
+    def ndarrayToList(cls, array):
+        if isinstance(array, np.ndarray):
+            array = array.tolist()
+        return array
+
+    @classmethod
+    def getTransposedMatrix(cls, array):
+        transposedMatrix = []
+        for i in range(len(array[0])):
+            X = []
+            for j in range(len(array)):
+                X.append(array[j][i])
+            transposedMatrix.append(X)
+        return transposedMatrix

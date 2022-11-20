@@ -46,6 +46,18 @@ class Sample:
         # PCA(copy=True, n_components=2, whiten=False)
 
     def arraydebug(self):
-        arr = np.array([[1,2,3],[1,2,3]])
-        arr = arr.T
+        arr = np.array([
+            [
+                [1.1,2,3,4,5],
+                [2,3,4,5,6],
+            ],
+            [
+                [3,4,5,6,7],
+                [4,5,6,7,8],
+            ],
+        ])
+        print(arr, arr.ndim)
+        # print(arr.tolist().index(1.1))
+        arr = np.ravel(arr)
         print(arr)
+        print(arr[1:3])

@@ -119,7 +119,7 @@ class PCALoad(Abstract):
         return array
 
     def print_cumulative_contribution_rate(self):
-        cumulative_contribution_rates = self.cumulative_contribution_rate()
+        cumulative_contribution_rates = self.cumulative_contribution_rate
         text = ''
         for i in range(len(cumulative_contribution_rates)):
             text += 'Until No.{}: {}\n'.format(i+1, cumulative_contribution_rates[i])

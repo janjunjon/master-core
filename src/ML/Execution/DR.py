@@ -3,13 +3,14 @@ import numpy as np
 from Abstract.Abstract import Abstract
 from netCDF.NetCDF import NetCDF
 from ML.DR.PCA import *
+from ML.Other.HeavyRainCases import Indexes
 
 class Execution(Abstract):
     """
     <DimensionalityReduction>
     Execution of Principal Component Analysis
     """
-    def __init__(self) -> None:
+    def __init__(self, indexes=False) -> None:
         super().__init__()
         path_to_combined = '{}/fdrive/nc/reversed'.format(self.parent_path)
         self.ncRain = NetCDF('{}/fdrive/rains.nc'.format(self.parent_path))
@@ -25,9 +26,17 @@ class Execution(Abstract):
         self.twoDimVarNames = self.get2DimentionalVarNames()
         self.threeDimVarNames = self.get3DimentionalVarNames()
         self.getVars()
+        if indexes:
+            instance = Indexes()
+            self.indexes = instance.indexes
+        else:
+            self.indexes = None
 
     def main(self):
-        indexes = self.getRainExistsIndex(0)
+        if not self.indexes:
+            indexes = self.getRainExistsIndex(0)
+        else:
+            indexes = self.indexes
         print(len(indexes))
         self.convertVars(self.twoDimVarNames)
         self.getSpecificVars(self.twoDimVarNames, indexes)
@@ -56,9 +65,9 @@ class Execution(Abstract):
         )
         feature, pca, df = PrincipalComponentAnalysis.main(n_components=None, X=data)
         self.reshapeVars(self.twoDimVarNames)
-        PrincipalComponentAnalysis.savePCA(pca, '{}/var/PCA/{}'.format(self.root_path, 'PCA_Rain.sav'))
-        PrincipalComponentAnalysis.saveArray(feature, '{}/var/PCA/{}'.format(self.root_path, 'PCA_Rain'))
-        PrincipalComponentAnalysis.saveArray(indexes, '{}/var/PCA/{}'.format(self.root_path, 'PCA_Rain_indexes'))
+        PrincipalComponentAnalysis.savePCA(pca, '{}/var/PCA/{}'.format(self.root_path, 'PCA_HeavyRainCases.sav'))
+        PrincipalComponentAnalysis.saveArray(feature, '{}/var/PCA/{}'.format(self.root_path, 'PCA_HeavyRainCases'))
+        PrincipalComponentAnalysis.saveArray(indexes, '{}/var/PCA/{}'.format(self.root_path, 'PCA_HeavyRainCases_indexes'))
         return feature, pca, df
         
     def getVars(self) -> None:
