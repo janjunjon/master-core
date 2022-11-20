@@ -1,5 +1,7 @@
 import numpy as np
+import os
 
+from Exception.Exception import *
 from Abstract.Abstract import Abstract
 from netCDF.NetCDF import NetCDF
 from ML.DR.PCA import *
@@ -32,14 +34,27 @@ class Execution(Abstract):
         else:
             self.indexes = None
 
-    def main(self):
-        if not self.indexes:
-            indexes = self.getRainExistsIndex(0)
-        else:
-            indexes = self.indexes
-        print(len(indexes))
+    def each202007(self):
+        count = 0
+        files = os.listdir('/home/jjthomson/fdrive/nc/div')
+        for file in files:
+            filename = file.split('.')[0]
+            pca_save_path = '{}/var/PCA/202007/PCA_{}.sav'.format(self.root_path, filename)
+            arr_save_path = '{}/var/PCA/202007/PCA_{}'.format(self.root_path, filename)
+            self.main(
+                pca_save_path=pca_save_path,
+                arr_save_path=arr_save_path,
+                start=count,
+                end=count+24
+            )
+            count += 24
+            self.getVars()
+
+    def main(self, pca_save_path, arr_save_path, t=None, start=None, end=None):
+        self.getSpecificTime(var_names=self.twoDimVarNames, t=t, start=start, end=end)
         self.convertVars(self.twoDimVarNames)
-        self.getSpecificVars(self.twoDimVarNames, indexes)
+        # indexes = self.getIndexes()
+        # self.getSpecificVars(self.twoDimVarNames, indexes)
         data = PrincipalComponentAnalysis.shapeData(
             rain_MSMs=self.rain_MSMs,
             psea=self.psea,
@@ -65,10 +80,18 @@ class Execution(Abstract):
         )
         feature, pca, df = PrincipalComponentAnalysis.main(n_components=None, X=data)
         self.reshapeVars(self.twoDimVarNames)
-        PrincipalComponentAnalysis.savePCA(pca, '{}/var/PCA/{}'.format(self.root_path, 'PCA_HeavyRainCases.sav'))
-        PrincipalComponentAnalysis.saveArray(feature, '{}/var/PCA/{}'.format(self.root_path, 'PCA_HeavyRainCases'))
-        PrincipalComponentAnalysis.saveArray(indexes, '{}/var/PCA/{}'.format(self.root_path, 'PCA_HeavyRainCases_indexes'))
+        PrincipalComponentAnalysis.savePCA(pca, pca_save_path)
+        PrincipalComponentAnalysis.saveArray(feature, arr_save_path)
+        # PrincipalComponentAnalysis.saveArray(indexes, '{}/var/PCA/{}'.format(self.root_path, 'PCA_HeavyRainCases_indexes'))
         return feature, pca, df
+
+    def getIndexes(self):
+        if not self.indexes:
+            indexes = self.getRainExistsIndex(0)
+        else:
+            indexes = self.indexes
+        print(len(indexes))
+        return indexes
         
     def getVars(self) -> None:
         for var in self.varNcRain:
@@ -110,20 +133,30 @@ class Execution(Abstract):
         self.rain_Ra = np.array(self.rain_Ra)
         rains = self.rain_Ra.tolist()
         rains = self.convert(rains).tolist()
-        Indexs = []
+        Indexes = []
         for i, rain in enumerate(rains):
             if rain > mm:
-                Indexs.append(i)
+                Indexes.append(i)
         self.rain_Ra = self.reshape(rains)
-        return Indexs
+        return Indexes
 
-    def getSpecificVars(self, var_names, Indexs):
+    def getSpecificVars(self, var_names, Indexes):
         for var_name in var_names:
             X = []
-            for i in Indexs:
+            for i in Indexes:
                 specificVar = getattr(self, var_name)[i]
                 X.append(specificVar)
             setattr(self, var_name, X)
+
+    def getSpecificTime(self, var_names, t=None, start=None, end=None):
+        for var_name in var_names:
+            if t != None:
+                specificVar = getattr(self, var_name)[t]
+            elif start != None and end != None:
+                specificVar = getattr(self, var_name)[start:end]
+            else:
+                raise SetError('time step is invalid.')
+            setattr(self, var_name, specificVar)
 
     def getAllVarsName(self):
         var_names = []

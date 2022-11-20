@@ -65,7 +65,7 @@ class PrincipalComponentAnalysis:
         np.save(path, array)
 
 class PCALoad(Abstract):
-    def __init__(self, filename) -> None:
+    def __init__(self, filename, indexes=True) -> None:
         """
         filename: *.sav
         """
@@ -74,7 +74,8 @@ class PCALoad(Abstract):
         self.path = '{}/var/PCA/{}'.format(self.root_path, filename)
         self.pca = pickle.load(open(self.path, 'rb'))
         self.feature = np.load(file='{}/var/PCA/{}.npy'.format(self.root_path, self.label))
-        self.indexes = np.load(file='{}/var/PCA/{}.npy'.format(self.root_path, '{}_indexes'.format(self.label, '')))
+        if indexes:
+            self.indexes = np.load(file='{}/var/PCA/{}.npy'.format(self.root_path, '{}_indexes'.format(self.label, '')))
 
     @property
     def score_(self):
