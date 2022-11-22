@@ -9,12 +9,13 @@ class MLNetCDF(SKLearn):
     def __init__(self) -> None:
         super().__init__()
         self.model = self.loadModel(
-            '{}/var/MLModels/v2/SDGRegressor_PCA_HeavyRainCases_10_rain_MSMs.sav'.format(self.root_path)
+            '{}/var/MLModels/v2/SDGRegressor_PCA_HeavyRainCases.sav'.format(self.root_path)
         )
         self.save_path = '/home/jjthomson/fdrive/images/predict/predictedRain20200703_0300JST_HeavyRainCases.png'
         self.region = [22, 48, 120, 150]
         self.predicted_time_step = 24
         self.nc_rains = NetCDF('/home/jjthomson/fdrive/rains.nc')
+        self.nc_pca = NetCDF('/home/jjthomson/fdrive/nc/PCA/pca.nc')
         self.rain_MSMs = self.nc_rains.variables['rain_MSMs']
         i = self.predicted_time_step
 
@@ -29,33 +30,6 @@ class MLNetCDF(SKLearn):
         self.predicted = predicted
         print(self.calcRMSE())
         self.makeFigure(self.predicted)
-
-    def shapeData(self):
-        i = self.predicted_time_step
-        rain_Ra = np.ravel(self.rain_Ra[i])
-        rain_MSMs = np.ravel(self.rain_MSMs[i])
-        w = np.ravel(self.w[i])
-        u = np.ravel(self.u[i])
-        v = np.ravel(self.v[i])
-        temp = np.ravel(self.temp[i])
-        rh = np.ravel(self.rh[i])
-        Y = []
-        X = []
-        for i in range(len(rain_Ra)):
-            Y_arr = [
-                rain_Ra[i]
-            ]
-            X_arr = [
-                rain_MSMs[i],
-                w[i],
-                u[i],
-                v[i],
-                temp[i],
-                rh[i]
-            ]
-            Y.append(Y_arr)
-            X.append(X_arr)
-        return X, Y
 
     def makeFigure(self, var):
         d = Draw()
@@ -75,3 +49,12 @@ class MLNetCDF(SKLearn):
         deviation = np.array([(x - y) ** 2 for (x, y) in zip(X, Y)])
         RMSE = pow(np.mean(deviation), 0.5)
         return RMSE
+
+    def getPCAComponents(self):
+        for i in range(21):
+            # setattr(self, f'component{i}', self.nc_pca.variables[f'component{i}'])
+            if i == 0:
+                components = np.array([np.ravel(self.nc_pca.variables[f'component{i+1}'][self.predicted_time_step])])
+            else:
+                components = np.append(components, [np.ravel(self.nc_pca.variables[f'component{i+1}'][self.predicted_time_step])], axis=0)
+        return components

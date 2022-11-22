@@ -34,22 +34,6 @@ class Execution(Abstract):
         else:
             self.indexes = None
 
-    def each202007(self):
-        count = 0
-        files = os.listdir('/home/jjthomson/fdrive/nc/div')
-        for file in files:
-            filename = file.split('.')[0]
-            pca_save_path = '{}/var/PCA/202007/PCA_{}.sav'.format(self.root_path, filename)
-            arr_save_path = '{}/var/PCA/202007/PCA_{}'.format(self.root_path, filename)
-            self.main(
-                pca_save_path=pca_save_path,
-                arr_save_path=arr_save_path,
-                start=count,
-                end=count+24
-            )
-            count += 24
-            self.getVars()
-
     def main(self, pca_save_path, arr_save_path, t=None, start=None, end=None):
         self.getSpecificTime(var_names=self.twoDimVarNames, t=t, start=start, end=end)
         self.convertVars(self.twoDimVarNames)
@@ -184,3 +168,36 @@ class Execution(Abstract):
         arr = [self.varNcAtmos[i] for i in np.arange(len(self.varNcAtmos)) if self.varNcAtmos[i] not in out]
         var_names.extend(arr)
         return var_names
+
+class Execution202007(Execution):
+    def __init__(self, indexes=False) -> None:
+        super().__init__(indexes)
+
+    def each202007(self):
+        count = 0
+        files = os.listdir('/home/jjthomson/fdrive/nc/div')
+        for i, file in enumerate(files):
+            filename = file.split('.')[0]
+            pca_save_path = '{}/var/PCA/202007/PCA_{}.sav'.format(self.root_path, filename)
+            arr_save_path = '{}/var/PCA/202007/PCA_{}'.format(self.root_path, filename)
+            if i == 0:
+                start = count
+                count += 3
+                end = count
+            elif i == 32:
+                start = count
+                count += 5
+                end = count
+            else:
+                start = count
+                count += 8
+                end = count
+            self.main(
+                pca_save_path=pca_save_path,
+                arr_save_path=arr_save_path,
+                start=start,
+                end=end
+            )
+            print('DEBUG {}'.format(pca_save_path), start, end)
+            
+            self.getVars()

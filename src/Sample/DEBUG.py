@@ -46,18 +46,29 @@ class Sample:
         # PCA(copy=True, n_components=2, whiten=False)
 
     def arraydebug(self):
-        arr = np.array([
+        locals()['arr'] = np.array([
             [
-                [1.1,2,3,4,5],
-                [2,3,4,5,6],
+                [1,2,3,4,5],
+                [1,2,3,4,5]
             ],
             [
-                [3,4,5,6,7],
-                [4,5,6,7,8],
-            ],
+                [1,2,3,4,5],
+                [1,2,3,4,5]
+            ]
         ])
-        print(arr, arr.ndim)
-        # print(arr.tolist().index(1.1))
-        arr = np.ravel(arr)
-        print(arr)
-        print(arr[1:3])
+        print(locals()['arr'], locals()['arr'].ndim)
+        locals()['arr'] = np.append(
+            locals()['arr'],
+            np.array([
+                [
+                    [6,7,8,9,10],
+                    [6,7,8,9,10]
+                ],
+                [
+                    [6,7,8,9,10],
+                    [6,7,8,9,10]
+                ]
+            ]),
+            axis=0
+        )
+        print(locals()['arr'], locals()['arr'].ndim)

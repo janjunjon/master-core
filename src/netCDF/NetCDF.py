@@ -14,9 +14,18 @@ class NetCDF:
         self.variables = self.nc.variables
         self.filename = path.split('/')[-1].split('.')[0]
         self.MSMRange = [120, 150, 22.4, 47.6]
-
-        self.lat = self.nc.variables['lat'][:].tolist()
-        self.lon = self.nc.variables['lon'][:].tolist()
+    
+    @property
+    def lat(self):
+        return self.nc.variables['lat'][:].tolist()
+    
+    @property
+    def lon(self):
+        return self.nc.variables['lon'][:].tolist()
+    
+    @property
+    def time(self):
+        return self.nc.variables['time'][:].tolist()
 
     def arrayToBinary(self, arr, path):
         nd_arr = np.array(arr)

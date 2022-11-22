@@ -3,6 +3,7 @@ import numpy as np
 from netCDF.NetCDF import NetCDF
 from Module.Array import Array
 from ML.Other.Abstract import SKLearn
+from ML.Other.HeavyRainCases import Indexes
 from ML.DR.PCA import *
 from ML.Regression.v2.Linear.SDGRegressor import SDGRegressor
 
@@ -10,13 +11,17 @@ class Execution(SKLearn):
     """
     Execution to create RegressionModel from PCA components
     """
-    def __init__(self, save_path, pca_path, i) -> None:
+    def __init__(self, save_path, i, indexes=True) -> None:
         super().__init__()
         self.save_path = save_path
         self.nc_rains = NetCDF('/home/jjthomson/fdrive/rains.nc')
+        self.nc_pca = NetCDF('/home/jjthomson/fdrive/nc/PCA/pca.nc')
+        self.components = self.getPCAComponents()
         self.Ra = self.nc_rains.variables['rain_Ra']
         self.rain_MSMs = self.nc_rains.variables['rain_MSMs']
-        self.pca = PCALoad(pca_path)
+        if indexes:
+            instance = Indexes()
+            self.indexes = instance.indexes
         self.i = i
 
     def createModel(self):
@@ -37,8 +42,14 @@ class Execution(SKLearn):
             so, if specific pca components, specify where you wanna use (example: [:10]) after transpose pca.feature
         """
         rains_Ra = Array.convert(self.Ra[:].tolist())
-        Y = [[rains_Ra[i]] for i in self.pca.indexes]
-        X = self.pca.feature.T[:self.i].tolist()
+        Y = [[rains_Ra[i]] for i in self.indexes]
+        components = self.components[:self.i]
+        X = []
+        for component in components:
+            each = []
+            for index in self.indexes:
+                each.append(component[index])
+            X.append(each)
         X = self.additionalX(X)
         X = Array.getTransposedMatrix(X)
         print(type(X), len(X), len(X[0]))
@@ -53,7 +64,16 @@ class Execution(SKLearn):
             X = X.tolist()
         additionalX = []
         rains_MSMs = Array.convert(self.rain_MSMs[:].tolist())
-        X_rain = [rains_MSMs[i] for i in self.pca.indexes]
+        X_rain = [rains_MSMs[i] for i in self.indexes]
         additionalX.append(X_rain)
         X.extend(additionalX)
         return X
+
+    def getPCAComponents(self):
+        for i in range(21):
+            # setattr(self, f'component{i}', self.nc_pca.variables[f'component{i}'])
+            if i == 0:
+                components = np.array([np.ravel(self.nc_pca.variables[f'component{i+1}'][:])])
+            else:
+                components = np.append(components, [np.ravel(self.nc_pca.variables[f'component{i+1}'][:])], axis=0)
+        return components

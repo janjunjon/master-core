@@ -6,3 +6,4 @@ class Abstract:
     def __init__(self) -> None:
         self.root_path = self.__class__.root
         self.parent_path = self.__class__.parent
+        self.fdrive_path = '{}/fdrive'.format(self.root_path)
