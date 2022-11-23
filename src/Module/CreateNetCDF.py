@@ -323,6 +323,45 @@ class CreateNetCDF:
         ssi[:, :, :] = np.array(ssiList)
         ki[:, :, :] = np.array(kiList)
         nc.close()
+
+    @classmethod
+    def createNcFilePCAv2(
+        cls, path, lonList, latList, timeList, **kwargs
+    ):
+        """
+        kwargs
+        key: varname (example, component1, component2...)
+        value: array
+        """
+        nc = netCDF4.Dataset(path, "w", format="NETCDF4")
+        nc.createDimension("lon", len(lonList))
+        nc.createDimension("lat", len(latList))
+        nc.createDimension("time", len(timeList))
+
+        lon = nc.createVariable("lon", dtype('float32'), "lon")
+        lon.long_name = 'longitude'
+        lon.units = 'degrees_east'
+        lon.standard_name = 'longitude'
+
+        lat = nc.createVariable("lat", dtype('float32'), "lat")
+        lat.long_name = 'latitude'
+        lat.units = 'degrees_north'
+        lat.standard_name = 'latitude'
+
+        time = nc.createVariable("time", dtype('int16'), "time")
+        time.long_name = 'time'
+        time.unit = 'hours since {}'
+        time.standard_name = 'time'
+
+        lon[:], lat[:], time[:] = np.array(lonList), np.array(latList), np.array(timeList)
+
+        for key, value in kwargs.items():
+            locals()[key] = nc.createVariable(key, dtype('int16'), ("time", "lat", "lon"))
+            setattr(locals()[key], 'long_name', 'Principal Components Analysis {}'.format(key))
+            setattr(locals()[key], 'units', '')
+            setattr(locals()[key], 'standard_name', 'PCA_{}'.format(key))
+            locals()[key][:, :, :] = np.array(value)
+        nc.close()
         
     @classmethod
     def createNcFileRain(cls, filename, path, lonList, latList, timeList, rainList):
