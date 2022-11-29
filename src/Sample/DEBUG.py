@@ -1,5 +1,7 @@
 import numpy as np
 import random
+import struct
+from sys import byteorder
 
 from sklearn.decomposition import PCA
 
@@ -72,3 +74,17 @@ class Sample:
             axis=0
         )
         print(locals()['arr'], locals()['arr'].ndim)
+
+    def debugbinary(self, path):
+        rain = []
+        i = 0
+        with open(path, "rb") as f:
+            while True:
+                data=f.read(2)
+                if data=="":
+                    break
+                rain.append(data)
+                if i < 10: print(data.decode())
+                i=i+1
+        print(rain[:10])
+        return data

@@ -7,8 +7,11 @@ import numpy as np
 from mpl_toolkits.basemap import Basemap
 import os
 
-class NetCDF:
+from Abstract.Abstract import Abstract
+
+class NetCDF(Abstract):
     def __init__(self, path) -> None:
+        super().__init__()
         self.nc = netCDF4.Dataset(path)
         self.dimensions = self.nc.dimensions
         self.variables = self.nc.variables

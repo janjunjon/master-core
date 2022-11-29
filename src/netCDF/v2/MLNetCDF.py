@@ -1,10 +1,9 @@
 import numpy as np
 
-from ML.DR.PCA import PCALoad
+from netCDF.NetCDF import NetCDF
 from ML.Other.Abstract import SKLearn
 from Module.Draw import Draw
 from Module.Array import Array
-from netCDF.NetCDF import NetCDF
 
 class MLNetCDF(SKLearn):
     """
@@ -16,9 +15,9 @@ class MLNetCDF(SKLearn):
     def __init__(self) -> None:
         super().__init__()
         self.model = self.loadModel(
-            '{}/var/MLModels/v2/SDGRegressor_PCA_HeavyRainCases.sav'.format(self.root_path)
+            '{}/var/MLModels/v2/SDGRegressor_PCA_Rain.sav'.format(self.root_path)
         )
-        self.save_path = '/home/jjthomson/fdrive/images/predict/predictedRain20200703_0300JST_HeavyRainCases.png'
+        self.save_path = '/home/jjthomson/fdrive/images/predict/PCA/predictedRain20200703_0300JST_Rain01.png'
         self.region = [22, 48, 120, 150]
         self.nc_rains = NetCDF('/home/jjthomson/fdrive/rains.nc')
         self.nc_pca = NetCDF('/home/jjthomson/fdrive/nc/PCA/pca.nc')
@@ -30,13 +29,13 @@ class MLNetCDF(SKLearn):
     def predict(self):
         rain_MSMs = self.rain_MSMs[self.predicted_time_step]
         X = self.getX()
-        X = self.getAdditionalX(additionalX=rain_MSMs, X=X)
+        # X = self.getAdditionalX(additionalX=rain_MSMs, X=X)
         X = Array.getTransposedMatrix(X)
         rain_MSMs = np.ravel(rain_MSMs)
         predicted = np.array(self.model.predict(X))
-        for i in range(len(predicted)):
-            if rain_MSMs[i] < 10:
-                predicted[i] = rain_MSMs[i]
+        # for i in range(len(predicted)):
+        #     if rain_MSMs[i] < 10:
+        #         predicted[i] = rain_MSMs[i]
         predicted = predicted.reshape([253, 241])
         self.predicted = predicted
         print(self.calcRMSE())
