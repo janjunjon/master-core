@@ -16,9 +16,20 @@ class ConvertedRa(NetCDF):
         return r1h
 
     @property
-    def latlon(self):
-        lat, lon = self._returnConvertedLatLon()
-        return lat, lon
+    def lat(self):
+        lat = self.nc.variables['lat'][:].tolist()
+        convertedLat = []
+        for i in range(287, 3312, 12):
+            convertedLat.append(lat[i])
+        return convertedLat
+    
+    @property
+    def lon(self):
+        lon = self.nc.variables['lon'][:].tolist()
+        convertedLon = []
+        for j in range(159, 2560, 10):
+            convertedLon.append(lon[j])
+        return convertedLon
 
     @property
     def time(self):
@@ -49,15 +60,26 @@ class ConvertedRa(NetCDF):
 
     def _convertRaRain(self):
         rain = ma.masked_values(self.nc.variables['rain'], value=-999)
-        convertedRain = []    
-        for i in range(0, 8):
-            lat_a = []
+        rain.mask = ma.nomask
+        if rain.ndim == 3:
+            convertedRain = []
+            for i in range(0, 8):
+                lat_a = []
+                for j in range(287, 3312, 12):
+                    lon_a = []
+                    for k in range(159, 2560, 10):
+                        lon_a.append(
+                            rain[i][j][k]
+                        )
+                    lat_a.append(lon_a)
+                convertedRain.append(lat_a)
+        elif rain.ndim == 2:
+            convertedRain = []
             for j in range(287, 3312, 12):
                 lon_a = []
                 for k in range(159, 2560, 10):
                     lon_a.append(
-                        rain[i][j][k]
+                        rain[j][k]
                     )
-                lat_a.append(lon_a)
-            convertedRain.append(lat_a)
+                convertedRain.append(lon_a)
         return convertedRain
