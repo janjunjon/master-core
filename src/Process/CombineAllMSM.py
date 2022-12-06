@@ -9,7 +9,7 @@ class Execution:
         self.path = ncDirPath
         self.saveDir = '/home/jjthomson/fdrive/nc/combined'
         self.saveFilename = saveFilename
-        self.nc = netCDF4.Dataset('/home/jjthomson/fdrive/nc/data/p20200701.nc')
+        self.nc = netCDF4.Dataset('/home/jjthomson/fdrive/nc/recreated/rains.nc')
         self.lat = self.nc.variables['lat'][:].tolist()
         self.lon = self.nc.variables['lon'][:].tolist()
         self.p = [
@@ -97,6 +97,8 @@ class Execution:
         LCL = Combine.combineMSM(self.path, 'lcl')
         SSI = Combine.combineMSM(self.path, 'ssi')
         KI = Combine.combineMSM(self.path, 'ki')
+        UVS = Combine.combineMSM(self.path, 'uvs')
+        VVS = Combine.combineMSM(self.path, 'vvs')
         CreateNetCDF.createNcFileAtmosIndexes(
             filename=self.saveFilename,
             path='{}/{}'.format(self.saveDir, self.saveFilename),
@@ -110,5 +112,7 @@ class Execution:
             tlList=TL,
             lclList=LCL,
             ssiList=SSI,
-            kiList=KI
+            kiList=KI,
+            uvsList=UVS,
+            vvsList=VVS
         )

@@ -2,8 +2,10 @@ import numpy as np
 
 from netCDF.NetCDF import NetCDF
 from ML.Other.Abstract import SKLearn
+from ML.Other.HeavyRainCases import Indexes
 from Module.Draw import Draw
 from Module.Array import Array
+from Module.Calculation import Calculation as MathCalculation
 
 class MLNetCDF(SKLearn):
     """
@@ -40,6 +42,15 @@ class MLNetCDF(SKLearn):
         self.predicted = predicted
         print(self.calcRMSE())
         self.makeFigure(self.predicted)
+        indexes = Indexes.getIndexesLatLon(self, range(56,106), range(64,104))
+        FSS = MathCalculation.FSS_(indexes, 0.5, np.ravel(self.rain_Ra[self.predicted_time_step]), np.ravel(predicted))
+        print('FSS: {:.4f}'.format(FSS))
+        # arr_fss = []
+        # thresholds = np.linspace(0, 50, 21)
+        # for threshold in thresholds:
+        #     FSS = MathCalculation.FSS_(indexes, threshold, np.ravel(self.rain_Ra[self.predicted_time_step]), np.ravel(predicted))
+        #     print(f'threshold: {threshold}, FSS: {FSS}')
+        #     arr_fss.append(FSS)
 
     def makeFigure(self, var):
         d = Draw()

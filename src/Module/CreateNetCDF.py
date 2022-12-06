@@ -251,7 +251,7 @@ class CreateNetCDF:
 
     @classmethod
     def createNcFileAtmosIndexes(
-        cls, filename, path, lonList, latList, pList, timeList, ptList, eptList, tdList, tlList, lclList, ssiList, kiList
+        cls, filename, path, lonList, latList, pList, timeList, ptList, eptList, tdList, tlList, lclList, ssiList, kiList, uvsList, vvsList
     ):
         nc = netCDF4.Dataset(path, "w", format="NETCDF4")
         nc.createDimension("lon", len(lonList))
@@ -314,6 +314,16 @@ class CreateNetCDF:
         ki.units = ''
         ki.standard_name = 'K_Index'
 
+        uvs = nc.createVariable("uvs", dtype('int16'), ("time", "lat", "lon"))
+        uvs.long_name = 'eastward vertical sheer'
+        uvs.units = 'm/s'
+        uvs.standard_name = 'eastward_vertical_sheer'
+
+        vvs = nc.createVariable("vvs", dtype('int16'), ("time", "lat", "lon"))
+        vvs.long_name = 'northward vertical sheer'
+        vvs.units = 'm/s'
+        vvs.standard_name = 'northward_vertical_sheer'
+
         lon[:], lat[:], p[:], time[:] = np.array(lonList), np.array(latList), np.array(pList), np.array(timeList)
         pt[:, :, :, :] = np.array(ptList)
         ept[:, :, :, :] = np.array(eptList)
@@ -322,6 +332,8 @@ class CreateNetCDF:
         lcl[:, :, :] = np.array(lclList)
         ssi[:, :, :] = np.array(ssiList)
         ki[:, :, :] = np.array(kiList)
+        uvs[:, :, :] = np.array(uvsList)
+        vvs[:, :, :] = np.array(vvsList)
         nc.close()
 
     @classmethod
@@ -386,15 +398,11 @@ class CreateNetCDF:
         time.standard_name = 'time'
 
         rain_Ra = nc.createVariable("rain_Ra", dtype('int16'), ("time", "lat", "lon"))
-        rain_Ra.scale_factor = 0.006116208155
-        rain_Ra.add_offset = 200.0
         rain_Ra.long_name = 'RadarAmedas rain_fall in 1 hour'
         rain_Ra.units = 'mm/h'
         rain_Ra.standard_name = 'rainfall_rate'
 
         rain_MSMs = nc.createVariable("rain_MSMs", dtype('int16'), ("time", "lat", "lon"))
-        rain_MSMs.scale_factor = 0.006116208155
-        rain_MSMs.add_offset = 200.0
         rain_MSMs.long_name = 'MSMs rain_fall in 1 hour'
         rain_MSMs.units = 'mm/h'
         rain_MSMs.standard_name = 'rainfall_rate'
@@ -402,6 +410,7 @@ class CreateNetCDF:
         lon[:], lat[:], time[:] = np.array(lonList), np.array(latList), np.array(timeList)
         rain_Ra[:, :, :] = np.array(rainList1)
         rain_MSMs[:, :, :] = np.array(rainList2)
+
         nc.close()
 
     @classmethod

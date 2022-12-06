@@ -30,12 +30,18 @@ class NetCDFAtmosIndex(Abstract):
         self.rh850hPa = self.rh[:, 5, :, :]
         self.rh700hPa = self.rh[:, 7, :, :]
         self.rh500hPa = self.rh[:, 9, :, :]
+        self.u = np.array(self.MSMp.variables['u'][:][:][:][:].tolist())
+        self.u900hPa = self.u[:, 4, :, :]
+        self.u700hPa = self.u[:, 7, :, :]
+        self.v = np.array(self.MSMp.variables['v'][:][:][:][:].tolist())
+        self.v900hPa = self.v[:, 4, :, :]
+        self.v700hPa = self.v[:, 7, :, :]
 
-        self.varNcAtmos = ['pt', 'ept', 'td', 'tl', 'lcl', 'ssi', 'ki']
+        self.varNcAtmos = ['pt', 'ept', 'td', 'tl', 'lcl', 'ssi', 'ki', 'uvs', 'vvs']
 
     def main(self):
         self.pt, self.ept = self.calcFourDimensionalVars()
-        self.td, self.tl, self.lcl, self.ssi, self.ki = self.calcThreeDimensionalVars()
+        self.td, self.tl, self.lcl, self.ssi, self.ki, self.uvs, self.vvs = self.calcThreeDimensionalVars()
         for var_name in self.varNcAtmos:
             setattr(self, var_name, Reverse.reverseLat(getattr(self, var_name)))
         CreateNetCDF.createNcFileAtmosIndexes(
@@ -51,7 +57,9 @@ class NetCDFAtmosIndex(Abstract):
             tlList=self.tl,
             lclList=self.lcl,
             ssiList=self.ssi,
-            kiList=self.ki
+            kiList=self.ki,
+            uvsList=self.uvs,
+            vvsList=self.vvs
         )
 
     def calcFourDimensionalVars(self):
@@ -82,6 +90,8 @@ class NetCDFAtmosIndex(Abstract):
         LCLList = []
         SSIList = []
         KIList = []
+        UVSList = []
+        VVSList = []
         for t in range(8):
             for y in range(253):
                 for x in range(241):
@@ -109,17 +119,27 @@ class NetCDFAtmosIndex(Abstract):
                         rh850hPa=self.rh850hPa[t, y, x],
                         rh700hPa=self.rh700hPa[t, y, x]
                     )
+                    UVS, VVS = AtmosCalculation.getVerticalSheer(
+                        upperU=self.u700hPa[t, y, x],
+                        upperV=self.v700hPa[t, y, x],
+                        lowerU=self.u900hPa[t, y, x],
+                        lowerV=self.v900hPa[t, y, x],
+                    )
                     TdList.append(Td)
                     TlList.append(Tl)
                     LCLList.append(LCL)
                     SSIList.append(SSI)
                     KIList.append(KI)
+                    UVSList.append(UVS)
+                    VVSList.append(VVS)
         TdList = self.restoreMultidimensionalArray(np.array(TdList), 3)
         TlList = self.restoreMultidimensionalArray(np.array(TlList), 3)
         LCLList = self.restoreMultidimensionalArray(np.array(LCLList), 3)
         SSIList = self.restoreMultidimensionalArray(np.array(SSIList), 3)
         KIList = self.restoreMultidimensionalArray(np.array(KIList), 3)
-        return TdList, TlList, LCLList, SSIList, KIList
+        UVSList = self.restoreMultidimensionalArray(np.array(UVSList), 3)
+        VVSList = self.restoreMultidimensionalArray(np.array(VVSList), 3)
+        return TdList, TlList, LCLList, SSIList, KIList, UVSList, VVSList
 
     def convertOneDimArray(self, array):
         if not isinstance(array, np.ndarray):

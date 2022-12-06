@@ -3,6 +3,7 @@ import numpy as np
 
 from netCDF.ConvertedRa import ConvertedRa
 from Module.CreateNetCDF import CreateNetCDF
+from Module.Reverse import Reverse
 
 class Execution:
     def __init__(self, path) -> None:
@@ -27,13 +28,12 @@ class Execution201107260100:
         self.savePath = '/home/jjthomson/fdrive/ra/tanaka2019/reshaped201107260100.nc'
 
     def main(self):
-        indexes = self.getIndexes()
+        rains = Reverse.reverseLat(self.nc.rain)
+        indexes = self.getIndexes(rains)
         self.saveArray(indexes, '/home/jjthomson/fdrive/ra/tanaka2019/undef')
         self.indexes = indexes
 
-    def getIndexes(self):
-        rains = self.nc.rain
-        print(rains)
+    def getIndexes(self, rains):
         count = 0
         indexes = []
         for lat in range(253):
