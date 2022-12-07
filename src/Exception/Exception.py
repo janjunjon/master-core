@@ -3,3 +3,6 @@ class NetCDFError(Exception):
 
 class SetError(Exception):
     pass
+
+class DimensionalError(Exception):
+    pass

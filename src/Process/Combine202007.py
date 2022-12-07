@@ -9,7 +9,7 @@ class Execution:
         self.path = ncDirPath
         self.saveDir = '/home/jjthomson/fdrive/nc/combined'
         self.saveFilename = saveFilename
-        self.nc = netCDF4.Dataset('/home/jjthomson/fdrive/nc/data/p20200701.nc')
+        self.nc = netCDF4.Dataset('/home/jjthomson/fdrive/nc/grads/rains.nc')
         self.lat = self.nc.variables['lat'][:].tolist()
         self.lon = self.nc.variables['lon'][:].tolist()
         self.p = [
@@ -17,7 +17,13 @@ class Execution:
         ]
         self.time = range(0, 248)
 
-    def combineAllMSMs(self):
+class ExecutionMSMs(Execution):
+    def __init__(self) -> None:
+        ncDirPath = '/home/jjthomson/fdrive/nc/convertedMSMs'
+        saveFilename = 'MSMs.nc'
+        super().__init__(ncDirPath, saveFilename)
+
+    def main(self):
         RAIN = Combine.combineMSM(self.path, 'rain')
         PSEA = Combine.combineMSM(self.path, 'psea')
         SP = Combine.combineMSM(self.path, 'sp')
@@ -50,7 +56,13 @@ class Execution:
             dswrfList=DSWRF
         )
 
-    def combineAllMSMp(self):
+class ExecutionMSMp(Execution):
+    def __init__(self) -> None:
+        ncDirPath = '/home/jjthomson/fdrive/nc/convertedMSMp'
+        saveFilename = 'MSMp.nc'
+        super().__init__(ncDirPath, saveFilename)
+
+    def main(self):
         Z = Combine.combineMSM(self.path, 'z', 4)
         W = Combine.combineMSM(self.path, 'w', 4)
         U = Combine.combineMSM(self.path, 'u', 4)
@@ -72,7 +84,13 @@ class Execution:
             rhList=RH
         )
 
-    def combineAllDiv(self):
+class ExecutionDiv(Execution):
+    def __init__(self) -> None:
+        ncDirPath = '/home/jjthomson/fdrive/nc/div'
+        saveFilename = 'div.nc'
+        super().__init__(ncDirPath, saveFilename)
+
+    def main(self):
         PWV = Combine.combineMSM(self.path, 'pwv')
         QU = Combine.combineMSM(self.path, 'qu')
         QV = Combine.combineMSM(self.path, 'qv')
@@ -89,7 +107,13 @@ class Execution:
             divList=DIV
         )
 
-    def combineAllAtmos(self):
+class ExecutionAtmos(Execution):
+    def __init__(self) -> None:
+        ncDirPath = '/home/jjthomson/fdrive/nc/atmos'
+        saveFilename = 'atmos.nc'
+        super().__init__(ncDirPath, saveFilename)
+
+    def main(self):
         PT = Combine.combineMSM(self.path, 'pt', 4)
         EPT = Combine.combineMSM(self.path, 'ept', 4)
         TD = Combine.combineMSM(self.path, 'td')
@@ -97,6 +121,8 @@ class Execution:
         LCL = Combine.combineMSM(self.path, 'lcl')
         SSI = Combine.combineMSM(self.path, 'ssi')
         KI = Combine.combineMSM(self.path, 'ki')
+        UVS = Combine.combineMSM(self.path, 'uvs')
+        VVS = Combine.combineMSM(self.path, 'vvs')
         CreateNetCDF.createNcFileAtmosIndexes(
             filename=self.saveFilename,
             path='{}/{}'.format(self.saveDir, self.saveFilename),
@@ -110,5 +136,7 @@ class Execution:
             tlList=TL,
             lclList=LCL,
             ssiList=SSI,
-            kiList=KI
+            kiList=KI,
+            uvsList=UVS,
+            vvsList=VVS
         )

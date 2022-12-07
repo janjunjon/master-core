@@ -1,5 +1,6 @@
 import math
 import metpy.calc as calc
+import numpy as np
 
 class Calculation:
     # !! Unit of temperature is K !!
@@ -165,3 +166,10 @@ class Calculation:
             parcel_profile=parcel_profile
         )
         return CAPE, CIN
+
+    @classmethod
+    def getVerticalSheer(cls, upperU, upperV, lowerU, lowerV):
+        diffU = upperU - lowerU
+        diffV = upperV - lowerV
+        return diffU, diffV
+        

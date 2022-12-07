@@ -9,20 +9,21 @@ class PCAResults(Abstract):
     def __init__(self, casename) -> None:
         super().__init__()
         self.casename = casename # example: HeavyRainCases
+        self.pca = PCALoad('{}/var/PCA'.format(self.root_path), 'PCA_{}.sav'.format(self.casename))
 
     def createComponentGraph(self):
-        pca = PCALoad('PCA_{}.sav'.format(self.casename))
+        pca = self.pca
         labels = ['rain_MSMs', 'psea', 'sp', 'u', 'v', 'temp', 'rh', 'ncld_upper', 'ncld_mid', 'ncld_low', 'ncld', 'dswrf', 'pwv', 'qu', 'qv', 'div', 'td', 'tl', 'lcl', 'ssi', 'ki']
         for i in range(len(labels)):
             Figure.createComponentBarGraph(
                 path='{}/img/PCA/components/{}/loading_{}_{}.png'.format(self.root_path, self.casename, self.casename, i+1),
                 labels=labels,
                 array=pca.loading_[i],
-                title='No.{} {}'.format(self.casename, i+1)
+                title='No.{} {}'.format(i+1, self.casename)
             )
 
     def createEVRGraph(self):
-        pca = PCALoad('PCA_{}.sav'.format(self.casename))
+        pca = self.pca
         if isinstance(pca.cumulative_contribution_rate, np.ndarray):
             cumulative_contribution_rate = pca.cumulative_contribution_rate.tolist()
         else:

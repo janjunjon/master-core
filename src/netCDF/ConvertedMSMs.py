@@ -11,9 +11,10 @@ class ConvertedMSMs(NetCDF):
         self.filename = file.split('/')[-1][1:9]
         self.saveDir = '/home/jjthomson/fdrive/nc/converted'
 
-        self.nc = netCDF4.Dataset(file, format="NETCDF3_CLASSIC")
-        self.lat, self.lon = self.getLatLon()
-        self.lat.reverse()
+        lon = self.lon
+        lat = self.lat
+        lat.reverse()
+        self.lat, self.lon = self.getLatLon(lat, lon)
         # 0,3,6,9,12,15,18,21時は欠損
         self.time = [1.0, 4.0, 7.0, 10.0, 13.0, 16.0, 19.0, 22.0]
         self.MSMRange = [120, 150, 22.4, 47.6]
@@ -35,8 +36,8 @@ class ConvertedMSMs(NetCDF):
             else:
                 setattr(self, var_name, Reverse.reverseLat(getattr(self, var_name)))
 
-    def getLatLon(self):
-        lat, lon = self._returnConvertedLatLon()
+    def getLatLon(self, lat, lon):
+        lat, lon = self._returnConvertedLatLon(lat, lon)
         return lat, lon
 
     def _convertMSMsResolution(self, v_array):
@@ -51,9 +52,7 @@ class ConvertedMSMs(NetCDF):
             normal_array_with_time.append(lat_a)
         return normal_array_with_time
 
-    def _returnConvertedLatLon(self):
-        lat = self.nc.variables['lat'][:].tolist()
-        lon = self.nc.variables['lon'][:].tolist()
+    def _returnConvertedLatLon(self, lat, lon):
         convertedLat = []
         convertedLon = []
         for i in range(0, len(lat), 2):

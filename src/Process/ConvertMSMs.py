@@ -4,8 +4,8 @@ from netCDF.ConvertedMSMs import ConvertedMSMs
 from Module.CreateNetCDF import CreateNetCDF
 
 class Execution:
-    def __init__(self, path) -> None:
-        self.path = path
+    def __init__(self) -> None:
+        self.path = '/home/jjthomson/fdrive/nc/data'
         self.saveDir = '/home/jjthomson/fdrive/nc/convertedMSMs'
 
     def main(self):

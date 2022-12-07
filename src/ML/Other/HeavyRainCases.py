@@ -1,12 +1,20 @@
 import numpy as np
 
-class Indexes:
+from Exception.Exception import DimensionalError
+
+class AbstractIndexes:
+    def saveIndexes(self, array, path):
+        if not isinstance(array, np.ndarray):
+            array = np.array(array)
+        np.save(path, array)
+
+class Indexes(AbstractIndexes):
     """
     get array index of specific heavy rain cases
     """
     def __init__(self) -> None:
         self.indexes = self.getAllIndexes()
-
+        
     def getAllIndexes(self):
         indexes_case_1 = self.case_1()
         indexes_case_2 = self.case_2()
@@ -33,6 +41,16 @@ class Indexes:
                     if t in T and lat in LAT and lon in LON:
                         indexes.append(count)
                     count += 1
+        return indexes
+
+    def getIndexesLatLon(self, LAT, LON):
+        count = 0
+        indexes = []
+        for lat in range(253):
+            for lon in range(241):
+                if lat in LAT and lon in LON:
+                    indexes.append(count)
+                count += 1
         return indexes
         
     def case_1(self):
@@ -114,3 +132,53 @@ class Indexes:
         LON = range(40,104)
         indexes = self.getIndexes(T, LAT, LON)
         return indexes
+
+class IndexesRain(AbstractIndexes):
+    def __init__(self) -> None:
+        super().__init__()
+        self.undef = np.load(file='/home/jjthomson/master-core/var/Data/undef.npy')
+
+    def getIndexes(self, array) -> list:
+        if isinstance(array, list):
+            array = np.array(array)
+        elif isinstance(array, np.ndarray):
+            pass
+        else:
+            raise TypeError('rain_Ra should be array.')
+        if array.ndim != 3:
+            raise DimensionalError('dimension of rain array should be 3.')
+        count = 0
+        indexes = []
+        array = np.ravel(array)
+        for i in range(248*253*241):
+            if array[i] > 0:
+                indexes.append(i)
+            else:
+                continue
+            count += 1
+        # for t in range(248):
+        #     rain = np.ravel(array[t])
+        #     for each in range(253*241):
+        #         if each in self.undef:
+        #             continue
+        #         if rain[each] > 0:
+        #             indexes.append(count)
+        #         count += 1
+        return indexes
+
+class IndexesHeavyRainCases(Indexes):
+    def __init__(self) -> None:
+        super().__init__()
+        self.undef = np.load(file='/home/jjthomson/master-core/var/Data/undef.npy')
+
+    def compare(self):
+        print(f'DEBUG: undef {len(self.undef)}')
+        print(f'DEBUG: heavyrain {len(self.indexes)}')
+        advanced = []
+        for index in self.indexes:
+            if index in self.undef:
+                continue
+            else:
+                advanced.append(index)
+        print(f'DEBUG: advanced {len(advanced)}')
+        return advanced
