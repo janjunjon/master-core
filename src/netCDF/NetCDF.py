@@ -63,7 +63,7 @@ class NetCDF(Abstract):
         Lo = np.array(v_lon)
         Lon, Lat = np.meshgrid(Lo, La)
         fig = plt.figure(figsize=(10, 10))
-        interval = list(np.arange(280, 310, 5))
+        interval = list(np.arange(5, 50, 5))
         interval.insert(0, 0.1)
         cmap = cm.jet
         cmap.set_under('w', alpha=0)

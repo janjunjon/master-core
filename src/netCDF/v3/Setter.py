@@ -7,6 +7,7 @@ from ML.Other.HeavyRainCases import *
 from Module.Draw import Draw
 from Module.Array import Array
 from Module.CreateNetCDF import CreateNetCDF
+from Module.Reverse import Reverse
 from Module.Calculation import Calculation as MathCalculation
 
 class Setter(SKLearn):
@@ -124,27 +125,17 @@ class Setter(SKLearn):
         print(f'Y: {len(Y)}, vars: {len(Y[0])}')
         return X, Y
 
-    def shapeXYForPredict(self, indexes, varnames):
+    def shapeXForPredict(self, varnames):
         TIME_X = []
-        TIME_Y = []
         for time in range(248):
             X = []
             for varname in varnames:
                 d = np.ravel(getattr(self, varname)[time]).tolist()
-                addData = []
-                for i in indexes:
-                    addData.append(d[i])
-                X.append(addData)
+                X.append(d)
             X = Array.getTransposedMatrix(X)
             TIME_X.append(X)
-            Y = []
-            d = np.ravel(self.Y)
-            for i in indexes:
-                Y.append([d[i]])
-            TIME_Y.append(Y)
-        print(f'TIME: {len(X)}, X: {len(X[0])}, vars: {len(X[0][0])}')
-        print(f'TIME: {len(Y)}, Y: {len(Y[0])}, vars: {len(Y[0][0])}')
-        return X, Y
+        print(f'TIME: {len(TIME_X)}, X: {len(TIME_X[0])}, vars: {len(TIME_X[0][0])}')
+        return TIME_X
 
     def predict(self):
         self.model = SKLearn.loadModel(self, self.model_path)
@@ -156,21 +147,27 @@ class Setter(SKLearn):
         print(f'RMSE: {self.calcRMSE()}')
         self.makeFigure(predicted)
 
-    def predictAll(self, ncSavePath):
+    def predictAll(self, ncSavePath, X):
+        self.model = SKLearn.loadModel(self, self.model_path)
+        lat = self.nc_rains.lat
+        lat.reverse()
         ALL = []
         for time in range(248):
-            self.model = SKLearn.loadModel(self, self.model_path)
-            predicted = np.array(self.model.predict(self.X[time]))
-            for lat in range(253):
-                for lon in range(241):
-                    if self.rain_MSMs[lat][lon] <= 0:
-                        predicted[lat][lon] = self.rain_MSMs[lat][lon]
+            predicted = np.array(self.model.predict(X[time]))
+            rain_MSMs = np.ravel(self.rain_MSMs[time])
+            exists = [i for i in predicted if i > 0]
+            print(len(exists))
+            for i in range(253*241):
+                if rain_MSMs[i] <= 0:
+                    predicted[i] = rain_MSMs[i]
+            predicted = np.reshape(predicted, (253,241))
+            predicted = Reverse.reverseLat(predicted)
             ALL.append(predicted)
         CreateNetCDF.createNcFilePredict(
             path=ncSavePath,
             filename='20200701',
             lonList=self.nc_rains.lon,
-            latList=self.nc_rains.lat,
+            latList=lat,
             timeList=self.nc_rains.time,
             predict=ALL
         )
