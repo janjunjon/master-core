@@ -14,12 +14,6 @@ class Indexes(AbstractIndexes):
     """
     def __init__(self) -> None:
         self.indexes = self.getAllIndexes()
-
-    def saveIndexes(self, path) -> None:
-        indexes = self.indexes
-        if not isinstance(indexes, np.ndarray):
-            indexes = np.array(indexes)
-        np.save(path, indexes)
         
     def getAllIndexes(self):
         indexes_case_1 = self.case_1()
@@ -155,14 +149,21 @@ class IndexesRain(AbstractIndexes):
             raise DimensionalError('dimension of rain array should be 3.')
         count = 0
         indexes = []
-        for t in range(248):
-            rain = np.ravel(array[t])
-            for each in range(253*241):
-                if each in self.undef:
-                    continue
-                if rain[each] > 0:
-                    indexes.append(count)
-                count += 1
+        array = np.ravel(array)
+        for i in range(248*253*241):
+            if array[i] > 0:
+                indexes.append(i)
+            else:
+                continue
+            count += 1
+        # for t in range(248):
+        #     rain = np.ravel(array[t])
+        #     for each in range(253*241):
+        #         if each in self.undef:
+        #             continue
+        #         if rain[each] > 0:
+        #             indexes.append(count)
+        #         count += 1
         return indexes
 
 class IndexesHeavyRainCases(Indexes):

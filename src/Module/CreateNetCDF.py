@@ -472,3 +472,34 @@ class CreateNetCDF:
         lon[:], lat[:] = np.array(lonList), np.array(latList)
         rain[:, :] = np.array(rainList)
         nc.close()
+
+    @classmethod
+    def createNcFilePredict(self, path, filename, lonList, latList, timeList, predict):
+        nc = netCDF4.Dataset(path, "w", format="NETCDF4")
+        nc.createDimension("lon", len(lonList))
+        nc.createDimension("lat", len(latList))
+        nc.createDimension("time", len(timeList))
+
+        lon = nc.createVariable("lon", dtype('float32'), "lon")
+        lon.long_name = 'longitude'
+        lon.units = 'degrees_east'
+        lon.standard_name = 'longitude'
+
+        lat = nc.createVariable("lat", dtype('float32'), "lat")
+        lat.long_name = 'latitude'
+        lat.units = 'degrees_north'
+        lat.standard_name = 'latitude'
+
+        time = nc.createVariable("time", dtype('int16'), "time")
+        time.long_name = 'time'
+        time.unit = 'hours since {} 00:00:00+00:00'.format(filename)
+        time.standard_name = 'time'
+
+        rain = nc.createVariable("rain", dtype('int16'), ("time", "lat", "lon"))
+        rain.long_name = 'predicted(corrected) rain'
+        rain.units = 'mm/h'
+        rain.standard_name = 'predicted_rainfall'
+
+        lon[:], lat[:], time[:] = np.array(lonList), np.array(latList), np.array(timeList)
+        rain[:, :, :] = np.array(predict)
+        nc.close()

@@ -1,4 +1,4 @@
-'open rains.ctl'
+'open combinedRains.ctl'
 
 'q ctlinfo'
 say result
@@ -12,9 +12,7 @@ say result
 'set xlopts 1 1 0.1'
 'set ylopts 1 1 0.1'
 
-t=1
-while(t<=248)
-
+t=5
 'set t 't
 
 * rain_Ra
@@ -68,11 +66,7 @@ title2='rain_MSMs'
 'draw string 2.75 6.75 'title1
 'draw string 7.75 6.75 'title2
 
-'gxprint ../../images/rain/rain_t='t'.png'
+'gxprint ../../images/DEBUG/DEBUG_combinedRain_t='t'.png'
 
-'c'
-
-t=t+1
-endwhile
 
 reinit

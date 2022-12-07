@@ -4,15 +4,15 @@ from netCDF.NetCDF import NetCDF
 from Module.Reverse import Reverse
 from Module.CreateNetCDF import *
 
-class ConvertedMSMs:
+class ConvertedMSMs(NetCDF):
     def __init__(self, file) -> None:
+        super().__init__(file)
 
         self.filename = file.split('/')[-1][1:9]
         self.saveDir = '/home/jjthomson/fdrive/nc/converted'
 
-        self.nc = NetCDF(file)
-        lon = self.nc.variables['lon'][:].tolist()
-        lat = self.nc.variables['lat'][:].tolist()
+        lon = self.lon
+        lat = self.lat
         lat.reverse()
         self.lat, self.lon = self.getLatLon(lat, lon)
         # 0,3,6,9,12,15,18,21時は欠損

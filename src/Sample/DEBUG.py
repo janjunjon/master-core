@@ -88,3 +88,9 @@ class Sample:
                 i=i+1
         print(rain[:10])
         return data
+
+    def debugCreateImage(self):
+        nc = NetCDF('/home/jjthomson/fdrive/nc/combined/atmos.nc')
+        print(nc.lat)
+        pt = nc.variables['pt'][:,0,:,:]
+        nc.drawMapByArray(pt, nc.lat, nc.lon, 1, '/home/jjthomson/fdrive/images/DEBUG/python/DEBUG_combinedAtmos_pt_t=1.png')

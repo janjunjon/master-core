@@ -1,4 +1,4 @@
-DSET ../reversed/div.nc
+DSET ../combined/div.nc
 DTYPE netcdf
 TITLE PWV, QU, QV, DIV From MSM
 UNPACK scale_factor add_offset

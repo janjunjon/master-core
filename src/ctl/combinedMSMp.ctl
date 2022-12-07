@@ -1,4 +1,4 @@
-DSET ../reversed/MSMp.nc
+DSET ../combined/MSMp.nc
 DTYPE netcdf
 TITLE MSM surface
 UNPACK scale_factor add_offset

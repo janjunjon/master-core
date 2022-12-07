@@ -13,9 +13,7 @@ class NetCDFAtmosIndex(Abstract):
         self.savePath = savePath
         self.filename = filename
 
-        lat = self.MSMp.variables['lat'][:].tolist()
-        lat.reverse()
-        self.lat = np.array(lat)
+        self.lat = np.array(self.MSMp.variables['lat'][:].tolist())
         self.lon = np.array(self.MSMp.variables['lon'][:].tolist())
         self.time = np.array(self.MSMp.variables['time'][:].tolist())
         # [1000.,  975.,  950.,  925.,  900.,  850.,  800.,  700.,  600.,  500.,  400.,  300.,  250.,  200.,  150.,  100.]
@@ -42,8 +40,8 @@ class NetCDFAtmosIndex(Abstract):
     def main(self):
         self.pt, self.ept = self.calcFourDimensionalVars()
         self.td, self.tl, self.lcl, self.ssi, self.ki, self.uvs, self.vvs = self.calcThreeDimensionalVars()
-        for var_name in self.varNcAtmos:
-            setattr(self, var_name, Reverse.reverseLat(getattr(self, var_name)))
+        # for var_name in self.varNcAtmos:
+        #     setattr(self, var_name, Reverse.reverseLat(getattr(self, var_name)))
         CreateNetCDF.createNcFileAtmosIndexes(
             filename=self.filename,
             path=self.savePath,
