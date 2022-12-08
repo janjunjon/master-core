@@ -1,4 +1,6 @@
+import time as Time
 import numpy as np
+from sklearn.preprocessing import PolynomialFeatures
 
 from Exception.Exception import *
 from netCDF.NetCDF import NetCDF
@@ -21,8 +23,8 @@ class Setter(SKLearn):
         self.ncMSMp = NetCDF('/home/jjthomson/fdrive/nc/combined/MSMp.nc')
         self.ncDiv = NetCDF('/home/jjthomson/fdrive/nc/combined/div.nc')
         self.ncAtmos = NetCDF('/home/jjthomson/fdrive/nc/combined/atmos.nc')
-        self.varNcMSMs  = ['psea', 'sp', 'u', 'v', 'temp', 'rh', 'ncld_upper', 'ncld_mid', 'ncld_low', 'ncld', 'dswrf']
-        self.varNcMSMp  = ['z', 'w', 'u', 'v', 'temp', 'rh']
+        self.varNcMSMs  = ['psea', 'sp', 'u', 'v', 'temp', 'ncld_upper', 'ncld_mid', 'ncld_low', 'ncld', 'dswrf']
+        self.varNcMSMp  = ['z', 'w', 'rh']
         self.varNcDiv   = ['pwv', 'qu', 'qv', 'div']
         self.varNcAtmos = ['pt', 'ept', 'td', 'tl', 'lcl', 'ssi', 'ki', 'uvs', 'vvs']
         self.predicted_time_step = 24
@@ -138,6 +140,7 @@ class Setter(SKLearn):
         return TIME_X
 
     def predict(self):
+        starttime = Time.time()
         self.model = SKLearn.loadModel(self, self.model_path)
         predicted = np.array(self.model.predict(self.X))
         for lat in range(253):
@@ -146,17 +149,25 @@ class Setter(SKLearn):
                     predicted[lat][lon] = self.rain_MSMs[lat][lon]
         print(f'RMSE: {self.calcRMSE()}')
         self.makeFigure(predicted)
+        elapsedtime = Time.time() - starttime
+        print ("Elapsed time to create: {0} [sec]".format(elapsedtime))
 
     def predictAll(self, ncSavePath, X):
+        starttime = Time.time()
         self.model = SKLearn.loadModel(self, self.model_path)
         lat = self.nc_rains.lat
         lat.reverse()
         ALL = []
         for time in range(248):
-            predicted = np.array(self.model.predict(X[time]))
+            data = X[time]
+            indexes = [data.index(vector) for vector in data if vector[0] > 0]
+            print(f'TIME: {time}, X: {len(data)}, vars: {len(data[0])}')
+            print(f'vector: {data[indexes[0]]}')
+            predicted = np.array(self.model.predict(data))
+            print(f'predicted: {predicted[indexes[0]]}')
             rain_MSMs = np.ravel(self.rain_MSMs[time])
-            exists = [i for i in predicted if i > 0]
-            print(len(exists))
+            # exists = [i for i in predicted if i > 0]
+            # print(exists[:10])
             for i in range(253*241):
                 if rain_MSMs[i] <= 0:
                     predicted[i] = rain_MSMs[i]
@@ -171,6 +182,44 @@ class Setter(SKLearn):
             timeList=self.nc_rains.time,
             predict=ALL
         )
+        elapsedtime = Time.time() - starttime
+        print ("Elapsed time to correct: {0} [sec]".format(elapsedtime))
+    
+    def predictAllNonLinear(self, ncSavePath, X):
+        starttime = Time.time()
+        self.model = SKLearn.loadModel(self, self.model_path)
+        lat = self.nc_rains.lat
+        lat.reverse()
+        ALL = []
+        for time in range(248):
+            data = X[time]
+            indexes = [data.index(vector) for vector in data if vector[0] > 0]
+            print(f'TIME: {time}, X: {len(data)}, vars: {len(data[0])}')
+            print(f'vector: {data[indexes[0]]}')
+            length = len(data[0])
+            poly = PolynomialFeatures(length)
+            data = poly.fit_transform(data)
+            predicted = np.array(self.model.predict(data))
+            print(f'predicted: {predicted[indexes[0]]}')
+            rain_MSMs = np.ravel(self.rain_MSMs[time])
+            # exists = [i for i in predicted if i > 0]
+            # print(exists[:10])
+            for i in range(253*241):
+                if rain_MSMs[i] <= 0:
+                    predicted[i] = rain_MSMs[i]
+            predicted = np.reshape(predicted, (253,241))
+            predicted = Reverse.reverseLat(predicted)
+            ALL.append(predicted)
+        CreateNetCDF.createNcFilePredict(
+            path=ncSavePath,
+            filename='20200701',
+            lonList=self.nc_rains.lon,
+            latList=lat,
+            timeList=self.nc_rains.time,
+            predict=ALL
+        )
+        elapsedtime = Time.time() - starttime
+        print ("Elapsed time to correct: {0} [sec]".format(elapsedtime))
 
     def makeFigure(self, var):
         d = Draw()
@@ -190,3 +239,17 @@ class Setter(SKLearn):
         deviation = np.array([(x - y) ** 2 for (x, y) in zip(X, Y)])
         RMSE = pow(np.mean(deviation), 0.5)
         return RMSE
+
+    def calcCorrelationCoefficient(self, B):
+        indexes = np.load(file='/home/jjthomson/master-core/var/Data/undef.npy')
+        A = np.ravel(self.nc_rains.variables['rain_Ra'])
+        B = np.ravel(B)
+        print(f'A: {len(A)}')
+        X = []
+        Y = []
+        for index in indexes:
+            X.append(A[index])
+            Y.append(B[index])
+        print(f'X: {len(X)}')
+        corrcoef_ = MathCalculation.corrcoef_(X, Y)
+        print(corrcoef_)

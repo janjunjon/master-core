@@ -90,7 +90,7 @@ class Sample:
         return data
 
     def debugCreateImage(self):
-        nc = NetCDF('/home/jjthomson/fdrive/nc/predict/v3/Rain/SDGRegressor/pattern1.nc')
+        nc = NetCDF('/home/jjthomson/fdrive/nc/predict/v3/Rain/SDGRegressor/preparation.nc')
         print(nc.lat)
         rain = nc.variables['rain'][:,:,:]
-        nc.drawMapByArray(rain, nc.lat, nc.lon, 1, '/home/jjthomson/fdrive/images/DEBUG/python/DEBUG_pattern1_t=1.png')
+        nc.drawMapByArray(rain, nc.lat, nc.lon, 24, '/home/jjthomson/fdrive/images/DEBUG/python/DEBUG_preparation_t=24.png')
