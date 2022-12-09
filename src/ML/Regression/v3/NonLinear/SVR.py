@@ -1,3 +1,4 @@
+import time as Time
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -7,13 +8,20 @@ from sklearn.metrics import r2_score
 from sklearn.metrics import mean_absolute_error
 
 from ML.Other.Abstract import SKLearnOnlyMethod as SKLearn
-from ML.Other.GridSearch import SVRHyperParams
+from ML.Other.GridSearch import SVRHyperParams, Sample
 
 class SVR:
     @classmethod
-    def createModel(cls, save_path, text_path, X, Y):
+    def debug(cls, X, Y):
         X_train, X_test, Y_train, Y_test = cls.getDistributedData(X, Y)
-        model = svm.SVR(kernel='rbf', C=1e3, gamma=0.01, epsilon=0.001)
+        gridsearch, KSVR = Sample.template(X_train, X_test, Y_train, Y_test)
+        return gridsearch, KSVR
+
+    @classmethod
+    def createModel(cls, save_path, text_path, X, Y):
+        starttime = Time.time()
+        X_train, X_test, Y_train, Y_test = cls.getDistributedData(X, Y)
+        model = svm.SVR(kernel='rbf', C=1e3, gamma='auto', epsilon=0.001)
         # model, gscv = SVRHyperParams.model(X_train, X_test, Y_train, Y_test)
         model.fit(X_train, Y_train)
         
@@ -22,6 +30,11 @@ class SVR:
         mae_lr = mean_absolute_error(Y_test, pred_model)
         scores = cross_validation.cross_val_score(model, X, Y, cv=5)
         RMSE = cls.calcRMSE(pred_model, Y_test)
+
+        elapsedtime = Time.time() - starttime
+        print ("Elapsed time for SVR: {0} [sec]".format(elapsedtime))
+
+        SKLearn.saveModel(model, save_path)
 
         with open(text_path, 'w') as f:
             f.write(
@@ -33,8 +46,6 @@ class SVR:
                 Test set score: {model.score(X_test, Y_test)}
                 R2: {r2_lr}
                 MAE: {mae_lr}
-                Coef: {model.coef_}
-                Intercept: {model.intercept_}
                 RMSE: {RMSE}
                 '''
             )
@@ -43,7 +54,6 @@ class SVR:
         plt.legend()
         plt.hlines(y=0, xmin=0, xmax=50, colors='black')
         plt.show
-        SKLearn.saveModel(model, save_path)
 
     @classmethod
     def getDistributedData(cls, X, Y):

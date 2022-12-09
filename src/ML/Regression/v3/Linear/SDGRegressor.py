@@ -7,10 +7,16 @@ from sklearn.metrics import r2_score
 from sklearn.metrics import mean_absolute_error
 
 from ML.Other.Abstract import SKLearnOnlyMethod as SKLearn
+from Module.Figure import Figure
 
 class SDGRegressor:
     @classmethod
-    def createModel(cls, save_path, text_path, X, Y):
+    def plotFigure(cls, model, img_path, X, Y):
+        X_train, X_test, Y_train, Y_test = cls.getDistributedData(X, Y)
+        Figure.createModelResult(model, X_train, X_test, Y_train, Y_test, img_path)
+
+    @classmethod
+    def createModel(cls, save_path, text_path, img_path, X, Y):
         X_train, X_test, Y_train, Y_test = cls.getDistributedData(X, Y)
         model = linear_model.SGDRegressor(max_iter=1000)
         model.fit(X_train, Y_train)
@@ -37,11 +43,8 @@ class SDGRegressor:
                 '''
             )
 
-        plt.scatter(Y_test, pred_model, c='r', marker='s',label="ALL")
-        plt.legend()
-        plt.hlines(y=0, xmin=0, xmax=50, colors='black')
-        plt.show
         SKLearn.saveModel(model, save_path)
+        Figure.createModelResult(model, X_train, X_test, Y_train, Y_test, img_path)
 
     @classmethod
     def getDistributedData(cls, X, Y):

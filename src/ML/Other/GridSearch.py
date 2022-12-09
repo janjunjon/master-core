@@ -11,6 +11,8 @@ class SVRHyperParams:
         starttime = Time.time()
         gscv = GridSearchCV(svm.SVC(), cls.param(), cv=4, verbose=2, error_score='raise')
         gscv.fit(X_train, Y_train)
+        best_params = gscv.best_params_
+        print(best_params)
 
         # スコアの一覧を取得
         gs_result = pd.DataFrame.from_dict(gscv.cv_results_)
@@ -30,7 +32,7 @@ class SVRHyperParams:
         elapsedtime = Time.time() - starttime
         print ("Elapsed time for grid search: {0} [sec]".format(elapsedtime))
 
-        return best, gscv
+        return best, best_params
 
     @classmethod
     def param(cls):
@@ -41,3 +43,55 @@ class SVRHyperParams:
             'gamma':np.linspace(0.01, 1.0, 50)
         }
         return ret
+
+class Sample:
+    @classmethod
+    def template(cls, X_train, X_test, Y_train, Y_test):
+        starttime = Time.time()
+        from sklearn.metrics import mean_absolute_error #MAE
+        from sklearn.metrics import mean_squared_error #MSE
+        from sklearn.metrics import make_scorer
+
+        from sklearn.model_selection import GridSearchCV
+        from sklearn.model_selection import KFold
+        from sklearn.svm import SVR
+
+        kf = KFold(n_splits=5,shuffle=True,random_state=0)
+
+        params_cnt = 10
+        params = {
+            "kernel":['rbf'],
+            "C":np.logspace(0,1,params_cnt),
+            "epsilon":np.logspace(-1,1,params_cnt)
+        }
+
+        gridsearch = GridSearchCV(
+            SVR(gamma='auto'),
+            params, cv=kf,
+            n_jobs=-1
+        )
+        '''
+        epsilon : Epsilon parameter in the epsilon-insensitive loss function.
+                Note that the value of this parameter depends on the scale of the target variable y.
+                If unsure, set epsilon=0.
+        C : Regularization parameter.
+            The strength of the regularization is inversely proportional to C.
+            Must be strictly positive.
+        https://scikit-learn.org/stable/modules/generated/sklearn.svm.SVR.html
+        '''
+
+        gridsearch.fit(X_train, Y_train)
+
+        elapsedtime = Time.time() - starttime
+        print ("Elapsed time for grid search: {0} [sec]".format(elapsedtime))
+        
+        print('The best parameter = ',gridsearch.best_params_)
+        print('RMSE = ',-gridsearch.best_score_)
+        print()
+
+        KSVR = SVR(
+            kernel=gridsearch.best_params_['kernel'],
+            C=gridsearch.best_params_["C"],
+            epsilon=gridsearch.best_params_["epsilon"]
+        )
+        return gridsearch, KSVR

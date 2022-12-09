@@ -56,14 +56,15 @@ class MLCorrectModel(Setter):
         def LinearRegression(self, save_path, text_path, X, Y):
             LinearRegression.createModel(save_path, text_path, X, Y)
 
-        def SDGRegressor(self, save_path, text_path, X, Y):
-            SDGRegressor.createModel(save_path, text_path, X, Y)
+        def SDGRegressor(self, save_path, text_path, img_path, X, Y):
+            SDGRegressor.createModel(save_path, text_path, img_path, X, Y)
 
         def NonLinearSDGRegressor(self, save_path, text_path, X, Y):
             NonLinearSDGRegressor.createModel(save_path, text_path, X, Y)
 
         def SVR(self, save_path, text_path, X, Y):
-            SVR.createModel(save_path, text_path, X, Y)
+            # SVR.createModel(save_path, text_path, X, Y)
+            gridsearch, KSVR = SVR.debug(X, Y)
 
     class Data:
         """

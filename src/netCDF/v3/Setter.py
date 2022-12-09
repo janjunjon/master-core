@@ -11,6 +11,7 @@ from Module.Array import Array
 from Module.CreateNetCDF import CreateNetCDF
 from Module.Reverse import Reverse
 from Module.Calculation import Calculation as MathCalculation
+from Module.CreateGradsFile import Grads
 
 class Setter(SKLearn):
     def __init__(self) -> None:
@@ -139,6 +140,11 @@ class Setter(SKLearn):
         print(f'TIME: {len(TIME_X)}, X: {len(TIME_X[0])}, vars: {len(TIME_X[0][0])}')
         return TIME_X
 
+    def shapeXForPCA(self, varnames):
+        for varname in varnames:
+            d = np.ravel(getattr(self, varname))
+            setattr(self, varname, d)
+
     def predict(self):
         starttime = Time.time()
         self.model = SKLearn.loadModel(self, self.model_path)
@@ -157,8 +163,11 @@ class Setter(SKLearn):
         self.model = SKLearn.loadModel(self, self.model_path)
         lat = self.nc_rains.lat
         lat.reverse()
+        RAIN = []
         ALL = []
+        DEVIATION = []
         for time in range(248):
+            real = np.ravel(self.nc_rains.variables['rain_Ra'][time,:,:])
             data = X[time]
             indexes = [data.index(vector) for vector in data if vector[0] > 0]
             print(f'TIME: {time}, X: {len(data)}, vars: {len(data[0])}')
@@ -171,16 +180,26 @@ class Setter(SKLearn):
             for i in range(253*241):
                 if rain_MSMs[i] <= 0:
                     predicted[i] = rain_MSMs[i]
+            deviation = self.getSquareDeviation(real, predicted)
+            real = np.reshape(real, (253,241))
+            real = Reverse.reverseLat(real)
             predicted = np.reshape(predicted, (253,241))
             predicted = Reverse.reverseLat(predicted)
+            deviation = np.reshape(deviation, (253,241))
+            deviation = Reverse.reverseLat(deviation)
+            RAIN.append(real)
             ALL.append(predicted)
+            DEVIATION.append(deviation)
+        print(f'deviation: TIME: {len(DEVIATION)}, LAT: {len(DEVIATION[0])}, LON: {len(DEVIATION[0][0])}')
         CreateNetCDF.createNcFilePredict(
             path=ncSavePath,
             filename='20200701',
             lonList=self.nc_rains.lon,
             latList=lat,
             timeList=self.nc_rains.time,
-            predict=ALL
+            real=RAIN,
+            predict=ALL,
+            deviation=DEVIATION
         )
         elapsedtime = Time.time() - starttime
         print ("Elapsed time to correct: {0} [sec]".format(elapsedtime))
@@ -190,8 +209,11 @@ class Setter(SKLearn):
         self.model = SKLearn.loadModel(self, self.model_path)
         lat = self.nc_rains.lat
         lat.reverse()
+        RAIN = []
         ALL = []
+        DEVIATION = []
         for time in range(248):
+            real = np.ravel(self.nc_rains.variables['rain_Ra'][time,:,:])
             data = X[time]
             indexes = [data.index(vector) for vector in data if vector[0] > 0]
             print(f'TIME: {time}, X: {len(data)}, vars: {len(data[0])}')
@@ -207,16 +229,24 @@ class Setter(SKLearn):
             for i in range(253*241):
                 if rain_MSMs[i] <= 0:
                     predicted[i] = rain_MSMs[i]
+            deviation = self.getSquareDeviation(real, predicted)
+            real = np.reshape(real, (253,241))
+            real = Reverse.reverseLat(real)
             predicted = np.reshape(predicted, (253,241))
             predicted = Reverse.reverseLat(predicted)
+            deviation = np.reshape(deviation, (253,241))
+            deviation = Reverse.reverseLat(deviation)
             ALL.append(predicted)
+            DEVIATION.append(deviation)
         CreateNetCDF.createNcFilePredict(
             path=ncSavePath,
             filename='20200701',
             lonList=self.nc_rains.lon,
             latList=lat,
             timeList=self.nc_rains.time,
-            predict=ALL
+            real=RAIN,
+            predict=ALL,
+            deviation=DEVIATION
         )
         elapsedtime = Time.time() - starttime
         print ("Elapsed time to correct: {0} [sec]".format(elapsedtime))
@@ -231,14 +261,9 @@ class Setter(SKLearn):
             region=self.region
         )
 
-    def calcRMSE(self):
-        t = self.predicted_time_step
-        X = np.ravel(self.rain_Ra[t])
-        # Y = np.ravel(self.rain_MSMs[t])
-        Y = np.ravel(self.predicted)
+    def getSquareDeviation(self, X, Y):
         deviation = np.array([(x - y) ** 2 for (x, y) in zip(X, Y)])
-        RMSE = pow(np.mean(deviation), 0.5)
-        return RMSE
+        return deviation
 
     def calcCorrelationCoefficient(self, B):
         indexes = np.load(file='/home/jjthomson/master-core/var/Data/undef.npy')
@@ -253,3 +278,7 @@ class Setter(SKLearn):
         print(f'X: {len(X)}')
         corrcoef_ = MathCalculation.corrcoef_(X, Y)
         print(corrcoef_)
+
+    def createGradsFiles(self, ctl_path, gs_path, dirPath):
+        Grads.createCtlFileV3Results(ctl_path, dirPath)
+        Grads.createGsFileV3Results(gs_path, dirPath)

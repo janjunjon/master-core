@@ -56,3 +56,29 @@ class Figure:
         #         k += 1
         fig.show()
         fig.savefig(path)
+
+    @classmethod
+    def createModelResult(cls, model, X_train, X_test, Y_train, Y_test, path):
+        # 予測値の計算
+        score = model.score(X_test, Y_test)
+
+        # グラフ化
+        # plt.scatter(X_test, Y_test,label="test data")
+
+        plt.clf()
+        print(f'X_train: {len(X_train)}, X_test: {len(X_test)}, Y_train: {len(Y_train)}, Y_test: {len(Y_test)}')
+        plt.scatter(X_test, Y_test, label="test data", edgecolor='k',facecolor='w')
+        plt.scatter(X_train, Y_train, label="training data", facecolor="r", marker='x')
+        plt.scatter(X_train[model.support_], Y_train[model.support_], label="Support vectors", color='c')
+
+        plt.title("predicted results")
+        plt.xlabel("$x$")
+        plt.ylabel("$y$")
+
+        x = np.reshape(np.arange(-3,3,0.01), (-1, 1))
+        plt.plot(x, model.predict(x), label="model ($R^2=%1.3f$)" % (score), color='b')
+
+        plt.legend()
+        
+        plt.savefig(path)
+        plt.close()
