@@ -474,7 +474,7 @@ class CreateNetCDF:
         nc.close()
 
     @classmethod
-    def createNcFilePredict(self, path, filename, lonList, latList, timeList, predict):
+    def createNcFilePredict(self, path, filename, lonList, latList, timeList, real, predict, deviation):
         nc = netCDF4.Dataset(path, "w", format="NETCDF4")
         nc.createDimension("lon", len(lonList))
         nc.createDimension("lat", len(latList))
@@ -495,11 +495,23 @@ class CreateNetCDF:
         time.unit = 'hours since {} 00:00:00+00:00'.format(filename)
         time.standard_name = 'time'
 
+        rain_Ra = nc.createVariable("rain_Ra", dtype('int16'), ("time", "lat", "lon"))
+        rain_Ra.long_name = 'RadarAmedas rain_fall in 1 hour'
+        rain_Ra.units = 'mm/h'
+        rain_Ra.standard_name = 'rainfall_rate'
+
         rain = nc.createVariable("rain", dtype('int16'), ("time", "lat", "lon"))
         rain.long_name = 'predicted(corrected) rain'
         rain.units = 'mm/h'
         rain.standard_name = 'predicted_rainfall'
 
+        devi = nc.createVariable("devi", dtype('int16'), ("time", "lat", "lon"))
+        devi.long_name = 'square deviation for RMSE'
+        devi.units = 'mm/h'
+        devi.standard_name = 'square_deviation'
+
         lon[:], lat[:], time[:] = np.array(lonList), np.array(latList), np.array(timeList)
+        rain_Ra[:, :, :] = np.array(real)
         rain[:, :, :] = np.array(predict)
+        devi[:, :, :] = np.array(deviation)
         nc.close()

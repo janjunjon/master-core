@@ -3,13 +3,13 @@ from sklearn.metrics import mean_squared_error
 
 class Calculation:
     @classmethod
-    def coef_(cls, array1, array2):
+    def corrcoef_(cls, array1, array2):
         if not isinstance(array1, np.ndarray):
             array1 = np.array(array1)
         if not isinstance(array2, np.ndarray):
             array2 = np.array(array2)
-        coef_ = np.corrcoef(array1, array2)
-        return coef_
+        corrcoef_ = np.corrcoef(array1, array2)
+        return corrcoef_
 
     @classmethod
     def FSS_(cls, indexes, threshold, arr_real, arr_pred):

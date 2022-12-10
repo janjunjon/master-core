@@ -90,7 +90,7 @@ class Sample:
         return data
 
     def debugCreateImage(self):
-        nc = NetCDF('/home/jjthomson/fdrive/nc/combined/atmos.nc')
+        nc = NetCDF('/home/jjthomson/fdrive/nc/PCA/pattern1.nc')
         print(nc.lat)
-        pt = nc.variables['pt'][:,0,:,:]
-        nc.drawMapByArray(pt, nc.lat, nc.lon, 1, '/home/jjthomson/fdrive/images/DEBUG/python/DEBUG_combinedAtmos_pt_t=1.png')
+        component2 = nc.variables['component2'][:,:,:]
+        nc.drawMapByArray(component2, nc.lat, nc.lon, 1, '/home/jjthomson/fdrive/images/DEBUG/python/DEBUG_pca1_t=1.png')

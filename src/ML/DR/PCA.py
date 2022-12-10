@@ -7,6 +7,7 @@ from sklearn.decomposition import PCA
 import pickle
 
 from Abstract.Abstract import Abstract
+from ML.Other.Abstract import SKLearn
 
 class PrincipalComponentAnalysis:
     @classmethod
@@ -109,6 +110,86 @@ class PCALoad(Abstract):
         """
         np.set_printoptions(precision=5, suppress=True)
         return self.pca.explained_variance_ratio_
+    
+    @property
+    def cumulative_contribution_rate(self):
+        explained_variance_ratio_ = self.getNormalArray(self.pca.explained_variance_ratio_)
+        array = []
+        cumulative_contribution_rate = 0
+        for each_rate in explained_variance_ratio_:
+            cumulative_contribution_rate += each_rate
+            array.append(cumulative_contribution_rate)
+        return array
+
+    def print_cumulative_contribution_rate(self):
+        cumulative_contribution_rates = self.cumulative_contribution_rate
+        text = ''
+        for i in range(len(cumulative_contribution_rates)):
+            text += 'Until No.{}: {}\n'.format(i+1, cumulative_contribution_rates[i])
+        with open('{}/var/PCA/{}.txt'.format(self.root_path, self.label), 'w') as f:
+            f.write(text)
+
+    def getNdArray(self, array):
+        if isinstance(array, np.ndarray):
+            return array
+        else:
+            array = np.array(array)
+            return array
+    
+    def getNormalArray(self, array):
+        if isinstance(array, np.ndarray):
+            array = array.tolist()
+            return array
+        else:
+            return array
+
+class PCALoad2(Abstract):
+    def __init__(self, label, path) -> None:
+        """
+        filename: *.sav
+        """
+        super().__init__()
+        self.label = label
+        self.pca = SKLearn.loadModel(self, path)
+
+    @property
+    def score_(self):
+        """
+        score_: 主成分得点
+        """
+        np.set_printoptions(precision=5, suppress=True)
+        return self.feature
+
+    @property
+    def loading_(self):
+        """
+        loading_: 主成分負荷量
+        """
+        np.set_printoptions(precision=5, suppress=True)
+        return self.pca.components_
+
+    @property
+    def mean_(self):
+        return self.pca.mean_
+
+    @property
+    def covariance_(self):
+        return self.pca.get_covariance()
+
+    @property
+    def explained_variance_ratio_(self):
+        """
+        explained_variance_ratio_: 各主成分の寄与率
+        """
+        np.set_printoptions(precision=5, suppress=True)
+        return self.pca.explained_variance_ratio_
+
+    @property
+    def explained_variance_(self):
+        """
+        explained_variance_: 固有値
+        """
+        return self.pca.explained_variance_
     
     @property
     def cumulative_contribution_rate(self):
