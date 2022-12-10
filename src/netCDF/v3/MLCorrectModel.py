@@ -47,7 +47,12 @@ class MLCorrectModel(Setter):
             return setVarnames, varnames
 
         def pattern6(self):
-            pass
+            varnames = [
+                'rain_MSMs',
+                'pca1_component1', 'pca1_component2', 'pca2_component1', 'pca2_component2',
+                'pca3_component1', 'pca3_component2', 'pca4_component1', 'pca4_component2',
+            ]
+            return varnames
 
     class RegressionModel:
         """
@@ -56,15 +61,16 @@ class MLCorrectModel(Setter):
         def LinearRegression(self, save_path, text_path, X, Y):
             LinearRegression.createModel(save_path, text_path, X, Y)
 
-        def SDGRegressor(self, save_path, text_path, img_path, X, Y):
-            SDGRegressor.createModel(save_path, text_path, img_path, X, Y)
+        def SDGRegressor(self, save_path, text_path, X, Y):
+            SDGRegressor.createModel(save_path, text_path, X, Y)
 
         def NonLinearSDGRegressor(self, save_path, text_path, X, Y):
             NonLinearSDGRegressor.createModel(save_path, text_path, X, Y)
 
-        def SVR(self, save_path, text_path, X, Y):
-            # SVR.createModel(save_path, text_path, X, Y)
-            gridsearch, KSVR = SVR.debug(X, Y)
+        def SVR(self, save_path, text_path, json_path, X, Y):
+            SVR.createModel(save_path, text_path, json_path, X, Y)
+            # gridsearch, KSVR = SVR.debug(X, Y)
+            # return gridsearch, KSVR
 
     class Data:
         """

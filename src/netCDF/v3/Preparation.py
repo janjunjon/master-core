@@ -76,6 +76,7 @@ class Preparation3(MLCorrectModel):
         super().__init__()
         self.model_path = '/home/jjthomson/master-core/var/v3/HeavyRainCases/SVR/preparation.sav'
         self.text_path = '/home/jjthomson/master-core/var/v3_result/HeavyRainCases/SVR/preparation.txt'
+        self.json_path = '/home/jjthomson/master-core/var/v3_result/HeavyRainCases/SVR/preparation.json'
 
         indexes = self.Data.HeavyRainCases(self)
         self.setVarnames, self.varnames = self.Variables.preparation(self)
@@ -85,9 +86,10 @@ class Preparation3(MLCorrectModel):
             self.X, self.Y = self.shapeXY(indexes, self.varnames)
 
     def create(self):
-        self.gridsearch, self.KSVR = self.model.SVR(
+        self.model.SVR(
             save_path=self.model_path,
             text_path=self.text_path,
+            gs_path=self.json_path,
             X=self.X,
             Y=self.Y
         )

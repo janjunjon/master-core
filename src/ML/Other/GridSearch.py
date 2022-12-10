@@ -46,7 +46,7 @@ class SVRHyperParams:
 
 class Sample:
     @classmethod
-    def template(cls, X_train, X_test, Y_train, Y_test):
+    def template(cls, X_train, X_test, Y_train, Y_test, json_path):
         starttime = Time.time()
         from sklearn.metrics import mean_absolute_error #MAE
         from sklearn.metrics import mean_squared_error #MSE
@@ -60,15 +60,14 @@ class Sample:
 
         params_cnt = 10
         params = {
-            "kernel":['rbf'],
-            "C":np.logspace(0,1,params_cnt),
-            "epsilon":np.logspace(-1,1,params_cnt)
+            "kernel": ['rbf'],
+            "C": np.logspace(0,1,params_cnt),
+            "epsilon": np.logspace(-1,1,params_cnt)
         }
 
         gridsearch = GridSearchCV(
             SVR(gamma='auto'),
-            params, cv=kf,
-            n_jobs=-1
+            params, cv=kf
         )
         '''
         epsilon : Epsilon parameter in the epsilon-insensitive loss function.
@@ -88,6 +87,9 @@ class Sample:
         print('The best parameter = ',gridsearch.best_params_)
         print('RMSE = ',-gridsearch.best_score_)
         print()
+
+        with open(json_path, 'w') as f:
+            f.write(gridsearch.best_params_)
 
         KSVR = SVR(
             kernel=gridsearch.best_params_['kernel'],

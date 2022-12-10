@@ -10,7 +10,7 @@ class Model1(MLCorrectModel):
         super().__init__()
         self.model_path = '/home/jjthomson/fdrive/MLCorrectModels/v3/Rain/SDGRegressor/pattern1.sav'
         self.text_path = '/home/jjthomson/fdrive/MLCorrectModels/v3_result/Rain/SDGRegressor/pattern1.txt'
-        self.img_path = '/home/jjthomson/fdrive/MLCorrectModels/v3_img/Rain/SDGRegressor/pattern1.png'
+        # self.img_path = '/home/jjthomson/fdrive/MLCorrectModels/v3_img/Rain/SDGRegressor/pattern1.png'
         self.nc_path = '/home/jjthomson/fdrive/nc/predict/v3/Rain/SDGRegressor/pattern1.nc'
         self.ctl_path = '/home/jjthomson/fdrive/nc/predict/v3_ctl/Rain/SDGRegressor/pattern1.ctl'
         self.gs_path = '/home/jjthomson/fdrive/nc/predict/v3_gs/Rain/SDGRegressor/pattern1.gs'
@@ -27,7 +27,6 @@ class Model1(MLCorrectModel):
         self.model.SDGRegressor(
             save_path=self.model_path,
             text_path=self.text_path,
-            img_path=self.img_path,
             X=self.X,
             Y=self.Y
         )
@@ -50,9 +49,11 @@ class Model2(MLCorrectModel):
         super().__init__()
         self.model_path = '/home/jjthomson/fdrive/MLCorrectModels/v3/Rain/SDGRegressor/pattern2.sav'
         self.text_path = '/home/jjthomson/fdrive/MLCorrectModels/v3_result/Rain/SDGRegressor/pattern2.txt'
-        self.img_path = '/home/jjthomson/fdrive/MLCorrectModels/v3_img/Rain/SDGRegressor/pattern2.png'
+        # self.img_path = '/home/jjthomson/fdrive/MLCorrectModels/v3_img/Rain/SDGRegressor/pattern2.png'
         self.nc_path = '/home/jjthomson/fdrive/nc/predict/v3/Rain/SDGRegressor/pattern2.nc'
-        self.ctl_path = '/home/jjthomson/master-core/fdrive/nc/predict/v3_ctl/Rain/SDGRegressor/pattern2.ctl'
+        self.ctl_path = '/home/jjthomson/fdrive/nc/predict/v3_ctl/Rain/SDGRegressor/pattern2.ctl'
+        self.gs_path = '/home/jjthomson/fdrive/nc/predict/v3_gs/Rain/SDGRegressor/pattern2.gs'
+        self.dirPath = 'Rain/SDGRegressor/pattern2'
 
         indexes = self.Data.Rain(self)
         self.setVarnames, self.varnames = self.Variables.pattern2(self)
@@ -70,6 +71,7 @@ class Model2(MLCorrectModel):
         )
     
     def correct(self):
+        self.createGradsFiles(self.ctl_path, self.gs_path, self.dirPath)
         X = self.shapeXForPredict(self.varnames)
         self.predictAll(
             ncSavePath=self.nc_path,
@@ -86,8 +88,11 @@ class Model3(MLCorrectModel):
         super().__init__()
         self.model_path = '/home/jjthomson/fdrive/MLCorrectModels/v3/Rain/SDGRegressor/pattern3.sav'
         self.text_path = '/home/jjthomson/fdrive/MLCorrectModels/v3_result/Rain/SDGRegressor/pattern3.txt'
-        self.img_path = '/home/jjthomson/fdrive/MLCorrectModels/v3_img/Rain/SDGRegressor/pattern3.png'
+        # self.img_path = '/home/jjthomson/fdrive/MLCorrectModels/v3_img/Rain/SDGRegressor/pattern3.png'
         self.nc_path = '/home/jjthomson/fdrive/nc/predict/v3/Rain/SDGRegressor/pattern3.nc'
+        self.ctl_path = '/home/jjthomson/fdrive/nc/predict/v3_ctl/Rain/SDGRegressor/pattern3.ctl'
+        self.gs_path = '/home/jjthomson/fdrive/nc/predict/v3_gs/Rain/SDGRegressor/pattern3.gs'
+        self.dirPath = 'Rain/SDGRegressor/pattern3'
 
         indexes = self.Data.Rain(self)
         self.setVarnames, self.varnames = self.Variables.pattern3(self)
@@ -105,6 +110,7 @@ class Model3(MLCorrectModel):
         )
     
     def correct(self):
+        self.createGradsFiles(self.ctl_path, self.gs_path, self.dirPath)
         X = self.shapeXForPredict(self.varnames)
         self.predictAll(
             ncSavePath=self.nc_path,
@@ -121,8 +127,11 @@ class Model4(MLCorrectModel):
         super().__init__()
         self.model_path = '/home/jjthomson/fdrive/MLCorrectModels/v3/Rain/SDGRegressor/pattern4.sav'
         self.text_path = '/home/jjthomson/fdrive/MLCorrectModels/v3_result/Rain/SDGRegressor/pattern4.txt'
-        self.img_path = '/home/jjthomson/fdrive/MLCorrectModels/v3_img/Rain/SDGRegressor/pattern4.png'
+        # self.img_path = '/home/jjthomson/fdrive/MLCorrectModels/v3_img/Rain/SDGRegressor/pattern4.png'
         self.nc_path = '/home/jjthomson/fdrive/nc/predict/v3/Rain/SDGRegressor/pattern4.nc'
+        self.ctl_path = '/home/jjthomson/fdrive/nc/predict/v3_ctl/Rain/SDGRegressor/pattern4.ctl'
+        self.gs_path = '/home/jjthomson/fdrive/nc/predict/v3_gs/Rain/SDGRegressor/pattern4.gs'
+        self.dirPath = 'Rain/SDGRegressor/pattern4'
 
         indexes = self.Data.Rain(self)
         self.setVarnames, self.varnames = self.Variables.pattern4(self)
@@ -140,6 +149,7 @@ class Model4(MLCorrectModel):
         )
     
     def correct(self):
+        self.createGradsFiles(self.ctl_path, self.gs_path, self.dirPath)
         X = self.shapeXForPredict(self.varnames)
         self.predictAll(
             ncSavePath=self.nc_path,
@@ -156,8 +166,11 @@ class Model5(MLCorrectModel):
         super().__init__()
         self.model_path = '/home/jjthomson/fdrive/MLCorrectModels/v3/Rain/SDGRegressor/pattern5.sav'
         self.text_path = '/home/jjthomson/fdrive/MLCorrectModels/v3_result/Rain/SDGRegressor/pattern5.txt'
-        self.img_path = '/home/jjthomson/fdrive/MLCorrectModels/v3_img/Rain/SDGRegressor/pattern5.png'
+        # self.img_path = '/home/jjthomson/fdrive/MLCorrectModels/v3_img/Rain/SDGRegressor/pattern5.png'
         self.nc_path = '/home/jjthomson/fdrive/nc/predict/v3/Rain/SDGRegressor/pattern5.nc'
+        self.ctl_path = '/home/jjthomson/fdrive/nc/predict/v3_ctl/Rain/SDGRegressor/pattern5.ctl'
+        self.gs_path = '/home/jjthomson/fdrive/nc/predict/v3_gs/Rain/SDGRegressor/pattern5.gs'
+        self.dirPath = 'Rain/SDGRegressor/pattern5'
 
         indexes = self.Data.Rain(self)
         self.setVarnames, self.varnames = self.Variables.pattern5(self)
@@ -175,6 +188,7 @@ class Model5(MLCorrectModel):
         )
     
     def correct(self):
+        self.createGradsFiles(self.ctl_path, self.gs_path, self.dirPath)
         X = self.shapeXForPredict(self.varnames)
         self.predictAll(
             ncSavePath=self.nc_path,
@@ -191,13 +205,16 @@ class Model6(MLCorrectModel):
         super().__init__()
         self.model_path = '/home/jjthomson/fdrive/MLCorrectModels/v3/Rain/SDGRegressor/pattern6.sav'
         self.text_path = '/home/jjthomson/fdrive/MLCorrectModels/v3_result/Rain/SDGRegressor/pattern6.txt'
-        self.img_path = '/home/jjthomson/fdrive/MLCorrectModels/v3_img/Rain/SDGRegressor/pattern6.png'
+        # self.img_path = '/home/jjthomson/fdrive/MLCorrectModels/v3_img/Rain/SDGRegressor/pattern6.png'
         self.nc_path = '/home/jjthomson/fdrive/nc/predict/v3/Rain/SDGRegressor/pattern6.nc'
+        self.ctl_path = '/home/jjthomson/fdrive/nc/predict/v3_ctl/Rain/SDGRegressor/pattern6.ctl'
+        self.gs_path = '/home/jjthomson/fdrive/nc/predict/v3_gs/Rain/SDGRegressor/pattern6.gs'
+        self.dirPath = 'Rain/SDGRegressor/pattern6'
 
         indexes = self.Data.Rain(self)
-        self.setVarnames, self.varnames = self.Variables.pattern6(self)
+        self.varnames = self.Variables.pattern6(self)
         self.model = self.RegressionModel()
-        self.setSpecificVars(self.setVarnames)
+        self.setPCAComponents()
         if not correct:
             self.X, self.Y = self.shapeXY(indexes, self.varnames)
 
@@ -210,6 +227,7 @@ class Model6(MLCorrectModel):
         )
     
     def correct(self):
+        self.createGradsFiles(self.ctl_path, self.gs_path, self.dirPath)
         X = self.shapeXForPredict(self.varnames)
         self.predictAll(
             ncSavePath=self.nc_path,

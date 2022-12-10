@@ -18,14 +18,14 @@ class SVR:
         return gridsearch, KSVR
 
     @classmethod
-    def createModel(cls, save_path, text_path, X, Y):
+    def createModel(cls, save_path, text_path, json_path, X, Y):
         starttime = Time.time()
         X_train, X_test, Y_train, Y_test = cls.getDistributedData(X, Y)
-        model = svm.SVR(kernel='rbf', C=1e3, gamma='auto', epsilon=0.001)
-        # model, gscv = SVRHyperParams.model(X_train, X_test, Y_train, Y_test)
+        # model = svm.SVR(kernel='rbf', C=1e3, gamma='auto', epsilon=0.001)
+        gscv, model = Sample.template(X_train, X_test, Y_train, Y_test, json_path)
         model.fit(X_train, Y_train)
         
-        pred_model=model.predict(X_test)
+        pred_model = model.predict(X_test)
         r2_lr = r2_score(Y_test, pred_model)
         mae_lr = mean_absolute_error(Y_test, pred_model)
         scores = cross_validation.cross_val_score(model, X, Y, cv=5)

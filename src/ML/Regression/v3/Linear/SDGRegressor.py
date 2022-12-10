@@ -16,7 +16,7 @@ class SDGRegressor:
         Figure.createModelResult(model, X_train, X_test, Y_train, Y_test, img_path)
 
     @classmethod
-    def createModel(cls, save_path, text_path, img_path, X, Y):
+    def createModel(cls, save_path, text_path, X, Y):
         X_train, X_test, Y_train, Y_test = cls.getDistributedData(X, Y)
         model = linear_model.SGDRegressor(max_iter=1000)
         model.fit(X_train, Y_train)
@@ -44,7 +44,6 @@ class SDGRegressor:
             )
 
         SKLearn.saveModel(model, save_path)
-        Figure.createModelResult(model, X_train, X_test, Y_train, Y_test, img_path)
 
     @classmethod
     def getDistributedData(cls, X, Y):

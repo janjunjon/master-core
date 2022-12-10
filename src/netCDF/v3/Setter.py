@@ -282,3 +282,18 @@ class Setter(SKLearn):
     def createGradsFiles(self, ctl_path, gs_path, dirPath):
         Grads.createCtlFileV3Results(ctl_path, dirPath)
         Grads.createGsFileV3Results(gs_path, dirPath)
+
+    def setPCAComponents(self):
+        setattr(self, 'rain_MSMs', self.nc_rains.variables['rain_MSMs'][:].tolist())
+        nc_pca1 = NetCDF('/home/jjthomson/fdrive/nc/PCA/pattern1.nc')
+        nc_pca2 = NetCDF('/home/jjthomson/fdrive/nc/PCA/pattern2.nc')
+        nc_pca3 = NetCDF('/home/jjthomson/fdrive/nc/PCA/pattern3.nc')
+        nc_pca4 = NetCDF('/home/jjthomson/fdrive/nc/PCA/pattern4.nc')
+        # varnames1 = ['component1', 'component2']
+        # varnames2 = ['component1', 'component2']
+        # varnames3 = ['component1', 'component2', 'component3']
+        # varnames4 = ['component1', 'component2', 'component3', 'component4']
+        varnames = ['component1', 'component2']
+        for varname in varnames:
+            for i in range(1,5):
+                setattr(self, f'pca{i}_{varname}', locals()[f'nc_pca{i}'].variables[varname][:])
