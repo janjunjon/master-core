@@ -1,7 +1,10 @@
-from netCDF.v3.Rain.SDGRegressor import *
+from netCDF.v3.HeavyRainCases.SDGRegressor import *
 
 class Execution:
-    def exec1(self):
+    def exec(self):
+        instance = Model1()
+        instance.create()
+        instance.correct()
         instance = Model2()
         instance.create()
         instance.correct()
@@ -12,5 +15,8 @@ class Execution:
         instance.create()
         instance.correct()
         instance = Model5()
+        instance.create()
+        instance.correct()
+        instance = Model6()
         instance.create()
         instance.correct()
