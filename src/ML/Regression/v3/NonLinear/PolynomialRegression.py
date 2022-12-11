@@ -53,8 +53,6 @@ class NonLinearSDGRegressor:
         sc=preprocessing.StandardScaler()
         sc.fit(X)
         X=sc.transform(X)
-        sc.fit(Y)
-        Y=sc.transform(Y)
         X_train, X_test, Y_train, Y_test = cross_validation.train_test_split(X, Y, test_size=0.2, random_state=0)
         return X_train, X_test, Y_train, Y_test
 

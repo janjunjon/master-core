@@ -1,7 +1,7 @@
 from netCDF.v3.HeavyRainCases.LinearRegression import *
 
 class Execution:
-    def exec1(self):
+    def exec(self):
         instance = Model1()
         instance.create()
         instance.correct()

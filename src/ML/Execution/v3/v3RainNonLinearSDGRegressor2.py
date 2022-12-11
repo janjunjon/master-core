@@ -1,4 +1,4 @@
-from netCDF.v3.Rain.SDGRegressor import *
+from netCDF.v3.Rain.NonLinearSDGRegressor import *
 
 class Execution:
     def exec(self):
