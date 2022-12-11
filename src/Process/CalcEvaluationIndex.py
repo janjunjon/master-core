@@ -5,8 +5,7 @@ from Module.Calculation import *
 
 class Execution:
     def __init__(self) -> None:
-        self.nc_rains = NetCDF('/home/jjthomson/fdrive/nc/grads/rains2.nc')
-        self.nc_rains2 = NetCDF('/home/jjthomson/fdrive/nc/combined/rains_nomask.nc')
+        self.nc_rains = NetCDF('/home/jjthomson/fdrive/nc/combined/rains_nomask.nc')
         self.nc_correct = NetCDF('/home/jjthomson/fdrive/nc/predict/v3/Rain/SDGRegressor/pattern1.nc')
 
     def main(self):
@@ -28,7 +27,7 @@ class Execution:
 
     def debug(self):
         time = 0
-        real = self.nc_rains2.variables['rain_Ra'][:]
+        real = self.nc_rains.variables['rain_Ra'][:]
         correct = self.nc_correct.variables['rain'][:]
         FSS = Calculation.FSS_(threshold=2, real=real[time], pred=correct[time])
         print(FSS)
@@ -38,7 +37,7 @@ class Execution:
         ALL1 = []
         ALL2 = []
         ALL3 = []
-        real = self.nc_rains2.variables['rain_Ra'][:]
+        real = self.nc_rains.variables['rain_Ra'][:]
         correct = self.nc_correct.variables['rain'][:]
         for time in range(248):
             FSS = Calculation.FSS_(threshold=2, real=real[time], pred=correct[time])

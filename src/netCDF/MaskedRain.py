@@ -54,11 +54,11 @@ class NoMaskedRain(NetCDF):
         # self.nc = NetCDF('/home/jjthomson/fdrive/nc/combined/rains.nc')
 
     def recreateRain(self):
-        rain_Ra = self.putMaskedValue('rain_Ra')
-        rain_MSMs = self.putMaskedValue('rain_MSMs')
+        # rain_Ra = self.putMaskedValue('rain_Ra')
+        # rain_MSMs = self.putMaskedValue('rain_MSMs')
         # rain_Ra = self.nc.variables['rain_Ra']
-        # rain_MSMs = self.nc.variables['rain_MSMs']
-        # rain_MSMs = self.nc.variables['rain_MSMs'][:]
+        rain_Ra = np.load('/home/jjthomson/fdrive/npy/MaskedRain_Ra.npy')
+        rain_MSMs = np.load('/home/jjthomson/fdrive/npy/MaskedRain_MSMs.npy')
         CreateNetCDF.createNcFileRaMSMsRain(
             path='/home/jjthomson/fdrive/nc/combined/rains_nomask.nc',
             filename='20200701',
