@@ -25,3 +25,8 @@ class Execution:
             instance.correct()
         except ExecutionError as e:
             Slack.notification('file: {}, error: {}'.format(__file__, e))
+
+# if __name__ == '__main__':
+#     instance = Execution()
+#     instance.exec()
+#     Slack.notification('file: {}, finished'.format(__file__))

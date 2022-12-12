@@ -226,7 +226,7 @@ class Setter(SKLearn):
             print(f'TIME: {time}, X: {len(data)}, vars: {len(data[0])}')
             print(f'vector: {data[indexes[0]]}')
             length = len(data[0])
-            poly = PolynomialFeatures(length)
+            poly = PolynomialFeatures(2)
             data = poly.fit_transform(data)
             predicted = np.array(self.model.predict(data))
             print('predicted: {:4f}'.format(predicted[indexes[0]]))
