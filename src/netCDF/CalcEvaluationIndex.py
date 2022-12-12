@@ -23,27 +23,28 @@ class Eval:
         self.value3 = Calculation.welchT(self.TS1, self.TS2)
         text = """
         <tkentei>
-        tRMSE: {:.4f}
-        tTS: {:.4f}
+        tRMSE: {}
+        tTS: {}
 
-        """.format(
-            self.value1, self.value3
-        )
+        """.format(self.value1, self.value3)
         for i, value in enumerate(self.value2):
             text += """
-            tFSS_{:.4f}: {:.4f}
+            tFSS_{}: {}
             """.format(i, value)
-        text += f"""
+        text += """
         <RA-MSMs>
-        RMSE: {np.mean(self.RMSE1)}
-        FSS: {np.mean(self.FSS1)}
-        TS: {np.mean(self.TS1)}
+        RMSE: {}
+        FSS: {}
+        TS: {}
 
         <RA-Correct>
-        RMSE: {np.mean(self.RMSE2)}
-        FSS: {np.mean(self.FSS2)}
-        TS: {np.mean(self.TS2)}
-        """
+        RMSE: {}
+        FSS: {}
+        TS: {}
+        """.format(
+            np.mean(self.RMSE1), [np.mean(self.FSS1[:,i]) for i in range(10)], np.mean(self.TS1),
+            np.mean(self.RMSE2), [np.mean(self.FSS2[:,i]) for i in range(10)], np.mean(self.TS2),
+        )
         with open(self.savePath, 'w') as f:
             f.write(text)
 
@@ -71,6 +72,7 @@ class Eval:
             ALL1.append(RMSE)
             ALL2.append(FSSEACH)
             ALL3.append(TS)
+            print(f'time: {time}')
         return ALL1, ALL2, ALL3
 
     def calcEvalIndex_RA_MSMs(self):
@@ -93,13 +95,13 @@ class EvalRAMSMs:
     def main(self):
         starttime = Time.time()
 
-        self.RMSE1, self.FSS1, self.TS1 = self.calcEvalIndex_RA_MSMs()
+        self.RMSE, self.FSS, self.TS = self.calcEvalIndex_RA_MSMs()
         self.save()
         text = f"""
         <RA-MSMs>
-        RMSE: {np.mean(self.RMSE1)}
-        FSS: {np.mean(self.FSS1)}
-        TS: {np.mean(self.TS1)}
+        RMSE: {np.mean(self.RMSE)}
+        FSS: {np.mean(self.FSS)}
+        TS: {np.mean(self.TS)}
         """
         with open(self.savePath, 'w') as f:
             f.write(text)
@@ -129,6 +131,6 @@ class EvalRAMSMs:
         return ALL1, ALL2, ALL3
 
     def save(self):
-        np.save('/home/jjthomson/fdrive/npy/RMSE', self.RMSE1)
-        np.save('/home/jjthomson/fdrive/npy/FSS', self.FSS1)
-        np.save('/home/jjthomson/fdrive/npy/TS', self.TS1)
+        np.save('/home/jjthomson/fdrive/npy/RMSE', self.RMSE)
+        np.save('/home/jjthomson/fdrive/npy/FSS', self.FSS)
+        np.save('/home/jjthomson/fdrive/npy/TS', self.TS)

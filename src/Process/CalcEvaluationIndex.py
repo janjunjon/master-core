@@ -1,34 +1,64 @@
 from netCDF.CalcEvaluationIndex import *
+from External.Slack import *
 
 class Execution:
     def main(self):
-        instance = Eval(
-            dirPath='Rain/SDGRegressor',
-            pattern='pattern1'
-        )
-        instance.main()
-        instance = Eval(
-            savePath='/home/jjthomson/fdrive/nc/predict/v3_eval/Rain/SDGRegressor/pattern2.txt',
-            nc_correct_path='/home/jjthomson/fdrive/nc/predict/v3/Rain/SDGRegressor/pattern2.nc'
-        )
-        instance.main()
-        instance = Eval(
-            savePath='/home/jjthomson/fdrive/nc/predict/v3_eval/Rain/SDGRegressor/pattern3.txt',
-            nc_correct_path='/home/jjthomson/fdrive/nc/predict/v3/Rain/SDGRegressor/pattern3.nc'
-        )
-        instance.main()
-        instance = Eval(
-            savePath='/home/jjthomson/fdrive/nc/predict/v3_eval/Rain/SDGRegressor/pattern4.txt',
-            nc_correct_path='/home/jjthomson/fdrive/nc/predict/v3/Rain/SDGRegressor/pattern4.nc'
-        )
-        instance.main()
-        instance = Eval(
-            savePath='/home/jjthomson/fdrive/nc/predict/v3_eval/Rain/SDGRegressor/pattern5.txt',
-            nc_correct_path='/home/jjthomson/fdrive/nc/predict/v3/Rain/SDGRegressor/pattern5.nc'
-        )
-        instance.main()
-        instance = Eval(
-            savePath='/home/jjthomson/fdrive/nc/predict/v3_eval/Rain/SDGRegressor/pattern6.txt',
-            nc_correct_path='/home/jjthomson/fdrive/nc/predict/v3/Rain/SDGRegressor/pattern6.nc'
-        )
-        instance.main()
+        try:
+            for pattern in ['pattern1', 'pattern2', 'pattern3', 'pattern4', 'pattern5', 'pattern6']:
+                instance = Eval(
+                    dirPath='Rain/SDGRegressor',
+                    pattern=pattern
+                )
+                instance.main()
+                Slack.notification('file: {}, finished: {}'.format(__file__, 'Rain/SDGRegressor'))
+            # for pattern in ['pattern1', 'pattern2', 'pattern3', 'pattern4', 'pattern5', 'pattern6']:
+            #     instance = Eval(
+            #         dirPath='HeavyRainCases/SDGRegressor',
+            #         pattern=pattern
+            #     )
+            #     instance.main()
+            #     Slack.notification('file: {}, finished: {}'.format(__file__, 'HeavyRainCases/SDGRegressor'))
+            # for pattern in ['pattern1', 'pattern2', 'pattern3', 'pattern4', 'pattern5', 'pattern6']:
+            #     instance = Eval(
+            #         dirPath='Rain/LinearRegression',
+            #         pattern=pattern
+            #     )
+            #     instance.main()
+            #     Slack.notification('file: {}, finished: {}'.format(__file__, 'Rain/LinearRegression'))
+            # for pattern in ['pattern1', 'pattern2', 'pattern3', 'pattern4', 'pattern5', 'pattern6']:
+            #     instance = Eval(
+            #         dirPath='HeavyRainCases/LinearRegression',
+            #         pattern=pattern
+            #     )
+            #     instance.main()
+            #     Slack.notification('file: {}, finished: {}'.format(__file__, 'HeavyRainCases/LinearRegression'))
+            # for pattern in ['pattern1', 'pattern2', 'pattern3', 'pattern4', 'pattern5', 'pattern6']:
+            #     instance = Eval(
+            #         dirPath='Rain/NonLinearSDGRegressor',
+            #         pattern=pattern
+            #     )
+            #     instance.main()
+            #     Slack.notification('file: {}, finished: {}'.format(__file__, 'Rain/NonLinearSDGRegressor'))
+            # for pattern in ['pattern1', 'pattern2', 'pattern3', 'pattern4', 'pattern5', 'pattern6']:
+            #     instance = Eval(
+            #         dirPath='HeavyRainCases/NonlinearSDGRegressor',
+            #         pattern=pattern
+            #     )
+            #     instance.main()
+            #     Slack.notification('file: {}, finished: {}'.format(__file__, 'HeavyRainCases/NonLinearSDGRegressor'))
+            # for pattern in ['pattern1', 'pattern2', 'pattern3', 'pattern4', 'pattern5', 'pattern6']:
+            #     instance = Eval(
+            #         dirPath='Rain/SVR',
+            #         pattern=pattern
+            #     )
+            #     instance.main()
+            #     Slack.notification('file: {}, finished: {}'.format(__file__, 'Rain/SVR'))
+            # for pattern in ['pattern1', 'pattern2', 'pattern3', 'pattern4', 'pattern5', 'pattern6']:
+            #     instance = Eval(
+            #         dirPath='HeavyRainCases/SVR',
+            #         pattern=pattern
+            #     )
+            #     instance.main()
+            #     Slack.notification('file: {}, finished: {}'.format(__file__, 'HeavyRainCases/SVR'))
+        except ExecutionError as e:
+            Slack.notification('file: {}, error: {}'.format(__file__, e))
