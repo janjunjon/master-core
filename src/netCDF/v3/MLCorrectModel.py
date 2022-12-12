@@ -79,11 +79,11 @@ class MLCorrectModel(Setter):
         def Rain(self):
             # instance = IndexesRain()
             # indexes = instance.getIndexes(rain)
-            indexes = np.load('/home/jjthomson/master-core/var/Data/Rain.npy')
+            indexes = np.load('/home/ishihara/master-core/var/Data/Rain.npy')
             return indexes
 
         def HeavyRainCases(self):
-            indexes = np.load('/home/jjthomson/master-core/var/Data/HeavyRainCases.npy')
+            indexes = np.load('/home/ishihara/master-core/var/Data/HeavyRainCases.npy')
             return indexes
 
     class Predict:

@@ -19,12 +19,12 @@ class Setter(SKLearn):
         super().__init__()
 
         self.region = [22, 48, 120, 150]
-        self.nc_rains = NetCDF('/home/jjthomson/fdrive/nc/combined/rains.nc')
+        self.nc_rains = NetCDF('/home/ishihara/fdrive/nc/combined/rains.nc')
         self.Y = self.nc_rains.variables['rain_Ra'][:].tolist()
-        self.ncMSMs = NetCDF('/home/jjthomson/fdrive/nc/combined/MSMs.nc')
-        self.ncMSMp = NetCDF('/home/jjthomson/fdrive/nc/combined/MSMp.nc')
-        self.ncDiv = NetCDF('/home/jjthomson/fdrive/nc/combined/div.nc')
-        self.ncAtmos = NetCDF('/home/jjthomson/fdrive/nc/combined/atmos.nc')
+        self.ncMSMs = NetCDF('/home/ishihara/fdrive/nc/combined/MSMs.nc')
+        self.ncMSMp = NetCDF('/home/ishihara/fdrive/nc/combined/MSMp.nc')
+        self.ncDiv = NetCDF('/home/ishihara/fdrive/nc/combined/div.nc')
+        self.ncAtmos = NetCDF('/home/ishihara/fdrive/nc/combined/atmos.nc')
         self.varNcMSMs  = ['psea', 'sp', 'u', 'v', 'temp', 'ncld_upper', 'ncld_mid', 'ncld_low', 'ncld', 'dswrf']
         self.varNcMSMp  = ['z', 'w', 'rh']
         self.varNcDiv   = ['pwv', 'qu', 'qv', 'div']

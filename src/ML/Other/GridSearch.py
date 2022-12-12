@@ -88,8 +88,11 @@ class Sample:
         print('RMSE = ',-gridsearch.best_score_)
         print()
 
-        with open(json_path, 'w') as f:
-            f.write(gridsearch.best_params_)
+        try:
+            with open(json_path, 'w') as f:
+                f.write(str(gridsearch.best_params_))
+        except:
+            pass
 
         KSVR = SVR(
             kernel=gridsearch.best_params_['kernel'],
