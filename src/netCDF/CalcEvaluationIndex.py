@@ -42,8 +42,8 @@ class Eval:
         FSS: {}
         TS: {}
         """.format(
-            np.mean(self.RMSE1), [np.mean(self.FSS1[:,i]) for i in range(10)], np.mean(self.TS1),
-            np.mean(self.RMSE2), [np.mean(self.FSS2[:,i]) for i in range(10)], np.mean(self.TS2),
+            np.mean(self.RMSE1), ['{:.4f}'.format(np.mean(self.FSS1[:,i])) for i in range(10)], np.mean(self.TS1),
+            np.mean(self.RMSE2), ['{:.4f}'.format(np.mean(self.FSS2[:,i])) for i in range(10)], np.mean(self.TS2),
         )
         with open(self.savePath, 'w') as f:
             f.write(text)
