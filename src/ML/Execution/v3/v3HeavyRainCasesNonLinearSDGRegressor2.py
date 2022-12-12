@@ -1,5 +1,6 @@
 from netCDF.v3.HeavyRainCases.NonLinearSDGRegressor import *
 from External.Slack import *
+from Exception.Exception import *
 
 class Execution:
     def exec(self):
@@ -22,5 +23,5 @@ class Execution:
             instance = Model6()
             instance.create()
             instance.correct()
-        except:
-            Slack.notification('failed in v3HeavyRainCasesNonLinearSDGRegressor2.')
+        except ExecutionError as e:
+            Slack.notification('file: {}, error: {}'.format(__file__, e))

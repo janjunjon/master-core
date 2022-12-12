@@ -180,7 +180,7 @@ class Setter(SKLearn):
             print(f'TIME: {time}, X: {len(data)}, vars: {len(data[0])}')
             print(f'vector: {data[indexes[0]]}')
             predicted = np.array(self.model.predict(data))
-            print(f'predicted: {predicted[indexes[0]]}')
+            print('predicted: {:4f}'.format(predicted[indexes[0]]))
             rain_MSMs = np.ravel(self.rain_MSMs[time])
             # exists = [i for i in predicted if i > 0]
             # print(exists[:10])
@@ -229,7 +229,7 @@ class Setter(SKLearn):
             poly = PolynomialFeatures(length)
             data = poly.fit_transform(data)
             predicted = np.array(self.model.predict(data))
-            print(f'predicted: {predicted[indexes[0]]}')
+            print('predicted: {:4f}'.format(predicted[indexes[0]]))
             rain_MSMs = np.ravel(self.rain_MSMs[time])
             # exists = [i for i in predicted if i > 0]
             # print(exists[:10])
