@@ -9,7 +9,8 @@ class Slack:
         slack_token = os.environ["SLACK_BOT_USER_OAUTH_TOKEN"]
         slack_channel = os.environ["SLACK_CHANNEL_ID"]
         slack_client = WebClient(token=slack_token)
+        slack_to = os.environ['SLACK_ISHIHARA_ID']
         slack_client.chat_postMessage(
             channel=slack_channel,
-            text=f'<@U04EH1W4STY> {description}'
+            text=f'<@{slack_to}> ```{description}```'
         )
