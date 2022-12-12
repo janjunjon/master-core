@@ -3,6 +3,11 @@ from netCDF.CalcEvaluationIndex import *
 class Execution:
     def main(self):
         instance = Eval(
+            dirPath='Rain/SDGRegressor',
+            pattern='pattern1'
+        )
+        instance.main()
+        instance = Eval(
             savePath='/home/jjthomson/fdrive/nc/predict/v3_eval/Rain/SDGRegressor/pattern2.txt',
             nc_correct_path='/home/jjthomson/fdrive/nc/predict/v3/Rain/SDGRegressor/pattern2.nc'
         )

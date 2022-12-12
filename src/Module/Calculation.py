@@ -51,7 +51,7 @@ class Calculation:
         real = np.ravel(real).tolist()
         pred = np.ravel(pred).tolist()
         MSE = mean_squared_error(Io, If)
-        MSEref = np.mean([(If[j]**2 + Io[j]**2) for j in range(len(Io))])
+        MSEref = np.mean([(If[j] + Io[j])**2 for j in range(len(Io))])
         if MSE > MSEref or MSEref == 0:
             return 0
         FSS = 1 - (MSE / MSEref)
