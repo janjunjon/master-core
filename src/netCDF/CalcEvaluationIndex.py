@@ -6,10 +6,10 @@ from Module.Calculation import *
 class Eval:
     def __init__(self, dirPath, pattern) -> None:
         self.pattern = pattern
-        self.dirPath = f'/home/jjthomson/fdrive/npy/{dirPath}'
-        self.savePath = f'/home/jjthomson/fdrive/nc/predict/v3_eval/{dirPath}/{pattern}.txt'
-        self.nc_rains = NetCDF('/home/jjthomson/fdrive/nc/combined/rains_nomask.nc')
-        self.nc_correct = NetCDF(f'/home/jjthomson/fdrive/nc/predict/v3/{dirPath}/{pattern}.nc')
+        self.dirPath = f'/home/ishihara/fdrive/npy/{dirPath}'
+        self.savePath = f'/home/ishihara/fdrive/nc/predict/v3_eval/{dirPath}/{pattern}.txt'
+        self.nc_rains = NetCDF('/home/ishihara/fdrive/nc/combined/rains_nomask.nc')
+        self.nc_correct = NetCDF(f'/home/ishihara/fdrive/nc/predict/v3/{dirPath}/{pattern}.nc')
 
     def main(self):
         starttime = Time.time()
@@ -76,9 +76,9 @@ class Eval:
         return ALL1, ALL2, ALL3
 
     def calcEvalIndex_RA_MSMs(self):
-        RMSE = np.load('/home/jjthomson/fdrive/npy/RMSE.npy')
-        FSS = np.load('/home/jjthomson/fdrive/npy/FSS.npy')
-        TS  = np.load('/home/jjthomson/fdrive/npy/TS.npy')
+        RMSE = np.load('/home/ishihara/fdrive/npy/RMSE.npy')
+        FSS = np.load('/home/ishihara/fdrive/npy/FSS.npy')
+        TS  = np.load('/home/ishihara/fdrive/npy/TS.npy')
         return RMSE, FSS, TS
 
     def save(self):
@@ -89,8 +89,8 @@ class Eval:
 
 class EvalRAMSMs:
     def __init__(self) -> None:
-        self.savePath = f'/home/jjthomson/fdrive/npy/RA_MSMs.txt'
-        self.nc_rains = NetCDF('/home/jjthomson/fdrive/nc/combined/rains_nomask.nc')
+        self.savePath = f'/home/ishihara/fdrive/npy/RA_MSMs.txt'
+        self.nc_rains = NetCDF('/home/ishihara/fdrive/nc/combined/rains_nomask.nc')
 
     def main(self):
         starttime = Time.time()
@@ -131,6 +131,6 @@ class EvalRAMSMs:
         return ALL1, ALL2, ALL3
 
     def save(self):
-        np.save('/home/jjthomson/fdrive/npy/RMSE', self.RMSE)
-        np.save('/home/jjthomson/fdrive/npy/FSS', self.FSS)
-        np.save('/home/jjthomson/fdrive/npy/TS', self.TS)
+        np.save('/home/ishihara/fdrive/npy/RMSE', self.RMSE)
+        np.save('/home/ishihara/fdrive/npy/FSS', self.FSS)
+        np.save('/home/ishihara/fdrive/npy/TS', self.TS)

@@ -22,8 +22,6 @@ class advModel1(Model1):
         self.setSpecificVars(self.setVarnames)
         self.X, self.Y = self.shapeXY(indexes, self.varnames)
 
-
-
 class advModel2(Model2):
     def __init__(self, correct=False) -> None:
         super().__init__(correct)
@@ -123,21 +121,27 @@ try:
     model1 = advModel1()
     model1.create()
     model1.correct()
+    Slack.notification('file: {}, finished: model1'.format(__file__))
     model2 = advModel2()
     model2.create()
     model2.correct()
+    Slack.notification('file: {}, finished: model1'.format(__file__))
     model3 = advModel3()
     model3.create()
     model3.correct()
+    Slack.notification('file: {}, finished: model1'.format(__file__))
     model4 = advModel4()
     model4.create()
     model4.correct()
+    Slack.notification('file: {}, finished: model1'.format(__file__))
     model5 = advModel5()
     model5.create()
     model5.correct()
+    Slack.notification('file: {}, finished: model1'.format(__file__))
     model6 = advModel6()
     model6.create()
     model6.correct()
+    Slack.notification('file: {}, finished: model1'.format(__file__))
 except ExecutionError as e:
     Slack.notification('file: {}, error: {}'.format(__file__, e))
 
