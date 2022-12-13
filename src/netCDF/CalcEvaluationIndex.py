@@ -2,6 +2,8 @@ import time as Time
 import numpy as np
 from netCDF.NetCDF import NetCDF
 from Module.Calculation import *
+from Module.Reverse import *
+from ML.Other.HeavyRainCases import *
 
 class Eval:
     def __init__(self, dirPath, pattern) -> None:
@@ -62,13 +64,12 @@ class Eval:
         correct = self.nc_correct.variables['rain'][:]
         for time in range(248):
             FSSEACH = []
+            rain = Reverse.reverseLat(correct[time])
             for threshold in np.linspace(2, 20, 10):
-                FSS = Calculation.FSS_(threshold=threshold, real=real[time], pred=correct[time])
+                FSS = Calculation.FSS_(threshold=threshold, real=real[time], pred=rain)
                 FSSEACH.append(FSS)
-            TS = Calculation.ThreatScore(real=real[time], pred=correct[time])
-            rain1 = np.ravel(real[time])
-            rain2 = np.ravel(correct[time])
-            RMSE = Calculation.calcRMSE(rain1, rain2)
+            TS = Calculation.ThreatScore(real=real[time], pred=rain)
+            RMSE = Calculation.RMSE(real=real[time], pred=rain)
             ALL1.append(RMSE)
             ALL2.append(FSSEACH)
             ALL3.append(TS)
@@ -85,7 +86,6 @@ class Eval:
         np.save(f'{self.dirPath}/RMSE_{self.pattern}', self.RMSE2)
         np.save(f'{self.dirPath}/FSS_{self.pattern}', self.FSS2)
         np.save(f'{self.dirPath}/TS_{self.pattern}', self.TS2)
-
 
 class EvalRAMSMs:
     def __init__(self) -> None:
@@ -121,9 +121,7 @@ class EvalRAMSMs:
                 FSS = Calculation.FSS_(threshold=threshold, real=rain_Ra[time], pred=rain_MSMs[time])
                 FSSEACH.append(FSS)
             TS = Calculation.ThreatScore(real=rain_Ra[time], pred=rain_MSMs[time])
-            rain1 = np.ravel(rain_Ra[time])
-            rain2 = np.ravel(rain_MSMs[time])
-            RMSE = Calculation.calcRMSE(rain1, rain2)
+            RMSE = Calculation.RMSE(real=rain_Ra[time], pred=rain_MSMs[time])
             ALL1.append(RMSE)
             ALL2.append(FSSEACH)
             ALL3.append(TS)

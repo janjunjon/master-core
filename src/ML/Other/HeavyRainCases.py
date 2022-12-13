@@ -182,3 +182,21 @@ class IndexesHeavyRainCases(Indexes):
                 advanced.append(index)
         print(f'DEBUG: advanced {len(advanced)}')
         return advanced
+
+def getIndexes(LAT, LON):
+    count = 0
+    indexes = []
+    for lat in range(253):
+        for lon in range(241):
+            if lat in LAT and lon in LON:
+                indexes.append(count)
+            count += 1
+    return indexes
+
+def case202007040100():
+    # t=23, lat=28-33, lon=128-133
+    T = 23
+    LAT = range(56,106)
+    LON = range(64,104)
+    indexes = getIndexes(LAT, LON)
+    return indexes
