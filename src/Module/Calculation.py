@@ -8,8 +8,17 @@ from Module.Array import Array
 
 class Calculation:
     @classmethod
-    def calcRMSE(cls, X, Y):
-        deviation = [(x - y) ** 2 for (x, y) in zip(X, Y)]
+    def RMSE(cls, real, pred, indexes=None):
+        real = Array.convert(real)
+        pred = Array.convert(pred)
+        if indexes:
+            real = [real[i] for i in indexes]
+            pred = [pred[i] for i in indexes]
+        print([rain for rain in real if rain > 0][:100])
+        print([rain for rain in pred if rain > 0][:100])
+        real = [0 if not value else value for value in real]
+        pred = [0 if not value else value for value in pred]
+        deviation = [(x - y) ** 2 for (x, y) in zip(real, pred)]
         RMSE = pow(np.mean(deviation), 0.5)
         return RMSE
 
@@ -23,20 +32,31 @@ class Calculation:
         return corrcoef_
 
     @classmethod
-    def FSS_(cls, threshold, real, pred):
+    def FSS_(cls, threshold, real, pred, LATs=0, LATf=253, LONs=0, LONf=240):
+        """
+        Calculation of FSS, which shows degree of simularity of distribution
+
+        regions can be specified.
+        LATs: start index of latitude array.
+        LATf: end index of latitude array.
+        LATs: start index of longitude array.
+        LATs: end index of longitude array.
+        """
         real = Array.listToNdArray(real)
         pred = Array.listToNdArray(pred)
         if real.ndim != 2 and pred.ndim != 2:
             raise DimensionalError('real/pred dimension must be 2 dims.')
         real = np.ravel(real).tolist()
         pred = np.ravel(pred).tolist()
+        real = [0 if not value else value for value in real]
+        pred = [0 if not value else value for value in pred]
         Io = [1 if value >= threshold else 0 for value in real]
         If = [1 if value >= threshold else 0 for value in pred]
         Io = Array.reshape(Io)
         If = Array.reshape(If)
-        for lat in range(253):
-            for lon in range(241):
-                if lat == 0 or lon == 0 or lat == 252 or lon == 240:
+        for lat in range(LATf-LATs):
+            for lon in range(LONf-LONs):
+                if lat == LATs or lon == LONs or lat == LATf or lon == LONf:
                     pass
                 else:
                     patterns = list(itertools.product([lon-1, lon, lon+1], repeat=2))
@@ -58,12 +78,17 @@ class Calculation:
         return FSS
 
     @classmethod
-    def ThreatScore(self, real, pred, threshold=0):
+    def ThreatScore(self, real, pred, threshold=0, indexes=None):
         """
         FO: 適中, FX: 空振り, XO: 見逃し, XX: 適中
         """
         real = Array.convert(real)
         pred = Array.convert(pred)
+        if indexes:
+            real = [real[i] for i in indexes]
+            pred = [pred[i] for i in indexes]
+        real = [0 if not value else value for value in real]
+        pred = [0 if not value else value for value in pred]
         FO = 0
         FX = 0
         XO = 0
