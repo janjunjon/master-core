@@ -4,10 +4,10 @@ from Module.CreateNetCDF import CreateNetCDF
 
 class ReverseRains(NetCDF):
     def __init__(self) -> None:
-        super().__init__('/home/jjthomson/fdrive/nc/recreated/rains.nc')
+        super().__init__('/home/jjthomson/fdrive/nc/combined/rains_nomask.nc')
         self.rain_Ra = self.nc.variables['rain_Ra'][:]
         self.rain_MSMs = self.nc.variables['rain_MSMs'][:]
-        self.savePath = f'{self.fdrive_path}/nc/combined/rains.nc'
+        self.savePath = f'{self.fdrive_path}/nc/combined/rains_nomask2.nc'
 
     def main(self):
         rain_Ra = Reverse.reverseLat(self.rain_Ra)

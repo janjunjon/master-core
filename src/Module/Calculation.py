@@ -14,8 +14,8 @@ class Calculation:
         if indexes:
             real = [real[i] for i in indexes]
             pred = [pred[i] for i in indexes]
-        print([rain for rain in real if rain > 0][:100])
-        print([rain for rain in pred if rain > 0][:100])
+        # print([rain for rain in real if rain > 0][:100])
+        # print([rain for rain in pred if rain > 0][:100])
         real = [0 if not value else value for value in real]
         pred = [0 if not value else value for value in pred]
         deviation = [(x - y) ** 2 for (x, y) in zip(real, pred)]
@@ -60,6 +60,7 @@ class Calculation:
                     pass
                 else:
                     patterns = list(itertools.product([lon-1, lon, lon+1], repeat=2))
+                    # print(f'len: {len(patterns)}')
                     value = 0
                     for i in range(len(patterns)):
                         value += Io[patterns[i][0]][patterns[i][1]]

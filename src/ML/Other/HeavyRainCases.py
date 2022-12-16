@@ -194,9 +194,9 @@ def getIndexes(LAT, LON):
     return indexes
 
 def case202007040100():
-    # t=23, lat=28-33, lon=128-133
+    # t=23, lat=30-34, lon=128-133
     T = 23
-    LAT = range(56,106)
+    LAT = range(76,116)
     LON = range(64,104)
     indexes = getIndexes(LAT, LON)
     return indexes

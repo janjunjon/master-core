@@ -44,8 +44,8 @@ class Eval:
         FSS: {}
         TS: {}
         """.format(
-            np.mean(self.RMSE1), [np.mean(self.FSS1[:,i]) for i in range(10)], np.mean(self.TS1),
-            np.mean(self.RMSE2), [np.mean(self.FSS2[:,i]) for i in range(10)], np.mean(self.TS2),
+            np.mean(self.RMSE1), [np.mean(self.FSS1[:,i]) for i in range(13)], np.mean(self.TS1),
+            np.mean(self.RMSE2), [np.mean(self.FSS2[:,i]) for i in range(13)], np.mean(self.TS2),
         )
         with open(self.savePath, 'w') as f:
             f.write(text)
@@ -65,7 +65,8 @@ class Eval:
         for time in range(248):
             FSSEACH = []
             rain = Reverse.reverseLat(correct[time])
-            for threshold in np.linspace(2, 20, 10):
+            thresholds = np.append(np.linspace(2, 20, 10), [30,40,50])
+            for threshold in thresholds:
                 FSS = Calculation.FSS_(threshold=threshold, real=real[time], pred=rain)
                 FSSEACH.append(FSS)
             TS = Calculation.ThreatScore(real=real[time], pred=rain)
@@ -99,9 +100,9 @@ class EvalRAMSMs:
         self.save()
         text = f"""
         <RA-MSMs>
-        RMSE: {np.mean(self.RMSE)}
-        FSS: {np.mean(self.FSS)}
-        TS: {np.mean(self.TS)}
+        RMSE: {'{:.6f}'.format(self.RMSE[0])}
+        FSS: {[float('{:.6f}'.format(self.FSS[0][i])) for i in range(13)]}
+        TS: {'{:.6f}'.format(self.TS[0])}
         """
         with open(self.savePath, 'w') as f:
             f.write(text)
@@ -117,7 +118,8 @@ class EvalRAMSMs:
         rain_MSMs = self.nc_rains.variables['rain_MSMs'][:]
         for time in range(248):
             FSSEACH = []
-            for threshold in np.linspace(2, 20, 10):
+            thresholds = np.append(np.linspace(2, 20, 10), [30,40,50])
+            for threshold in thresholds:
                 FSS = Calculation.FSS_(threshold=threshold, real=rain_Ra[time], pred=rain_MSMs[time])
                 FSSEACH.append(FSS)
             TS = Calculation.ThreatScore(real=rain_Ra[time], pred=rain_MSMs[time])
@@ -140,7 +142,7 @@ class EvalSpecificRegions(Eval):
     def __init__(self, dirPath, pattern, regions=None) -> None:
         super().__init__(dirPath, pattern)
         self.time = 23
-        self.regions = [56, 106, 64, 104]
+        self.regions = [76, 116, 64, 104]
         self.indexes = case202007040100()
         self.dirPath = f'/home/jjthomson/fdrive/npy2/{dirPath}'
         self.savePath = f'/home/jjthomson/fdrive/nc/predict/v3_eval2/{dirPath}/{pattern}.txt'
@@ -153,7 +155,21 @@ class EvalSpecificRegions(Eval):
         self.RMSE1, self.FSS1, self.TS1 = self.calcEvalIndex_RA_MSMs()
         self.RMSE2, self.FSS2, self.TS2 = self.calcEvalIndex_Real_Correct()
         self.save()
+        self.value1 = Calculation.welchT(self.RMSE1, self.RMSE2)
+        self.FSS1, self.FSS2 = np.array(self.FSS1), np.array(self.FSS2)
+        self.value2 = [Calculation.welchT(self.FSS1[:,i], self.FSS2[:,i]) for i in range(10)]
+        self.value3 = Calculation.welchT(self.TS1, self.TS2)
         text = """
+        <tkentei>
+        tRMSE: {}
+        tTS: {}
+
+        """.format(self.value1, self.value3)
+        for i, value in enumerate(self.value2):
+            text += """
+            tFSS_{}: {}
+            """.format(i, value)
+        text += """
         <RA-MSMs>
         RMSE: {}
         FSS: {}
@@ -164,8 +180,8 @@ class EvalSpecificRegions(Eval):
         FSS: {}
         TS: {}
         """.format(
-            '{:.6f}'.format(self.RMSE1[0]), [float('{:.6f}'.format(self.FSS1[0][i])) for i in range(10)], '{:.6f}'.format(self.TS1[0]),
-            '{:.6f}'.format(self.RMSE2[0]), [float('{:.6f}'.format(self.FSS2[0][i])) for i in range(10)], '{:.6f}'.format(self.TS2[0]),
+            '{:.6f}'.format(self.RMSE1[0]), [float('{:.6f}'.format(self.FSS1[0][i])) for i in range(13)], '{:.6f}'.format(self.TS1[0]),
+            '{:.6f}'.format(self.RMSE2[0]), [float('{:.6f}'.format(self.FSS2[0][i])) for i in range(13)], '{:.6f}'.format(self.TS2[0]),
         )
         with open(self.savePath, 'w') as f:
             f.write(text)
@@ -183,20 +199,21 @@ class EvalSpecificRegions(Eval):
         time = self.time
         real = self.nc_rains.variables['rain_Ra'][time]
         correct = self.nc_correct.variables['rain'][time]
-        correct = Reverse.reverseLat(correct)
         FSSEACH = []
-        for threshold in np.linspace(2, 20, 10):
+        rain = Reverse.reverseLat(correct)
+        thresholds = np.append(np.linspace(2, 20, 10), [30,40,50])
+        for threshold in thresholds:
             FSS = Calculation.FSS_(
-                threshold=threshold, real=real, pred=correct,
+                threshold=threshold, real=real, pred=rain,
                 LATs=self.regions[0], LATf=self.regions[1],
                 LONs=self.regions[2], LONf=self.regions[3]
             )
             FSSEACH.append(FSS)
         TS = Calculation.ThreatScore(
-            real=real, pred=correct, indexes=self.indexes
+            real=real, pred=rain, indexes=self.indexes
         )
         RMSE = Calculation.RMSE(
-            real=real, pred=correct, indexes=self.indexes
+            real=real, pred=rain, indexes=self.indexes
         )
         ALL1.append(RMSE)
         ALL2.append(FSSEACH)
@@ -231,7 +248,7 @@ class EvalRAMSMsSpecificRegions(EvalRAMSMs):
         text = f"""
         <RA-MSMs>
         RMSE: {'{:.6f}'.format(self.RMSE[0])}
-        FSS: {[float('{:.6f}'.format(self.FSS[0][i])) for i in range(10)]}
+        FSS: {[float('{:.6f}'.format(self.FSS[0][i])) for i in range(13)]}
         TS: {'{:.6f}'.format(self.TS[0])}
         """
         with open(self.savePath, 'w') as f:
@@ -246,9 +263,10 @@ class EvalRAMSMsSpecificRegions(EvalRAMSMs):
         ALL3 = []
         time = self.time
         real = self.nc_rains.variables['rain_Ra'][time]
-        correct = self.nc_correct.variables['rain'][time]
+        correct = self.nc_rains.variables['rain_MSMs'][time]
         FSSEACH = []
-        for threshold in np.linspace(2, 20, 10):
+        thresholds = np.append(np.linspace(2, 20, 10), [30,40,50])
+        for threshold in thresholds:
             FSS = Calculation.FSS_(
                 threshold=threshold, real=real, pred=correct,
                 LATs=self.regions[0], LATf=self.regions[1],
