@@ -1,6 +1,7 @@
 import time as Time
 import numpy as np
 from sklearn.preprocessing import PolynomialFeatures
+from sklearn import preprocessing
 
 from Exception.Exception import *
 from netCDF.NetCDF import NetCDF
@@ -126,16 +127,22 @@ class Setter(SKLearn):
             Y.append([d[i]])
         print(f'X: {len(X)}, vars: {len(X[0])}')
         print(f'Y: {len(Y)}, vars: {len(Y[0])}')
+        sc = preprocessing.StandardScaler()
+        sc.fit(X)
+        X = sc.transform(X)
         return X, Y
 
     def shapeXForPredict(self, varnames):
         TIME_X = []
+        sc = preprocessing.StandardScaler()
         for time in range(248):
             X = []
             for varname in varnames:
                 d = np.ravel(getattr(self, varname)[time]).tolist()
                 X.append(d)
             X = Array.getTransposedMatrix(X)
+            sc.fit(X)
+            X = sc.transform(X)
             TIME_X.append(X)
         print(f'TIME: {len(TIME_X)}, X: {len(TIME_X[0])}, vars: {len(TIME_X[0][0])}')
         return TIME_X
@@ -168,12 +175,12 @@ class Setter(SKLearn):
         DEVIATION = []
         for time in range(248):
             real = np.ravel(self.nc_rains.variables['rain_Ra'][time,:,:])
-            data = X[time]
+            data = X[time].tolist()
             indexes = [data.index(vector) for vector in data if vector[0] > 0]
             print(f'TIME: {time}, X: {len(data)}, vars: {len(data[0])}')
             print(f'vector: {data[indexes[0]]}')
             predicted = np.array(self.model.predict(data))
-            print(f'predicted: {predicted[indexes[0]]}')
+            print('predicted: {:4f}'.format(predicted[indexes[0]]))
             rain_MSMs = np.ravel(self.rain_MSMs[time])
             # exists = [i for i in predicted if i > 0]
             # print(exists[:10])
@@ -214,15 +221,15 @@ class Setter(SKLearn):
         DEVIATION = []
         for time in range(248):
             real = np.ravel(self.nc_rains.variables['rain_Ra'][time,:,:])
-            data = X[time]
+            data = X[time].tolist()
             indexes = [data.index(vector) for vector in data if vector[0] > 0]
             print(f'TIME: {time}, X: {len(data)}, vars: {len(data[0])}')
             print(f'vector: {data[indexes[0]]}')
             length = len(data[0])
-            poly = PolynomialFeatures(length)
+            poly = PolynomialFeatures(2)
             data = poly.fit_transform(data)
             predicted = np.array(self.model.predict(data))
-            print(f'predicted: {predicted[indexes[0]]}')
+            print('predicted: {:4f}'.format(predicted[indexes[0]]))
             rain_MSMs = np.ravel(self.rain_MSMs[time])
             # exists = [i for i in predicted if i > 0]
             # print(exists[:10])
@@ -236,8 +243,10 @@ class Setter(SKLearn):
             predicted = Reverse.reverseLat(predicted)
             deviation = np.reshape(deviation, (253,241))
             deviation = Reverse.reverseLat(deviation)
+            RAIN.append(real)
             ALL.append(predicted)
             DEVIATION.append(deviation)
+        print(f'deviation: TIME: {len(DEVIATION)}, LAT: {len(DEVIATION[0])}, LON: {len(DEVIATION[0][0])}')
         CreateNetCDF.createNcFilePredict(
             path=ncSavePath,
             filename='20200701',

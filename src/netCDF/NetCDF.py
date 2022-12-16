@@ -16,7 +16,7 @@ class NetCDF(Abstract):
         self.dimensions = self.nc.dimensions
         self.variables = self.nc.variables
         self.filename = path.split('/')[-1].split('.')[0]
-        self.MSMRange = [120, 150, 22.4, 47.6]
+        self.MSMRange = [22.4, 47.6, 120, 150]
         self.__lat = self.nc.variables['lat'][:].tolist()
         self.__lon = self.nc.variables['lon'][:].tolist()
         self.__time = self.nc.variables['time'][:].tolist()
@@ -76,7 +76,7 @@ class NetCDF(Abstract):
         plt.close()
 
     def _return_basemap(self):
-        llcrnrlon, urcrnrlon, llcrnrlat, urcrnrlat = self.MSMRange
+        llcrnrlat, urcrnrlat, llcrnrlon, urcrnrlon = self.MSMRange
         m=Basemap(
             projection='cyl',
             resolution='i',

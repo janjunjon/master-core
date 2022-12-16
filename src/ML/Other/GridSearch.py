@@ -2,6 +2,7 @@ import time as Time
 import numpy as np
 import pandas as pd
 from sklearn import svm, metrics
+from sklearn.preprocessing import PolynomialFeatures
 from sklearn.model_selection import GridSearchCV
 from sklearn.metrics import confusion_matrix
 
@@ -43,6 +44,29 @@ class SVRHyperParams:
             'gamma':np.linspace(0.01, 1.0, 50)
         }
         return ret
+
+class PolynomialRegression:
+    @classmethod
+    def model(cls, X_train, X_test, Y_train, Y_test):
+        starttime = Time.time()
+        params = {
+            'polynomialfeatures__degree': np.arange(4)
+        }
+        gridsearch = GridSearchCV(
+            PolynomialFeatures(),
+            params, cv=10,
+            scoring='neg_mean_squared_error'
+        )
+        gridsearch.fit(X_train, Y_train)
+
+        elapsedtime = Time.time() - starttime
+        print("Elapsed time for grid search: {0} [sec]".format(elapsedtime))
+        
+        print('The best parameter = ',gridsearch.best_params_)
+        print('RMSE = ',-gridsearch.best_score_)
+        
+        Poly = PolynomialFeatures(gridsearch.best_params_['polynomialfeatures__degree'])
+        return gridsearch, Poly
 
 class Sample:
     @classmethod

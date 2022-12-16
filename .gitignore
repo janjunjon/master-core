@@ -1,4 +1,5 @@
 memo.txt
+.env
 *.code-workspace
 __pycache__
 fdrive

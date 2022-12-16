@@ -1,0 +1,10 @@
+[Unit]
+Description = execution daemon
+
+[Service]
+ExecStart = /home/jjthomson/master-core/src/ML/Execution/v3/v3HeavyRainCasesNonLinearSDGRegressor2.py
+Restart = always
+Type = simple
+
+[Install]
+WantedBy = multi-user.target

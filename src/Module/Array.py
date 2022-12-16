@@ -2,7 +2,7 @@ import numpy as np
 
 class Array:
     @classmethod
-    def reshape(cls, array: np.ndarray) -> np.ndarray:
+    def reshape(cls, array) -> np.ndarray:
         if not isinstance(array, np.ndarray):
             array = np.array(array)
         if array.ndim == 1 and len(array) == 253*241:
@@ -12,7 +12,7 @@ class Array:
         return array
 
     @classmethod
-    def convert(cls, array: np.ndarray) -> np.ndarray:
+    def convert(cls, array) -> np.ndarray:
         if not isinstance(array, np.ndarray):
             array = np.array(array)
         if array.ndim > 1:
@@ -20,15 +20,23 @@ class Array:
         return array
 
     @classmethod
-    def listToNdArray(cls, array):
+    def listToNdArray(cls, array) -> np.ndarray:
         if isinstance(array, list):
             array = np.array(array)
+        elif isinstance(array, np.ndarray):
+            pass
+        else:
+            raise TypeError('array is not list.')
         return array
 
     @classmethod
-    def ndarrayToList(cls, array):
-        if isinstance(array, np.ndarray):
+    def ndarrayToList(cls, array) -> list:
+        if isinstance(array, list):
+            pass
+        elif isinstance(array, np.ndarray):
             array = array.tolist()
+        else:
+            raise TypeError('array is not list.')
         return array
 
     @classmethod

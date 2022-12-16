@@ -6,3 +6,6 @@ class SetError(Exception):
 
 class DimensionalError(Exception):
     pass
+
+class ExecutionError(Exception):
+    pass

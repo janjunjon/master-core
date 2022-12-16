@@ -8,13 +8,14 @@ from sklearn.metrics import mean_absolute_error
 from sklearn.preprocessing import PolynomialFeatures
 
 from ML.Other.Abstract import SKLearnOnlyMethod as SKLearn
+from ML.Other.GridSearch import PolynomialRegression
 
 class NonLinearSDGRegressor:
     @classmethod
     def createModel(cls, save_path, text_path, X, Y):
-        length = len(X[0])
         X_train, X_test, Y_train, Y_test = cls.getDistributedData(X, Y)
-        poly = PolynomialFeatures(length)
+        poly = PolynomialFeatures(2)
+        # gridsearch, poly = PolynomialRegression.model(X_train, X_test, Y_train, Y_test)
         X_poly = poly.fit_transform(X_train)
         X_test = poly.fit_transform(X_test)
         model = linear_model.SGDRegressor(max_iter=1000)
@@ -53,8 +54,6 @@ class NonLinearSDGRegressor:
         sc=preprocessing.StandardScaler()
         sc.fit(X)
         X=sc.transform(X)
-        sc.fit(Y)
-        Y=sc.transform(Y)
         X_train, X_test, Y_train, Y_test = cross_validation.train_test_split(X, Y, test_size=0.2, random_state=0)
         return X_train, X_test, Y_train, Y_test
 
