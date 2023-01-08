@@ -1,3 +1,5 @@
+import subprocess
+
 from netCDF.v3.HeavyRainCases.SVR import *
 from External.Slack import *
 
@@ -74,30 +76,36 @@ class advModel6(Model6):
         self.json_path = '/home/ishihara/fdrive/MLCorrectModels/v3_result/HeavyRainCases/SVR/pattern6.json'
 
 try:
-    model1 = advModel1()
-    model1.create()
-    model1.correct()
-    Slack.notification('file: {}, finished: model1'.format(__file__))
-    model2 = advModel2()
-    model2.create()
-    model2.correct()
-    Slack.notification('file: {}, finished: model1'.format(__file__))
-    model3 = advModel3()
-    model3.create()
-    model3.correct()
-    Slack.notification('file: {}, finished: model1'.format(__file__))
-    model4 = advModel4()
-    model4.create()
-    model4.correct()
-    Slack.notification('file: {}, finished: model1'.format(__file__))
-    model5 = advModel5()
-    model5.create()
-    model5.correct()
-    Slack.notification('file: {}, finished: model1'.format(__file__))
+    # model1 = advModel1()
+    # model1.create()
+    # model1.correct()
+    # r = subprocess.run('ls /home/ishihara/fdrive/nc/predict/v3/HeavyRainCases/SVR', shell=True, capture_output=True)
+    # Slack.notification('file: {}, finished: model1, ls: {}'.format(__file__, r.stdout))
+    # model2 = advModel2()
+    # model2.create()
+    # model2.correct()
+    # r = subprocess.run('ls /home/ishihara/fdrive/nc/predict/v3/HeavyRainCases/SVR', shell=True, capture_output=True)
+    # Slack.notification('file: {}, finished: model2, ls: {}'.format(__file__, r.stdout))
+    # model3 = advModel3()
+    # model3.create()
+    # model3.correct()
+    # r = subprocess.run('ls /home/ishihara/fdrive/nc/predict/v3/HeavyRainCases/SVR', shell=True, capture_output=True)
+    # Slack.notification('file: {}, finished: model3, ls: {}'.format(__file__, r.stdout))
+    # model4 = advModel4()
+    # model4.create()
+    # model4.correct()
+    # r = subprocess.run('ls /home/ishihara/fdrive/nc/predict/v3/HeavyRainCases/SVR', shell=True, capture_output=True)
+    # Slack.notification('file: {}, finished: model4, ls: {}'.format(__file__, r.stdout))
+    # model5 = advModel5()
+    # model5.create()
+    # model5.correct()
+    # r = subprocess.run('ls /home/ishihara/fdrive/nc/predict/v3/HeavyRainCases/SVR', shell=True, capture_output=True)
+    # Slack.notification('file: {}, finished: model5, ls: {}'.format(__file__, r.stdout))
     model6 = advModel6()
     model6.create()
     model6.correct()
-    Slack.notification('file: {}, finished: model1'.format(__file__))
+    r = subprocess.run('ls /home/ishihara/fdrive/nc/predict/v3/HeavyRainCases/SVR', shell=True, capture_output=True)
+    Slack.notification('file: {}, finished: model6, ls: {}'.format(__file__, r.stdout))
 except ExecutionError as e:
     Slack.notification('file: {}, error: {}'.format(__file__, e))
 

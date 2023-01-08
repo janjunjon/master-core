@@ -5,7 +5,7 @@ from Exception.Exception import *
 class Execution:
     def main(self):
         try:
-            for pattern in ['pattern2', 'pattern3', 'pattern4', 'pattern5', 'pattern6']:
+            for pattern in ['pattern1', 'pattern2', 'pattern3', 'pattern4', 'pattern5', 'pattern6']:
                 instance = Eval(
                     dirPath='Rain/SDGRegressor',
                     pattern=pattern

@@ -275,7 +275,7 @@ class Setter(SKLearn):
         return deviation
 
     def calcCorrelationCoefficient(self, B):
-        indexes = np.load(file='/home/jjthomson/master-core/var/Data/undef.npy')
+        indexes = np.load(file='/home/ishihara/master-core/var/Data/undef.npy')
         A = np.ravel(self.nc_rains.variables['rain_Ra'])
         B = np.ravel(B)
         print(f'A: {len(A)}')
@@ -294,10 +294,10 @@ class Setter(SKLearn):
 
     def setPCAComponents(self):
         setattr(self, 'rain_MSMs', self.nc_rains.variables['rain_MSMs'][:].tolist())
-        nc_pca1 = NetCDF('/home/jjthomson/fdrive/nc/PCA/pattern1.nc')
-        nc_pca2 = NetCDF('/home/jjthomson/fdrive/nc/PCA/pattern2.nc')
-        nc_pca3 = NetCDF('/home/jjthomson/fdrive/nc/PCA/pattern3.nc')
-        nc_pca4 = NetCDF('/home/jjthomson/fdrive/nc/PCA/pattern4.nc')
+        nc_pca1 = NetCDF('/home/ishihara/fdrive/nc/PCA/pattern1.nc')
+        nc_pca2 = NetCDF('/home/ishihara/fdrive/nc/PCA/pattern2.nc')
+        nc_pca3 = NetCDF('/home/ishihara/fdrive/nc/PCA/pattern3.nc')
+        nc_pca4 = NetCDF('/home/ishihara/fdrive/nc/PCA/pattern4.nc')
         # varnames1 = ['component1', 'component2']
         # varnames2 = ['component1', 'component2']
         # varnames3 = ['component1', 'component2', 'component3']
