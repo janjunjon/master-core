@@ -19,12 +19,12 @@ class Setter(SKLearn):
         super().__init__()
 
         self.region = [22, 48, 120, 150]
-        self.nc_rains = NetCDF('/home/jjthomson/fdrive/nc/combined/rains.nc')
+        self.nc_rains = NetCDF('/home/ishihara/fdrive/nc/combined/rains.nc')
         self.Y = self.nc_rains.variables['rain_Ra'][:].tolist()
-        self.ncMSMs = NetCDF('/home/jjthomson/fdrive/nc/combined/MSMs.nc')
-        self.ncMSMp = NetCDF('/home/jjthomson/fdrive/nc/combined/MSMp.nc')
-        self.ncDiv = NetCDF('/home/jjthomson/fdrive/nc/combined/div.nc')
-        self.ncAtmos = NetCDF('/home/jjthomson/fdrive/nc/combined/atmos.nc')
+        self.ncMSMs = NetCDF('/home/ishihara/fdrive/nc/combined/MSMs.nc')
+        self.ncMSMp = NetCDF('/home/ishihara/fdrive/nc/combined/MSMp.nc')
+        self.ncDiv = NetCDF('/home/ishihara/fdrive/nc/combined/div.nc')
+        self.ncAtmos = NetCDF('/home/ishihara/fdrive/nc/combined/atmos.nc')
         self.varNcMSMs  = ['psea', 'sp', 'u', 'v', 'temp', 'ncld_upper', 'ncld_mid', 'ncld_low', 'ncld', 'dswrf']
         self.varNcMSMp  = ['z', 'w', 'rh']
         self.varNcDiv   = ['pwv', 'qu', 'qv', 'div']
@@ -275,7 +275,7 @@ class Setter(SKLearn):
         return deviation
 
     def calcCorrelationCoefficient(self, B):
-        indexes = np.load(file='/home/jjthomson/master-core/var/Data/undef.npy')
+        indexes = np.load(file='/home/ishihara/master-core/var/Data/undef.npy')
         A = np.ravel(self.nc_rains.variables['rain_Ra'])
         B = np.ravel(B)
         print(f'A: {len(A)}')
@@ -294,10 +294,10 @@ class Setter(SKLearn):
 
     def setPCAComponents(self):
         setattr(self, 'rain_MSMs', self.nc_rains.variables['rain_MSMs'][:].tolist())
-        nc_pca1 = NetCDF('/home/jjthomson/fdrive/nc/PCA/pattern1.nc')
-        nc_pca2 = NetCDF('/home/jjthomson/fdrive/nc/PCA/pattern2.nc')
-        nc_pca3 = NetCDF('/home/jjthomson/fdrive/nc/PCA/pattern3.nc')
-        nc_pca4 = NetCDF('/home/jjthomson/fdrive/nc/PCA/pattern4.nc')
+        nc_pca1 = NetCDF('/home/ishihara/fdrive/nc/PCA/pattern1.nc')
+        nc_pca2 = NetCDF('/home/ishihara/fdrive/nc/PCA/pattern2.nc')
+        nc_pca3 = NetCDF('/home/ishihara/fdrive/nc/PCA/pattern3.nc')
+        nc_pca4 = NetCDF('/home/ishihara/fdrive/nc/PCA/pattern4.nc')
         # varnames1 = ['component1', 'component2']
         # varnames2 = ['component1', 'component2']
         # varnames3 = ['component1', 'component2', 'component3']

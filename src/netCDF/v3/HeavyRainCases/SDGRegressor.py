@@ -8,12 +8,12 @@ class Model1(MLCorrectModel):
     """
     def __init__(self, correct=False) -> None:
         super().__init__()
-        self.model_path = '/home/jjthomson/fdrive/MLCorrectModels/v3/HeavyRainCases/SDGRegressor/pattern1.sav'
-        self.text_path = '/home/jjthomson/fdrive/MLCorrectModels/v3_result/HeavyRainCases/SDGRegressor/pattern1.txt'
-        # self.img_path = '/home/jjthomson/fdrive/MLCorrectModels/v3_img/HeavyRainCases/SDGRegressor/pattern1.png'
-        self.nc_path = '/home/jjthomson/fdrive/nc/predict/v3/HeavyRainCases/SDGRegressor/pattern1.nc'
-        self.ctl_path = '/home/jjthomson/fdrive/nc/predict/v3_ctl/HeavyRainCases/SDGRegressor/pattern1.ctl'
-        self.gs_path = '/home/jjthomson/fdrive/nc/predict/v3_gs/HeavyRainCases/SDGRegressor/pattern1.gs'
+        self.model_path = '/home/ishihara/fdrive/MLCorrectModels/v3/HeavyRainCases/SDGRegressor/pattern1.sav'
+        self.text_path = '/home/ishihara/fdrive/MLCorrectModels/v3_result/HeavyRainCases/SDGRegressor/pattern1.txt'
+        # self.img_path = '/home/ishihara/fdrive/MLCorrectModels/v3_img/HeavyRainCases/SDGRegressor/pattern1.png'
+        self.nc_path = '/home/ishihara/fdrive/nc/predict/v3/HeavyRainCases/SDGRegressor/pattern1.nc'
+        self.ctl_path = '/home/ishihara/fdrive/nc/predict/v3_ctl/HeavyRainCases/SDGRegressor/pattern1.ctl'
+        self.gs_path = '/home/ishihara/fdrive/nc/predict/v3_gs/HeavyRainCases/SDGRegressor/pattern1.gs'
         self.dirPath = 'HeavyRainCases/SDGRegressor/pattern1'
 
         indexes = self.Data.HeavyRainCases(self)
@@ -47,12 +47,12 @@ class Model2(MLCorrectModel):
     """
     def __init__(self, correct=False) -> None:
         super().__init__()
-        self.model_path = '/home/jjthomson/fdrive/MLCorrectModels/v3/HeavyRainCases/SDGRegressor/pattern2.sav'
-        self.text_path = '/home/jjthomson/fdrive/MLCorrectModels/v3_result/HeavyRainCases/SDGRegressor/pattern2.txt'
-        # self.img_path = '/home/jjthomson/fdrive/MLCorrectModels/v3_img/HeavyRainCases/SDGRegressor/pattern2.png'
-        self.nc_path = '/home/jjthomson/fdrive/nc/predict/v3/HeavyRainCases/SDGRegressor/pattern2.nc'
-        self.ctl_path = '/home/jjthomson/fdrive/nc/predict/v3_ctl/HeavyRainCases/SDGRegressor/pattern2.ctl'
-        self.gs_path = '/home/jjthomson/fdrive/nc/predict/v3_gs/HeavyRainCases/SDGRegressor/pattern2.gs'
+        self.model_path = '/home/ishihara/fdrive/MLCorrectModels/v3/HeavyRainCases/SDGRegressor/pattern2.sav'
+        self.text_path = '/home/ishihara/fdrive/MLCorrectModels/v3_result/HeavyRainCases/SDGRegressor/pattern2.txt'
+        # self.img_path = '/home/ishihara/fdrive/MLCorrectModels/v3_img/HeavyRainCases/SDGRegressor/pattern2.png'
+        self.nc_path = '/home/ishihara/fdrive/nc/predict/v3/HeavyRainCases/SDGRegressor/pattern2.nc'
+        self.ctl_path = '/home/ishihara/fdrive/nc/predict/v3_ctl/HeavyRainCases/SDGRegressor/pattern2.ctl'
+        self.gs_path = '/home/ishihara/fdrive/nc/predict/v3_gs/HeavyRainCases/SDGRegressor/pattern2.gs'
         self.dirPath = 'HeavyRainCases/SDGRegressor/pattern2'
 
         indexes = self.Data.HeavyRainCases(self)
@@ -86,12 +86,12 @@ class Model3(MLCorrectModel):
     """
     def __init__(self, correct=False) -> None:
         super().__init__()
-        self.model_path = '/home/jjthomson/fdrive/MLCorrectModels/v3/HeavyRainCases/SDGRegressor/pattern3.sav'
-        self.text_path = '/home/jjthomson/fdrive/MLCorrectModels/v3_result/HeavyRainCases/SDGRegressor/pattern3.txt'
-        # self.img_path = '/home/jjthomson/fdrive/MLCorrectModels/v3_img/HeavyRainCases/SDGRegressor/pattern3.png'
-        self.nc_path = '/home/jjthomson/fdrive/nc/predict/v3/HeavyRainCases/SDGRegressor/pattern3.nc'
-        self.ctl_path = '/home/jjthomson/fdrive/nc/predict/v3_ctl/HeavyRainCases/SDGRegressor/pattern3.ctl'
-        self.gs_path = '/home/jjthomson/fdrive/nc/predict/v3_gs/HeavyRainCases/SDGRegressor/pattern3.gs'
+        self.model_path = '/home/ishihara/fdrive/MLCorrectModels/v3/HeavyRainCases/SDGRegressor/pattern3.sav'
+        self.text_path = '/home/ishihara/fdrive/MLCorrectModels/v3_result/HeavyRainCases/SDGRegressor/pattern3.txt'
+        # self.img_path = '/home/ishihara/fdrive/MLCorrectModels/v3_img/HeavyRainCases/SDGRegressor/pattern3.png'
+        self.nc_path = '/home/ishihara/fdrive/nc/predict/v3/HeavyRainCases/SDGRegressor/pattern3.nc'
+        self.ctl_path = '/home/ishihara/fdrive/nc/predict/v3_ctl/HeavyRainCases/SDGRegressor/pattern3.ctl'
+        self.gs_path = '/home/ishihara/fdrive/nc/predict/v3_gs/HeavyRainCases/SDGRegressor/pattern3.gs'
         self.dirPath = 'HeavyRainCases/SDGRegressor/pattern3'
 
         indexes = self.Data.HeavyRainCases(self)
@@ -125,12 +125,12 @@ class Model4(MLCorrectModel):
     """
     def __init__(self, correct=False) -> None:
         super().__init__()
-        self.model_path = '/home/jjthomson/fdrive/MLCorrectModels/v3/HeavyRainCases/SDGRegressor/pattern4.sav'
-        self.text_path = '/home/jjthomson/fdrive/MLCorrectModels/v3_result/HeavyRainCases/SDGRegressor/pattern4.txt'
-        # self.img_path = '/home/jjthomson/fdrive/MLCorrectModels/v3_img/HeavyRainCases/SDGRegressor/pattern4.png'
-        self.nc_path = '/home/jjthomson/fdrive/nc/predict/v3/HeavyRainCases/SDGRegressor/pattern4.nc'
-        self.ctl_path = '/home/jjthomson/fdrive/nc/predict/v3_ctl/HeavyRainCases/SDGRegressor/pattern4.ctl'
-        self.gs_path = '/home/jjthomson/fdrive/nc/predict/v3_gs/HeavyRainCases/SDGRegressor/pattern4.gs'
+        self.model_path = '/home/ishihara/fdrive/MLCorrectModels/v3/HeavyRainCases/SDGRegressor/pattern4.sav'
+        self.text_path = '/home/ishihara/fdrive/MLCorrectModels/v3_result/HeavyRainCases/SDGRegressor/pattern4.txt'
+        # self.img_path = '/home/ishihara/fdrive/MLCorrectModels/v3_img/HeavyRainCases/SDGRegressor/pattern4.png'
+        self.nc_path = '/home/ishihara/fdrive/nc/predict/v3/HeavyRainCases/SDGRegressor/pattern4.nc'
+        self.ctl_path = '/home/ishihara/fdrive/nc/predict/v3_ctl/HeavyRainCases/SDGRegressor/pattern4.ctl'
+        self.gs_path = '/home/ishihara/fdrive/nc/predict/v3_gs/HeavyRainCases/SDGRegressor/pattern4.gs'
         self.dirPath = 'HeavyRainCases/SDGRegressor/pattern4'
 
         indexes = self.Data.HeavyRainCases(self)
@@ -164,12 +164,12 @@ class Model5(MLCorrectModel):
     """
     def __init__(self, correct=False) -> None:
         super().__init__()
-        self.model_path = '/home/jjthomson/fdrive/MLCorrectModels/v3/HeavyRainCases/SDGRegressor/pattern5.sav'
-        self.text_path = '/home/jjthomson/fdrive/MLCorrectModels/v3_result/HeavyRainCases/SDGRegressor/pattern5.txt'
-        # self.img_path = '/home/jjthomson/fdrive/MLCorrectModels/v3_img/HeavyRainCases/SDGRegressor/pattern5.png'
-        self.nc_path = '/home/jjthomson/fdrive/nc/predict/v3/HeavyRainCases/SDGRegressor/pattern5.nc'
-        self.ctl_path = '/home/jjthomson/fdrive/nc/predict/v3_ctl/HeavyRainCases/SDGRegressor/pattern5.ctl'
-        self.gs_path = '/home/jjthomson/fdrive/nc/predict/v3_gs/HeavyRainCases/SDGRegressor/pattern5.gs'
+        self.model_path = '/home/ishihara/fdrive/MLCorrectModels/v3/HeavyRainCases/SDGRegressor/pattern5.sav'
+        self.text_path = '/home/ishihara/fdrive/MLCorrectModels/v3_result/HeavyRainCases/SDGRegressor/pattern5.txt'
+        # self.img_path = '/home/ishihara/fdrive/MLCorrectModels/v3_img/HeavyRainCases/SDGRegressor/pattern5.png'
+        self.nc_path = '/home/ishihara/fdrive/nc/predict/v3/HeavyRainCases/SDGRegressor/pattern5.nc'
+        self.ctl_path = '/home/ishihara/fdrive/nc/predict/v3_ctl/HeavyRainCases/SDGRegressor/pattern5.ctl'
+        self.gs_path = '/home/ishihara/fdrive/nc/predict/v3_gs/HeavyRainCases/SDGRegressor/pattern5.gs'
         self.dirPath = 'HeavyRainCases/SDGRegressor/pattern5'
 
         indexes = self.Data.HeavyRainCases(self)
@@ -203,12 +203,12 @@ class Model6(MLCorrectModel):
     """
     def __init__(self, correct=False) -> None:
         super().__init__()
-        self.model_path = '/home/jjthomson/fdrive/MLCorrectModels/v3/HeavyRainCases/SDGRegressor/pattern6.sav'
-        self.text_path = '/home/jjthomson/fdrive/MLCorrectModels/v3_result/HeavyRainCases/SDGRegressor/pattern6.txt'
-        # self.img_path = '/home/jjthomson/fdrive/MLCorrectModels/v3_img/HeavyRainCases/SDGRegressor/pattern6.png'
-        self.nc_path = '/home/jjthomson/fdrive/nc/predict/v3/HeavyRainCases/SDGRegressor/pattern6.nc'
-        self.ctl_path = '/home/jjthomson/fdrive/nc/predict/v3_ctl/HeavyRainCases/SDGRegressor/pattern6.ctl'
-        self.gs_path = '/home/jjthomson/fdrive/nc/predict/v3_gs/HeavyRainCases/SDGRegressor/pattern6.gs'
+        self.model_path = '/home/ishihara/fdrive/MLCorrectModels/v3/HeavyRainCases/SDGRegressor/pattern6.sav'
+        self.text_path = '/home/ishihara/fdrive/MLCorrectModels/v3_result/HeavyRainCases/SDGRegressor/pattern6.txt'
+        # self.img_path = '/home/ishihara/fdrive/MLCorrectModels/v3_img/HeavyRainCases/SDGRegressor/pattern6.png'
+        self.nc_path = '/home/ishihara/fdrive/nc/predict/v3/HeavyRainCases/SDGRegressor/pattern6.nc'
+        self.ctl_path = '/home/ishihara/fdrive/nc/predict/v3_ctl/HeavyRainCases/SDGRegressor/pattern6.ctl'
+        self.gs_path = '/home/ishihara/fdrive/nc/predict/v3_gs/HeavyRainCases/SDGRegressor/pattern6.gs'
         self.dirPath = 'HeavyRainCases/SDGRegressor/pattern6'
 
         indexes = self.Data.HeavyRainCases(self)

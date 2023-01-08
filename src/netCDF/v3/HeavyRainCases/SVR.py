@@ -8,14 +8,14 @@ class Model1(MLCorrectModel):
     """
     def __init__(self, correct=False) -> None:
         super().__init__()
-        self.model_path = '/home/jjthomson/fdrive/MLCorrectModels/v3/HeavyRainCases/SVR/pattern1.sav'
-        self.text_path = '/home/jjthomson/fdrive/MLCorrectModels/v3_result/HeavyRainCases/SVR/pattern1.txt'
-        # self.img_path = '/home/jjthomson/fdrive/MLCorrectModels/v3_img/HeavyRainCases/SVR/pattern1.png'
-        self.nc_path = '/home/jjthomson/fdrive/nc/predict/v3/HeavyRainCases/SVR/pattern1.nc'
-        self.ctl_path = '/home/jjthomson/fdrive/nc/predict/v3_ctl/HeavyRainCases/SVR/pattern1.ctl'
-        self.gs_path = '/home/jjthomson/fdrive/nc/predict/v3_gs/HeavyRainCases/SVR/pattern1.gs'
+        self.model_path = '/home/ishihara/fdrive/MLCorrectModels/v3/HeavyRainCases/SVR/pattern1.sav'
+        self.text_path = '/home/ishihara/fdrive/MLCorrectModels/v3_result/HeavyRainCases/SVR/pattern1.txt'
+        # self.img_path = '/home/ishihara/fdrive/MLCorrectModels/v3_img/HeavyRainCases/SVR/pattern1.png'
+        self.nc_path = '/home/ishihara/fdrive/nc/predict/v3/HeavyRainCases/SVR/pattern1.nc'
+        self.ctl_path = '/home/ishihara/fdrive/nc/predict/v3_ctl/HeavyRainCases/SVR/pattern1.ctl'
+        self.gs_path = '/home/ishihara/fdrive/nc/predict/v3_gs/HeavyRainCases/SVR/pattern1.gs'
         self.dirPath = 'HeavyRainCases/SVR/pattern1'
-        self.json_path = '/home/jjthomson/master-core/var/v3_result/HeavyHeavyRainCasesCases/SVR/pattern1.json'
+        self.json_path = '/home/ishihara/master-core/var/v3_result/HeavyHeavyRainCasesCases/SVR/pattern1.json'
 
         indexes = self.Data.HeavyRainCases(self)
         self.setVarnames, self.varnames = self.Variables.pattern1(self)
@@ -49,14 +49,14 @@ class Model2(MLCorrectModel):
     """
     def __init__(self, correct=False) -> None:
         super().__init__()
-        self.model_path = '/home/jjthomson/fdrive/MLCorrectModels/v3/HeavyRainCases/SVR/pattern2.sav'
-        self.text_path = '/home/jjthomson/fdrive/MLCorrectModels/v3_result/HeavyRainCases/SVR/pattern2.txt'
-        # self.img_path = '/home/jjthomson/fdrive/MLCorrectModels/v3_img/HeavyRainCases/SVR/pattern2.png'
-        self.nc_path = '/home/jjthomson/fdrive/nc/predict/v3/HeavyRainCases/SVR/pattern2.nc'
-        self.ctl_path = '/home/jjthomson/fdrive/nc/predict/v3_ctl/HeavyRainCases/SVR/pattern2.ctl'
-        self.gs_path = '/home/jjthomson/fdrive/nc/predict/v3_gs/HeavyRainCases/SVR/pattern2.gs'
+        self.model_path = '/home/ishihara/fdrive/MLCorrectModels/v3/HeavyRainCases/SVR/pattern2.sav'
+        self.text_path = '/home/ishihara/fdrive/MLCorrectModels/v3_result/HeavyRainCases/SVR/pattern2.txt'
+        # self.img_path = '/home/ishihara/fdrive/MLCorrectModels/v3_img/HeavyRainCases/SVR/pattern2.png'
+        self.nc_path = '/home/ishihara/fdrive/nc/predict/v3/HeavyRainCases/SVR/pattern2.nc'
+        self.ctl_path = '/home/ishihara/fdrive/nc/predict/v3_ctl/HeavyRainCases/SVR/pattern2.ctl'
+        self.gs_path = '/home/ishihara/fdrive/nc/predict/v3_gs/HeavyRainCases/SVR/pattern2.gs'
         self.dirPath = 'HeavyRainCases/SVR/pattern2'
-        self.json_path = '/home/jjthomson/master-core/var/v3_result/HeavyHeavyRainCasesCases/SVR/pattern2.json'
+        self.json_path = '/home/ishihara/master-core/var/v3_result/HeavyHeavyRainCasesCases/SVR/pattern2.json'
 
         indexes = self.Data.HeavyRainCases(self)
         self.setVarnames, self.varnames = self.Variables.pattern2(self)
@@ -90,14 +90,14 @@ class Model3(MLCorrectModel):
     """
     def __init__(self, correct=False) -> None:
         super().__init__()
-        self.model_path = '/home/jjthomson/fdrive/MLCorrectModels/v3/HeavyRainCases/SVR/pattern3.sav'
-        self.text_path = '/home/jjthomson/fdrive/MLCorrectModels/v3_result/HeavyRainCases/SVR/pattern3.txt'
-        # self.img_path = '/home/jjthomson/fdrive/MLCorrectModels/v3_img/HeavyRainCases/SVR/pattern3.png'
-        self.nc_path = '/home/jjthomson/fdrive/nc/predict/v3/HeavyRainCases/SVR/pattern3.nc'
-        self.ctl_path = '/home/jjthomson/fdrive/nc/predict/v3_ctl/HeavyRainCases/SVR/pattern3.ctl'
-        self.gs_path = '/home/jjthomson/fdrive/nc/predict/v3_gs/HeavyRainCases/SVR/pattern3.gs'
+        self.model_path = '/home/ishihara/fdrive/MLCorrectModels/v3/HeavyRainCases/SVR/pattern3.sav'
+        self.text_path = '/home/ishihara/fdrive/MLCorrectModels/v3_result/HeavyRainCases/SVR/pattern3.txt'
+        # self.img_path = '/home/ishihara/fdrive/MLCorrectModels/v3_img/HeavyRainCases/SVR/pattern3.png'
+        self.nc_path = '/home/ishihara/fdrive/nc/predict/v3/HeavyRainCases/SVR/pattern3.nc'
+        self.ctl_path = '/home/ishihara/fdrive/nc/predict/v3_ctl/HeavyRainCases/SVR/pattern3.ctl'
+        self.gs_path = '/home/ishihara/fdrive/nc/predict/v3_gs/HeavyRainCases/SVR/pattern3.gs'
         self.dirPath = 'HeavyRainCases/SVR/pattern3'
-        self.json_path = '/home/jjthomson/master-core/var/v3_result/HeavyHeavyRainCasesCases/SVR/pattern3.json'
+        self.json_path = '/home/ishihara/master-core/var/v3_result/HeavyHeavyRainCasesCases/SVR/pattern3.json'
 
         indexes = self.Data.HeavyRainCases(self)
         self.setVarnames, self.varnames = self.Variables.pattern3(self)
@@ -131,14 +131,14 @@ class Model4(MLCorrectModel):
     """
     def __init__(self, correct=False) -> None:
         super().__init__()
-        self.model_path = '/home/jjthomson/fdrive/MLCorrectModels/v3/HeavyRainCases/SVR/pattern4.sav'
-        self.text_path = '/home/jjthomson/fdrive/MLCorrectModels/v3_result/HeavyRainCases/SVR/pattern4.txt'
-        # self.img_path = '/home/jjthomson/fdrive/MLCorrectModels/v3_img/HeavyRainCases/SVR/pattern4.png'
-        self.nc_path = '/home/jjthomson/fdrive/nc/predict/v3/HeavyRainCases/SVR/pattern4.nc'
-        self.ctl_path = '/home/jjthomson/fdrive/nc/predict/v3_ctl/HeavyRainCases/SVR/pattern4.ctl'
-        self.gs_path = '/home/jjthomson/fdrive/nc/predict/v3_gs/HeavyRainCases/SVR/pattern4.gs'
+        self.model_path = '/home/ishihara/fdrive/MLCorrectModels/v3/HeavyRainCases/SVR/pattern4.sav'
+        self.text_path = '/home/ishihara/fdrive/MLCorrectModels/v3_result/HeavyRainCases/SVR/pattern4.txt'
+        # self.img_path = '/home/ishihara/fdrive/MLCorrectModels/v3_img/HeavyRainCases/SVR/pattern4.png'
+        self.nc_path = '/home/ishihara/fdrive/nc/predict/v3/HeavyRainCases/SVR/pattern4.nc'
+        self.ctl_path = '/home/ishihara/fdrive/nc/predict/v3_ctl/HeavyRainCases/SVR/pattern4.ctl'
+        self.gs_path = '/home/ishihara/fdrive/nc/predict/v3_gs/HeavyRainCases/SVR/pattern4.gs'
         self.dirPath = 'HeavyRainCases/SVR/pattern4'
-        self.json_path = '/home/jjthomson/master-core/var/v3_result/HeavyHeavyRainCasesCases/SVR/pattern4.json'
+        self.json_path = '/home/ishihara/master-core/var/v3_result/HeavyHeavyRainCasesCases/SVR/pattern4.json'
 
         indexes = self.Data.HeavyRainCases(self)
         self.setVarnames, self.varnames = self.Variables.pattern4(self)
@@ -172,14 +172,14 @@ class Model5(MLCorrectModel):
     """
     def __init__(self, correct=False) -> None:
         super().__init__()
-        self.model_path = '/home/jjthomson/fdrive/MLCorrectModels/v3/HeavyRainCases/SVR/pattern5.sav'
-        self.text_path = '/home/jjthomson/fdrive/MLCorrectModels/v3_result/HeavyRainCases/SVR/pattern5.txt'
-        # self.img_path = '/home/jjthomson/fdrive/MLCorrectModels/v3_img/HeavyRainCases/SVR/pattern5.png'
-        self.nc_path = '/home/jjthomson/fdrive/nc/predict/v3/HeavyRainCases/SVR/pattern5.nc'
-        self.ctl_path = '/home/jjthomson/fdrive/nc/predict/v3_ctl/HeavyRainCases/SVR/pattern5.ctl'
-        self.gs_path = '/home/jjthomson/fdrive/nc/predict/v3_gs/HeavyRainCases/SVR/pattern5.gs'
+        self.model_path = '/home/ishihara/fdrive/MLCorrectModels/v3/HeavyRainCases/SVR/pattern5.sav'
+        self.text_path = '/home/ishihara/fdrive/MLCorrectModels/v3_result/HeavyRainCases/SVR/pattern5.txt'
+        # self.img_path = '/home/ishihara/fdrive/MLCorrectModels/v3_img/HeavyRainCases/SVR/pattern5.png'
+        self.nc_path = '/home/ishihara/fdrive/nc/predict/v3/HeavyRainCases/SVR/pattern5.nc'
+        self.ctl_path = '/home/ishihara/fdrive/nc/predict/v3_ctl/HeavyRainCases/SVR/pattern5.ctl'
+        self.gs_path = '/home/ishihara/fdrive/nc/predict/v3_gs/HeavyRainCases/SVR/pattern5.gs'
         self.dirPath = 'HeavyRainCases/SVR/pattern5'
-        self.json_path = '/home/jjthomson/master-core/var/v3_result/HeavyHeavyRainCasesCases/SVR/pattern5.json'
+        self.json_path = '/home/ishihara/master-core/var/v3_result/HeavyHeavyRainCasesCases/SVR/pattern5.json'
 
         indexes = self.Data.HeavyRainCases(self)
         self.setVarnames, self.varnames = self.Variables.pattern5(self)
@@ -213,14 +213,14 @@ class Model6(MLCorrectModel):
     """
     def __init__(self, correct=False) -> None:
         super().__init__()
-        self.model_path = '/home/jjthomson/fdrive/MLCorrectModels/v3/HeavyRainCases/SVR/pattern6.sav'
-        self.text_path = '/home/jjthomson/fdrive/MLCorrectModels/v3_result/HeavyRainCases/SVR/pattern6.txt'
-        # self.img_path = '/home/jjthomson/fdrive/MLCorrectModels/v3_img/HeavyRainCases/SVR/pattern6.png'
-        self.nc_path = '/home/jjthomson/fdrive/nc/predict/v3/HeavyRainCases/SVR/pattern6.nc'
-        self.ctl_path = '/home/jjthomson/fdrive/nc/predict/v3_ctl/HeavyRainCases/SVR/pattern6.ctl'
-        self.gs_path = '/home/jjthomson/fdrive/nc/predict/v3_gs/HeavyRainCases/SVR/pattern6.gs'
+        self.model_path = '/home/ishihara/fdrive/MLCorrectModels/v3/HeavyRainCases/SVR/pattern6.sav'
+        self.text_path = '/home/ishihara/fdrive/MLCorrectModels/v3_result/HeavyRainCases/SVR/pattern6.txt'
+        # self.img_path = '/home/ishihara/fdrive/MLCorrectModels/v3_img/HeavyRainCases/SVR/pattern6.png'
+        self.nc_path = '/home/ishihara/fdrive/nc/predict/v3/HeavyRainCases/SVR/pattern6.nc'
+        self.ctl_path = '/home/ishihara/fdrive/nc/predict/v3_ctl/HeavyRainCases/SVR/pattern6.ctl'
+        self.gs_path = '/home/ishihara/fdrive/nc/predict/v3_gs/HeavyRainCases/SVR/pattern6.gs'
         self.dirPath = 'HeavyRainCases/SVR/pattern6'
-        self.json_path = '/home/jjthomson/master-core/var/v3_result/HeavyHeavyRainCasesCases/SVR/pattern6.json'
+        self.json_path = '/home/ishihara/master-core/var/v3_result/HeavyHeavyRainCasesCases/SVR/pattern6.json'
 
         indexes = self.Data.HeavyRainCases(self)
         self.varnames = self.Variables.pattern6(self)
