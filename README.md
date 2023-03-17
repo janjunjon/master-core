@@ -139,3 +139,29 @@ grads -blc checkfig_real.gs
 * [SCALE_user_guide](https://scale.riken.jp/archives/scale_users_guide.v5.4.4.pdf)  
 * [color.gs](http://kodama.fubuki.info/wiki/wiki.cgi/GrADS/script/color.gs?lang=jp)  
 * [xcbar.gs](http://kodama.fubuki.info/wiki/wiki.cgi/GrADS/script/xcbar.gs?lang=en)  
+
+## ディレクトリ構成 (src)
+
+研究に使用したソースを管理しています。
+
+### ML
+
+機械学習関係のクラスがあります。
+
+### Process
+
+一連の処理のフローをまとめたクラスがあります。
+
+### External
+
+外部連携用のクラスがあります。
+
+現状はSlackと連携するクラスがあります。
+
+### Exception
+
+例外のクラスがあります。
+
+### Module
+
+状態を持たないクラスがあります。（計算や描画など）
