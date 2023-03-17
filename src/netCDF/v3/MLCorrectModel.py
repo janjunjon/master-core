@@ -42,8 +42,8 @@ class MLCorrectModel(Setter):
             return setVarnames, varnames
 
         def pattern5(self):
-            setVarnames = ['rain_MSMs', 'u', 'ncld', 'ept', 'uvs']
-            varnames = ['rain_MSMs', 'u', 'ncld', 'ept700hPa', 'uvs']
+            setVarnames = ['rain_MSMs', 'u', 'ncld', 'ept', 'lcl']
+            varnames = ['rain_MSMs', 'u', 'ncld', 'ept700hPa', 'lcl']
             return setVarnames, varnames
 
         def pattern6(self):

@@ -21,8 +21,8 @@ class SVR:
     def createModel(cls, save_path, text_path, json_path, X, Y):
         starttime = Time.time()
         X_train, X_test, Y_train, Y_test = cls.getDistributedData(X, Y)
-        # model = svm.SVR(kernel='rbf', C=1e3, gamma='auto', epsilon=0.001)
-        gscv, model = Sample.template(X_train, X_test, Y_train, Y_test, json_path)
+        model = svm.SVR(kernel='rbf', C=1e3, gamma='auto', epsilon=0.001)
+        # gscv, model = Sample.template(X_train, X_test, Y_train, Y_test, json_path)
         model.fit(X_train, Y_train)
         
         pred_model = model.predict(X_test)
